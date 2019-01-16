@@ -9,18 +9,6 @@ a {
     font-weight: 400;
 }
 
-span {
-    font-weight: 300;
-    color: #00DD1D;
-	animation-name: example;
-    animation-duration: 0s;
-	transition: color 5s;
-}
-span:hover{
-		color: green;
-		color: yellow;
-		color: red;
-}
 .mlogin {
     margin: 40px auto 0;
 }
@@ -205,15 +193,14 @@ border: solid 1px #3b8dbd;
 }
 
 #sitter{
-    padding-top: 5px;
-    
-    
+    margin-top: -5px;
 }
 
 .doggy {
     display:inline-block;
     margin-left: 20px;
     margin-right: 10px;
+
   --face-before: #AEB8D1;
   --face-after: #679DFF;
   --face-details-before: #5B6F8F;
