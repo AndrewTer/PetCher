@@ -6,32 +6,38 @@ include("functions.php");
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
     <script type="text/javascript" src="/js/header.js"></script>
     <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+    <title>Регистрация | BlaBlaCat</title>
 </head>
 <?php
-if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['replay_password']) && !empty($_POST['email'])) 
+if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['replay_password'])) 
 {
 	$username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     $replay_password = htmlspecialchars($_POST['replay_password']);
 	
+    if(!empty($_POST['role']))
+    {
+        $role = "owner";
+    }else{
+        $role = "sitter";
+    }
+    
     if (htmlspecialchars($password) == htmlspecialchars($replay_password))
 	{
 		$encrypted_password = md5($password);
 	}
-    $email = htmlspecialchars($_POST['email']);
 	
-	$query=mysql_query("SELECT * FROM users WHERE full_name='".$username."' AND email='".$email."'");
+	$query=mysql_query("SELECT * FROM users WHERE full_name='".$username."' AND password='".$encrypted_password."'");
 	$numrows=mysql_num_rows($query);
 	
 		if($numrows==0)
 		{
-			$sql="insert into users VALUES ('','$username','$encrypted_password','sitter','','$email','','','','')";
+			$sql="insert into users VALUES ('','$username','$encrypted_password','$role','','','','','','')";
 			$result=mysql_query($sql);
-            
             
 			if($result)
 			{
-			 $directory = mysql_query("SELECT * FROM users WHERE full_name = '".$username."' AND password = '".$encrypted_password."' AND email = '".$email."'");
+			 $directory = mysql_query("SELECT * FROM users WHERE full_name = '".$username."' AND password = '".$encrypted_password."'");
                 if (mysql_num_rows($directory) > 0)
                 {
                   $directory_new = mysql_fetch_array($directory);
@@ -41,14 +47,15 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
                         if($dir)
                         {
                                $message = "Аккаунт успешно создан";
-                               
+				                //переадресация
+                                header("Location: login.php");
                         }
                         else
                         {
-                        $sql_er="DELETE FROM users WHERE username = '".$username."' AND encrypted_password = '".$encrypted_password."' AND email = '".$email;
-			             $result_er=mysql_query($sql_er);
-                                $message = "Ошибка при добавление информации!\nПовторите ввод, пожалуйста";
-                                }
+                        $sql_er="DELETE FROM users WHERE username = '".$username."' AND encrypted_password = '".$encrypted_password."'";
+                        $result_er=mysql_query($sql_er);
+                        $message = "Ошибка при добавление информации!\nПовторите ввод, пожалуйста";
+                        }
 				
 			} 
 			else 
@@ -59,9 +66,10 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 		} 
 		else 
 		{
-			$message = "Эта почта уже занята!";
+			$message = "Ваше имя занято!";
 		}
-			if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['replay_password']) || empty($_POST['email']))
+        
+		if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['replay_password']))
 		{
 			$message = "Заполните пожалуйста все поля !";
 		}
@@ -74,7 +82,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 <div class="header">
 <div class="contain clearfix">
 
-<img id = "logos" src='images/logo.png' width="150" height="50"/>
+<a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
 <nav>
 <a href="">Правила</a>
 <a href="">О нас</a>
@@ -101,16 +109,11 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 		<label for="user_rep_pass">Повторить пароль<br />
 		<input type="password" name="replay_password" id="replay_password" class="input" value="" size="32" required /></label>
 	</p>
-	
-	<p>
-		<label for="user_email">Почта<br />
-		<input type="email" name="email" id="email" class="input" value="" size="32" required /></label>
-	</p>
     
         <h4 id="sitter">Я Ситтер!
         <div class="doggy">
         <div class="toggle-wrapper">
-            <input type="checkbox" class="doggle" id="doggle"/>
+            <input type="checkbox" name="role" class="doggle" id="doggle"/>
             <label for="doggle" class="toggle">
                 <span class="toggle-handler">
                 <span class="face eye-left"></span>
@@ -129,12 +132,11 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
         </div>
         Я Владелец!</h4>
         
-	
     <p class="submit">
-		<input type="submit" name="register" id="register" class="button" value="Зарегистрироваться" />
+		<input type="submit" name="register" id="register" class="button" value="Продолжить регистрацию" />
 	</p>
 	
-	<p class="regtext">У вас есть аккаунт ? <a class="loglink" href="login.php" >Вход</a>!</p>
+	<p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход</a>!</p>
     </form>
     </div>
 </div>
@@ -142,3 +144,4 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 <div class="footer">
 BlaBlaCat © 2019
 </div>
+
