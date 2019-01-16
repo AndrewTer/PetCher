@@ -4,6 +4,8 @@ include("functions.php");
 ?>
 <head>
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
+    <script type="text/javascript" src="/js/header.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
 </head>
 <?php
 if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['replay_password']) && !empty($_POST['email'])) 
@@ -39,6 +41,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
                         if($dir)
                         {
                                $message = "Аккаунт успешно создан";
+                               
                         }
                         else
                         {
@@ -67,7 +70,19 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 
 
 <?php if (!empty($message)) {echo "<p class=\"error\">" .$message . "</p>";} ?>
-<div class="main_welcome">Сервис BlaBla<span name="pet">Cat</span></div>
+<!--<div class="main_welcome">Сервис BlaBla<span name="pet">Cat</span></div>--!>
+
+<div class="header">
+<div class="contain clearfix">
+
+<!--<h1 id="logo"> BlaBlaCat </h1>--!>
+<img id = "logos" src='images/logo.png' width="150" height="50"/>
+<nav>
+<a href="">Правила</a>
+<a href="">О нас</a>
+</nav>
+</div>
+</div>
 
 <div class="container mregister">
     <div id="login">
@@ -124,4 +139,8 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 	<p class="regtext">У вас есть аккаунт ? <a class="loglink" href="login.php" >Вход</a>!</p>
     </form>
     </div>
+</div>
+
+<div class="footer">
+BlaBlaCat © 2019
 </div>
