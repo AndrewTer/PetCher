@@ -1,1 +1,55 @@
+<?php 
+require_once("includes/connection.php"); 
+include("functions.php");
+session_start();
+if($_SESSION['auth_user'] == "yes_auth")
+{
+$username = $_SESSION['username'];
+$encrypted_password = $_SESSION['encrypted_password'];
+$email = $_SESSION['email'];
+$phone = $_SESSION['phone'];
+$address = $_SESSION['address'];
+$id = $_SESSION['id']; 
+?>
 
+<html>
+<head>
+    <link href="css/style.css" media="screen" rel="stylesheet"/>
+    <title><? echo $username ?> | BlaBlaCat</title> 
+</head>
+
+<div class="header">
+<?
+$result_new = mysql_query("SELECT * FROM users WHERE full_name = '".$username."' AND password = '".$encrypted_password."' AND email = '".$email."'");
+    if (mysql_num_rows($result_new) > 0)
+    {
+        $row_new = mysql_fetch_array($result_new);
+    }
+?>
+
+<div class="contain clearfix">  
+<a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
+<nav>
+<a href=""><? echo $row_new["full_name"]; ?></a> | 
+<a href="">Настройки</a>
+<a href="">Помощь</a>
+<a href="logout.php">Выйти</a>
+</nav>
+</div>
+</div>
+
+<div id="content">
+<? echo $row_new["id"];  ?>
+</div>
+
+<div class="footer">
+BlaBlaCat © 2019
+</div>
+  
+</html>
+<?
+}else
+{
+    header("Location: login.php"); 
+}
+?>
