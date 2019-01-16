@@ -131,7 +131,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
         
 	
     <p class="submit">
-		<input type="submit" name="register" id="register" class="button" value="Зарегестрироваться" />
+		<input type="submit" name="register" id="register" class="button" value="Зарегистрироваться" />
 	</p>
 	
 	<p class="regtext">У вас есть аккаунт ? <a class="loglink" href="login.php" >Вход</a>!</p>
