@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 15 2019 г., 22:53
+-- Время создания: Янв 19 2019 г., 02:22
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -59,8 +59,17 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `date_in` date DEFAULT NULL,
   `cost` int(11) NOT NULL,
   `other_information` text NOT NULL,
+  `kind` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `owner_id`, `pet_id`, `date_out`, `date_in`, `cost`, `other_information`, `kind`) VALUES
+(1, 1, 1, '2019-01-20', '2019-01-23', 5000, 'Улетаю по делам, нужно посидеть, подробности обговорим по телефону', 'current'),
+(2, 1, 2, '2019-01-02', '2019-01-05', 2500, '', 'performed');
 
 -- --------------------------------------------------------
 
@@ -78,8 +87,17 @@ CREATE TABLE IF NOT EXISTS `pets` (
   `weight` double DEFAULT NULL,
   `growth` double DEFAULT NULL,
   `other_information` text NOT NULL,
+  `photo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `pets`
+--
+
+INSERT INTO `pets` (`id`, `owner_id`, `name`, `kind`, `breed`, `sex`, `weight`, `growth`, `other_information`, `photo`) VALUES
+(1, 1, 'Бурбон', 'собака', 'бигль', 'мальчик', 12, 0.3, 'Хороший мальчик', 'andrey_burbon1.jpg'),
+(2, 1, 'Анфиса', 'кошка', 'без породы', 'девочка', 5, 0.2, '', 'andrey_anfisa1.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,8 +145,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `description` text NOT NULL,
   `photo` varchar(50) NOT NULL,
   `rating` double DEFAULT NULL,
+  `folder` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `full_name`, `password`, `role`, `phone_number`, `email`, `address`, `description`, `photo`, `rating`, `folder`) VALUES
+(1, 'Андрей ', '41d8b17b7d2ed68df448e2f85447ec0c', 'owner', '+79213363348', 'andrej_terexin@mail.ru', 'Санкт-Петербург, улица Крюкова, дом 10', 'У меня двое домашних животных, кошка по кличке Анфиса и собака по кличке Бурбон. Души в них не чаю)', 'no', 0, 'andrey'),
+(9, 'Андрей Терехин', '41d8b17b7d2ed68df448e2f85447ec0c', 'owner', '', 'andrewcter@gmail.com', '', '', 'no', 0, ''),
+(10, 'Крутой Чел', '41d8b17b7d2ed68df448e2f85447ec0c', 'owner', '', 'krutoy@yandex.ru', '', '', 'no', 0, 'krutoy-chel10');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
