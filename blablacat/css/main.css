@@ -3,15 +3,24 @@ body {
     padding:0;
 }
 .grid-container {
-    background: #efefef;
+    background: #C8C3FE; /* #efefef; */
     font-family: 'Open Sans', sans-serif;
     color: #777;
-    height: 100%;
+    height: auto;
     width: 100%;
+    min-height: 100%;
+    min-width: 1024px;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    /* Set up positioning */
+    top: 0;
+    left: 0;
 }
 
 .header { 
     grid-area: header; 
+        
     height: 50px; 
     background-color: #3b8dbd; 
 }
@@ -187,7 +196,6 @@ body {
     padding-left: 20px;
     padding-right: 10px;
     padding-bottom: 10px;
-    
 }
 
 .clear {
@@ -215,4 +223,81 @@ body {
     color: #3D3D3D;
     font-weight: 700;
     font-size: 18px;
+}
+
+.pets-list {
+    width: 598px;
+    height: 110px;        
+    margin: auto;
+    float: left;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    margin-top: 10px;
+    outline: none;
+    /*border: 1px solid #d9d9d9;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.main-part-body {
+    width: auto;
+    height: auto;
+    /*border: 1px solid #000;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.favorites-part {
+    width: 915px;
+    height: 500px;        
+    margin: auto;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    /*border: 1px solid #d9d9d9;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.con {
+ position: relative;
+
+}
+.containerr{
+display: block;
+position: absolute;
+top: 10px;
+left: 50px;
+height: 70px;
+width: 600px;
+overflow: hidden;
+}
+.containerr img{
+position: absolute;
+top: 0px;
+height: 70px;
+width: 70px;
+cursor: pointer;
+overflow: hidden;
+}
+.carouselLeft{
+position: absolute;
+top: 25px;
+left: 0px;
+cursor: pointer;
+}
+.carouselRight{
+position: absolute;
+top: 25px;
+left:550px;
+cursor: pointer;
 }
