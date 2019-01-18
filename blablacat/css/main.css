@@ -1,0 +1,218 @@
+body {
+    margin:0;
+    padding:0;
+}
+.grid-container {
+    background: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    color: #777;
+    height: 100%;
+    width: 100%;
+}
+
+.header { 
+    grid-area: header; 
+    height: 50px; 
+    background-color: #3b8dbd; 
+}
+
+
+.header h1#logo {
+    display: inline-block;
+    height: 50px;
+    float: left;
+    margin-left: 50px;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.contain {
+    width: 950px;
+    margin: auto;
+    /*border: 1px solid #000;*/
+}
+
+.menu {
+    display: inline-block;
+    float: left;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.menu:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #53A3D5;
+}
+
+.header nav {
+    display: inline-block;
+    float: right;
+}
+
+.header nav a {
+    line-height: 50px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.header.smaller {
+    height: 50px;
+}
+
+.header.smaller h1#logo {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.header.smallernav a {
+    line-height: 50px;
+}
+
+.footer { 
+    grid-area: footer; 
+    /*border: 1px solid red;*/
+    text-align: center;    
+}
+
+.body { 
+    grid-area: body; 
+    /*border: 1px solid blue;*/
+    height: auto; 
+}
+
+.main-body {
+    width: 950px;
+    height: auto;
+    /*border: 1px solid #000;*/
+    margin: auto; /* Выравниваем по центру */
+}
+
+.upper-part-body {
+    width: auto;
+    height: auto;
+    /*border: 1px solid #000;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.user-menu {
+    float: left;
+    width: 300px;
+    height: auto;        
+    margin: auto;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    margin: 0 10px 0 0;
+    outline: none;
+    /*border: 1px solid #d9d9d9;*/
+}
+
+#avatar{
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.list-user-menu {
+    width: 250px;
+    margin: auto; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+.list-user-menu-item {
+    list-style-type: none; /* Убираем маркеры */
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.user-menu nav a {
+    margin: auto;
+    color: #777;
+    font-weight: 700;
+    font-size: 16px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.list-user-menu-item:hover {
+    background-color: #efefef;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
+.user-info {
+    width: 598px;
+    height: auto;        
+    margin: auto;
+    float: left;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    margin: 0;
+    outline: none;
+    /*border: 1px solid #d9d9d9;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    
+}
+
+.clear {
+    clear: left; /* Отмена обтекания */
+}
+
+.name-user {
+    margin: auto;
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.address-user, .about-user {
+    margin: auto;
+    margin-top: 10px;
+    color: #777;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.about-user-info {
+    margin: auto;
+    margin-top: 10px;
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 18px;
+}
