@@ -100,7 +100,7 @@ body {
     width: 950px;
     height: auto;
     /*border: 1px solid #000;*/
-    margin: auto; /* Выравниваем по центру */
+    margin: auto; /* Р’С‹СЂР°РІРЅРёРІР°РµРј РїРѕ С†РµРЅС‚СЂСѓ */
 }
 
 .upper-part-body {
@@ -140,12 +140,12 @@ body {
 
 .list-user-menu {
     width: 250px;
-    margin: auto; /* Отступ слева в браузере IE и Opera */
-    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+    margin: auto; /* РћС‚СЃС‚СѓРї СЃР»РµРІР° РІ Р±СЂР°СѓР·РµСЂРµ IE Рё Opera */
+    padding-left: 0; /* РћС‚СЃС‚СѓРї СЃР»РµРІР° РІ Р±СЂР°СѓР·РµСЂРµ Firefox, Safari, Chrome */
 }
 
 .list-user-menu-item {
-    list-style-type: none; /* Убираем маркеры */
+    list-style-type: none; /* РЈР±РёСЂР°РµРј РјР°СЂРєРµСЂС‹ */
     padding-bottom: 5px;
     padding-top: 5px;
 }
@@ -191,7 +191,7 @@ body {
 }
 
 .clear {
-    clear: left; /* Отмена обтекания */
+    clear: left; /* РћС‚РјРµРЅР° РѕР±С‚РµРєР°РЅРёСЏ */
 }
 
 .name-user {
