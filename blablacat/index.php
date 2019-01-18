@@ -15,6 +15,13 @@ $id = $_SESSION['id'];
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/click-carousel.js"></script> 
+    <script type="text/javascript">
+    $(function(){
+        $(".containerr").clickCarousel({margin: 10});
+    });
+    </script>
     <title><? echo $username ?> | BlaBlaCat</title> 
 </head>
 
@@ -29,63 +36,22 @@ $id = $_SESSION['id'];
         
         
     ?>
-  <div class="header">
-    <div class="contain clearfix">
-
-        <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
-        <nav>
-            <a href=""><div class="menu"><? echo $username ?></div></a>
-            <a href=""><div class="menu">Настройки</div></a>
-            <a href=""><div class="menu">Помощь</div></a>
-            <a href="logout.php"><div class="menu">Выйти</div></a>
-        </nav>
-    </div>
-  </div>
+  
+  <?php 
+    include("includes/header.php");
+  ?>
   
   <div class="body">
     <div class="main-body">
-        <div class="upper-part-body">
-            <div class="user-menu">
-                <div id="avatar">
-                <?
-                    if($row_new["photo"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_new["photo"]))
-                    {
-                        $img_path = 'users/'.$row_new["folder"].'/'.$row_new["photo"];
-                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
-                    }else
-                    {
-                        echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
-                    }
-                ?>
-                
-                </div>
-                
-                <nav>
-                    <ul class="list-user-menu">
-                        <a href=""><li class="list-user-menu-item">&ensp;&#9733;&ensp;Избранное</li></a>
-                        <a href=""><li class="list-user-menu-item">&ensp;&#9993;&ensp;Мои отзывы</li></a>
-                        <a href=""><li class="list-user-menu-item">&ensp;&#9743;&ensp;Заявки от ситтеров</li></a>
-                    </ul>
-                </nav>
-                
-            </div>
-            <div class="user-info">
-                <p class="name-user"><? echo $row_new["full_name"];?></p>
-                <p class="address-user"><? echo $row_new["address"] ?></p>
-                <p class="about-user-info">О себе:</p>
-                <?
-                    if($row_new["description"]==null)
-                    {
-                        echo '<p class="about-user">Ничего не указано</p>';
-                    }else
-                    {
-                        echo '<p class="about-user">'.$row_new["description"].'</p>';
-                    }
-                ?>
-            </div>
-            <div class="clear"></div>
-        </div>
+    <?php 
+        include("includes/upper_body.php");
+    ?>
         
+        <div class="main-part-body">
+            <div class="favorites-part">
+                Избранное
+            </div>
+        </div>
     </div>
   </div>
   
