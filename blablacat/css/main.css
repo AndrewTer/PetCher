@@ -371,6 +371,89 @@ body {
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
 }
 
+.ribbon-wrapper-green, .ribbon-wrapper-blue {
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+    float: right;
+    top: -5px;
+    right: -5px;
+}
+
+.ribbon-green {
+    font-weight: bold;
+    font-family: Sans-Serif;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: white 0px 1px 0px;
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position: relative;
+    padding: 7px 0 ;
+    left: -5px;
+    top: 17px;
+    width: 120px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+    color:#6a6340;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
+}
+
+.ribbon-blue {
+    font-weight: bold;
+    font-family: Sans-Serif;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: white 0px 1px 0px;
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position: relative;
+    padding: 7px 0 ;
+    left: -5px;
+    top: 17px;
+    width: 120px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8AADFF), to(#6896FD));
+    color:#405B6A;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);  
+}
+
+.ribbon-green:before, .ribbon-green:after {
+    content: '';
+    /* Colour of the triangle. To flip the effect, use border-bottom. */ 
+    border-top: 3px solid #6e8900;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+    /* +1 to compensate for the border */ 
+}
+
+.ribbon-blue:before, .ribbon-blue:after {
+    content: '';
+    /* Colour of the triangle. To flip the effect, use border-bottom. */ 
+    border-top: 3px solid #405B6A;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+    /* +1 to compensate for the border */ 
+}
+
+.ribbon-green:before, .ribbon-blue:before {
+    left: 0px;
+}
+
+.ribbon-green:after, .ribbon-blue:after {
+    right: 0px;
+}
+ 
 .con {
     position: relative;
 }
@@ -495,7 +578,7 @@ body {
 
 .right-part-order-list {
     /*border: 1px solid brown;*/
-    width: 80%; /* 78% */
+    width: 70%; /* 78% */
     float: left;
     padding-bottom: 10px;
 }
