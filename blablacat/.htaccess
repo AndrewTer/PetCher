@@ -1,1 +1,4 @@
 AddDefaultCharset UTF-8
+
+RewriteEngine On
+ErrorDocument 404 http://localhost/blablacat/404.php
