@@ -107,7 +107,7 @@ body {
 
 .main-body {
     width: 950px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     margin: auto; /* Выравниваем по центру */
 }
 
