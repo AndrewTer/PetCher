@@ -14,15 +14,15 @@ $id = $_SESSION['id'];
 $sort = $_GET["sort"];
     switch($sort){
         case 'all-orders':
-        $sort = " id DESC";
+        $sort = " orders.id DESC";
         $sort_name = 'Все';
         break;
         case 'performed':
-        $sort = " confirmed = 'yes' DESC";
+        $sort = " orders.kind = 'performed' DESC";
         $sort_name = 'Выполненные';
         break;
         case 'current':
-        $sort = " confirmed = 'no' DESC";
+        $sort = " orders.kind = 'current' DESC";
         $sort_name = 'Текущие';
         break;
         default:
@@ -54,14 +54,6 @@ $sort = $_GET["sort"];
         {
             $row_new = mysql_fetch_array($result_new);
         }
-        
-        $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet FROM orders, pets WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id)");
-        if (mysql_num_rows($result_orders) > 0)
-        {
-            $row_orders = mysql_fetch_array($result_orders);
-        }
-        
-        
     ?>
   
   <?php 
@@ -96,41 +88,79 @@ $sort = $_GET["sort"];
                 
                 
                 <?
+                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind FROM orders, pets WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) ORDER BY $sort");
                     if (mysql_num_rows($result_orders) == null)
                     {
                         echo '<hr /><p class="not-order">Вы пока не создали ни одного заказа</p>';
                     }else
                     {
+                        $row_orders = mysql_fetch_array($result_orders);
                         do{
-                            echo '
+                            if ($row_orders["order_kind"]=="current") 
+                            {
+                                echo '
                             <hr />
                             <div class="current-order">
-                                <div class="left-part-order-list">
-                                    <div id="avatar-pet">';
-                                        if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
-                                        {
-                                            $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
-                                            echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
-                                        }else
-                                        {
-                                            echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
-                                        }
-                                echo '</div>
-                                </div>
-                                <div class="right-part-order-list">
-                                    <p class="order-about">'.$row_orders["about_order"].'</p>
-                                    <p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
-                                    <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
-                                    <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
-                                    <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
-                                    <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
-                                    <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
-                                </div>
-                                <div class="clear"></div>
+                                    <div class="ribbon-wrapper-blue">
+                                        <div class="ribbon-blue">Текущий</div>
+                                    </div>
+                                    <div class="left-part-order-list">
+                                        <div id="avatar-pet">';
+                                            if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
+                                            {
+                                                $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
+                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                            }else
+                                            {
+                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                            }
+                                    echo '</div>
+                                    </div>
+                                    <div class="right-part-order-list">
+                                        <p class="order-about">'.$row_orders["about_order"].'</p>
+                                        <p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
+                                        <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
+                                        <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
+                                        <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
+                                        <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                        <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
+                                    </div>
+                                    <div class="clear"></div>
                             </div>
-                            
                             ';
-                
+                            } else if ($row_orders["order_kind"]=="performed")
+                            {
+                                echo '
+                            <hr />
+                            <div class="current-order">
+                                    <div class="ribbon-wrapper-green">
+                                        <div class="ribbon-green">Выполнен</div>
+                                    </div>
+                                    <div class="left-part-order-list">
+                                        <div id="avatar-pet">';
+                                            if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
+                                            {
+                                                $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
+                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                            }else
+                                            {
+                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                            }
+                                    echo '</div>
+                                    </div>
+                                    <div class="right-part-order-list">
+                                        <p class="order-about">'.$row_orders["about_order"].'</p>
+                                        <p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
+                                        <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
+                                        <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
+                                        <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
+                                        <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                        <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
+                                    </div>
+                                    <div class="clear"></div>
+                            </div>
+                            ';
+                            }
                         }while ($row_orders = mysql_fetch_array($result_orders));
                     }
                 ?>
