@@ -106,9 +106,16 @@ $sort = $_GET["sort"];
                             <hr />
                             <div class="current-order">
                                 <div class="left-part-order-list">
-                                    <div id="avatar-pet">
-                                        
-                                    </div>
+                                    <div id="avatar-pet">';
+                                        if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
+                                        {
+                                            $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
+                                            echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                        }else
+                                        {
+                                            echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                        }
+                                echo '</div>
                                 </div>
                                 <div class="right-part-order-list">
                                     <p class="order-about">'.$row_orders["about_order"].'</p>
@@ -119,14 +126,18 @@ $sort = $_GET["sort"];
                                     <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
                                     <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
                                 </div>
+                                <div class="clear"></div>
                             </div>
+                            
                             ';
                 
                         }while ($row_orders = mysql_fetch_array($result_orders));
                     }
                 ?>
             </div>
+            
         </div>
+        
     </div>
   </div>
   
