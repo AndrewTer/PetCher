@@ -15,24 +15,24 @@
         {
             $row_favourites = mysql_fetch_array($result_favourites);
             do{
-            echo '<div id="favourite-circle">';
+            echo '<div id="favourite-circle"><div class="fav-rating"><p class="fav-rating-p">'.$row_favourites["rating"].'/10</p></div>';
                     
                 if($row_favourites["photo"]!="no" && file_exists("users/".$row_favourites["folder"]."/".$row_favourites["photo"]))
                 {
                     $img_path = 'users/'.$row_favourites["folder"].'/'.$row_favourites["photo"];
-                    echo '<a href="favourite.php?id'.$row_favourites["fav_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /><div class="overlay">'.$row_favourites["rating"].'/10</div></a>';
+                    echo '<a href="favourite.php?id'.$row_favourites["fav_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                 }else
                 {
-                    echo '<a href="favourite.php?id'.$row_favourites["fav_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /><div class="overlay">'.$row_favourites["rating"].'/10</div></a>';
+                    echo '<a href="favourite.php?id'.$row_favourites["fav_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                 }
             
             echo '</div>';
                 
             }while ($row_favourites = mysql_fetch_array($result_favourites));
             
-            echo '<div class="clear"></div>
-        </div>';
+            echo '<div class="clear"></div>';
         }
-        ?>             
+        ?>   
+        </div>          
     </div> 
 </div>
