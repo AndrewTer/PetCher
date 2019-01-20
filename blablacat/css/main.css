@@ -1,6 +1,7 @@
 body {
     margin:0;
     padding:0;
+    height: 100%;
 }
 .grid-container {
     background: #efefef; /* #C8C3FE; */
@@ -238,12 +239,14 @@ body {
     width: 250px;
     margin: auto; /* Отступ слева в браузере IE и Opera */
     padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+    /*border: 1px solid green;*/
 }
 
 .list-user-menu-item {
     list-style-type: none; /* Убираем маркеры */
     padding-bottom: 5px;
     padding-top: 5px;
+    /*border: 1px solid blue;*/
 }
 
 .user-menu nav a {
@@ -257,6 +260,7 @@ body {
         -o-transition: all 0.3s;
     transition: all 0.3s;
     text-decoration: none;
+    /*border: 1px solid yellow;*/
 }
 
 .list-user-menu-item:hover {
@@ -491,7 +495,7 @@ body {
     cursor: pointer;
 }
 
-.not-order {
+.not-order, .not-favourites {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -635,4 +639,95 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     width: 80%;
+}
+
+.count-requests {
+    /*border: 1px solid red;*/
+    width: 20px;
+    text-align: center;
+    background-color: #C7C7C7;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    padding-left: 5px;    
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: -2px;
+    margin-right: 2px;
+    float: right;
+}
+
+.favourites-part {
+    width: 915px;
+    margin: auto;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    /*border: 1px solid yellow;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);   
+}
+
+.favourites-list {
+    /*border: 1px solid black;*/
+    margin: 0;
+}
+
+#favourite-circle {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 17px;
+    border: 1px solid black;
+    overflow: hidden;
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #aaa 1px solid;
+    box-shadow: 0px 1px 1px 1px #bbb; /* тень */
+    -moz-box-shadow: 0px 1px 1px 1px #bbb;
+    -webkit-box-shadow: 0px 1px 1px 1px #bbb;
+    /*border: 1px solid red;*/
+    float: left;
+    position: relative;
+}
+
+#favourite-circle img {
+    display: block;
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*border: 1px solid black;*/
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#favourite-circle:hover .overlay {
+  opacity: 1;
 }
