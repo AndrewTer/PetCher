@@ -1,5 +1,3 @@
-
-
 <div class="upper-part-body">
             <div class="user-menu">
                 <div id="avatar">
@@ -7,7 +5,7 @@
                     if($row_new["photo"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_new["photo"]))
                     {
                         $img_path = 'users/'.$row_new["folder"].'/'.$row_new["photo"];
-                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" height="100%"/>';
                     }else
                     {
                         echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
@@ -18,9 +16,9 @@
                 
                 <nav>
                     <ul class="list-user-menu">
-                        <a href=""><li class="list-user-menu-item">&ensp;&#9733;&ensp;Избранное</li></a>
+                        <a href="favourites.php"><li class="list-user-menu-item">&ensp;&#9733;&ensp;Избранное</li></a>
                         <a href=""><li class="list-user-menu-item">&ensp;&#9993;&ensp;Мои отзывы</li></a>
-                        <a href=""><li class="list-user-menu-item">&ensp;&#9743;&ensp;Заявки от ситтеров</li></a>
+                        <a href=""><li class="list-user-menu-item">&ensp;&#9743;&ensp;Заявки от ситтеров <?if ($count_requests > 0) { echo '<div class="count-requests">'.$count_requests.'</div>'; }?></li></a>
                     </ul>
                 </nav>
                 
@@ -43,7 +41,7 @@
                 ?>
             </div>
             <div class="pets-list">
-                Питомцы
+                <p class="title-section">Питомцы</p>
                 <div class="con">
                     <div class="containerr">
                         <img src="users/<?echo $row_new["folder"];?>/andrey_burbon1.jpg" alt="Бурбон" />
@@ -51,8 +49,8 @@
                         <img src="users/<?echo $row_new["folder"];?>/andrey_burbon1.jpg" alt="Бурбон" />
                         <img src="users/<?echo $row_new["folder"];?>/andrey_burbon1.jpg" alt="Бурбон" />
                     </div>
-                <img class="carouselLeft" src="images/left.png" width="8%" alt="Left Arrow" />
-                <img class="carouselRight" src="images/right.png" width="8%" alt="Right Arrow" />
+                <img class="carouselLeft" src="images/left.png" width="5%" alt="Left Arrow" />
+                <img class="carouselRight" src="images/right.png" width="5%" alt="Right Arrow" />
                 </div>
 
             </div>
