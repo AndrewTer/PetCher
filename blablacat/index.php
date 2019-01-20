@@ -15,6 +15,7 @@ if($_SESSION['auth_user'] == "yes_auth")
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link href="css/ihover.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/click-carousel.js"></script> 
     <script type="text/javascript" src="js/script.js"></script> 
@@ -27,13 +28,7 @@ if($_SESSION['auth_user'] == "yes_auth")
 </head>
 
 <div class="grid-container">
-    <?
-        $result_new = mysql_query("SELECT * FROM users WHERE full_name = '".$username."' AND password = '".$encrypted_password."'"); // AND email = '".$email."'");
-        if (mysql_num_rows($result_new) > 0)
-        {
-            $row_new = mysql_fetch_array($result_new);
-        }
-    ?>
+
   
   <?php 
     include("includes/header.php");
@@ -45,6 +40,7 @@ if($_SESSION['auth_user'] == "yes_auth")
         include("includes/upper_body.php");
         include("includes/main_body.php");
     ?>
+    
     </div>
   </div>
   
