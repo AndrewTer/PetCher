@@ -26,15 +26,7 @@ if($_SESSION['auth_user'] == "yes_auth")
     <title><? echo $username ?> | BlaBlaCat</title> 
 </head>
 
-<div class="grid-container">
-    <?
-        $result_new = mysql_query("SELECT * FROM users WHERE full_name = '".$username."' AND password = '".$encrypted_password."'"); // AND email = '".$email."'");
-        if (mysql_num_rows($result_new) > 0)
-        {
-            $row_new = mysql_fetch_array($result_new);
-        }
-    ?>
-  
+<div class="grid-container">  
   <?php 
     include("includes/header.php");
   ?>
