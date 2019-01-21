@@ -780,3 +780,46 @@ body {
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
     float: left;
 }
+
+.current-order-search {
+    border: 1px solid green;
+    margin: 0;
+}
+
+.left-part-order-search-list {
+    border: 1px solid brown;
+    width: 25%;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.right-part-order-search-list {
+    border: 1px solid brown;
+    width: 70%; /* 78% */
+    float: left;
+    padding-bottom: 10px;
+}
+
+.order-about-search {
+    margin: auto;
+    margin-top: 10px;
+    color: #777;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
+}
+
+.order-cost-search {
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid black;
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
+}
