@@ -42,7 +42,7 @@ if($_SESSION['auth_user'] == "yes_auth")
   
 <script>
 $(document).ready(function() {
-    $('body').append('<div class="button-up" style="display: none;opacity: 0.7;width: 100%;max-width:90px;height:100%;position: fixed;left: 0px;top: 0px;cursor: pointer;text-align: center;line-height: 100px;color: #45688E;">&#9650; Наверх</div>');
+    $('body').append('<div class="button-up" style="display: none; margin-top:50px; opacity: 0.7;width: 100%;max-width:90px;height:100%;position: fixed;left: 0px;top: 0px;cursor: pointer;text-align: center;line-height: 100px;color: #45688E;">&#9650; Наверх</div>');
     $ (window).scroll (function () {
         if ($ (this).scrollTop () > 300) {
         $ ('.button-up').fadeIn();
