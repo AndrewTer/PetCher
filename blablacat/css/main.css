@@ -2,6 +2,9 @@ body {
     margin:0;
     padding:0;
     height: 100%;
+    /*border: 1px solid black;*/
+    background: #efefef;
+    margin-top: 60px;
 }
 .grid-container {
     background: #efefef; /* #C8C3FE; */
@@ -23,6 +26,16 @@ body {
     grid-area: header; 
     height: 50px; 
     background-color: #3b8dbd; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
 }
 
 
