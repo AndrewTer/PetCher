@@ -18,6 +18,21 @@ $sort = $_GET["sort"];
                 $sort_name = 'Все';
             break;
         }
+
+if ($_POST["add_new_order"])
+{
+        mysql_query("INSERT INTO orders (owner_id, pet_id, date_out, date_in, cost, other_information, kind)
+                        VALUES (
+                            '".$id."',
+                            '2',
+                            '".$_POST["date_out_new_order"]."',
+                            '".$_POST["date_in_new_order"]."',
+                            '".$_POST["cost_new_order"]."',
+                            '".$_POST["discription_new_order"]."',
+                            '".$_POST["performed"]."'
+                        )");
+}
+
 ?>
 <div class="main-part-body">
             <div class="orders-part">
@@ -37,6 +52,25 @@ $sort = $_GET["sort"];
                             </li>
                         </ul>
                     </div>
+                </div>
+                <hr />
+                
+                <div class="block-add-order">
+                    Добавить новый заказ <sub>﹀</sub>
+                </div>
+                <div class="block-add-order-info">
+                    <form enctype="multipart/form-data" method="post">
+                        <?
+                            $current_date_result = mysql_query("SELECT DATE(NOW())");
+                            $row_current_date_result = mysql_fetch_array($current_date_result);
+                        ?>
+                        <p class="add-order">Даты: с <input type="date" id="dates_new_order" name="date_out_new_order" value="<?echo $row_current_date_result["DATE(NOW())"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /> по <input type="date" id="dates_new_order" name="date_in_new_order" value="<?echo $row_current_date_result["DATE(NOW())"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /></p>
+                        <p class="add-order">Цена:&emsp; <input type="number" id="cost_new_order" name="cost_new_order" min="100" max="1000000" value="1000" placeholder="100-1000000" /> руб</p>
+                        <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"></textarea>
+                        <p class="add-order">Выбор питомца:</p>
+                        
+                        <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="add_new_order" value="Добавить" /></p>
+                    </form>
                 </div>
                 
                 <?
