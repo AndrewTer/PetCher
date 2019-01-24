@@ -5,7 +5,7 @@ body {
 }
 
 a {
-    color: #f58220;
+    color: #f58220; 
     font-weight: 400;
 }
 
@@ -146,6 +146,7 @@ line-height: 55px;
     width: 320px;
     margin: auto;
     padding-bottom: 1514:43 02.08.2016px;
+    /*border: 1px solid red;*/
 }
 
 .container form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
@@ -159,21 +160,35 @@ line-height: 55px;
     border: 1px solid #d9d9d9;
 }
 
+#reg_username, #password, #replay_password, #email {
+    /*border: 1px solid blue;*/
+    width: 90%;  
+}
+
 .container form .input:focus {
     border: 1px solid #3b8dbd;
     box-shadow: 0 0 3px #3b8dbd;
 }
-.loglink{
+.loglink {
 	color: #3b8dbd;
 }
-.reglink{
+.reglink {
 	color: #3b8dbd;
 }
 
-.success{
+.success {
 	color: blue;
 }
 
+.input:valid + span:after {
+    content: "\2714";
+    color: #07A407;
+}
+
+.input:invalid + span:after {
+    content: "\2718";
+    color: #D32222;
+}
 
 /*= BUTTONS
 --------------------------------------------------------*/
