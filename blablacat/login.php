@@ -15,12 +15,12 @@ if(isset($_POST["login"]))
 														or trigger_error(mysql_error().$query);
 		if($row= mysql_fetch_array($query))
 		{
-			if(($_POST['email']==$email)&&($_POST['password']==$encrypted_password))
+			if(($_POST['email']==$email)&&($_POST['password']==$password))
 			{
 				//создаём сессию с данным
-                
+                  
 				$_SESSION['username']=$row['full_name'];
-                $_SESSION['encrypted_password'] = $row['encrypted_password'];
+                $_SESSION['encrypted_password'] = $row['password'];
                 $_SESSION['phone']=$row['phone_number'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['address'] = $row['address'];
@@ -32,13 +32,14 @@ if(isset($_POST["login"]))
 		}
 		else
 		{
-			//$messgae = "Неверный логин и/или пароль";
-			print "Неверный логин и/или пароль";
+			$message = "Неверный логин и/или пароль";
+			//print "Неверный логин и/или пароль";
 		}
 	}
 	else
 	{
-	   print "Неизвестный пользователь";
+	   $message = "Неизвестный пользователь";
+	   //print "Неизвестный пользователь";
 		
 	}
 } 
@@ -67,13 +68,19 @@ else
     <div id="login">
         <h1>ВХОД</h1>
         <form name="loginform" id="loginform" action="" method="POST">
+            <?php 
+            if (!empty($message)) 
+            {
+                echo "<div class='error'>".$message."</div>";
+            } 
+            ?>
             <p>
                 <label for="user_email">Почта<br />
-                <input type="email" name="email" id="email" class="input" value="" size="20" required></label>
+                <input type="email" name="email" id="email_login" class="input" value="" size="20" required /></label>
             </p>
             <p>
                 <label for="user_pass">Пароль<br />
-                <input type="password" name="password" id="password" class="input" value="" size="20" required/></label>
+                <input type="password" name="password" id="password_login" class="input" value="" size="20" required /></label>
             </p>
             <p class="submit">
                 <input type="submit" name="login" class="button" value="Вход" />
@@ -86,11 +93,4 @@ else
 <div class="footer">
 BlaBlaCat © 2019
 </div>
-    
-<?php 
-if (!empty($message)) 
-{
-	echo "<p class=\"error\">". $message . "</p>";
-} 
-?>
 	
