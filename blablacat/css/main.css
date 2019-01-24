@@ -654,6 +654,112 @@ body {
     width: 80%;
 }
 
+.block-add-order {
+    min-height: 40px;
+    height: auto;    
+    background-color: #efefef;    
+    /*border: 1px solid red;*/
+    text-align: center;
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.block-add-order:before {
+    content: "";
+    display: inline-block;
+    min-height: inherit;
+    vertical-align: middle;
+}
+
+.block-add-order:hover {
+    background-color: #E6E5E5;    
+}
+
+.block-add-order-info {
+    display: none;
+    min-height: 40px;
+    height: auto;
+    /*border: 1px solid green;*/
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+    margin: 0;
+    background-color: #fbfbfb;    
+    padding: 10px;
+}
+
+.add-order {
+    margin: auto;
+    margin-top: 10px;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 75%;
+}
+
+.help-text-cost-add-order {
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid red;
+    margin-right: 10px;
+    float: right;
+}
+
+#discription_new_order {
+    margin: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    resize: none;
+    width: 75%;
+    font-size: 17px;
+}
+
+#cost_new_order, #dates_new_order {
+    font-size: 17px;
+}
+
+#submit_add_new_order{
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid #1557D5;
+    background-color: #9fdbfc;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: #3B64BD;
+    height: 30px;
+    width: 180px;
+}
+#submit_add_new_order:hover{
+    border: 1px solid #3b8dbd;
+}
+
+#form-success{
+    font: bold 14px sans-serif;
+    color: black;
+    background-color: #E6EED9;
+    border: 1px solid #D1E7BC;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 0;
+}
+
 .count-requests {
     /*border: 1px solid red;*/
     width: 20px;
