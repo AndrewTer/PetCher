@@ -7,7 +7,7 @@ if(isset($_POST["register"]))
 {
     if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['replay_password']) && !empty($_POST['email'])) 
     {
-	   $username = htmlspecialchars($_POST['username']);
+        $username = htmlspecialchars($_POST['username']);
         $password = htmlspecialchars($_POST['password']);
         $replay_password = htmlspecialchars($_POST['replay_password']);
 	
@@ -96,8 +96,6 @@ else
     <title>Регистрация | BlaBlaCat</title>
 </head>
 
-<?php if (!empty($message)) {echo "<p class=\"error\">" .$message . "</p>";} ?>
-
 <div class="header">
     <div class="contain clearfix">
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
@@ -112,6 +110,12 @@ else
     <div id="login">
 	   <h1>Регистрация</h1>
         <form name="registerform" id="registerform" action="" method="POST">
+            <?php 
+                if (!empty($message)) 
+                {
+                    echo "<div class='error'>".$message."</div>";
+                } 
+            ?>
             <p>
 		      <label for="user_login">Имя</label><br />
 		      <input type="text" name="username" id="reg_username" class="input" value="" size="20" required placeholder="Имя пользователя" /><span></span>
@@ -168,4 +172,3 @@ else
 <div class="footer">
 BlaBlaCat © 2019
 </div>
-
