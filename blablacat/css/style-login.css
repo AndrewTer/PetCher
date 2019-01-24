@@ -18,12 +18,59 @@ a {
 }
 
 .error {
-    margin: 40px auto 0;
-    padding: 3px;
-    color: black;
+    margin: auto;
+    padding: 5px;
+    color: #D63301;
+    background-color: #FFCCBA;
     text-align: center;
-    width: 650px;
-    background: green;
+    /*border: 1px solid yellow;*/
+    
+    animation-name: error;
+    -webkit-animation-name: error; 
+ 
+    animation-duration: 2s; 
+    -webkit-animation-duration: 2s;
+ 
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;     
+ 
+    visibility: visible !important; 
+}
+ 
+@keyframes error {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;       
+    }
+    60% {
+        transform: scale(1.1);  
+    }
+    80% {
+        transform: scale(0.9);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(1);
+        opacity: 1; 
+    }       
+}
+ 
+@-webkit-keyframes error {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;       
+    }
+    60% {
+        -webkit-transform: scale(1.1);
+    }
+    80% {
+        -webkit-transform: scale(0.9);
+        opacity: 1; 
+    }   
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1; 
+    }       
 }
 
 .regtext {
@@ -176,10 +223,6 @@ line-height: 55px;
 	color: #3b8dbd;
 }
 
-.success {
-	color: blue;
-}
-
 .input:valid + span:after {
     content: "\2714";
     color: #07A407;
@@ -194,7 +237,7 @@ line-height: 55px;
 --------------------------------------------------------*/
 
 .button{
-border: solid 1px #3b8dbd;
+    border: solid 1px #3b8dbd;
 	background: #3b8dbd;
 	color: white;
         padding: 7px 12px;
@@ -223,9 +266,7 @@ border: solid 1px #3b8dbd;
   --tongue: red;
 }
 
-
 .toggle-wrapper {
-  
   height: 50px;
   width: 100px;
   /*transform: translate3d(-50%, -50%, 0);*/
