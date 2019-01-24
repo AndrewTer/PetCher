@@ -14,7 +14,8 @@ a {
 }
 
 .mregister {
-    margin: 240px auto 0;
+    margin: 40px auto 0;
+    /*border: 1px solid yellow;*/
 }
 
 .error {
@@ -166,6 +167,7 @@ line-height: 55px;
     height: auto;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    /*border: 1px solid green;*/
 }
 
 #welcome {
