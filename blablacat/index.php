@@ -15,9 +15,11 @@ if($_SESSION['auth_user'] == "yes_auth")
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link href="js/jquery_confirm/jquery_confirm.css" rel="stylesheet" type="text/css" />  
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/click-carousel.js"></script> 
     <script type="text/javascript" src="js/script.js"></script> 
+    <script type="text/javascript" src="js/jquery_confirm/jquery_confirm.js"></script>
     <script type="text/javascript">
     $(function(){
         $(".containerr").clickCarousel({margin: 10});
