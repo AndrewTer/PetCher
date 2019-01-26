@@ -35,7 +35,7 @@ if ($_POST["add_new_order"])
         mysql_query("INSERT INTO orders (owner_id, pet_id, date_out, date_in, cost, other_information, kind, deleted)
                         VALUES (
                             '".$id."',
-                            '2',
+                            '".$_POST["select-pet-for-add-order"]."',
                             '".$_POST["date_out_new_order"]."',
                             '".$_POST["date_in_new_order"]."',
                             '".$_POST["cost_new_order"]."',
@@ -80,8 +80,39 @@ if ($_POST["add_new_order"])
                         <p class="add-order">Цена:&emsp; <input type="number" id="cost_new_order" name="cost_new_order" min="100" max="1000000" value="1000" placeholder="100-1000000" /> руб</p>
                         <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"></textarea>
                         <p class="add-order">Выбор питомца:</p>
-                        
-                        <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="add_new_order" value="Добавить" /></p>
+                        <?
+                            $pets_list_result = mysql_query("SELECT id, name FROM pets WHERE (owner_id = ".$id.")");
+                            if (mysql_num_rows($pets_list_result) == null)
+                            {
+                                echo '<p class="add-order" style="text-align: center;">У вас нет ни одного питомца!</p>';
+                            }else{
+                                $row_pets_list_result = mysql_fetch_array($pets_list_result);
+                                $count_actual_pet = 0;
+                                echo '
+                                    <div class="select-pet-add-order-main">';
+                                do {
+                                    $count_actual_pet++;
+                                    if ($count_actual_pet == 1)
+                                    {
+                                        echo '
+                                    <input type="radio" class="select-pet-add-order" id="'.$row_pets_list_result["id"].'" name="select-pet-for-add-order" value="'.$row_pets_list_result["id"].'" checked>
+                                        <label for="'.$row_pets_list_result["id"].'">'.$row_pets_list_result["name"].'</label>
+                                        ';
+                                    }else
+                                    {
+                                        echo '
+                                    <input type="radio" class="select-pet-add-order" id="'.$row_pets_list_result["id"].'" name="select-pet-for-add-order" value="'.$row_pets_list_result["id"].'">
+                                        <label for="'.$row_pets_list_result["id"].'">'.$row_pets_list_result["name"].'</label>
+                                        ';
+                                    }
+                                
+                                 }while ($row_pets_list_result = mysql_fetch_array($pets_list_result));   
+                                 
+                                 echo '
+                                    </div>
+                                    <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="add_new_order" value="Добавить" /></p>';
+                            }
+                        ?>
                     </form>
                 </div>
                 
