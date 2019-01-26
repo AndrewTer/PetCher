@@ -1,4 +1,15 @@
 <?
+$order_id = clear_string($_GET["id"]);
+$action = $_GET["action"];
+    if (isset($action))
+    {
+        switch ($action) {
+            case 'delete':
+            $delete = mysql_query("UPDATE orders SET deleted='yes' WHERE id=".$order_id);
+            break;
+        }
+    }
+    
 $sort = $_GET["sort"];
         switch($sort){
             case 'all-orders':
@@ -21,7 +32,7 @@ $sort = $_GET["sort"];
 
 if ($_POST["add_new_order"])
 {
-        mysql_query("INSERT INTO orders (owner_id, pet_id, date_out, date_in, cost, other_information, kind)
+        mysql_query("INSERT INTO orders (owner_id, pet_id, date_out, date_in, cost, other_information, kind, deleted)
                         VALUES (
                             '".$id."',
                             '2',
@@ -29,7 +40,8 @@ if ($_POST["add_new_order"])
                             '".$_POST["date_in_new_order"]."',
                             '".$_POST["cost_new_order"]."',
                             '".$_POST["discription_new_order"]."',
-                            '".$_POST["performed"]."'
+                            'current',
+                            'no'
                         )");
 }
 
@@ -74,7 +86,7 @@ if ($_POST["add_new_order"])
                 </div>
                 
                 <?
-                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind FROM orders, pets WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) ORDER BY $sort");
+                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind FROM orders, pets WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) ORDER BY $sort");
                     if (mysql_num_rows($result_orders) == null)
                     {
                         echo '<hr /><p class="not-order">Вы пока не создали ни одного заказа</p>';
@@ -82,7 +94,7 @@ if ($_POST["add_new_order"])
                     {
                         $row_orders = mysql_fetch_array($result_orders);
                         do{
-                            if ($row_orders["order_kind"]=="current") 
+                            if (($row_orders["order_kind"]=="current") AND ($row_orders["order_deleted"]=="no")) 
                             {
                                 echo '
                             <hr />
@@ -90,6 +102,7 @@ if ($_POST["add_new_order"])
                                     <div class="ribbon-wrapper-blue">
                                         <div class="ribbon-blue">Текущий</div>
                                     </div>
+                                    
                                     <div class="left-part-order-list">
                                         <div id="avatar-pet">';
                                             if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
@@ -110,11 +123,12 @@ if ($_POST["add_new_order"])
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
                                         <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
+                                        <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>
                                     </div>
                                     <div class="clear"></div>
                             </div>
                             ';
-                            } else if ($row_orders["order_kind"]=="performed")
+                            } else if ($row_orders["order_kind"]=="performed" AND ($row_orders["order_deleted"]=="no"))
                             {
                                 echo '
                             <hr />
@@ -142,6 +156,7 @@ if ($_POST["add_new_order"])
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
                                         <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
+                                        <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>
                                     </div>
                                     <div class="clear"></div>
                             </div>
