@@ -372,7 +372,7 @@ body {
     margin-bottom: 10px;
 }
 
-.orders-part {
+.orders-part, .requests-part {
     width: 915px;
     margin: auto;
     background: #fbfbfb;
@@ -417,6 +417,7 @@ body {
     background: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
     color:#6a6340;
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
+        
 }
 
 .ribbon-blue {
@@ -508,7 +509,7 @@ body {
     cursor: pointer;
 }
 
-.not-order, .not-favourites {
+.not-order, .not-favourites, .not-requests {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -517,7 +518,7 @@ body {
     font-size: 18px;
 }
 
-.current-order {
+.current-order, .current-request {
     /*border: 1px solid green;*/
     margin: 0;
 }
@@ -660,8 +661,7 @@ body {
     position: relative;
     margin: 0;
     margin-right: -80px;
-    margin-top: -10px;
-    
+    margin-top: -10px; 
 }
 
 .delete-current-order {
@@ -885,7 +885,6 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 17px;
-    border: 1px solid black;
     /*overflow: hidden;*/
     background: #fff;
     padding: 5px; /* создание отступов */
@@ -1021,4 +1020,125 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     width: 80%;
+}
+
+.right-part-request-list {
+    /*border: 1px solid brown;*/
+    width: 55%;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.sitter-request-part {
+    /*border: 1px solid brown;*/
+    width: 24%; /*30%*/
+    float: left;
+    padding-bottom: 10px;
+    border-left: 2px solid #D1D1D1;
+    /*min-height: 250px;*/
+}
+
+#sitter-request-circle {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    /*overflow: hidden;*/
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #aaa 1px solid;
+    box-shadow: 0px 1px 1px 1px #bbb; /* тень */
+    -moz-box-shadow: 0px 1px 1px 1px #bbb;
+    -webkit-box-shadow: 0px 1px 1px 1px #bbb;
+    /*border: 1px solid red;*/
+    float: left;
+    position: relative;
+}
+
+#sitter-request-circle img {
+    display: block;
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*border: 1px solid black;*/
+}
+
+.refusing-request-links {
+    /*border: 1px solid brown;*/
+    /*position: absolute;*/
+    margin: 0;
+
+}
+
+.refuse-current-request {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #D63301;
+    background-color: #FFD2C2;
+    box-shadow: 0px 0px 3px 2px #FC6636; 
+    padding: 4px;
+    
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
+.refuse-current-request:hover {
+    box-shadow: 0px 0px 3px 2px #D63301; 
+}
+
+.approve-request-links {
+    /*border: 1px solid brown;*/
+    /*position: absolute;*/
+    margin: 0;
+
+}
+
+.approve-current-request {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #74993D;
+    background-color: #DAF0A8;
+    box-shadow: 0px 0px 3px 2px #8EBF45; 
+    padding: 4px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
+.approve-current-request:hover {
+    box-shadow: 0px 0px 3px 2px #74993D; 
+}
+
+.sitter-request-links {
+    /*border: 1px solid brown;*/
+    /*position: absolute;*/
+    margin: 0;
+
+}
+
+.sitter-current-request {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #3B8DBD;
+    background-color: #A1DAF7;
+    box-shadow: 0px 0px 3px 2px #60B2E1; 
+    padding: 4px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
+.sitter-current-request:hover {
+    box-shadow: 0px 0px 3px 2px #3B8DBD; 
 }
