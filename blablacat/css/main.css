@@ -346,8 +346,9 @@ body {
 }
 
 .pets-list {
+    /*border: 1px solid blue;*/
     width: 598px;
-    height: 110px;        
+    height: 160px;        
     margin: auto;
     float: left;
     padding-bottom: 1514:43 02.08.2016px;
@@ -474,6 +475,7 @@ body {
  
 .con {
     position: relative;
+    /*border: 1px solid green;*/
 }
 
 .containerr{
@@ -481,31 +483,60 @@ body {
     position: absolute;
     top: 10px;
     left: 50px;
-    height: 70px;
-    width: 600px;
+    bottom: 10px;
+    height: 120px;
+    width: 480px;
     overflow: hidden;
+    /*border: 1px solid red;*/
 }
 
-.containerr img {
+.caption-border {
     position: absolute;
-    top: 0px;
-    height: 70px;
-    width: 70px;
-    cursor: pointer;
-    overflow: hidden;
+    overflow: hidden;        
+    width: 22.7%;
+    height: 90%;
+    border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    border: 1px solid #aaa; /*#aaa*/
+        box-shadow: 0px 1px 1px 1px #bbb; /* тень */
+        -moz-box-shadow: 0px 1px 1px 1px #bbb;
+        -webkit-box-shadow: 0px 1px 1px 1px #bbb;
+    background: white;
+    margin: 0;
+}
+
+.caption-border img { 
+    width: 100%; 
+    height: 80%;
+    display: block;
+}
+
+.caption-border figcaption {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    text-overflow: ellipsis; /* Многоточие */
+    padding: 5px;
+    color: #3D3D3D;
+    font-weight: 700;
+    background: #E6E5E5;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .carouselLeft {
     position: absolute;
-    top: 30px;
+    top: 55px;
     left: 0px;
     cursor: pointer;
 }
 
 .carouselRight {
     position: absolute;
-    top: 30px;
-    left:550px;
+    top: 55px;
+    left: 550px;
     cursor: pointer;
 }
 
@@ -516,6 +547,15 @@ body {
     color: #777;
     text-align: center;
     font-size: 18px;
+}
+
+.not-pet-list-menu {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #777;
+    text-align: center;
+    font-size: 20px;
 }
 
 .current-order, .current-request {
