@@ -5,5 +5,5 @@ AddDefaultCharset UTF-8
 RewriteEngine On
 ErrorDocument 404 http://localhost/blablacat/404.php
 
-# Запрет выдачи листинга пустого каталога в случае отстутсвия главного файла
+# Запрет выдачи листинга пустого каталога в случае отсутсвия главного файла
 Options -Indexes
