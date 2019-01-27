@@ -11,6 +11,8 @@
         $row_requests = mysql_fetch_array($result_requests);
         $count_requests = mysql_num_rows($result_requests);
     }
+    
+    $result_pet_list = mysql_query("SELECT * FROM pets WHERE owner_id = $id");
 ?>
 <div class="header">
     <div class="contain clearfix">
