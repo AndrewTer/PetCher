@@ -44,17 +44,38 @@
             </div>
             <div class="pets-list">
                 <p class="title-section">Питомцы</p>
+                <?
+                    if (mysql_num_rows($result_pet_list) > 0)
+                    {
+                        $row_pets_list_menu = mysql_fetch_array($result_pet_list);
+                ?>
                 <div class="con">
                     <div class="containerr">
-                        <img src="users/<?echo $row_new["folder"];?>/andrey_burbon1.jpg" alt="Бурбон" />
-                        <img src="users/<?echo $row_new["folder"];?>/andrey_anfisa1.jpg" alt="Анфиса" />
-                        <img src="users/<?echo $row_new["folder"];?>/andrey_burbon1.jpg" alt="Бурбон" />
-                        <img src="users/<?echo $row_new["folder"];?>/andrey_burbon1.jpg" alt="Бурбон" />
-                    </div>
-                <img class="carouselLeft" src="images/left.png" width="5%" alt="Left Arrow" />
-                <img class="carouselRight" src="images/right.png" width="5%" alt="Right Arrow" />
-                </div>
-
+                    <?
+                        do{
+                        echo '<figure class="caption-border">';
+                        
+                            if($row_pets_list_menu["photo"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_pets_list_menu["photo"]))
+                            {
+                                $img_path = 'users/'.$row_new["folder"].'/'.$row_pets_list_menu["photo"];
+                                echo '<img src="'.$img_path.'" />';
+                            }else
+                            {
+                                echo '<img src="images/nophoto.jpg" />';
+                            }
+                            
+                            echo '<figcaption>'.$row_pets_list_menu["name"].'</figcaption>
+                        </figure>'; 
+                        }while ($row_pets_list_menu = mysql_fetch_array($result_pet_list));         
+            echo '</div>
+                    <img class="carouselLeft" src="images/left.png" width="5%" alt="Left Arrow" />
+                    <img class="carouselRight" src="images/right.png" width="5%" alt="Right Arrow" />
+                </div>';
+                    }else
+                    {
+                        echo '<p class="not-pet-list-menu">Вы пока не добавили ни одного питомца</p>';
+                    }
+                ?>
             </div>
             <div class="clear"></div>
 </div>
