@@ -4,8 +4,9 @@ include("functions.php");
 session_start();
 if($_SESSION['auth_user'] == "yes_auth")
 {
-$id = $_SESSION['id'];
-$username = $_SESSION['username'];
+    $id = $_SESSION['id'];
+    $username = $_SESSION['username'];
+    $encrypted_password = $_SESSION['encrypted_password'];
 ?>
 
 <html>
