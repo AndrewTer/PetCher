@@ -1,5 +1,5 @@
 <?
-    $result_new = mysql_query("SELECT * FROM users WHERE full_name = '".$username."' AND password = '".$encrypted_password."'"); // AND email = '".$email."'");
+    $result_new = mysql_query("SELECT * FROM users WHERE id = '".$id."' AND password = '".$encrypted_password."'"); // AND email = '".$email."'");
     if (mysql_num_rows($result_new) > 0)
     {
         $row_new = mysql_fetch_array($result_new);
@@ -19,7 +19,7 @@
 
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
         <nav>
-            <a href="index.php?id<?echo $id;?>"><div class="menu"><? echo $username ?></div></a>
+            <a href="index.php?id<?echo $id;?>"><div class="menu"><? echo $row_new["full_name"] ?></div></a>
             <a href="settings.php"><div class="menu">Настройки</div></a>
             <a href="support.php"><div class="menu">Помощь</div></a>
             <a href="logout.php"><div class="menu">Выйти</div></a>
