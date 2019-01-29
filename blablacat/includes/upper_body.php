@@ -79,7 +79,7 @@ if ($_POST["add_new_pet"])
             <div class="user-menu">
                 <div id="avatar">
                 <?
-                    if($row_new["photo"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_new["photo"]))
+                    if($row_new["photo"]!="no" && $row_new["photo"]!=null && file_exists("users/".$row_new["folder"]."/".$row_new["photo"]))
                     {
                         $img_path = 'users/'.$row_new["folder"].'/'.$row_new["photo"];
                         echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" height="100%"/>';
@@ -90,6 +90,10 @@ if ($_POST["add_new_pet"])
                 ?>
                 
                 </div>
+                
+                <p align="center" class="change-user-info"><a href="edit.php" id="change_user_info_link">Редактировать</a></p>
+                
+                <hr />
                 
                 <nav>
                     <ul class="list-user-menu">
