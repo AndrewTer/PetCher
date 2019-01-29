@@ -380,7 +380,6 @@ body {
     /*border: 1px solid black;*/
     margin-left: 10px;
     margin-right: 10px;
-    
 }
 
 #name-new-pet, #kind-new-pet, #breed-new-pet, 
@@ -482,6 +481,212 @@ body {
     color: #3D3D3D;
     font-weight: 700;
     font-size: 18px;
+}
+
+.change-user-info {
+    margin: auto;
+    color: #777;
+    font-weight: 600;
+    /*border: 1px solid black;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#change_user_info_link {
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    border: 1px solid #1557D5;
+    background-color: #9fdbfc;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: #3B64BD;
+    height: 30px;
+    width: 280px;
+    /*border: 1px solid red;*/
+}
+
+.user-info-ch {
+    width: 598px;
+    margin: auto;
+    float: left;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    margin: 0;
+    outline: none;
+    /*border: 1px solid #d9d9d9;*/
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+}
+
+#change_user_info_link:hover {
+    border: 1px solid #3b8dbd;
+}
+
+#avatar_up {
+    width: 250px;
+    height: 280px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border: #aaa 1px solid;
+    box-shadow: 0px 1px 1px 1px #bbb; /* тень */
+    -moz-box-shadow: 0px 1px 1px 1px #bbb;
+    -webkit-box-shadow: 0px 1px 1px 1px #bbb;
+}
+
+#avatar_up img {
+    display: block;
+    width:100%;
+    height: 100%;
+    margin-top: 60px;
+    /*border: 1px solid black;*/
+}
+
+.update-avatar, .update-info-title {
+    margin: auto;
+    margin-top: 10px;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid green;*/
+    text-align: center;
+}
+
+#upload-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: auto;
+	height: 75%;
+	outline: 2px dashed #5d5d5d;
+	outline-offset: -12px;
+	background-color: #e0f2f7;
+	font-family: 'Segoe UI';
+	color: #1f3c44;
+    /*border: 1px solid black;*/
+    padding: 10px;
+}
+
+#upload-container img {
+	width: 85%;
+    height: 85%;
+	user-select: none;
+}
+
+#upload-container label {
+	font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/*#upload-container span {
+    font-size: 16px;
+}*/
+
+#upload-container label:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#upload-container div {
+	position: relative;
+	z-index: 10;
+    padding: 10px;
+    text-align: center;
+    /*border: 1px solid red;*/
+    margin-bottom: 20px;
+}
+
+#upload-container input[type=file] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	position: absolute;
+	z-index: -10;
+}
+
+#upload-container label.focus {
+	outline: 1px solid #0078d7;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#upload-container.dragover {
+	background-color: #fafafa;
+	outline-offset: -17px;
+}
+
+.change-user-info {
+    margin: auto;
+    margin-top: 20px;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+    width: 80%;
+}
+
+#change-user-name, #change-user-phone-number, 
+#change-user-phone-email, #change-user-address {
+    font-size: 17px;
+    width: 300px;
+    float: right;
+}
+
+#change-user-about {
+    margin: auto;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 10px;
+    resize: none;
+    width: 80%;
+    height: 20%;
+    font-size: 17px;
+}
+
+.change-user-info-link {
+    /*border: 1px solid brown;*/
+    /*position: absolute;*/
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.change-user-info-link-a {
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid #1557D5;
+    background-color: #9fdbfc;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: #3B64BD;
+    height: 30px;
+    width: 180px;
 }
 
 .pets-list {
