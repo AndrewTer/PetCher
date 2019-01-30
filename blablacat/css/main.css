@@ -385,6 +385,8 @@ body {
 #name-new-pet, #kind-new-pet, #breed-new-pet, 
 #sex-new-pet, #weight-new-pet, #growth-new-pet {
     font-size: 17px;
+    float: right;
+    width: 200px;
 }
 
 #other-information-new-pet {
@@ -715,6 +717,7 @@ body {
    /*border: 1px solid #000;*/
     margin-top: 10px;
     margin-bottom: 10px;
+    /*border: 1px solid red;*/
 }
 
 .orders-part, .requests-part {
