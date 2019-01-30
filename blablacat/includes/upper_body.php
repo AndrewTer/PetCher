@@ -2,6 +2,7 @@
 if ($_POST["add_new_pet"])
 {
         $sex_new_pet = $_POST["sex_new_pet"];
+        $breed_new_pet = $_POST["breed_new_pet"];
         
         switch ($sex_new_pet) {
             case 'no':
@@ -59,13 +60,17 @@ if ($_POST["add_new_pet"])
             break;
         }
         
+        if ($breed_new_pet == null)
+        {
+            $breed_new_pet = "без породы";
+        }
         
         mysql_query("INSERT INTO pets (owner_id, name, kind, breed, sex, weight, growth, other_information, photo)
                         VALUES (
                             '".$id."',
                             '".$_POST["name_new_pet"]."',
                             '".$kind_new_pet_result."',
-                            '".$_POST["breed_new_pet"]."',
+                            '".$breed_new_pet."',
                             '".$sex_new_pet_result."',
                             '".$_POST["weight_new_pet"]."',
                             '".$_POST["growth_new_pet"]."',
@@ -129,7 +134,7 @@ if ($_POST["add_new_pet"])
                     <span id="modal_close_add_new_pet">X</span> <!-- Кнoпкa зaкрыть --> 
                     <p id="title-add-new-pet">Добавление питомца</p>
                     <hr />
-                    <p class="add-new-pet">Кличка:&emsp; <input type="text" id="name-new-pet" name="name_new_pet" /></p>
+                    <p class="add-new-pet">Кличка:&emsp; <input type="text" id="name-new-pet" name="name_new_pet" required /></p>
                     <p class="add-new-pet">Вид:&emsp; 
                         <select id="kind-new-pet" name="kind_new_pet">
                             <option value="cat">Кошка</option>
@@ -153,8 +158,8 @@ if ($_POST["add_new_pet"])
                             <option value="w">Девочка</option>
                         </select>
                     </p>
-                    <p class="add-new-pet">Вес:&emsp; <input type="number" id="weight-new-pet" name="weight_new_pet" min="0" max="20" value="0" step="0.1" placeholder="0-20" /> кг</p>
-                    <p class="add-new-pet">Рост:&emsp; <input type="number" id="growth-new-pet" name="growth_new_pet" min="0" max="1" value="0" step="0.1" placeholder="0-1" /> м</p>
+                    <p class="add-new-pet">Вес (в кг):&emsp; <input type="number" id="weight-new-pet" name="weight_new_pet" min="0" max="20" value="0" step="0.1" placeholder="0-20" /></p>
+                    <p class="add-new-pet">Рост (в м):&emsp; <input type="number" id="growth-new-pet" name="growth_new_pet" min="0" max="1" value="0" step="0.1" placeholder="0-1" /></p>
                     <p class="add-new-pet">Остальная информация:</p><textarea id="other-information-new-pet" name="other_information_new_pet" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"></textarea>
                     
                     <p class="add-new-pet-link" ><input type="submit" class="add-new-pet-link-a" name="add_new_pet" value="Добавить" /></p>
