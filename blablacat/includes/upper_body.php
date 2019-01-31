@@ -185,7 +185,7 @@ if ($_POST["add_new_pet"])
                     <div class="containerr">
                     <?
                         do{
-                        echo '<figure class="caption-border">';
+                        echo '<figure class="caption-border"><a href="pets.php?petnum='.$row_pets_list_menu["id"].'">';
                         
                             if($row_pets_list_menu["photo"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_pets_list_menu["photo"]))
                             {
@@ -197,7 +197,7 @@ if ($_POST["add_new_pet"])
                             }
                             
                             echo '<figcaption>'.$row_pets_list_menu["name"].'</figcaption>
-                        </figure>'; 
+                        </a></figure>'; 
                         }while ($row_pets_list_menu = mysql_fetch_array($result_pet_list));         
             echo '</div>
                     <img class="carouselLeft" src="images/left.png" width="5%" alt="Left Arrow" />
