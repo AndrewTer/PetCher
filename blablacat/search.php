@@ -6,6 +6,7 @@ if($_SESSION['auth_user'] == "yes_auth")
 {
 $id = $_SESSION['id'];
 $username = $_SESSION['username'];
+$encrypted_password = $_SESSION['encrypted_password'];
 ?>
 
 <html>
@@ -31,7 +32,7 @@ $username = $_SESSION['username'];
                 </div>
                 <div class="search-list">
                     <?
-                        $result_search = mysql_query("SELECT orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight FROM orders, pets WHERE (orders.pet_id = pets.id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) GROUP BY orders.id");
+                        $result_search = mysql_query("SELECT orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight FROM orders, pets WHERE (orders.pet_id = pets.id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) AND (orders.deleted = 'no') GROUP BY orders.id");
                         if (mysql_num_rows($result_search) == null)
                         {
                             echo '<hr /><p class="not-order">Заказов нет</p>';
