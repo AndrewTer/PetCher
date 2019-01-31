@@ -514,7 +514,7 @@ body {
     /*border: 1px solid red;*/
 }
 
-.user-info-ch {
+.user-info-ch, .pet-info-ch {
     width: 598px;
     margin: auto;
     float: left;
@@ -636,7 +636,7 @@ body {
 	outline-offset: -17px;
 }
 
-.change-user-info {
+.change-user-info, .change-pet-info {
     margin: auto;
     margin-top: 20px;
     color: #777;
@@ -647,13 +647,15 @@ body {
 }
 
 #change-user-name, #change-user-phone-number, 
-#change-user-phone-email, #change-user-address {
+#change-user-phone-email, #change-user-address,
+#change-pet-name, #change-pet-breed, #change-pet-sex,
+#change-pet-kind {
     font-size: 17px;
     width: 300px;
     float: right;
 }
 
-#change-user-about {
+#change-user-about, #change-pet-about {
     margin: auto;
     margin-left: 60px;
     margin-right: 60px;
@@ -664,7 +666,7 @@ body {
     font-size: 17px;
 }
 
-.change-user-info-link {
+.change-user-info-link, .change-pet-info-link {
     /*border: 1px solid brown;*/
     /*position: absolute;*/
     margin: 0;
@@ -673,7 +675,7 @@ body {
     margin-right: 200px;
 }
 
-.change-user-info-link-a {
+.change-user-info-link-a, .change-pet-info-link-a {
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
@@ -871,6 +873,10 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+.caption-border a {
+    text-decoration: none;
 }
 
 .carouselLeft {
