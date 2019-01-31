@@ -240,7 +240,7 @@ jQuery.fn.clickCarousel = function(options)
 				container.animating = true;
 								
 				//Hide the clicked element's target
-				jQuery(clicked).slideUp(settings.hideSpeed, function() 
+				/*jQuery(clicked).slideUp(settings.hideSpeed, function() 
 				{		
 					//Take the clicked element's target and add it to the end of the array
 					//Also shift the clicker in order to keep settings.shifting and settings.clicker consistent. 
@@ -256,7 +256,7 @@ jQuery.fn.clickCarousel = function(options)
 						//The container has finished animating
 						container.animating = false;
 					});					
-				});			
+				});*/			
 			}
 		});	
 	}
