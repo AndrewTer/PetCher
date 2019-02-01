@@ -34,7 +34,7 @@
                             <hr />
                             <div class="current-request">
                                     <div class="left-part-order-list">
-                                        <div id="avatar-pet">';
+                                        <div id="avatar-pet"><a href="pets.php?petnum='.$row_requests["pet_id"].'">';
                                             $request_pet_id = $row_requests["pet_id"];
                                             $result_request_pet_folder = mysql_query("SELECT users.folder FROM users, pets WHERE (pets.owner_id = users.id) AND (pets.id = ".$request_pet_id.")");
                                             $folder_current_pet = mysql_fetch_array($result_request_pet_folder);
@@ -48,7 +48,7 @@
                                             {
                                                 echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
                                             }
-                                    echo '</div>
+                                    echo '</a></div>
                                     </div>
                                     
                                     <div class="right-part-request-list">
