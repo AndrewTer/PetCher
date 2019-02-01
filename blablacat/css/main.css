@@ -205,6 +205,7 @@ body {
     /*border: 1px solid #000;*/
     margin-top: 10px;
     margin-bottom: 10px;
+    /*border: 1px solid red;*/
 }
 
 .user-menu {
@@ -220,6 +221,7 @@ body {
     outline: none;
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
     /*border: 1px solid #d9d9d9;*/
+    /*border: 1px solid green;*/
 }
 
 #avatar {
@@ -649,7 +651,7 @@ body {
 #change-user-name, #change-user-phone-number, 
 #change-user-phone-email, #change-user-address,
 #change-pet-name, #change-pet-breed, #change-pet-sex,
-#change-pet-kind {
+#change-pet-kind, #change-pet-weight, #change-pet-growth {
     font-size: 17px;
     width: 300px;
     float: right;
@@ -673,6 +675,33 @@ body {
     margin-top: 20px;
     margin-left: 200px;
     margin-right: 200px;
+}
+
+.delete-user-photo-link, .delete-pet-photo-link {
+    /*border: 1px solid blue;*/
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 17px;
+}
+
+.change-user-photo-link-a, .change-pet-photo-link-a {
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid #D63301;
+    color: #D63301;
+    background-color: #FFD2C2;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    height: 30px;
+    width: 180px;
 }
 
 .change-user-info-link-a, .change-pet-info-link-a {
