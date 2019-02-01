@@ -93,10 +93,10 @@ if($_SESSION['auth_user'] == "yes_auth")
                 <div class="user-info-ch">
                     <p class="update-info-title">Основное</p>
                     <hr />
-                    <p class="change-user-info">ФИО:&emsp; <input type="text" id="change-user-name" name="change_user_name" maxlength="30" value="<?echo $row_change_user_info["full_name"];?>" required /></p>
+                    <p class="change-user-info">ФИО:&emsp; <input type="text" id="change-user-name" name="change_user_name" maxlength="50" value="<?echo $row_change_user_info["full_name"];?>" required /></p>
                     <p class="change-user-info">Моб.телефон: &emsp; <input type="text" name="change_user_phone_number" maxlength="20" id="change-user-phone-number" class="input" value="<?echo $row_change_user_info["phone_number"];?>" size="20" required placeholder="+7" /></p>
-                    <p class="change-user-info">Email: &emsp; <input type="email" name="change_user_email" placeholder="example@gmail.com" maxlength="20" id="change-user-phone-email" class="input" value="<?echo $row_change_user_info["email"];?>" required /></p>
-                    <p class="change-user-info">Адрес:&emsp; <input type="text" id="change-user-address" name="change_user_address" maxlength="30" value="<?echo $row_change_user_info["address"];?>" required /></p>
+                    <p class="change-user-info">Email: &emsp; <input type="email" name="change_user_email" placeholder="example@gmail.com" maxlength="50" id="change-user-phone-email" class="input" value="<?echo $row_change_user_info["email"];?>" required /></p>
+                    <p class="change-user-info">Адрес:&emsp; <input type="text" id="change-user-address" name="change_user_address" maxlength="50" value="<?echo $row_change_user_info["address"];?>" required /></p>
                     <p class="change-user-info">Обо мне:</p><textarea id="change-user-about" name="change_user_about" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_change_user_info["description"];?></textarea>
                     <p class="change-user-info-link" ><input type="submit" class="change-user-info-link-a" name="change_user_info_submit" value="Сохранить" /></p>
                 </div>
