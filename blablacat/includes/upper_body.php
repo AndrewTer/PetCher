@@ -159,7 +159,7 @@ if ($_POST["add_new_pet"])
                         </select>
                     </p>
                     <p class="add-new-pet">Вес (в кг):&emsp; <input type="number" id="weight-new-pet" name="weight_new_pet" min="0" max="20" value="0" step="0.1" placeholder="0-20" /></p>
-                    <p class="add-new-pet">Рост (в м):&emsp; <input type="number" id="growth-new-pet" name="growth_new_pet" min="0" max="1" value="0" step="0.1" placeholder="0-1" /></p>
+                    <p class="add-new-pet">Рост (в м):&emsp; <input type="number" id="growth-new-pet" name="growth_new_pet" min="0" max="1" value="0" step="0.01" placeholder="0-1" /></p>
                     <p class="add-new-pet">Остальная информация:</p><textarea id="other-information-new-pet" name="other_information_new_pet" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"></textarea>
                     
                     <p class="add-new-pet-link" ><input type="submit" class="add-new-pet-link-a" name="add_new_pet" value="Добавить" /></p>
