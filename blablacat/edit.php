@@ -26,6 +26,11 @@ if($_SESSION['auth_user'] == "yes_auth")
                         description = '".$_POST["change_user_about"]."' WHERE id = $id");
     }
 
+    if ($_POST["delete_user_photo_submit"])
+    {
+        mysql_query("UPDATE users SET photo = 'no' WHERE id = $id");
+    }
+    
     $result_change_user_info = mysql_query("SELECT * FROM users WHERE id = $id");
     if (mysql_num_rows($result_change_user_info) > null)
     {
@@ -81,6 +86,8 @@ if($_SESSION['auth_user'] == "yes_auth")
     		               <!--   <span>или перетащите его в квадрат</span> --!>
                         </div>
                     </div>
+                    <hr />
+                    <p class="delete-user-photo-link" ><input type="submit" class="change-pet-photo-link-a" name="delete_user_photo_submit" value="Удалить фото" /></p>
                 </div>
                 
                 <div class="user-info-ch">
