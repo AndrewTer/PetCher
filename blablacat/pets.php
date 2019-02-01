@@ -190,7 +190,7 @@ if($_SESSION['auth_user'] == "yes_auth")
                             <option value="other" <?php if($row_current_pet['kind'] == 'другой'){ echo ' selected="selected"'; } ?>>Другой</option>
                         </select>
                     </p>
-                    <p class="change-pet-info">Порода:&emsp; <input type="text" id="change-pet-breed" name="change_pet_breed" maxlength="30" value="<?echo $row_current_pet["breed"];?>" /></p>
+                    <p class="change-pet-info">Порода:&emsp; <input type="text" id="change-pet-breed" name="change_pet_breed" maxlength="40" value="<?echo $row_current_pet["breed"];?>" /></p>
                     <p class="change-pet-info">Пол:&emsp; 
                         <select id="change-pet-sex" name="change_pet_sex">
                             <option value="no" <?php if($row_current_pet['sex'] == 'не указано'){ echo ' selected="selected"'; } ?>>Пусто</option>
