@@ -135,7 +135,7 @@ if ($_POST["add_new_order"])
                                     </div>
                                     
                                     <div class="left-part-order-list">
-                                        <div id="avatar-pet">';
+                                        <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
                                             if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
                                             {
                                                 $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
@@ -144,7 +144,7 @@ if ($_POST["add_new_order"])
                                             {
                                                 echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
                                             }
-                                    echo '</div>
+                                    echo '</a></div>
                                     </div>
                                     <div class="right-part-order-list">
                                         <p class="order-about">'.$row_orders["about_order"].'</p>
@@ -168,7 +168,7 @@ if ($_POST["add_new_order"])
                                         <div class="ribbon-green">Выполнен</div>
                                     </div>
                                     <div class="left-part-order-list">
-                                        <div id="avatar-pet">';
+                                        <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
                                             if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
                                             {
                                                 $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
@@ -177,7 +177,7 @@ if ($_POST["add_new_order"])
                                             {
                                                 echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
                                             }
-                                    echo '</div>
+                                    echo '</a></div>
                                     </div>
                                     <div class="right-part-order-list">
                                         <p class="order-about">'.$row_orders["about_order"].'</p>
