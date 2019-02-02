@@ -5,7 +5,7 @@
                 users.id AS sitter_id, users.photo AS sitter_photo, users.folder AS sitter_folder, users.rating AS sitter_rating
 
         FROM request, orders, pets, users
-        WHERE (orders.id = request.order_id) AND (orders.deleted = 'no') AND (orders.kind = 'current') AND (orders.owner_id = ".$id.") AND (orders.pet_id = pets.id) AND (request.sitter_id = users.id)
+        WHERE (orders.id = request.order_id) AND (orders.deleted = 'no') AND (orders.kind = 'current') AND (orders.owner_id = ".$id.") AND (orders.pet_id = pets.id) AND (request.sitter_id = users.id) AND (users.deleted = 'no') AND (request.deleted = 'no') AND (pets.deleted = 'no')
     ");
     $count_user_requests = mysql_num_rows($result_requests);
 ?>
