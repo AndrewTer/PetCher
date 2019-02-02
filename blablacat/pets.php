@@ -9,6 +9,16 @@ if($_SESSION['auth_user'] == "yes_auth")
     $encrypted_password = $_SESSION['encrypted_password'];
     $id = $_SESSION['id']; 
     
+    $action = $_GET["action"];
+    if (isset($action))
+    {
+        switch ($action) {
+            case 'delete':
+            #$delete = mysql_query("UPDATE orders SET deleted='yes' WHERE id=".$order_id);
+            break;
+        }
+    }
+    
     if (!empty($_GET["petnum"]))
     {
         $pet_id=clear_string($_GET["petnum"]);
@@ -145,30 +155,36 @@ if($_SESSION['auth_user'] == "yes_auth")
     <div class="main-body">
         <div class="upper-part-body">
             <form enctype="multipart/form-data"  method="POST">
-                <div class="user-menu">
-                    <p class="update-avatar">Обновить фотографию</p>
-                    <hr />
-                    <div id="avatar_up">
-                        <div id="upload-container">
-                            <?
-                            if($row_current_pet["photo"]!="no" && $row_current_pet["photo"]!=null && file_exists("users/".$row_user_data_for_current_pet["folder"]."/".$row_current_pet["photo"]))
-                            {
-                                $img_path = 'users/'.$row_user_data_for_current_pet["folder"].'/'.$row_current_pet["photo"];
-                                echo '<img id="upload-image" src="'.$img_path.'" />';
-                            }else
-                            {
-                                echo '<img id="upload-image" style="opacity: 0.7;" src="images/upload_avatar.png" />';
-                            }
-                            ?>
-    		              <div>
-                		      <input id="file-input" type="file" name="file_pet_photo" />
-                		  </div>
-                          <label for="file-input">Выберите фото</label>
-    		               <!--   <span>или перетащите его в квадрат</span> --!>
+                <div class="pet-photo-and-delete">
+                    <div class="pet-menu">
+                        <p class="update-avatar">Обновить фотографию</p>
+                        <hr />
+                        <div id="avatar_up">
+                            <div id="upload-container">
+                                <?
+                                if($row_current_pet["photo"]!="no" && $row_current_pet["photo"]!=null && file_exists("users/".$row_user_data_for_current_pet["folder"]."/".$row_current_pet["photo"]))
+                                {
+                                    $img_path = 'users/'.$row_user_data_for_current_pet["folder"].'/'.$row_current_pet["photo"];
+                                    echo '<img id="upload-image" src="'.$img_path.'" />';
+                                }else
+                                {
+                                    echo '<img id="upload-image" style="opacity: 0.7;" src="images/upload_avatar.png" />';
+                                }
+                                ?>
+        		              <div>
+                    		      <input id="file-input" type="file" name="file_pet_photo" />
+                    		  </div>
+                              <label for="file-input">Выберите фото</label>
+        		               <!--   <span>или перетащите его в квадрат</span> --!>
+                            </div>
                         </div>
+                        <hr />
+                        <p class="delete-pet-photo-link" ><input type="submit" class="change-pet-photo-link-a" name="delete_pet_photo_submit" value="Удалить фото" /></p>
                     </div>
-                    <hr />
-                    <p class="delete-user-photo-link" ><input type="submit" class="change-user-photo-link-a" name="delete_pet_photo_submit" value="Удалить фото" /></p>
+                    
+                    <div class="pet-delete-menu">
+                        <a class="delete-pet" rel="pets.php?petnum=<?echo $pet_id;?>&action=delete">Удалить питомца</a>
+                    </div>
                 </div>
                 
                 <div class="pet-info-ch">
