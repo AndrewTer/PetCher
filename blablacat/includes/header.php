@@ -5,14 +5,14 @@
         $row_new = mysql_fetch_array($result_new);
     }
         
-    $result_requests = mysql_query("SELECT orders.owner_id AS owner_id, orders.pet_id AS pet_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS order_info, request.sitter_id AS sitter_id FROM orders, request WHERE (orders.id = request.order_id) AND (orders.owner_id = $id) AND (orders.kind = 'current')");
+    $result_requests = mysql_query("SELECT orders.owner_id AS owner_id, orders.pet_id AS pet_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS order_info, request.sitter_id AS sitter_id FROM orders, request WHERE (orders.id = request.order_id) AND (orders.owner_id = $id) AND (orders.kind = 'current') AND (orders.deleted = 'no') AND (request.deleted='no')");
     if (mysql_num_rows($result_requests) > 0)
     {
         $row_requests = mysql_fetch_array($result_requests);
         $count_requests = mysql_num_rows($result_requests);
     }
     
-    $result_pet_list = mysql_query("SELECT * FROM pets WHERE owner_id = $id");
+    $result_pet_list = mysql_query("SELECT * FROM pets WHERE (owner_id = $id) AND (deleted = 'no')");
 ?>
 <div class="header">
     <div class="contain clearfix">
