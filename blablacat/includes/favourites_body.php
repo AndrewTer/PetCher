@@ -7,7 +7,7 @@
         </div>
         <div class="favourites-list">
         <?
-        $result_favourites = mysql_query("SELECT favorites.id AS fav_num_id, favorites.favourite_id AS fav_id, users.folder AS folder, users.photo AS photo, users.rating AS rating FROM favorites, users WHERE (favorites.user_id = $id) AND (favorites.favourite_id=users.id)");
+        $result_favourites = mysql_query("SELECT favorites.id AS fav_num_id, favorites.favourite_id AS fav_id, users.folder AS folder, users.photo AS photo, users.rating AS rating FROM favorites, users WHERE (favorites.user_id = $id) AND (favorites.favourite_id=users.id) AND (favorites.deleted='no') AND (users.deleted='no')");
         if (mysql_num_rows($result_favourites) == null)
         {
             echo '<hr /><p class="not-favourites">Список избранного пуст</p>';
