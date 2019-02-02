@@ -81,7 +81,7 @@ if ($_POST["add_new_order"])
                         <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"></textarea>
                         <p class="add-order">Выбор питомца:</p>
                         <?
-                            $pets_list_result = mysql_query("SELECT id, name FROM pets WHERE (owner_id = ".$id.")");
+                            $pets_list_result = mysql_query("SELECT id, name FROM pets WHERE (owner_id = ".$id.") AND (deleted='no')");
                             if (mysql_num_rows($pets_list_result) == null)
                             {
                                 echo '<p class="add-order" style="text-align: center;">У вас нет ни одного питомца!</p>';
