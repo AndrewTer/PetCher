@@ -9,16 +9,6 @@ if($_SESSION['auth_user'] == "yes_auth")
     $encrypted_password = $_SESSION['encrypted_password'];
     $id = $_SESSION['id']; 
     
-    $action = $_GET["action"];
-    if (isset($action))
-    {
-        switch ($action) {
-            case 'delete':
-            #$delete = mysql_query("UPDATE orders SET deleted='yes' WHERE id=".$order_id);
-            break;
-        }
-    }
-    
     if (!empty($_GET["petnum"]))
     {
         $pet_id=clear_string($_GET["petnum"]);
@@ -30,6 +20,18 @@ if($_SESSION['auth_user'] == "yes_auth")
     {
         header("Location: index.php"); 
         
+    }
+    
+    $action = $_GET["action"];
+    if (isset($action))
+    {
+        switch ($action) {
+            case 'delete':
+                $delete = mysql_query("UPDATE pets SET deleted='yes' WHERE id=".$pet_id);
+                mysql_query("UPDATE orders SET deleted='yes' WHERE pet_id=".$pet_id);
+                header("Location: index.php"); 
+            break;
+        }
     }
     
     if ($_POST["change_pet_info_submit"])
