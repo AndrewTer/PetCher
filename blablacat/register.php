@@ -10,13 +10,6 @@ if(isset($_POST["register"]))
         $username = htmlspecialchars($_POST['username']);
         $password = htmlspecialchars($_POST['password']);
         $replay_password = htmlspecialchars($_POST['replay_password']);
-	
-        if(!empty($_POST['role']))
-        {
-            $role = "owner";
-        }else{
-            $role = "sitter";
-        }
     
         if ($password != $replay_password)
         {
@@ -35,7 +28,7 @@ if(isset($_POST["register"]))
 	
             if($numrows==0)
             {
-                $sql="insert into users VALUES ('','$username','$encrypted_password','$role','','$email','','','no','0','')";
+                $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','','','no','0','','no')";
                 $result=mysql_query($sql);
             
                 if($result)
@@ -136,30 +129,6 @@ else
                 <input type="email" name="email" placeholder="example@gmail.com" id="email" class="input" required /><span></span></label>
             </p>
     
-    
-    <!--
-        <h4 id="sitter">Я Ситтер!
-        <div class="doggy">
-        <div class="toggle-wrapper">
-            <input type="checkbox" name="role" class="doggle" id="doggle"/>
-            <label for="doggle" class="toggle">
-                <span class="toggle-handler">
-                <span class="face eye-left"></span>
-                <span class="face eye-right"></span>
-                <span class="nose"></span>
-                <span class="face mouth1"></span>
-                <span class="face mouth2"></span>
-                <span class="face2 mouth-smile"></span>
-                <span class="face2 mouth-smile2"></span>
-                <span class="left-ear">
-                <span class="right-ear">
-                    <span class="tongue"></span>
-                </span>
-            </label>
-        </div>
-        </div>
-        Я Владелец!</h4>
-    --!>
             <p class="submit">
 		      <input type="submit" name="register" id="register" class="button" value="Продолжить регистрацию" />
             </p>
@@ -172,3 +141,4 @@ else
 <div class="footer">
 BlaBlaCat © 2019
 </div>
+
