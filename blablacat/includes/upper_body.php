@@ -65,7 +65,7 @@ if ($_POST["add_new_pet"])
             $breed_new_pet = "без породы";
         }
         
-        mysql_query("INSERT INTO pets (owner_id, name, kind, breed, sex, weight, growth, other_information, photo)
+        mysql_query("INSERT INTO pets (owner_id, name, kind, breed, sex, weight, growth, other_information, photo, deleted)
                         VALUES (
                             '".$id."',
                             '".$_POST["name_new_pet"]."',
@@ -75,6 +75,7 @@ if ($_POST["add_new_pet"])
                             '".$_POST["weight_new_pet"]."',
                             '".$_POST["growth_new_pet"]."',
                             '".$_POST["other_information_new_pet"]."',
+                            'no',
                             'no'
                         )");
 }
