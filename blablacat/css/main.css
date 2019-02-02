@@ -224,6 +224,66 @@ body {
     /*border: 1px solid green;*/
 }
 
+.pet-photo-and-delete {
+    float: left;
+    width: 300px;
+    margin: auto;
+    padding-bottom: 1514:43 02.08.2016px;
+    font-size: 24px;
+    line-height: 1;
+    margin: 0 10px 0 0;
+    outline: none;
+    /*border: 1px solid #d9d9d9;*/
+    /*border: 1px solid green;*/
+}
+
+.pet-menu {
+    width: 98%;
+    margin: auto;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    margin: 0 10px 0 0;
+    outline: none;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+    /*border: 1px solid #d9d9d9;*/
+    /*border: 1px solid red;*/
+}
+
+.pet-delete-menu {
+    width: 100%;
+    height: 62px;
+    margin: auto;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    margin: 10px 10px 0 0;
+    outline: none;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+    /*border: 1px solid #d9d9d9;*/
+    /*border: 1px solid green;*/
+    line-height: 62px;
+}
+
+.delete-pet {
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    /*border: 1px solid #D63301;*/
+    color: #D63301;
+    background-color: #FFD2C2;
+    vertical-align: middle;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: block; /* Ссылка как блочный элемент */
+    text-align: center; /* Выравнивание по центру */
+    cursor: pointer;
+}
+
 #avatar {
     width: 250px;
     height: 250px;
@@ -375,7 +435,7 @@ body {
 
 .add-new-pet {
     margin: auto;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #777;
     font-weight: 600;
     font-size: 17px;
@@ -702,6 +762,7 @@ body {
     -moz-border-radius: 5px 5px 5px 5px;
     height: 30px;
     width: 180px;
+    cursor: pointer;
 }
 
 .change-user-info-link-a, .change-pet-info-link-a {
@@ -720,6 +781,7 @@ body {
     color: #3B64BD;
     height: 30px;
     width: 180px;
+    cursor: pointer;
 }
 
 .pets-list {
@@ -1192,6 +1254,7 @@ body {
     color: #3B64BD;
     height: 30px;
     width: 180px;
+    cursor: pointer;
 }
 #submit_add_new_order:hover{
     border: 1px solid #3b8dbd;
