@@ -32,6 +32,29 @@ $(document).ready(function(){
         
     });
     
+    $('.delete-pet').click(function(){
+        var rel = $(this).attr("rel");
+        
+        $.confirm({
+            'title'   : 'Подтверждение удаления питомца',
+            'message' : 'После удаления восстановление будет невозможно! Продолжить?',
+            'buttons' : {
+                'Да'  : {
+                    'class' : 'blue',
+                    'action': function(){
+                        location.href = rel;
+                    }
+                },
+                'Нет' : {
+                    'class' : 'gray',
+                    'action': function(){}
+                }
+                
+            }
+        });
+        
+    });
+    
     /* Открытие модального окна добавления нового животного */
     $('a#addnewpet').click( function(event){ // лoвим клик пo ссылки с id="addnewpet"
 		event.preventDefault(); // выключaем стaндaртную рoль элементa
