@@ -160,10 +160,7 @@ if($_SESSION['auth_user'] == "yes_auth")
                     </div>
                 </div>
                 <hr />
-                <?
-                    $result_selected_user_orders = mysql_query("SELECT * FROM orders WHERE (owner_id = ".$user_id.") AND (date_out>=curdate()) AND (deleted='no')");
-                    
-                ?>
+                
                 
             </div> 
             
