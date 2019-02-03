@@ -68,7 +68,6 @@ if(isset($_POST["register"]))
                 {	
 				    $message = "Ошибка при добавление информации!";
                 }
-
             } 
             else 
             {
@@ -88,7 +87,6 @@ else
     <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>--!>
     <title>Регистрация | BlaBlaCat</title>
 </head>
-
 <div class="header">
     <div class="contain clearfix">
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
@@ -98,7 +96,6 @@ else
         </nav>
     </div>
 </div>
-
 <div class="container mregister">
     <div id="login">
 	   <h1>Регистрация</h1>
@@ -137,8 +134,6 @@ else
         </form>
     </div>
 </div>
-
 <div class="footer">
 BlaBlaCat © 2019
 </div>
-
