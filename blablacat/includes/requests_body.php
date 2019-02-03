@@ -69,16 +69,16 @@
                                         if($row_requests["sitter_photo"]!="no" && file_exists("users/".$row_requests["sitter_folder"]."/".$row_requests["sitter_photo"]))
                                         {
                                             $img_path_sitter = 'users/'.$row_requests["sitter_folder"].'/'.$row_requests["sitter_photo"];
-                                            echo '<a href=""><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
+                                            echo '<a href="user.php?id='.$row_requests["sitter_id"].'"><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
                                         }else
                                         {
-                                            echo '<a href=""><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                            echo '<a href="user.php?id='.$row_requests["sitter_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                         }
                                         
                                         echo '</div>
                                         <table style="margin-left: 10px; margin-right: 10px; table-layout: fixed; width: 200px;">
                                             <tr>
-                                                <td style="padding-bottom: 15px; padding-top: 10px; text-align: center; width: 100%; max-width: 100px;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" rel="" >Страница ситтера</a></p></td>
+                                                <td style="padding-bottom: 15px; padding-top: 10px; text-align: center; width: 100%; max-width: 100px;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" href="user.php?id='.$row_requests["sitter_id"].'" >Страница ситтера</a></p></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 50%; text-align: center; "><p class="approve-request-links" ><a class="approve-current-request" rel="" >Одобрить</a></p></td>
