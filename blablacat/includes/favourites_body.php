@@ -20,10 +20,10 @@
                 if($row_favourites["photo"]!="no" && file_exists("users/".$row_favourites["folder"]."/".$row_favourites["photo"]))
                 {
                     $img_path = 'users/'.$row_favourites["folder"].'/'.$row_favourites["photo"];
-                    echo '<a href="favourite.php?id'.$row_favourites["fav_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
+                    echo '<a href="user.php?id='.$row_favourites["fav_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                 }else
                 {
-                    echo '<a href="favourite.php?id'.$row_favourites["fav_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                    echo '<a href="user.php?id='.$row_favourites["fav_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                 }
             
             echo '</div>';
