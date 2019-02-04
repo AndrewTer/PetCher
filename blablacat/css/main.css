@@ -1076,7 +1076,7 @@ body {
     text-decoration: none;
 }
 
-.left-part-order-list {
+.left-part-order-list, .left-part-review-list {
     /*border: 1px solid brown;*/
     width: 20%;
     float: left;
@@ -1088,6 +1088,94 @@ body {
     width: 70%; /* 78% */
     float: left;
     padding-bottom: 10px;
+}
+
+.right-part-review-list {
+    width: 65%; /* 70% */
+    float: left;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 25px;
+    border: 8px solid #666;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #7d9185;
+}
+
+.right-part-review-list:after, .right-part-review-list:before {
+   left: 100%;
+ border: solid transparent;
+ content: " ";
+ height: 0;
+ width: 0;
+ position: absolute;
+ pointer-events: none;
+}
+
+.right-part-review-list:after {
+     border-color: rgba(255, 255, 255, 0);
+ border-left-color: #ffffff;
+ border-width: 18px;
+ top: 50%;
+ margin-top: -18px;
+}
+
+.right-part-review-list:before {
+    border-color: rgba(125, 145, 133, 0);
+ border-left-color: #7d9185;
+ border-width: 19px;
+ top: 50%;
+ margin-top: -19px;
+}
+
+.right-part-review-list-about-user {
+    width: 65%; /* 70% */
+    float: left;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 25px;
+    border: 8px solid #666;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #7d9185;
+}
+
+.right-part-review-list-about-user:after, .right-part-review-list-about-user:before {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.right-part-review-list-about-user:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 18px;
+    top: 60px;
+    margin-top: -18px;  
+}
+
+.right-part-review-list-about-user:before {
+    border-color: rgba(125, 145, 133, 0);
+    border-right-color: #7d9185;
+    border-width: 19px;
+    top: 60px;
+    margin-top: -19px;
 }
 
 #avatar-pet {
@@ -1120,7 +1208,7 @@ body {
     /*border: 1px solid black;*/
 }
 
-.order-about {
+.order-about, .review-text {
     margin: auto;
     margin-top: 10px;
     color: #777;
@@ -1132,7 +1220,19 @@ body {
     width: 80%;
 }
 
-.order-cost {
+.review-rating {
+    margin: auto;
+    margin-top: 10px;
+    color: #3D3D3D;
+    font-weight: 600;
+    font-size: 16px;
+    /*border: 1px solid black;*/
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
+}
+
+.order-cost, .review-sitter-full-name {
     margin: auto;
     margin-top: 10px;
     /*border: 1px solid black;*/
@@ -1589,7 +1689,6 @@ body {
     /*border: 1px solid brown;*/
     /*position: absolute;*/
     margin: 0;
-
 }
 
 .approve-current-request {
@@ -1685,4 +1784,62 @@ body {
     height: 30px;
     width: 180px;
     cursor: pointer;    
+}
+
+.rating_current_review {
+    float:left;
+    margin-left: 10px;
+    padding: 0;
+    border: none;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating_current_review:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating_current_review:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding: 1px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size: 30px;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating_current_review:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating_current_review > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+/*.rating_current_review:not(:checked) > label:hover,
+.rating_current_review:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating_current_review > input:checked + label:hover,
+.rating_current_review > input:checked + label:hover ~ label,
+.rating_current_review > input:checked ~ label:hover,
+.rating_current_review > input:checked ~ label:hover ~ label,
+.rating_current_review > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}*/
+
+.rating_current_review > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
 }
