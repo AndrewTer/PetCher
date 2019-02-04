@@ -64,7 +64,7 @@
                                     <div class="sitter-request-part">
                                         ';
                                         echo '<div id="sitter-request-circle">
-                                                <div class="fav-rating"><p class="fav-rating-p">'.$row_requests["sitter_rating"].'/10</p></div>';
+                                                <div class="fav-rating" title="Рейтинг на основе оценок пользователей"><p class="fav-rating-p">'.$row_requests["sitter_rating"].'/10</p></div>';
                     
                                         if($row_requests["sitter_photo"]!="no" && file_exists("users/".$row_requests["sitter_folder"]."/".$row_requests["sitter_photo"]))
                                         {
