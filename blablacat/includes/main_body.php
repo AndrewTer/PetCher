@@ -95,13 +95,13 @@ if ($_POST["add_new_order"])
                                     if ($count_actual_pet == 1)
                                     {
                                         echo '
-                                    <input type="radio" class="select-pet-add-order" id="'.$row_pets_list_result["id"].'" name="select-pet-for-add-order" value="'.$row_pets_list_result["id"].'" checked>
+                                        <input type="radio" class="select-pet-add-order" id="'.$row_pets_list_result["id"].'" name="select-pet-for-add-order" value="'.$row_pets_list_result["id"].'" checked>
                                         <label for="'.$row_pets_list_result["id"].'">'.$row_pets_list_result["name"].'</label>
                                         ';
                                     }else
                                     {
                                         echo '
-                                    <input type="radio" class="select-pet-add-order" id="'.$row_pets_list_result["id"].'" name="select-pet-for-add-order" value="'.$row_pets_list_result["id"].'">
+                                        <input type="radio" class="select-pet-add-order" id="'.$row_pets_list_result["id"].'" name="select-pet-for-add-order" value="'.$row_pets_list_result["id"].'">
                                         <label for="'.$row_pets_list_result["id"].'">'.$row_pets_list_result["name"].'</label>
                                         ';
                                     }
