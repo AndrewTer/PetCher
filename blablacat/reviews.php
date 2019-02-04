@@ -10,6 +10,32 @@ if($_SESSION['auth_user'] == "yes_auth")
     $phone = $_SESSION['phone'];
     $address = $_SESSION['address'];
     $id = $_SESSION['id']; 
+    
+    
+    if (!empty($_GET["sort"]))
+    {
+            $sort = clear_string($_GET["sort"]);
+
+                switch($sort){
+                    case 'my':
+                        $sort = "WHERE (reviews.author_id = $id ) AND (reviews.author_id = users.id) AND (reviews.deleted='no') AND (reviews.hidden='no') AND (users.deleted='no')";
+                        $sort_name = 'Мои отзывы';
+                    break;
+                    case 'about_me':
+                        $sort = "WHERE (reviews.sitter_id = $id ) AND (reviews.sitter_id = users.id) AND (reviews.deleted='no') AND (reviews.hidden='no') AND (users.deleted='no')";
+                        $sort_name = 'Отзывы обо мне';
+                    break;
+                    default:
+                        $sort = "WHERE (reviews.author_id = $id ) AND (reviews.author_id = users.id) AND (reviews.deleted='no') AND (reviews.hidden='no') AND (users.deleted='no')";
+                        $sort_name = 'Отзывы обо мне';
+                    break;
+                }
+            
+    }else
+    {
+        header("Location: index.php"); 
+    }
+
 ?>
 
 <html>
