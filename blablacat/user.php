@@ -61,7 +61,8 @@ if($_SESSION['auth_user'] == "yes_auth")
         <div class="upper-part-body">
             <div class="user-menu">
                 <div id="avatar">
-                <?
+                <div class="user-rating" title="Рейтинг на основе оценок пользователей"><span class="user-rating-span"><? echo $row_selected_user["rating"].'/10'; ?></span></div>
+                    <?
                     if($row_selected_user["photo"]!="no" && $row_selected_user["photo"]!=null && file_exists("users/".$row_selected_user["folder"]."/".$row_selected_user["photo"]))
                     {
                         $img_path = 'users/'.$row_selected_user["folder"].'/'.$row_selected_user["photo"];
@@ -70,7 +71,7 @@ if($_SESSION['auth_user'] == "yes_auth")
                     {
                         echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
                     }
-                ?>
+                    ?>
                 
                 </div>
                 
