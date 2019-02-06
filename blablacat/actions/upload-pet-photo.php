@@ -52,6 +52,7 @@ defined('blablapet') or die('Доступ запрещён!');
             //загружаем файл move_uploaded_file
             if (@move_uploaded_file($_FILES['file_pet_photo']['tmp_name'], $uploadfile))
             {
+                chmod($uploadfile, 0777);
                 $update = mysql_query("UPDATE pets SET photo = '$newfilename' WHERE (owner_id='$id') AND (id='$pet_id')");
             }
             else
