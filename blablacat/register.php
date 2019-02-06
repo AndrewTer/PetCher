@@ -39,7 +39,7 @@ if(isset($_POST["register"]))
                         $directory_new = mysql_fetch_array($directory);
                     }
                     //создание папки для фотографий пользователя при регистрации и перевод кодировок для понятия названий ОС
-                    $dir = mkdir("users/".ftranslite(utf8_to_cp1251($username)).$directory_new['id']);
+                    $dir = mkdir("users/".ftranslite(utf8_to_cp1251($username)).$directory_new['id'], 0777);
                         if($dir)
                         {
                                 //добавление папки пользователя в таблицу бд
