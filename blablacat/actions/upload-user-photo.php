@@ -38,6 +38,7 @@ defined('blablauser') or die('Доступ запрещён!');
             //загружаем файл move_uploaded_file
             if (@move_uploaded_file($_FILES['file_user_photo']['tmp_name'], $uploadfile))
             {
+                chmod($uploadfile, 0777);
                 $update = mysql_query("UPDATE users SET photo = '$newfilename' WHERE id='$id'");
             }
             else
