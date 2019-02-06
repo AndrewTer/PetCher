@@ -184,10 +184,29 @@ body {
     width: auto;
 }
 
+.not-found-image-forbidden {
+    margin: 15px;
+    float: left;
+    /*border: 1px solid black;*/
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .not-found-info {
     float: left;
-    /*border: 1px solid blue;*/
-    width: 66%;
+    padding: 10px;
+    width: 63%;
+    border: 8px solid #666;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #7d9185;
 }
 
 #main{
@@ -479,7 +498,9 @@ body {
     width: 75%;
 }
 
-.add-new-pet {
+.add-new-pet, .search-order-pet-kind, .search-order-pet-sex,
+.search-order-pet-growth, .search-order-pet-weight, .search-order-cost,
+.search-order-city, .search-order-dates {
     margin: auto;
     margin-top: 15px;
     color: #777;
@@ -488,6 +509,7 @@ body {
     /*border: 1px solid black;*/
     margin-left: 10px;
     margin-right: 10px;
+    /*margin-bottom: 15px;*/
 }
 
 #name-new-pet, #kind-new-pet, #breed-new-pet, 
@@ -495,6 +517,23 @@ body {
     font-size: 17px;
     float: right;
     width: 200px;
+}
+
+.search-pet-param {
+    /*border: 1px solid green;*/
+}
+
+#search-order-kind-pet, #search-order-sex-pet,
+#search-order-growth-pet, #search-order-weight-pet,
+#search-order-cost, #search-order-city {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    width: 250px;
+    /*border: 1px solid red;*/
 }
 
 #other-information-new-pet {
