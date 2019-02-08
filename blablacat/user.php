@@ -4,6 +4,7 @@ include("functions.php");
 session_start();
 if($_SESSION['auth_user'] == "yes_auth")
 {
+    define('blablafavuser',true);
     $username = $_SESSION['username'];
     $encrypted_password = $_SESSION['encrypted_password'];
     $id = $_SESSION['id']; 
@@ -16,6 +17,11 @@ if($_SESSION['auth_user'] == "yes_auth")
             header("Location: index.php");
         }else
         {
+            if ($user_id == $id)
+            {
+                header("Location: index.php"); 
+            }
+            
             $result_selected_user = mysql_query("SELECT * FROM users WHERE id = ".$user_id." AND (deleted='no')");
             if (mysql_num_rows($result_selected_user) > 0)
             {
@@ -57,116 +63,10 @@ if($_SESSION['auth_user'] == "yes_auth")
   
   <div class="body">
     <div class="main-body">
-    
-        <div class="upper-part-body">
-            <div class="user-menu">
-                <div id="avatar">
-                <div class="user-rating" title="Рейтинг на основе оценок пользователей"><span class="user-rating-span"><? echo $row_selected_user["rating"].'/10'; ?></span></div>
-                    <?
-                    if($row_selected_user["photo"]!="no" && $row_selected_user["photo"]!=null && file_exists("users/".$row_selected_user["folder"]."/".$row_selected_user["photo"]))
-                    {
-                        $img_path = 'users/'.$row_selected_user["folder"].'/'.$row_selected_user["photo"];
-                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" height="100%"/>';
-                    }else
-                    {
-                        echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
-                    }
-                    ?>
-                
-                </div>
-                
-                <hr />
-                <p align="center" class="add-user-to-favorite"><a href="javascript:void(0)" onclick="this.parentNode.classList.toggle('opened');" id="add_user_to_favorite_link"></a></p>
-            </div>
-            <div class="user-info">
-                <p class="name-user"><? echo $row_selected_user["full_name"];?></p>
-                <p class="address-user"><? echo $row_selected_user["address"] ?></p>
-                <hr />
-                <p class="about-user-info">О себе</p>
-                <?
-                    if($row_selected_user["description"]==null)
-                    {
-                        echo '<p class="about-user">Ничего не указано</p>';
-                    }else
-                    {
-                        echo '<p class="about-user">'.$row_selected_user["description"].'</p>';
-                    }
-                ?>
-            </div>
-            
-            <div class="pets-list">
-                <div class="pets-list-title">
-                    <p class="title-section">Питомцы</p>
-                    <div class="clear"></div>
-                </div>
-                
-                
-                
-                <?
-                    $result_selected_user_pets = mysql_query("SELECT * FROM pets WHERE owner_id = ".$user_id);
-                    if (mysql_num_rows($result_selected_user_pets) > 0)
-                    {
-                        $row_selected_user_pets = mysql_fetch_array($result_selected_user_pets);
-                ?>
-                <div class="con">
-                    <div class="containerr">
-                    <?
-                        do{
-                        echo '<figure class="caption-border"><a href="">';
-                        
-                            if($row_selected_user_pets["photo"]!="no" && file_exists("users/".$row_selected_user["folder"]."/".$row_selected_user_pets["photo"]))
-                            {
-                                $img_path = 'users/'.$row_selected_user["folder"].'/'.$row_selected_user_pets["photo"];
-                                echo '<img src="'.$img_path.'" />';
-                            }else
-                            {
-                                echo '<img src="images/nophoto.jpg" />';
-                            }
-                            
-                            echo '<figcaption>'.$row_selected_user_pets["name"].'</figcaption>
-                        </a></figure>'; 
-                        }while ($row_selected_user_pets = mysql_fetch_array($result_selected_user_pets));         
-            echo '</div>
-                    <img class="carouselLeft" src="images/left.png" width="5%" alt="Left Arrow" />
-                    <img class="carouselRight" src="images/right.png" width="5%" alt="Right Arrow" />
-                </div>';
-                    }else
-                    {
-                        echo '<p class="not-pet-list-menu">Нет питомцев</p>';
-                    }
-                ?>
-            </div>
-            <div class="clear"></div>
-        </div>
-    
-        <div class="main-part-body">
-            <div class="orders-part">
-                <div id="block-title-and-sorting">
-                    <div class="block-title-and-sorting-left">
-                        <p class="title-section-main-body">Заказы</p>
-                    </div>
-                </div>
-                <hr />
-                <?
-                    $result_selected_user_orders = mysql_query("SELECT * FROM orders WHERE (owner_id = ".$user_id.") AND (date_out>=curdate()) AND (deleted='no')");
-                    
-                ?>
-                
-            </div> 
-            
-            <div class="orders-part">
-                <div id="block-title-and-sorting">
-                    <div class="block-title-and-sorting-left">
-                        <p class="title-section-main-body">Отзывы</p>
-                    </div>
-                </div>
-                <hr />
-                
-                
-            </div> 
-            
-        </div>
-    
+        <?php 
+            include("includes/upper_body_user.php");
+            include("includes/main_body_user.php");
+        ?>
     </div>
   </div>
   
