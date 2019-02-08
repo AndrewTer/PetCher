@@ -3,11 +3,20 @@ $(document).ready(function(){
     $('#select-links').click(function(){
         $("#list-links").slideToggle(200);
         $("#list-links-sort").slideToggle(200);    
+        return false;
     }); 
     
     $('.block-add-order').click(function(){
         $('.block-add-order-info').slideToggle(300);     
     }); 
+    
+    $('#block-title-and-sorting-all-reviews-favourite-user-part').click(function() {
+        $('.all-reviews-favourite-user-part').slideToggle(300);     
+    });
+    
+    $('#block-title-and-sorting-all-orders-favourite-user-part').click(function() {
+        $('.all-orders-favourite-user-part').slideToggle(300);     
+    });
     
     $('.delete-current-order').click(function(){
         var rel = $(this).attr("rel");
