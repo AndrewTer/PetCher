@@ -614,6 +614,7 @@ body {
     color: #3D3D3D;
     font-weight: 700;
     font-size: 25px;
+    word-break: keep-words;
 }
 
 .address-user, .about-user {
@@ -622,6 +623,7 @@ body {
     color: #777;
     font-weight: 600;
     font-size: 15px;
+    word-break: keep-words;
 }
 
 .about-user-info {
@@ -1298,6 +1300,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     width: 80%;
+    word-break: keep-words;
 }
 
 .review-rating {
@@ -1670,14 +1673,14 @@ body {
     margin: 0;
 }
 
-.left-part-order-search-list {
+.right-part-order-search-list {
     border: 1px solid brown;
     width: 25%;
     float: left;
     padding-bottom: 10px;
 }
 
-.right-part-order-search-list {
+.left-part-order-search-list {
     border: 1px solid brown;
     width: 70%; /* 78% */
     float: left;
@@ -1694,6 +1697,17 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     width: 80%;
+    word-wrap: break-word;
+}
+
+#order-about-search-username {
+    color: #777;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#order-about-search-username:hover {
+    color: #3D3D3D;
 }
 
 .order-cost-search {
@@ -1807,11 +1821,10 @@ body {
     /*border: 1px solid brown;*/
     /*position: absolute;*/
     margin: 0;
-
 }
 
 .sitter-current-request {
-    font: bold 16px sans-serif;
+    /*font: bold 16px sans-serif;
     cursor: pointer;
     color: #3B8DBD;
     background-color: #A1DAF7;
@@ -1822,11 +1835,25 @@ body {
     border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
+    text-decoration: none;*/
+    font-weight: 600;
+    font-size: 16px;
     text-decoration: none;
+    border: 1px solid #1557D5;
+    background-color: #9fdbfc;
+    padding: 4px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: #3B64BD;
+    /*border: 1px solid red;*/
 }
 
 .sitter-current-request:hover {
-    box-shadow: 0px 0px 3px 2px #3B8DBD; 
+    /*box-shadow: 0px 0px 3px 2px #3B8DBD; */
+    border: 1px solid #3b8dbd;
 }
 
 .add-user-to-favorite {
@@ -1938,4 +1965,44 @@ body {
     position:relative;
     top:2px;
     left:2px;
+}
+
+.current-customer-page {
+    /*font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #3B8DBD;
+    background-color: #A1DAF7;
+    box-shadow: 0px 0px 3px 2px #60B2E1; 
+    padding: 4px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    text-decoration: none;*/
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #1557D5;
+    background-color: #9fdbfc;
+    padding: 4px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    color: #3B64BD;
+    
+    /*border: 1px solid red;*/
+}
+
+.current-customer-page:hover {
+    /*box-shadow: 0px 0px 3px 2px #3B8DBD; */
+    border: 1px solid #3b8dbd;
+}
+
+.current-customer-page-links {
+    border: 1px solid brown;
+    /*position: absolute;*/
+    margin: 0;
 }
