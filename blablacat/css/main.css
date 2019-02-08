@@ -1870,8 +1870,7 @@ body {
     text-decoration: none;
 }
 
-#add_user_to_favorite_link::before {
-    content: "Добавить в избранное";
+.add-to-fav-us {
     font-weight: 600;
     font-size: 17px;
     text-decoration: none;
@@ -1889,8 +1888,11 @@ body {
     width: 280px;
 }
 
-.opened #add_user_to_favorite_link::before {
-    content: "Убрать из избранного";
+.add-to-fav-us:after {
+    content: 'Добавить в избранное';
+}
+
+.del-to-fav-us {
     font-weight: 600;
     font-size: 17px;
     text-decoration: none;
@@ -1907,6 +1909,10 @@ body {
     height: 30px;
     width: 180px;
     cursor: pointer;    
+}
+
+.del-to-fav-us:after {
+    content: 'Убрать из избранного';
 }
 
 .rating_current_review {
@@ -2006,3 +2012,66 @@ body {
     /*position: absolute;*/
     margin: 0;
 }
+
+.orders-favourite-user-part, .reviews-favourite-user-part {
+    width: 915px;
+    margin: auto;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    /*border: 1px solid yellow;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+}
+
+.all-reviews-favourite-user-part, .all-orders-favourite-user-part {
+    /*border: 1px solid red;*/
+}
+
+#block-title-and-sorting-all-reviews-favourite-user-part,
+#block-title-and-sorting-all-orders-favourite-user-part {
+    height: 40px;
+    background-color: #efefef;    
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+#block-title-and-sorting-all-reviews-favourite-user-part:hover,
+#block-title-and-sorting-all-orders-favourite-user-part:hover {
+    background-color: #E6E5E5;
+}
+
+.apply-order-links {
+    /*border: 1px solid brown;*/
+    float: right;
+    position: relative;
+    margin: 0;
+    margin-right: -80px;
+    margin-top: -10px; 
+}
+
+.apply-current-order {
+    font-weight: 600;     
+    font-size: 16px;     
+    text-decoration: none;     
+    border: 1px solid #1557D5;     
+    background-color: #9fdbfc;     
+    padding: 4px;     
+    padding-left: 18px;     
+    padding-right: 18px;     
+    border-radius: 5px 5px 5px 5px;     
+    -webkit-border-radius: 5px 5px 5px 5px;     
+    -moz-border-radius: 5px 5px 5px 5px;     
+    color: #3B64BD;
+}
+
+.apply-current-order:hover {
+    border: 1px solid #3b8dbd;
+}
+
