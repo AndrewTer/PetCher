@@ -43,7 +43,18 @@ $encrypted_password = $_SESSION['encrypted_password'];
                                 echo '
                             <hr />
                             <div class="current-order-search">
+                                    
                                     <div class="left-part-order-search-list">
+                                        <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
+                                        <p class="order-about-search">'.$row_search["about_order"].'</p>
+                                        <p class="order-about-search">Даты: с '.$row_search["date_out"].' до '.$row_search["date_in"].'</p>
+                                        <p class="order-about-search">Животное: '.$row_search["pet_kind"].' ('.$row_search["pet_sex"].')</p>
+                                        <p class="order-about-search">Кличка: '.$row_search["pet_name"].'</p>
+                                        <p class="order-about-search">Порода: '.$row_search["pet_breed"].'</p>
+                                        <p class="order-about-search">Рост | Вес: '.$row_search["pet_growth"].' м | '.$row_search["pet_weight"].' кг</p>
+                                        <p class="order-cost-search">Цена: '.$row_search["cost"].' руб</p>
+                                    </div>
+                                    <div class="right-part-order-search-list">
                                         <div id="avatar-pet">';
                                             if($row_search["pet_photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["pet_photo"]))
                                             {
@@ -54,16 +65,8 @@ $encrypted_password = $_SESSION['encrypted_password'];
                                                 echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
                                             }
                                     echo '</div>
-                                    </div>
-                                    <div class="right-part-order-search-list">
-                                        <p class="order-about-search">Заказчик: <a href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
-                                        <p class="order-about-search">'.$row_search["about_order"].'</p>
-                                        <p class="order-about-search">Даты: с '.$row_search["date_out"].' до '.$row_search["date_in"].'</p>
-                                        <p class="order-about-search">Животное: '.$row_search["pet_kind"].' ('.$row_search["pet_sex"].')</p>
-                                        <p class="order-about-search">Кличка: '.$row_search["pet_name"].'</p>
-                                        <p class="order-about-search">Порода: '.$row_search["pet_breed"].'</p>
-                                        <p class="order-about-search">Рост | Вес: '.$row_search["pet_growth"].' м | '.$row_search["pet_weight"].' кг</p>
-                                        <p class="order-cost-search">Цена: '.$row_search["cost"].' руб</p>
+                                        <p class="current-customer-page-links" ><a class="current-customer-page" href="user.php?id='.$row_search["user_id"].'" >Страница</a></p>
+                                        <p class="current-customer-page-links" ><a class="current-customer-page" href="user.php?id='.$row_search["user_id"].'" >Подать заявку</a></p>
                                     </div>
                                     <div class="clear"></div>
                             </div>
@@ -81,36 +84,6 @@ $encrypted_password = $_SESSION['encrypted_password'];
                 </div>
                 
                 <hr />
-                <div class="search-pet-param">
-                    <p class="search-order-pet-kind">Животное</p>
-                    <select id="search-order-kind-pet" name="search_order_kind_pet">
-                        <option value="cat">Кошка</option>
-                        <option value="dog">Собака</option>
-                        <option value="parrot">Попугай</option>
-                        <option value="bird">Другая птица</option>
-                        <option value="hamster">Хомяк</option>
-                        <option value="cavy">Морская свинка</option>
-                        <option value="rabbit">Кролик</option>
-                        <option value="chinchilla">Шиншилла</option>
-                        <option value="fish">Рыбки</option>
-                        <option value="turtle">Черепаха</option>
-                        <option value="other">Другой</option>
-                    </select>
-                    
-                    <p class="search-order-pet-sex">Пол</p>
-                    <select id="search-order-sex-pet" name="search_order_sex_pet">
-                        <option value="no">Пусто</option>
-                        <option value="m">Мальчик</option>
-                        <option value="w">Девочка</option>
-                    </select>
-                    
-                    <p class="search-order-pet-growth">Рост (в метрах)</p>
-                    <input type="number" id="search-order-growth-pet" name="search_order_growth_pet" min="0" max="1" step="0.01" placeholder="от 0 до 1" />
-                    
-                    <p class="search-order-pet-weight">Вес (в килограммах)</p>
-                    <input type="number" id="search-order-weight-pet" name="search_order_weight_pet" min="0" max="20" step="0.1" placeholder="от 0 до 20" />
-                </div>
-                
                 
                 <p class="search-order-cost">Цена (в рублях)</p>
                 <input type="number" id="search-order-cost" name="search_order_cost" min="100" max="1000000" placeholder="100-1000000" />
@@ -141,6 +114,39 @@ $encrypted_password = $_SESSION['encrypted_password'];
                         <option value="simferopol">Симферополь</option>
                         <option value="other">Другой город</option>
                 </select>
+                
+
+                
+                <div class="search-pet-param">
+                    <p class="search-order-pet-kind">Животное</p>
+                    <select id="search-order-kind-pet" name="search_order_kind_pet">
+                        <option value="cat">Кошка</option>
+                        <option value="dog">Собака</option>
+                        <option value="parrot">Попугай</option>
+                        <option value="bird">Другая птица</option>
+                        <option value="hamster">Хомяк</option>
+                        <option value="cavy">Морская свинка</option>
+                        <option value="rabbit">Кролик</option>
+                        <option value="chinchilla">Шиншилла</option>
+                        <option value="fish">Рыбки</option>
+                        <option value="turtle">Черепаха</option>
+                        <option value="other">Другой</option>
+                    </select>
+                    
+                    <p class="search-order-pet-sex">Пол</p>
+                    <select id="search-order-sex-pet" name="search_order_sex_pet">
+                        <option value="no">Пусто</option>
+                        <option value="m">Мальчик</option>
+                        <option value="w">Девочка</option>
+                    </select>
+                    
+                    <p class="search-order-pet-growth">Рост (в метрах)</p>
+                    <input type="number" id="search-order-growth-pet" name="search_order_growth_pet" min="0" max="1" step="0.01" placeholder="от 0 до 1" />
+                    
+                    <p class="search-order-pet-weight">Вес (в килограммах)</p>
+                    <input type="number" id="search-order-weight-pet" name="search_order_weight_pet" min="0" max="20" step="0.1" placeholder="от 0 до 20" />
+                </div>
+                
                     
             </div>
             <div class="clear"></div>
