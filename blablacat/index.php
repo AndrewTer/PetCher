@@ -8,7 +8,7 @@ if($_SESSION['auth_user'] == "yes_auth")
     $encrypted_password = $_SESSION['encrypted_password'];
     $email = $_SESSION['email'];
     $phone = $_SESSION['phone'];
-    $address = $_SESSION['address'];
+    $street = $_SESSION['street'];
     $id = $_SESSION['id']; 
 ?>
 
