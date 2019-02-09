@@ -3,7 +3,6 @@
         SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS order_cost, orders.other_information AS order_about,
                 pets.id AS pet_id, pets.name AS pet_name, pets.kind AS pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.other_information AS pet_info, pets.photo AS pet_photo,
                 users.id AS sitter_id, users.photo AS sitter_photo, users.folder AS sitter_folder, users.rating AS sitter_rating
-
         FROM request, orders, pets, users
         WHERE (orders.id = request.order_id) AND (orders.deleted = 'no') AND (orders.kind = 'current') AND (orders.owner_id = ".$id.") AND (orders.pet_id = pets.id) AND (request.sitter_id = users.id) AND (users.deleted = 'no') AND (request.deleted = 'no') AND (pets.deleted = 'no')
     ");
@@ -52,8 +51,17 @@
                                     </div>
                                     
                                     <div class="right-part-request-list">
-                                        <p class="order-about">'.$row_requests["order_about"].'</p>
-                                        <p class="order-about">Даты: с '.$row_requests["date_out"].' до '.$row_requests["date_in"].'</p>
+                                        <p class="order-about">'.$row_requests["order_about"].'</p>';
+                                        $result_request_city_order = mysql_query("SELECT city FROM users WHERE id = $id");
+                                        $row_result_request_city_order = mysql_fetch_array($result_request_city_order);
+                                        if ($row_result_request_city_order["city"]==null)
+                                        {
+                                            echo '<p class="order-about">Город: не указан</p>';
+                                        }else
+                                        {
+                                            echo '<p class="order-about">Город: '.$row_result_request_city_order["city"].'</p>';
+                                        }
+                                        echo '<p class="order-about">Даты: с '.$row_requests["date_out"].' до '.$row_requests["date_in"].'</p>
                                         <p class="order-about">Животное: '.$row_requests["pet_kind"].' ('.$row_requests["pet_sex"].')</p>
                                         <p class="order-about">Кличка: '.$row_requests["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_requests["pet_breed"].'</p>
