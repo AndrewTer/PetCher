@@ -32,7 +32,7 @@ $encrypted_password = $_SESSION['encrypted_password'];
                 </div>
                 <div class="search-list">
                     <?
-                        $result_search = mysql_query("SELECT orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight, pets.photo AS pet_photo, users.full_name AS full_name_user, users.id AS user_id, users.folder AS folder FROM orders, pets, users WHERE (orders.pet_id = pets.id) AND (users.id = pets.owner_id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) AND (orders.deleted = 'no') GROUP BY orders.id");
+                        $result_search = mysql_query("SELECT orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight, pets.photo AS pet_photo, users.full_name AS full_name_user, users.id AS user_id, users.folder AS folder, users.city AS city FROM orders, pets, users WHERE (orders.pet_id = pets.id) AND (users.id = pets.owner_id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) AND (orders.deleted = 'no') GROUP BY orders.id");
                         if (mysql_num_rows($result_search) == null)
                         {
                             echo '<hr /><p class="not-order">Заказов нет</p>';
@@ -46,8 +46,15 @@ $encrypted_password = $_SESSION['encrypted_password'];
                                     
                                     <div class="left-part-order-search-list">
                                         <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
-                                        <p class="order-about-search">'.$row_search["about_order"].'</p>
-                                        <p class="order-about-search">Даты: с '.$row_search["date_out"].' до '.$row_search["date_in"].'</p>
+                                        <p class="order-about-search">'.$row_search["about_order"].'</p>';
+                                        if ($row_search["city"]!=null)
+                                        {
+                                            echo '<p class="order-about-search">Город: '.$row_search["city"].'</p>';
+                                        }else
+                                        {
+                                            echo '<p class="order-about-search">Город: не указан</p>';
+                                        }
+                                        echo '<p class="order-about-search">Даты: с '.$row_search["date_out"].' до '.$row_search["date_in"].'</p>
                                         <p class="order-about-search">Животное: '.$row_search["pet_kind"].' ('.$row_search["pet_sex"].')</p>
                                         <p class="order-about-search">Кличка: '.$row_search["pet_name"].'</p>
                                         <p class="order-about-search">Порода: '.$row_search["pet_breed"].'</p>
