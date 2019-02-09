@@ -7,7 +7,7 @@
                 </div>
                 <div class="all-orders-favourite-user-part">
                 <?
-                    $result_orders_current_user = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind FROM orders, pets WHERE (orders.owner_id = ".$user_id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) AND (orders.kind = 'current') AND (orders.deleted = 'no')");
+                    $result_orders_current_user = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind, users.city AS city FROM orders, pets, users WHERE (orders.owner_id = ".$user_id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) AND (users.id = orders.owner_id) AND (orders.kind = 'current') AND (orders.deleted = 'no')");
                     if (mysql_num_rows($result_orders_current_user) == null)
                     {
                         echo '<hr /><p class="not-order">Список текущих заказов пуст</p>';
@@ -15,7 +15,8 @@
                     {
                         $row_result_orders_current_user = mysql_fetch_array($result_orders_current_user);
                         do{
-                                echo '
+                            $current_order_id = $row_result_orders_current_user["order_id"];
+                            echo '
                             <hr />
                             <div class="current-order">
                                     <div class="ribbon-wrapper-blue">
@@ -34,14 +35,33 @@
                                     echo '</div>
                                     </div>
                                     <div class="right-part-order-list">
-                                        <p class="order-about">'.$row_result_orders_current_user["about_order"].'</p>
-                                        <p class="order-about">Даты: с '.$row_result_orders_current_user["date_out"].' до '.$row_result_orders_current_user["date_in"].'</p>
+                                        <p class="order-about">'.$row_result_orders_current_user["about_order"].'</p>';
+                                        if ($row_result_orders_current_user["city"]==null)
+                                        {
+                                            echo '<p class="order-about">Город: не указан</p>';
+                                        }else
+                                        {
+                                            echo '<p class="order-about">Город: '.$row_result_orders_current_user["city"].'</p>';
+                                        }
+                                        echo '<p class="order-about">Даты: с '.$row_result_orders_current_user["date_out"].' до '.$row_result_orders_current_user["date_in"].'</p>
                                         <p class="order-about">Животное: '.$row_result_orders_current_user["pet_kind"].' ('.$row_result_orders_current_user["pet_sex"].')</p>
                                         <p class="order-about">Кличка: '.$row_result_orders_current_user["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_result_orders_current_user["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_result_orders_current_user["pet_growth"].' м | '.$row_result_orders_current_user["pet_weight"].' кг</p>
-                                        <p class="order-cost">Цена: '.$row_result_orders_current_user["cost"].' руб</p>
-                                        <p class="apply-order-links" ><a class="apply-current-order" href="" >Подать заявку</a></p>
+                                        <p class="order-cost">Цена: '.$row_result_orders_current_user["cost"].' руб</p>';
+                    
+                                        $search_req_rows = mysql_query("SELECT * FROM request, orders WHERE (request.order_id = orders.id) AND (request.sitter_id = $id) AND (orders.owner_id = ".$user_id.") AND (request.order_id = ".$row_result_orders_current_user["order_id"].") AND (request.deleted='no')");
+                                        if (mysql_num_rows($search_req_rows) > 0)
+                                        {
+                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" data-sitterid="'.$id.'" class="del-apply-current-order" id="apply_current_user_order" href="" ></a></p>';
+                                        }else
+                                        {
+                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" data-sitterid="'.$id.'" class="apply-current-order" id="apply_current_user_order" href="" ></a></p>';
+                                        }
+                                
+                                        
+                                        
+                                        echo '
                                     </div>
                                     <div class="clear"></div>
                             </div>
