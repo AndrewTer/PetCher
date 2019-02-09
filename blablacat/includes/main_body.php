@@ -117,7 +117,7 @@ if ($_POST["add_new_order"])
                 </div>
                 
                 <?
-                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind FROM orders, pets WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) ORDER BY $sort");
+                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind, users.city AS city FROM orders, pets, users WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) AND (users.id=orders.owner_id) ORDER BY $sort");
                     if (mysql_num_rows($result_orders) == null)
                     {
                         echo '<hr /><p class="not-order">Вы пока не создали ни одного заказа</p>';
@@ -147,8 +147,15 @@ if ($_POST["add_new_order"])
                                     echo '</a></div>
                                     </div>
                                     <div class="right-part-order-list">
-                                        <p class="order-about">'.$row_orders["about_order"].'</p>
-                                        <p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
+                                        <p class="order-about">'.$row_orders["about_order"].'</p>';
+                                        if ($row_orders["city"]==null)
+                                        {
+                                            echo '<p class="order-about">Город: не указан</p>';
+                                        }else
+                                        {
+                                            echo '<p class="order-about">Город: '.$row_orders["city"].'</p>';
+                                        }
+                                        echo '<p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
                                         <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
                                         <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
@@ -180,8 +187,15 @@ if ($_POST["add_new_order"])
                                     echo '</a></div>
                                     </div>
                                     <div class="right-part-order-list">
-                                        <p class="order-about">'.$row_orders["about_order"].'</p>
-                                        <p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
+                                        <p class="order-about">'.$row_orders["about_order"].'</p>';
+                                        if ($row_orders["city"]==null)
+                                        {
+                                            echo '<p class="order-about">Город: не указан</p>';
+                                        }else
+                                        {
+                                            echo '<p class="order-about">Город: '.$row_orders["city"].'</p>';
+                                        }
+                                        echo '<p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
                                         <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
                                         <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
