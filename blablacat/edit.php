@@ -9,7 +9,7 @@ if($_SESSION['auth_user'] == "yes_auth")
     $encrypted_password = $_SESSION['encrypted_password'];
     $email = $_SESSION['email'];
     $phone = $_SESSION['phone'];
-    $address = $_SESSION['address'];
+    $street = $_SESSION['street'];
     $id = $_SESSION['id']; 
     
     if ($_POST["change_user_info_submit"])
@@ -21,8 +21,79 @@ if($_SESSION['auth_user'] == "yes_auth")
             unset($_POST["file_user_photo"]);
         }    
         
+        $city_change_user = $_POST["change_user_city"];
+        
+        switch ($city_change_user) {
+            case 'moscow':
+                $city_change_user_result = "Москва";
+            break;
+            case 'st_petersburg':
+                $city_change_user_result = "Санкт-Петербург";
+            break;
+            case 'volgograd':
+                $city_change_user_result = "Волгоград";
+            break;
+            case 'vladivostok':
+                $city_change_user_result = "Владивосток";
+            break;
+            case 'voronezh':
+                $city_change_user_result = "Воронеж";
+            break;
+            case 'yekaterinburg':
+                $city_change_user_result = "Екатеринбург";
+            break;
+            case 'kazan':
+                $city_change_user_result = "Казань";
+            break;
+            case 'kaliningrad':
+                $city_change_user_result = "Калининград";
+            break;
+            case 'krasnodar':
+                $city_change_user_result = "Краснодар";
+            break;
+            case 'krasnoyarsk':
+                $city_change_user_result = "Красноярск";
+            break;
+            case 'nizhny_novgorod':
+                $city_change_user_result = "Нижний Новгород";
+            break;
+            case 'novosibirsk':
+                $city_change_user_result = "Новосибирск";
+            break;
+            case 'omsk':
+                $city_change_user_result = "Омск";
+            break;
+            case 'permian':
+                $city_change_user_result = "Пермь";
+            break;
+            case 'rostov_on_don':
+                $city_change_user_result = "Ростов-на-Дону";
+            break;
+            case 'samara':
+                $city_change_user_result = "Самара";
+            break;
+            case 'ufa':
+                $city_change_user_result = "Уфа";
+            break;
+            case 'chelyabinsk':
+                $city_change_user_result = "Челябинск";
+            break;
+            case 'sevastopol':
+                $city_change_user_result = "Севастополь";
+            break;
+            case 'simferopol':
+                $city_change_user_result = "Симферополь";
+            break;
+            case 'other':
+                $city_change_user_result = "Другой город";
+            break;
+            default;
+                $city_change_user_result = "Другой город";
+            break;
+        }
+        
         mysql_query("UPDATE users SET full_name = '".$_POST["change_user_name"]."', phone_number = '".$_POST["change_user_phone_number"]."', 
-                        email = '".$_POST["change_user_email"]."', address = '".$_POST["change_user_address"]."', 
+                        email = '".$_POST["change_user_email"]."', city = '".$city_change_user_result."', street = '".$_POST["change_user_street"]."', 
                         description = '".$_POST["change_user_about"]."' WHERE id = $id");
     }
 
@@ -96,7 +167,32 @@ if($_SESSION['auth_user'] == "yes_auth")
                     <p class="change-user-info">ФИО:&emsp; <input type="text" id="change-user-name" name="change_user_name" maxlength="50" value="<?echo $row_change_user_info["full_name"];?>" required /></p>
                     <p class="change-user-info">Моб.телефон: &emsp; <input type="text" name="change_user_phone_number" maxlength="20" id="change-user-phone-number" class="input" value="<?echo $row_change_user_info["phone_number"];?>" size="20" required placeholder="+7" /></p>
                     <p class="change-user-info">Email: &emsp; <input type="email" name="change_user_email" placeholder="example@gmail.com" maxlength="50" id="change-user-phone-email" class="input" value="<?echo $row_change_user_info["email"];?>" required /></p>
-                    <p class="change-user-info">Адрес:&emsp; <input type="text" id="change-user-address" name="change_user_address" maxlength="150" value="<?echo $row_change_user_info["address"];?>" required /></p>
+                    <p class="change-user-info">Город: &emsp; 
+                        <select id="change-user-city" name="change_user_city">
+                            <option value="moscow" <?php if($row_change_user_info['city'] == 'Москва'){ echo ' selected="selected"'; } ?>>Москва</option>
+                            <option value="st_petersburg" <?php if($row_change_user_info['city'] == 'Санкт-Петербург'){ echo ' selected="selected"'; } ?>>Санкт-Петербург</option>
+                            <option value="volgograd" <?php if($row_change_user_info['city'] == 'Волгоград'){ echo ' selected="selected"'; } ?>>Волгоград</option>
+                            <option value="vladivostok" <?php if($row_change_user_info['city'] == 'Владивосток'){ echo ' selected="selected"'; } ?>>Владивосток</option>
+                            <option value="voronezh" <?php if($row_change_user_info['city'] == 'Воронеж'){ echo ' selected="selected"'; } ?>>Воронеж</option>
+                            <option value="yekaterinburg" <?php if($row_change_user_info['city'] == 'Екатеринбург'){ echo ' selected="selected"'; } ?>>Екатеринбург</option>
+                            <option value="kazan" <?php if($row_change_user_info['city'] == 'Казань'){ echo ' selected="selected"'; } ?>>Казань</option>
+                            <option value="kaliningrad" <?php if($row_change_user_info['city'] == 'Калининград'){ echo ' selected="selected"'; } ?>>Калининград</option>
+                            <option value="krasnodar" <?php if($row_change_user_info['city'] == 'Краснодар'){ echo ' selected="selected"'; } ?>>Краснодар</option>
+                            <option value="krasnoyarsk" <?php if($row_change_user_info['city'] == 'Красноярск'){ echo ' selected="selected"'; } ?>>Красноярск</option>
+                            <option value="nizhny_novgorod" <?php if($row_change_user_info['city'] == 'Нижний Новгород'){ echo ' selected="selected"'; } ?>>Нижний Новгород</option>
+                            <option value="novosibirsk" <?php if($row_change_user_info['city'] == 'Новосибирск'){ echo ' selected="selected"'; } ?>>Новосибирск</option>
+                            <option value="omsk" <?php if($row_change_user_info['city'] == 'Омск'){ echo ' selected="selected"'; } ?>>Омск</option>
+                            <option value="permian" <?php if($row_change_user_info['city'] == 'Пермь'){ echo ' selected="selected"'; } ?>>Пермь</option>
+                            <option value="rostov_on_don" <?php if($row_change_user_info['city'] == 'Ростов-на-Дону'){ echo ' selected="selected"'; } ?>>Ростов-на-Дону</option>
+                            <option value="samara" <?php if($row_change_user_info['city'] == 'Самара'){ echo ' selected="selected"'; } ?>>Самара</option>
+                            <option value="ufa" <?php if($row_change_user_info['city'] == 'Уфа'){ echo ' selected="selected"'; } ?>>Уфа</option>
+                            <option value="chelyabinsk" <?php if($row_change_user_info['city'] == 'Челябинск'){ echo ' selected="selected"'; } ?>>Челябинск</option>
+                            <option value="sevastopol" <?php if($row_change_user_info['city'] == 'Севастополь'){ echo ' selected="selected"'; } ?>>Севастополь</option>
+                            <option value="simferopol" <?php if($row_change_user_info['city'] == 'Симферополь'){ echo ' selected="selected"'; } ?>>Симферополь</option>
+                            <option value="other" <?php if($row_change_user_info['city'] == 'Другой город'){ echo ' selected="selected"'; } ?>>Другой город</option>
+                        </select>
+                        
+                    <p class="change-user-info">Улица:&emsp; <input type="text" id="change-user-street" name="change_user_street" maxlength="100" value="<?echo $row_change_user_info["street"];?>" /></p>
                     <p class="change-user-info">Обо мне:</p><textarea id="change-user-about" name="change_user_about" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_change_user_info["description"];?></textarea>
                     <p class="change-user-info-link" ><input type="submit" class="change-user-info-link-a" name="change_user_info_submit" value="Сохранить" /></p>
                 </div>
