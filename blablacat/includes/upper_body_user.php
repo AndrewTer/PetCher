@@ -36,7 +36,7 @@
             </div>
             <div class="user-info">
                 <p class="name-user"><? echo $row_selected_user["full_name"];?></p>
-                <p class="address-user"><? echo $row_selected_user["address"] ?></p>
+                <p class="address-user"><? echo $row_selected_user["city"] ?></p>
                 <hr />
                 <p class="about-user-info">О себе</p>
                 <?
@@ -56,7 +56,7 @@
                     <div class="clear"></div>
                 </div>
                 <?
-                    $result_selected_user_pets = mysql_query("SELECT * FROM pets WHERE owner_id = ".$user_id);
+                    $result_selected_user_pets = mysql_query("SELECT * FROM pets WHERE (owner_id = ".$user_id.") AND (deleted = 'no')");
                     if (mysql_num_rows($result_selected_user_pets) > 0)
                     {
                         $row_selected_user_pets = mysql_fetch_array($result_selected_user_pets);
