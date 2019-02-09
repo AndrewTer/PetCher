@@ -626,6 +626,15 @@ body {
     word-break: keep-words;
 }
 
+.address-user-hint {
+    margin: auto;
+    margin-top: 10px;
+    color: #777;
+    font-weight: 600;
+    font-size: 12px;
+    word-break: keep-words;
+}
+
 .about-user-info {
     margin: auto;
     margin-top: 10px;
@@ -796,7 +805,8 @@ body {
 }
 
 #change-user-name, #change-user-phone-number, 
-#change-user-phone-email, #change-user-address,
+#change-user-phone-email, #change-user-street,
+#change-user-city,
 #change-pet-name, #change-pet-breed, #change-pet-sex,
 #change-pet-kind, #change-pet-weight, #change-pet-growth {
     font-size: 17px;
@@ -2075,3 +2085,26 @@ body {
     border: 1px solid #3b8dbd;
 }
 
+.apply-current-order:after {
+    content: 'Подать заявку';
+}
+
+.del-apply-current-order {
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #D63301;
+    color: #D63301;
+    background-color: #FFD2C2;
+    padding: 4px;     
+    padding-left: 18px;     
+    padding-right: 18px;  
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.del-apply-current-order:after {
+    content: 'Отменить заявку';
+}
