@@ -11,7 +11,7 @@ if(isset($_POST["login"]))
 		$password=mysql_escape_string($_POST['password']);
         $encrypted_password = md5($password);
         
-		$query = mysql_query("SELECT * FROM users WHERE email='".$email."' AND password='".$encrypted_password."'") 
+		$query = mysql_query("SELECT * FROM users WHERE email='".$email."' AND password='".$encrypted_password."' AND deleted='no'") 
 														or trigger_error(mysql_error().$query);
 		if($row= mysql_fetch_array($query))
 		{
@@ -23,7 +23,7 @@ if(isset($_POST["login"]))
                 $_SESSION['encrypted_password'] = $row['password'];
                 $_SESSION['phone']=$row['phone_number'];
                 $_SESSION['email'] = $row['email'];
-                $_SESSION['address'] = $row['address'];
+                $_SESSION['street'] = $row['street'];
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['auth_user'] = 'yes_auth';
 				//переадресация
