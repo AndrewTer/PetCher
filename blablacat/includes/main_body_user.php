@@ -49,18 +49,29 @@
                                         <p class="order-about">Порода: '.$row_result_orders_current_user["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_result_orders_current_user["pet_growth"].' м | '.$row_result_orders_current_user["pet_weight"].' кг</p>
                                         <p class="order-cost">Цена: '.$row_result_orders_current_user["cost"].' руб</p>';
-                    
+                ?>
+                <script type="text/javascript">
+                    function goaddapply(identifier)
+                    {     
+                        var current_order =$(identifier).data('orderid'); 
+                        var sit_user = <?php echo $id ?>;
+                        //alert(current_order);
+                        //alert(sit_user);
+                        var tmpFunc = new Function(applycurrentorder(current_order, sit_user));
+                        tmpFunc();                                      
+                    }                           
+                </script>
+                
+                <?                       
                                         $search_req_rows = mysql_query("SELECT * FROM request, orders WHERE (request.order_id = orders.id) AND (request.sitter_id = $id) AND (orders.owner_id = ".$user_id.") AND (request.order_id = ".$row_result_orders_current_user["order_id"].") AND (request.deleted='no')");
                                         if (mysql_num_rows($search_req_rows) > 0)
                                         {
-                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" data-sitterid="'.$id.'" class="del-apply-current-order" id="apply_current_user_order" href="" ></a></p>';
+                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" onclick="event.preventDefault();goaddapply(this);" class="del-apply-current-order" id="apply_current_user_order" href="" ></a></p>';
                                         }else
                                         {
-                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" data-sitterid="'.$id.'" class="apply-current-order" id="apply_current_user_order" href="" ></a></p>';
+                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" onclick="event.preventDefault();goaddapply(this);" class="apply-current-order" id="apply_current_user_order" href="" ></a></p>';
                                         }
                                 
-                                        
-                                        
                                         echo '
                                     </div>
                                     <div class="clear"></div>
