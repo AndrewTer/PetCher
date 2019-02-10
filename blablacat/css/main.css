@@ -584,6 +584,7 @@ body {
     font-size: 20px;
     padding-top: 10px;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .user-info {
@@ -614,7 +615,7 @@ body {
     color: #3D3D3D;
     font-weight: 700;
     font-size: 25px;
-    word-break: keep-words;
+    word-wrap: break-word;
 }
 
 .address-user, .about-user {
@@ -623,7 +624,8 @@ body {
     color: #777;
     font-weight: 600;
     font-size: 15px;
-    word-break: keep-words;
+    word-wrap: break-word;
+    /*border: 1px solid red; */           
 }
 
 .address-user-hint {
@@ -632,7 +634,7 @@ body {
     color: #777;
     font-weight: 600;
     font-size: 12px;
-    word-break: keep-words;
+    word-wrap: break-word;
 }
 
 .about-user-info {
@@ -1081,7 +1083,7 @@ body {
     cursor: pointer;
 }
 
-.not-order, .not-favourites, .not-requests {
+.not-order, .not-favourites, .not-requests, .not-users {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -1123,6 +1125,15 @@ body {
 #options-list > li > a {
     color: #748996;
     margin-left: 45px;   
+}
+
+.count-search-users-title {
+    float: right;
+    margin: auto;
+    color: #A3A3A3;
+    
+    font: 16px sans-serif;
+    font-weight: 700; 
 }
 
 #block-title-and-sorting {
@@ -1310,7 +1321,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     width: 80%;
-    word-break: keep-words;
+    word-wrap: break-word;
 }
 
 .review-rating {
@@ -1660,6 +1671,53 @@ body {
     margin: 0;
 }
 
+.part-parameters-and-to-search-orders {
+    width: 275px;
+    float: left;
+}
+
+.search-parameters-for-users {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    /*border: 1px solid yellow;*//*#d9d9d9;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+}
+
+.go-to-search-orders {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    /*border: 1px solid yellow;*//*#d9d9d9;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+}
+
+.go-to-search-orders a {
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+
 .search-parameters {
     width: 275px; /*915px*/
     margin: auto;
@@ -1678,8 +1736,8 @@ body {
     float: left;
 }
 
-.current-order-search {
-    border: 1px solid green;
+.current-order-search, .current-user-search {
+    /*border: 1px solid green;*/
     margin: 0;
 }
 
@@ -1697,26 +1755,76 @@ body {
     padding-bottom: 10px;
 }
 
-.order-about-search {
+.right-part-user-search-list {
+    /*border: 1px solid brown;*/
+    width: 60%; /* 78% */
+    float: left;
+    padding-bottom: 10px;
+    border-left: 2px solid #D1D1D1;
+    min-height: 190px;
+}
+
+.left-part-user-search-list {
+    /*border: 1px solid brown;*/
+    width: 35%; /* 78% */
+    float: left;
+    padding-bottom: 10px;
+}
+
+#search-user-circle {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    margin-right: 15px;
+    /*overflow: hidden;*/
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #aaa 1px solid;
+    box-shadow: 0px 1px 1px 1px #bbb; /* тень */
+    -moz-box-shadow: 0px 1px 1px 1px #bbb;
+    -webkit-box-shadow: 0px 1px 1px 1px #bbb;
+    /*border: 1px solid red;*/
+    float: left;
+    position: relative;
+}
+
+#search-user-circle img {
+    display: block;
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*border: 1px solid black;*/
+}
+
+.order-about-search, .user-about-search {
     margin: auto;
     margin-top: 10px;
     color: #777;
     font-weight: 600;
     font-size: 15px;
-    border: 1px solid black;
-    margin-left: 10px;
+    /*border: 1px solid black;*/
+    margin-left: 20px;
     margin-right: 10px;
-    width: 80%;
+    width: 95%;
     word-wrap: break-word;
 }
 
-#order-about-search-username {
+#order-about-search-username, #user-about-search-username {
     color: #777;
     text-decoration: none;
     font-size: 17px;
 }
 
-#order-about-search-username:hover {
+#order-about-search-username:hover, #user-about-search-username {
     color: #3D3D3D;
 }
 
@@ -2109,3 +2217,56 @@ body {
     content: 'Отменить заявку';
 }
 
+
+
+
+.users-search-links {
+    /*border: 1px solid brown;*/
+    float: left;
+    position: relative;
+    margin: 0;
+    margin-top: 10px; 
+}
+
+.apply-current-user-search {
+    font-weight: 600;     
+    font-size: 16px;     
+    text-decoration: none;     
+    border: 1px solid #1557D5;     
+    background-color: #9fdbfc;     
+    padding: 4px;     
+         
+    border-radius: 5px 5px 5px 5px;     
+    -webkit-border-radius: 5px 5px 5px 5px;     
+    -moz-border-radius: 5px 5px 5px 5px;     
+    color: #3B64BD;
+    
+}
+
+.apply-current-user-search:hover {
+    border: 1px solid #3b8dbd;
+}
+
+.apply-current-user-search:after {
+    content: 'Добавить в избранное';
+}
+
+.del-apply-current-user-search {
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #D63301;
+    color: #D63301;
+    background-color: #FFD2C2;
+    padding: 4px;     
+    margin-left: 2px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    
+}
+
+.del-apply-current-user-search:after {
+    content: 'Убрать из избранного';
+}
