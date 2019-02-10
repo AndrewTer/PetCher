@@ -41,7 +41,50 @@ function addtofavoriteuser()
     }
 }
 
+function applycurrentorder(current_order_id, sit_user_id)
+{
+    if ($('#apply_current_user_order[data-orderid="'+current_order_id+'"]').hasClass('apply-current-order')) {
+        var orderandsitter = 'order='+current_order_id+'&sitter='+sit_user_id;
+        
+        //alert(orderandsitter);
+        
+        $.ajax({
+        url: "actions/apply-current-order.php",
+        type : 'POST',
+        data : orderandsitter,
+        success : function (data) {
+            //alert("Заявка отправлена");
+            $('#apply_current_user_order[data-orderid="'+current_order_id+'"]').removeClass('apply-current-order');
+            $('#apply_current_user_order[data-orderid="'+current_order_id+'"]').addClass('del-apply-current-order');
+        },
+        error : function () {
+           alert("Ошибка");
+        }
+        });
+        return false;
+    } else if ($('#apply_current_user_order[data-orderid="'+current_order_id+'"]').hasClass('del-apply-current-order')) {
+        var orderandsitter = 'order='+current_order_id+'&sitter='+sit_user_id;
+        
+        //alert(orderandsitter);
+        
+        $.ajax({
+        url: "actions/delete-apply-current-order.php",
+        type : 'POST',
+        data : orderandsitter,
+        success : function (data) {
+            //alert("Заявка отменена");
+            $('#apply_current_user_order[data-orderid="'+current_order_id+'"]').removeClass('del-apply-current-order');
+            $('#apply_current_user_order[data-orderid="'+current_order_id+'"]').addClass('apply-current-order');
+        },
+        error : function () {
+           alert("Ошибка");
+        }
+        });
+        return false;
+    }
+}
 
 $(document).ready(function(){
     $("#add_user_to_favorite_link").click(addtofavoriteuser);
+    //$("#apply_current_user_order").click(applycurrentorder);
 });
