@@ -8,7 +8,106 @@
         $username = $_SESSION['username'];
         $encrypted_password = $_SESSION['encrypted_password'];
 
-        $result_search = mysql_query("SELECT id AS user_id, full_name, city, description, photo, rating, folder FROM users WHERE (id != $id) AND (deleted = 'no')");
+        if ($_POST["search_user_by_param"])
+        {
+            $param_city = $_POST["search_user_city"];
+            switch ($param_city) {
+            case 'all':
+                $param_city_search = " ";
+            break;
+            case 'moscow':
+                $param_city_search = " AND (city = 'Москва')";
+            break;
+            case 'st_petersburg':
+                $param_city_search = " AND (city = 'Санкт-Петербург')";
+            break;
+            case 'volgograd':
+                $param_city_search = " AND (city = 'Волгоград')";
+            break;
+            case 'vladivostok':
+                $param_city_search = " AND (city = 'Владивосток')";
+            break;
+            case 'voronezh':
+                $param_city_search = " AND (city = 'Воронеж')";
+            break;
+            case 'yekaterinburg':
+                $param_city_search = " AND (city = 'Екатеринбург')";
+            break;
+            case 'kazan':
+                $param_city_search = " AND (city = 'Казань')";
+            break;
+            case 'kaliningrad':
+                $param_city_search = " AND (city = 'Калининград')";
+            break;
+            case 'krasnodar':
+                $param_city_search = " AND (city = 'Краснодар')";
+            break;
+            case 'krasnoyarsk':
+                $param_city_search = " AND (city = 'Красноярск')";
+            break;
+            case 'nizhny_novgorod':
+                $param_city_search = " AND (city = 'Нижний Новгород')";
+            break;
+            case 'novosibirsk':
+                $param_city_search = " AND (city = 'Новосибирск')";
+            break;
+            case 'omsk':
+                $param_city_search = " AND (city = 'Омск')";
+            break;
+            case 'permian':
+                $param_city_search = " AND (city = 'Пермь')";
+            break;
+            case 'rostov_on_don':
+                $param_city_search = " AND (city = 'Ростов-на-Дону')";
+            break;
+            case 'samara':
+                $param_city_search = " AND (city = 'Самара')";
+            break;
+            case 'ufa':
+                $param_city_search = " AND (city = 'Уфа')";
+            break;
+            case 'chelyabinsk':
+                $param_city_search = " AND (city = 'Челябинск')";
+            break;
+            case 'sevastopol':
+                $param_city_search = " AND (city = 'Севастополь')";
+            break;
+            case 'simferopol':
+                $param_city_search = " AND (city = 'Симферополь')";
+            break;
+            case 'other':
+                $param_city_search = " AND ((city = null) OR (city = ''))";
+            break;
+            default;
+                $param_city_search = " ";
+            break;
+            }
+        }
+    
+        if (!empty($_GET["sort"]))
+        {
+                $sort = clear_string($_GET["sort"]);
+    
+                    switch($sort){
+                        case 'all-users':
+                            $sort = " ";
+                        break;
+                        case 'rating-decrease':
+                            $sort = " ORDER BY rating DESC";
+                        break;
+                        case 'rating-increase':
+                            $sort = " ORDER BY rating ASC";
+                        break;
+                        default:
+                            $sort = " ";
+                        break;
+                    }
+        }else
+        {
+            header("Location: index.php"); 
+        }
+        
+        $result_search = mysql_query("SELECT id AS user_id, full_name, city, description, photo, rating, folder FROM users WHERE (id != $id) AND (deleted = 'no') $param_city_search $sort");
         $count_users_search = mysql_num_rows($result_search);
 ?>
 
@@ -27,7 +126,7 @@
   
   <div class="body">
     <div class="main-body">
-        <div class="upper-part-body">
+        <div class="upper-part-search-body">
             <div class="main-search">
                 <div id="block-title-and-sorting">
                     <div class="block-title-and-sorting-left">
@@ -124,41 +223,56 @@
             <div class="part-parameters-and-to-search-orders">
                 <div class="search-parameters-for-users">
                     <div id="block-title-and-sorting">
-                        <div class="block-title-and-sorting-left">
-                            <p class="title-section-main-body">Параметры</p>
+                        <div class="block-title-and-sorting-for-search">
+                            <p class="title-section-main-body">Параметры поиска</p>
+                        </div>
+                    </div>
+                    
+                    <hr />
+                    <form enctype="multipart/form-data"  method="POST">
+                        <p class="search-user-city">Город</p>
+                        <select id="search-user-city" name="search_user_city">
+                                <option value="all">Все города</option>
+                                <option value="moscow">Москва</option>
+                                <option value="st_petersburg">Санкт-Петербург</option>
+                                <option value="volgograd">Волгоград</option>
+                                <option value="vladivostok">Владивосток</option>
+                                <option value="voronezh">Воронеж</option>
+                                <option value="yekaterinburg">Екатеринбург</option>
+                                <option value="kazan">Казань</option>
+                                <option value="kaliningrad">Калининград</option>
+                                <option value="krasnodar">Краснодар</option>
+                                <option value="krasnoyarsk">Красноярск</option>
+                                <option value="nizhny_novgorod">Нижний Новгород</option>
+                                <option value="novosibirsk">Новосибирск</option>
+                                <option value="omsk">Омск</option>
+                                <option value="permian">Пермь</option>
+                                <option value="rostov_on_don">Ростов-на-Дону</option>
+                                <option value="samara">Самара</option>
+                                <option value="ufa">Уфа</option>
+                                <option value="chelyabinsk">Челябинск</option>
+                                <option value="sevastopol">Севастополь</option>
+                                <option value="simferopol">Симферополь</option>
+                                <option value="other">Другой город</option>
+                        </select>
+                        <p class="users-search-links-button" ><input type="submit" class="search-user-by-param" name="search_user_by_param" value="Поиск" /></p>     
+                    </form>       
+                </div>
+                
+                <div class="sort-parameters-for-users">
+                    <div id="block-title-and-sorting">
+                        <div class="block-title-and-sorting-for-search">
+                            <p class="title-section-main-body">Сортировка</p>
                         </div>
                     </div>
                     
                     <hr />
                     
-                    <p class="search-order-city">Город</p>
-                    <select id="search-order-city" name="search_order_city">
-                            <option value="moscow">Москва</option>
-                            <option value="st_petersburg">Санкт-Петербург</option>
-                            <option value="volgograd">Волгоград</option>
-                            <option value="vladivostok">Владивосток</option>
-                            <option value="voronezh">Воронеж</option>
-                            <option value="yekaterinburg">Екатеринбург</option>
-                            <option value="kazan">Казань</option>
-                            <option value="kaliningrad">Калининград</option>
-                            <option value="krasnodar">Краснодар</option>
-                            <option value="krasnoyarsk">Красноярск</option>
-                            <option value="nizhny_novgorod">Нижний Новгород</option>
-                            <option value="novosibirsk">Новосибирск</option>
-                            <option value="omsk">Омск</option>
-                            <option value="permian">Пермь</option>
-                            <option value="rostov_on_don">Ростов-на-Дону</option>
-                            <option value="samara">Самара</option>
-                            <option value="ufa">Уфа</option>
-                            <option value="chelyabinsk">Челябинск</option>
-                            <option value="sevastopol">Севастополь</option>
-                            <option value="simferopol">Симферополь</option>
-                            <option value="other">Другой город</option>
-                    </select>
-                    
-                    <p class="search-order-city">Рейтинг</p>
-                                    
+                    <a class="sort-user-by-param-a" href="users_search.php?sort=rating-decrease"><p class="sort-user-by-param">&#8659; По убыванию рейтинга</p></a>
+                    <a class="sort-user-by-param-a" href="users_search.php?sort=rating-increase"><p class="sort-user-by-param">&#8657; По возрастанию рейтинга</p><a></a>
+                    <a class="sort-user-by-param-a" href="users_search.php?sort=all-users"><p class="sort-user-by-param">&#215; Без сортировки</p><a></a>             
                 </div>
+                
                 <div class="go-to-search-orders">
                 <a href="search.php">
                     <div id="block-title-and-sorting" style="min-height: 40px; height: auto;">
