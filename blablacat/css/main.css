@@ -226,6 +226,15 @@ body {
     /*border: 1px solid red;*/
 }
 
+.upper-part-search-body {
+    width: auto;
+    /*border: 1px solid #000;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*border: 1px solid red;*/
+    position: relative;
+}
+
 .user-menu {
     float: left;
     width: 300px;
@@ -512,6 +521,37 @@ body {
     /*margin-bottom: 15px;*/
 }
 
+.search-user-city {
+    margin: auto;
+    margin-top: 15px;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sort-user-by-param {
+    margin: auto;
+    padding: 5px;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+}
+
+.sort-user-by-param-a {
+    text-decoration: none;
+}
+
+.sort-user-by-param:hover {
+    background-color: #efefef;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
 #name-new-pet, #kind-new-pet, #breed-new-pet, 
 #sex-new-pet, #weight-new-pet, #growth-new-pet {
     font-size: 17px;
@@ -534,6 +574,16 @@ body {
     float: left;
     width: 250px;
     /*border: 1px solid red;*/
+}
+
+#search-user-city {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    width: 250px;
 }
 
 #other-information-new-pet {
@@ -1152,6 +1202,10 @@ body {
     float: right;
 }
 
+.block-title-and-sorting-for-search {
+    float: left;
+}
+
 #list-links-sort {
     list-style-type: none;  
     background: #fbfbfb;
@@ -1674,10 +1728,34 @@ body {
 .part-parameters-and-to-search-orders {
     width: 275px;
     float: left;
+    position: fixed;
+    z-index: 999;
+    margin-left: 640px;
 }
 
 .search-parameters-for-users {
     width: 100%;
+    height: auto;
+    min-height: 130px;
+    margin: auto;
+    margin-bottom: 10px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    /*border: 1px solid yellow;*//*#d9d9d9;*/
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+}
+
+.sort-parameters-for-users {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
     margin: auto;
     margin-bottom: 10px;
     background: #fbfbfb;
@@ -2217,9 +2295,6 @@ body {
     content: 'Отменить заявку';
 }
 
-
-
-
 .users-search-links {
     /*border: 1px solid brown;*/
     float: left;
@@ -2269,4 +2344,33 @@ body {
 
 .del-apply-current-user-search:after {
     content: 'Убрать из избранного';
+}
+
+.users-search-links-button {
+    /*border: 1px solid brown;*/
+    margin: 0;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.search-user-by-param {
+    font-weight: 600;     
+    font-size: 16px;     
+    text-decoration: none;     
+    border: 1px solid #1557D5;     
+    background-color: #9fdbfc;     
+    padding: 4px;    
+    padding-left: 100px;
+    padding-right: 100px; 
+    border-radius: 5px 5px 5px 5px;     
+    -webkit-border-radius: 5px 5px 5px 5px;     
+    -moz-border-radius: 5px 5px 5px 5px;     
+    color: #3B64BD;
+   
+}
+
+.search-user-by-param:hover {
+    border: 1px solid #3b8dbd;
 }
