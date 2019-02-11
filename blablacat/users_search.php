@@ -108,7 +108,10 @@
         }
         
         $result_search = mysql_query("SELECT id AS user_id, full_name, city, description, photo, rating, folder FROM users WHERE (id != $id) AND (deleted = 'no') $param_city_search $sort");
-        $count_users_search = mysql_num_rows($result_search);
+        
+        $result_search_count = mysql_query("SELECT * FROM users WHERE (id != $id)");
+        
+        $count_users_search = mysql_num_rows($result_search_count);
 ?>
 
 <html>
