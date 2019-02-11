@@ -107,14 +107,33 @@ if ($_POST["add_new_pet"])
                         <a href="reviews.php?sort=about_me"><li class="list-user-menu-item">&ensp;&#9993;&ensp;Отзывы</li></a>
                         <a href="requests.php"><li class="list-user-menu-item">&ensp;&#9743;&ensp;Заявки от ситтеров <?if ($count_requests > 0) { echo '<div class="count-requests">'.$count_requests.'</div>'; }?></li></a>
                         <a href=""><li class="list-user-menu-item">&ensp;&#9990;&ensp;Ответы на мои заявки</li></a>
+                    </ul>
+                </nav>
+                
+                <hr />
+                
+                <nav>
+                    <ul class="list-user-menu">
+                        <a href="users_search.php?sort=all-users"><li class="list-user-menu-item">&ensp;&#128270;&ensp;Поиск пользователей</li></a>
                         <a href="search.php"><li class="list-user-menu-item">&ensp;&#128270;&ensp;Поиск заказов</li></a>
                     </ul>
                 </nav>
                 
+                
             </div>
             <div class="user-info">
                 <p class="name-user"><? echo $row_new["full_name"];?></p>
-                <p class="address-user"><? echo $row_new["address"] ?></p>
+                <p class="address-user">
+                <? if (($row_new["city"]!=null) && ($row_new["street"]!=null)) 
+                    { 
+                        echo $row_new["city"].', улица '.$row_new["street"]; 
+                    }else if (($row_new["city"]!=null) && ($row_new["street"]==null)) 
+                    {
+                        echo $row_new["city"];
+                    }
+                ?>
+                </p>
+                <p class="address-user-hint">(другим пользователям виден только ваш город для удобства поиска ваших заказов)</p>
                 <hr />
                 <p class="about-user-info">Контактная информация</p>
                 <p class="about-user">Моб.номер: <? echo $row_new["phone_number"]; ?></p>
