@@ -1729,7 +1729,6 @@ body {
     width: 275px;
     float: left;
     position: fixed;
-    z-index: 999;
     margin-left: 640px;
 }
 
