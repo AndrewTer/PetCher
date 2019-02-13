@@ -1,7 +1,7 @@
 <head>
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
-    <!--<script type="text/javascript" src="/js/header.js"></script>
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>--!>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/share.js"></script>
     <title>О сервисе | BlaBlaCat</title>
 </head>
 <div class="header">
@@ -47,9 +47,44 @@
     <p id="text-for-map-add">Остальные города России также могут быть указаны пользователями сервиса в описании.</p>
     <hr />
     
-    <h3>Для связи с нами</h3>
+    <p id="text-for-map-add">Если есть какие-либо пожелания или вопросы, ответы на которые вы не смогли найти в разделе <a class="url-help" href="help.php">Помощь</a>, то вы можете написать сюда</p>
+    <h4>Дополнить</h4>
     <hr />
+    <p id="text-for-map-add">BlaBlaCat - недавно начавший свою работу сервис, поэтому, если вам нравится данный сервис, мы будем очень вам признательны, если вы расскажете о нас:</p>
+
+    <div style="text-align: center;" data-path="images/" class="shareinit"></div>
+    
+
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('body').append('<div class="button-up" style="display: none; margin-top:50px; opacity: 0.7;width: 100%;max-width:90px;height:100%;position: fixed;left: 0px;top: 0px;cursor: pointer;text-align: center;line-height: 100px;color: #45688E;">&#9650; Наверх</div>');
+        $ (window).scroll (function () {
+            if ($ (this).scrollTop () > 300) {
+            $ ('.button-up').fadeIn();
+            } else {
+            $ ('.button-up').fadeOut();
+            }
+        });
+        $('.button-up').click(function(){
+            $('body,html').animate({
+                scrollTop: 0
+            }, 100);
+            return false;
+        });
+        $('.button-up').hover(function() {
+            $(this).animate({
+                'opacity':'1',
+            }).css({'background-color':'#E1E7ED','color':'#45688E'});
+        }, function(){
+            $(this).animate({
+                'opacity':'0.7'
+            }).css({'background':'none','color':'#45688E'});;
+        });
+    });
+</script>
+
 <div class="footer">
 BlaBlaCat © 2019
 </div>
