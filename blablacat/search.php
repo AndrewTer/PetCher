@@ -161,7 +161,7 @@ $encrypted_password = $_SESSION['encrypted_password'];
     </div>
   </div>
   
-  <script>
+<script>
     $(document).ready(function() {
         $('body').append('<div class="button-up" style="display: none; margin-top:50px; opacity: 0.7;width: 100%;max-width:90px;height:100%;position: fixed;left: 0px;top: 0px;cursor: pointer;text-align: center;line-height: 100px;color: #45688E;">&#9650; Наверх</div>');
         $ (window).scroll (function () {
