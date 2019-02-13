@@ -18,6 +18,10 @@ a {
     /*border: 1px solid yellow;*/
 }
 
+.about {
+    margin: 40px auto 0;
+}
+
 .error {
     margin: auto;
     padding: 5px;
@@ -86,65 +90,70 @@ a {
 }
 
 .header {
-width: 100%;
-height: 50px;
-overflow: hidden;
-position: fixed;
-top: 0;
-left: 0;
-z-index: 999;
-background-color: #3b8dbd;
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
-    -ms-transition: height 0.3s;
-    -o-transition: height 0.3s;
-transition: height 0.3s;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #3b8dbd;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+    transition: height 0.3s;
 }
 .header h1#logo {
-display: inline-block;
-height: 50px;
-float: left;
-margin-left: 50px;
-font-family: "Oswald", sans-serif;
-font-size: 20px;
-color: white;
-font-weight: 400;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-transition: all 0.3s;
+    display: inline-block;
+    height: 50px;
+    float: left;
+    margin-left: 50px;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .header nav {
-display: inline-block;
-float: right;
-margin-right: 50px;
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
 }
+
 .header nav a {
-line-height: 50px;
-margin-left: 20px;
-color: #9fdbfc;
-font-weight: 700;
-font-size: 18px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-transition: all 0.3s;
+    line-height: 50px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
+
 .header nav a:hover {
-color: white;
+    color: white;
 }
+
 .header.smaller {
-height: 75px;
+    height: 75px;
 }
+
 .header.smaller h1#logo {
-width: 50px;
-height: 50px;
-font-size: 30px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
 }
+
 .header.smallernav a {
-line-height: 55px;
+    line-height: 55px;
 }
 
 #logos{
@@ -168,6 +177,17 @@ line-height: 55px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.13);
     /*border: 1px solid green;*/
+}
+
+.container_about {
+    padding: 25px 16px 25px 10px;
+    margin: 90px auto auto auto;
+    font-weight: 400;
+    overflow: hidden;
+    width: 800px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
 }
 
 #welcome {
@@ -484,4 +504,206 @@ input:checked + .toggle .toggle-handler .mouth2 {
 input:checked + .toggle .toggle-handler .face2,
 input:checked + .toggle .toggle-handler .tongue {
   opacity: 1;
+}
+
+#title-about {
+    text-align: center;
+    font-size: 25px;
+    background: #666666;
+    color: transparent;
+    text-shadow: 0px 1px 3px rgba(250,250,250,0.55);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;    
+    font-weight: 600;
+}
+
+#title-main-targer {
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-left: 2px solid #D1D1D1;
+    border-right: 2px solid #D1D1D1;
+    background-color: #F7F7F7;
+    font-weight: 600;
+}
+
+#title-main-year-start {
+    font-size: 20px;
+    text-align: center;
+}
+
+#map_about {
+    /*border: 1px solid green*/
+}
+
+.div-for-map {
+    position:relative;
+}
+
+#text-for-map {
+    width: 70%;
+    position:absolute;
+    margin-left: 10px;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    font-size: 18px;
+}
+
+.metka {
+    width: 2%;
+    position:absolute;
+    border-radius: 100px;
+    height: 3.5%;
+    display: inline-block;
+}
+
+.moscow {
+    left: 15%;
+    top: 55%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.st_petersburg {
+    left: 16%;
+    top: 42%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.volgograd {
+    left: 13%;
+    top: 73%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.vladivostok {
+    left: 89%;
+    top: 85%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.voronezh {
+    left: 12%;
+    top: 63%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.yekaterinburg {
+    left: 30%;
+    top: 68%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.kazan {
+    left: 22%;
+    top: 63%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.kaliningrad {
+    left: 6%;
+    top: 39%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.krasnodar {
+    left: 7%;
+    top: 74%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.krasnoyarsk {
+    left: 52%;
+    top: 77%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.nizhny_novgorod{
+    left: 19%;
+    top: 59%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.novosibirsk {
+    left: 44.5%;
+    top: 79%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.omsk {
+    left: 37.5%;
+    top: 77%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.permian {
+    left: 27.5%;
+    top: 64%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.rostov_on_don {
+    left: 9%;
+    top: 70%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.samara {
+    left: 20.7%;
+    top: 69%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.ufa {
+    left: 25%;
+    top: 71%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.chelyabinsk {
+    left: 29%;
+    top: 72%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.sevastopol {
+    left: 2%;
+    top: 69%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.simferopol {
+    left: 4%;
+    top: 68%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+#text-for-map-add {
+    text-align: center;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    font-size: 18px;
+    width: 100%;
 }
