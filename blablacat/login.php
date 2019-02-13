@@ -59,7 +59,7 @@ else
 <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
 <nav>
 <a href="">Правила</a>
-<a href="">О нас</a>
+<a href="about.php">О нас</a>
 </nav>
 </div>
 </div>
