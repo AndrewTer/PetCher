@@ -28,7 +28,7 @@ if(isset($_POST["register"]))
 	
             if($numrows==0)
             {
-                $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','','','no','0','','no')";
+                $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','Другой город','','','no','0','','no')";
                 $result=mysql_query($sql);
             
                 if($result)
@@ -47,14 +47,14 @@ if(isset($_POST["register"]))
                                 $result_add_folder=mysql_query($sql_add_folder);
                                 if($result_add_folder)
                                 {
-                                    	//создаём сессию с данным
-					$_SESSION['username']=$directory_new['full_name'];
-                                    	$_SESSION['encrypted_password'] = $directory_new['password'];
-                                    	$_SESSION['email'] = $directory_new['email'];
-                                    	$_SESSION['id'] = $directory_new['id'];
-                                    	$_SESSION['auth_user'] = 'yes_auth';
-				        //переадресация
-				        header("Location: index.php?id".$_SESSION['id']);
+                                    //создаём сессию с данным
+				                    $_SESSION['username']=$directory_new['full_name'];
+                                    $_SESSION['encrypted_password'] = $directory_new['password'];
+                                    $_SESSION['email'] = $directory_new['email'];
+                                    $_SESSION['id'] = $directory_new['id'];
+                                    $_SESSION['auth_user'] = 'yes_auth';
+				                    //переадресация
+				                    header("Location: index.php?id".$_SESSION['id']);
                                 }
                         }
                         else
@@ -92,7 +92,7 @@ else
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
         <nav>
             <a href="">Правила</a>
-            <a href="">О нас</a>
+            <a href="about.php">О нас</a>
         </nav>
     </div>
 </div>
