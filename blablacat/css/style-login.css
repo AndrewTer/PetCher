@@ -707,3 +707,12 @@ input:checked + .toggle .toggle-handler .tongue {
     font-size: 18px;
     width: 100%;
 }
+
+.url-help {
+    text-decoration: none;
+    color: #3b8dbd;
+}
+
+.url-help:hover {
+    color: #9fdbfc;
+}
