@@ -1818,21 +1818,7 @@ body {
     margin: 0;
 }
 
-.right-part-order-search-list {
-    border: 1px solid brown;
-    width: 25%;
-    float: left;
-    padding-bottom: 10px;
-}
-
-.left-part-order-search-list {
-    border: 1px solid brown;
-    width: 70%; /* 78% */
-    float: left;
-    padding-bottom: 10px;
-}
-
-.right-part-user-search-list {
+.right-part-user-search-list, .right-part-order-search-list {
     /*border: 1px solid brown;*/
     width: 60%; /* 78% */
     float: left;
@@ -1841,14 +1827,14 @@ body {
     min-height: 190px;
 }
 
-.left-part-user-search-list {
+.left-part-user-search-list, .left-part-order-search-list {
     /*border: 1px solid brown;*/
     width: 35%; /* 78% */
     float: left;
     padding-bottom: 10px;
 }
 
-#search-user-circle {
+#search-user-circle, #search-order-circle {
     width: 120px;
     height: 120px;
     margin: auto;
@@ -1872,7 +1858,7 @@ body {
     position: relative;
 }
 
-#search-user-circle img {
+#search-user-circle img, #search-order-circle img {
     display: block;
     width:100%;
     height: 100%;
@@ -1905,16 +1891,23 @@ body {
     color: #3D3D3D;
 }
 
+#order-about-search-username-page {
+    color: #273F9B;
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
 .order-cost-search {
     margin: auto;
     margin-top: 10px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     color: #3D3D3D;
     font-weight: 700;
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 20px;
     margin-right: 10px;
-    width: 80%;
+    width: 95%;
 }
 
 .right-part-request-list {
@@ -2294,7 +2287,7 @@ body {
     content: 'Отменить заявку';
 }
 
-.users-search-links {
+.users-search-links, .orders-search-links {
     /*border: 1px solid brown;*/
     float: left;
     position: relative;
@@ -2344,6 +2337,48 @@ body {
 .del-apply-current-user-search:after {
     content: 'Убрать из избранного';
 }
+
+.apply-current-order-search {
+    font-weight: 600;     
+    font-size: 16px;     
+    text-decoration: none;     
+    border: 1px solid #1557D5;     
+    background-color: #9fdbfc;     
+    padding: 4px;     
+    margin-left: 28px;     
+    border-radius: 5px 5px 5px 5px;     
+    -webkit-border-radius: 5px 5px 5px 5px;     
+    -moz-border-radius: 5px 5px 5px 5px;     
+    color: #3B64BD;
+}
+
+.apply-current-order-search:hover {
+    border: 1px solid #3b8dbd;
+}
+
+.apply-current-order-search:after {
+    content: 'Подать заявку';
+}
+
+.del-apply-current-order-search {
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #D63301;
+    color: #D63301;
+    background-color: #FFD2C2;
+    padding: 4px;     
+    margin-left: 17px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.del-apply-current-order-search:after {
+    content: 'Отменить заявку';
+}
+
 
 .users-search-links-button {
     /*border: 1px solid brown;*/
