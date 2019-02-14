@@ -15,7 +15,7 @@ function addtofavoriteuser()
             $('#add_user_to_favorite_link').addClass('del-to-fav-us');
         },
         error : function () {
-           alert("Ошибка");
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
         }
         });
         return false;
@@ -34,7 +34,7 @@ function addtofavoriteuser()
             $('#add_user_to_favorite_link').addClass('add-to-fav-us');
         },
         error : function () {
-           alert("Ошибка");
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
         }
         });
         return false;
@@ -58,7 +58,7 @@ function addtofavoritesearchuser(fav_user, current_user)
             $('#apply_current_user_search[data-usersearchid="'+fav_user+'"]').addClass('del-apply-current-user-search');
         },
         error : function () {
-           alert("Ошибка");
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
         }
         });
         return false;
@@ -77,7 +77,7 @@ function addtofavoritesearchuser(fav_user, current_user)
             $('#apply_current_user_search[data-usersearchid="'+fav_user+'"]').addClass('apply-current-user-search');
         },
         error : function () {
-           alert("Ошибка");
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
         }
         });
         return false;
@@ -101,7 +101,7 @@ function applycurrentorder(current_order_id, sit_user_id)
             $('#apply_current_user_order[data-orderid="'+current_order_id+'"]').addClass('del-apply-current-order');
         },
         error : function () {
-           alert("Ошибка");
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
         }
         });
         return false;
@@ -120,7 +120,50 @@ function applycurrentorder(current_order_id, sit_user_id)
             $('#apply_current_user_order[data-orderid="'+current_order_id+'"]').addClass('apply-current-order');
         },
         error : function () {
-           alert("Ошибка");
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
+        }
+        });
+        return false;
+    }
+}
+
+function addtorequestsearchorder(current_order, current_user)
+{
+    if ($('#apply_current_order_search[data-ordersearchid="'+current_order+'"]').hasClass('apply-current-order-search')) {
+        var orderanduser = 'order='+current_order+'&sitter='+current_user;
+        
+        //alert(orderanduser);
+        
+        $.ajax({
+        url: "actions/apply-current-order.php",
+        type : 'POST',
+        data : orderanduser,
+        success : function (data) {
+            //alert("Добавлено в избранное");
+            $('#apply_current_order_search[data-ordersearchid="'+current_order+'"]').removeClass('apply-current-order-search');
+            $('#apply_current_order_search[data-ordersearchid="'+current_order+'"]').addClass('del-apply-current-order-search');
+        },
+        error : function () {
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
+        }
+        });
+        return false;
+    } else if ($('#apply_current_order_search[data-ordersearchid="'+current_order+'"]').hasClass('del-apply-current-order-search')) {
+        var orderanduser = 'order='+current_order+'&sitter='+current_user;
+        
+        //alert(orderanduser);
+        
+        $.ajax({
+        url: "actions/delete-apply-current-order.php",
+        type : 'POST',
+        data : orderanduser,
+        success : function (data) {
+            //alert("Убрано из избранного");
+            $('#apply_current_order_search[data-ordersearchid="'+current_order+'"]').removeClass('del-apply-current-order-search');
+            $('#apply_current_order_search[data-ordersearchid="'+current_order+'"]').addClass('apply-current-order-search');
+        },
+        error : function () {
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
         }
         });
         return false;
