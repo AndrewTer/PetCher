@@ -12,6 +12,7 @@ $encrypted_password = $_SESSION['encrypted_password'];
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <title>Поиск заказов | BlaBlaCat</title> 
 </head>
 
@@ -32,7 +33,7 @@ $encrypted_password = $_SESSION['encrypted_password'];
                 </div>
                 <div class="search-list">
                     <?
-                        $result_search = mysql_query("SELECT orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight, pets.photo AS pet_photo, users.full_name AS full_name_user, users.id AS user_id, users.folder AS folder, users.city AS city FROM orders, pets, users WHERE (orders.pet_id = pets.id) AND (users.id = pets.owner_id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) AND (orders.deleted = 'no') GROUP BY orders.id");
+                        $result_search = mysql_query("SELECT orders.id AS current_order_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight, pets.photo AS pet_photo, users.full_name AS full_name_user, users.id AS user_id, users.folder AS folder, users.city AS city FROM orders, pets, users WHERE (orders.pet_id = pets.id) AND (users.id = pets.owner_id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) AND (orders.deleted = 'no') GROUP BY orders.id");
                         if (mysql_num_rows($result_search) == null)
                         {
                             echo '<hr /><p class="not-order">Заказов нет</p>';
@@ -45,7 +46,44 @@ $encrypted_password = $_SESSION['encrypted_password'];
                             <div class="current-order-search">
                                     
                                     <div class="left-part-order-search-list">
-                                        <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
+                                        <div id="search-order-circle">';
+                                            if($row_search["pet_photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["pet_photo"]))
+                                            {
+                                                $img_path = 'users/'.$row_search["folder"].'/'.$row_search["pet_photo"];
+                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                            }else
+                                            {
+                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                            }
+                                    echo '</div>';
+                                    $cur_order_search_id = $row_search["current_order_id"];
+                    ?>
+                    
+                                    <script type="text/javascript">
+                                            function goaddcurortoreq(identifier)
+                                            {     
+                                                var curr_order_search =$(identifier).data('ordersearchid'); 
+                                                var cur_user = <?php echo $id ?>;
+
+                                                var addtoreqFunc = new Function(addtorequestsearchorder(curr_order_search, cur_user));
+                                                addtoreqFunc();                                      
+                                            }                           
+                                    </script>    
+                                    <script type="text/javascript" src="js/ajax-scripts.js"></script>   
+                    
+                    <?        
+                                    $search_sitter_req_list = mysql_query("SELECT * FROM request WHERE (order_id = ".$cur_order_search_id.") AND (sitter_id = ".$id.") AND (deleted='no')");
+                                        if (mysql_num_rows($search_sitter_req_list) > 0)
+                                        {
+                                            echo '<p class="orders-search-links" ><a data-ordersearchid="'.$cur_order_search_id.'" onclick="event.preventDefault();goaddcurortoreq(this);" class="del-apply-current-order-search" id="apply_current_order_search" href="" ></a></p>';
+                                        }else
+                                        {
+                                            echo '<p class="orders-search-links" ><a data-ordersearchid="'.$cur_order_search_id.'" onclick="event.preventDefault();goaddcurortoreq(this);" class="apply-current-order-search" id="apply_current_order_search" href="" ></a></p>';
+                                        }
+                            echo '</div>
+                                    
+                                    <div class="right-part-order-search-list">
+                                        <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a> <a id="order-about-search-username-page" href="user.php?id='.$row_search["user_id"].'">(Перейти на страницу)</a></p>
                                         <p class="order-about-search">'.$row_search["about_order"].'</p>';
                                         if ($row_search["city"]!=null)
                                         {
@@ -61,20 +99,7 @@ $encrypted_password = $_SESSION['encrypted_password'];
                                         <p class="order-about-search">Рост | Вес: '.$row_search["pet_growth"].' м | '.$row_search["pet_weight"].' кг</p>
                                         <p class="order-cost-search">Цена: '.$row_search["cost"].' руб</p>
                                     </div>
-                                    <div class="right-part-order-search-list">
-                                        <div id="avatar-pet">';
-                                            if($row_search["pet_photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["pet_photo"]))
-                                            {
-                                                $img_path = 'users/'.$row_search["folder"].'/'.$row_search["pet_photo"];
-                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
-                                            }else
-                                            {
-                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
-                                            }
-                                    echo '</div>
-                                        <p class="current-customer-page-links" ><a class="current-customer-page" href="user.php?id='.$row_search["user_id"].'" >Страница</a></p>
-                                        <p class="current-customer-page-links" ><a class="current-customer-page" href="user.php?id='.$row_search["user_id"].'" >Подать заявку</a></p>
-                                    </div>
+                                    
                                     <div class="clear"></div>
                             </div>
                             ';
