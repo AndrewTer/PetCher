@@ -125,6 +125,15 @@ if ($_POST["add_new_order"])
                     {
                         $row_orders = mysql_fetch_array($result_orders);
                         do{
+                            
+                            //Сравнение даты окончания заказа с текущей
+                            $result_date=(strtotime($row_orders["date_in"])<strtotime(date('y-m-j'))); 
+                            if ($result_date==true)
+                            {
+                                $change_status = mysql_query("UPDATE orders SET kind='performed' WHERE id=".$row_orders["order_id"]);
+                                $row_orders["order_kind"]="performed";
+                            }
+                            
                             if (($row_orders["order_kind"]=="current") AND ($row_orders["order_deleted"]=="no")) 
                             {
                                 echo '
