@@ -223,7 +223,7 @@
                     ?>
                 </div>
             </div>
-            <div class="part-parameters-and-to-search-orders">
+            <div class="part-parameters-and-to-search-users">
                 <div class="search-parameters-for-users">
                     <div id="block-title-and-sorting">
                         <div class="block-title-and-sorting-for-search">
