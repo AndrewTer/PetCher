@@ -560,7 +560,11 @@ body {
 }
 
 .search-pet-param {
+    height: auto;
+    min-height: 280px;
+    margin-top: 45px;
     /*border: 1px solid green;*/
+    border-top: 1px solid #7d9185;
 }
 
 #search-order-kind-pet, #search-order-sex-pet,
@@ -1728,8 +1732,15 @@ body {
 .part-parameters-and-to-search-orders {
     width: 275px;
     float: left;
-    position: fixed;
-    margin-left: 640px;
+    /*position: fixed;
+    margin-left: 640px;*/
+}
+
+.part-parameters-and-to-search-users {
+    width: 275px;
+    float: left;
+    /*position: fixed;
+    margin-left: 640px;*/
 }
 
 .search-parameters-for-users {
@@ -1779,7 +1790,7 @@ body {
     line-height: 1;
     padding: 3px;
     outline: none;
-    /*border: 1px solid yellow;*//*#d9d9d9;*/
+    /*border: 1px solid yellow;*/
     padding-top: 10px;
     padding-left: 20px;
     padding-right: 10px;
@@ -1787,16 +1798,31 @@ body {
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
 }
 
-.go-to-search-orders a {
+.go-to-search-users {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    background: #fbfbfb;
+    line-height: 1;
+    padding: 3px;
+    outline: none;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+    /*border: 1px solid red;*/
+}
+
+.go-to-search-orders a, .go-to-search-users a {
     text-decoration: none;
     text-align: center;
 }
 
-
-
-
 .search-parameters {
-    width: 275px; /*915px*/
+    width: 100%;
+    height: auto;
+    min-height: 100px;
     margin: auto;
     margin-bottom: 10px;
     background: #fbfbfb;
@@ -1810,7 +1836,6 @@ body {
     padding-right: 10px;
     padding-bottom: 10px;
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
-    float: left;
 }
 
 .current-order-search, .current-user-search {
