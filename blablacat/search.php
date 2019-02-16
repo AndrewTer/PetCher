@@ -108,79 +108,89 @@ $encrypted_password = $_SESSION['encrypted_password'];
                     ?>
                 </div>
             </div>
-            <div class="search-parameters">
-                <div id="block-title-and-sorting">
-                    <div class="block-title-and-sorting-left">
-                        <p class="title-section-main-body">Параметры</p>
+            
+            <div class="part-parameters-and-to-search-orders">
+                <div class="search-parameters">
+                    <div id="block-title-and-sorting">
+                        <div class="block-title-and-sorting-for-search">
+                            <p class="title-section-main-body">Параметры поиска</p>
+                        </div>
                     </div>
-                </div>
-                
-                <hr />
-                
-                <p class="search-order-cost">Цена (в рублях)</p>
-                <input type="number" id="search-order-cost" name="search_order_cost" min="100" max="1000000" placeholder="100-1000000" />
-                
-                <p class="search-order-dates">Даты</p>
-                
-                <p class="search-order-city">Город</p>
-                <select id="search-order-city" name="search_order_city">
-                        <option value="moscow">Москва</option>
-                        <option value="st_petersburg">Санкт-Петербург</option>
-                        <option value="volgograd">Волгоград</option>
-                        <option value="vladivostok">Владивосток</option>
-                        <option value="voronezh">Воронеж</option>
-                        <option value="yekaterinburg">Екатеринбург</option>
-                        <option value="kazan">Казань</option>
-                        <option value="kaliningrad">Калининград</option>
-                        <option value="krasnodar">Краснодар</option>
-                        <option value="krasnoyarsk">Красноярск</option>
-                        <option value="nizhny_novgorod">Нижний Новгород</option>
-                        <option value="novosibirsk">Новосибирск</option>
-                        <option value="omsk">Омск</option>
-                        <option value="permian">Пермь</option>
-                        <option value="rostov_on_don">Ростов-на-Дону</option>
-                        <option value="samara">Самара</option>
-                        <option value="ufa">Уфа</option>
-                        <option value="chelyabinsk">Челябинск</option>
-                        <option value="sevastopol">Севастополь</option>
-                        <option value="simferopol">Симферополь</option>
-                        <option value="other">Другой город</option>
-                </select>
-                
+                    
+                    <hr />
+                    
+                    <p class="search-order-cost">Цена (в рублях)</p>
+                    <input type="number" id="search-order-cost" name="search_order_cost" min="100" max="1000000" placeholder="100-1000000" />
+                    
+                    <p class="search-order-dates">Даты</p>
+                    
+                    <p class="search-order-city">Город</p>
+                    <select id="search-order-city" name="search_order_city">
+                            <option value="moscow">Москва</option>
+                            <option value="st_petersburg">Санкт-Петербург</option>
+                            <option value="volgograd">Волгоград</option>
+                            <option value="vladivostok">Владивосток</option>
+                            <option value="voronezh">Воронеж</option>
+                            <option value="yekaterinburg">Екатеринбург</option>
+                            <option value="kazan">Казань</option>
+                            <option value="kaliningrad">Калининград</option>
+                            <option value="krasnodar">Краснодар</option>
+                            <option value="krasnoyarsk">Красноярск</option>
+                            <option value="nizhny_novgorod">Нижний Новгород</option>
+                            <option value="novosibirsk">Новосибирск</option>
+                            <option value="omsk">Омск</option>
+                            <option value="permian">Пермь</option>
+                            <option value="rostov_on_don">Ростов-на-Дону</option>
+                            <option value="samara">Самара</option>
+                            <option value="ufa">Уфа</option>
+                            <option value="chelyabinsk">Челябинск</option>
+                            <option value="sevastopol">Севастополь</option>
+                            <option value="simferopol">Симферополь</option>
+                            <option value="other">Другой город</option>
+                    </select>
+                    
+                    <div class="search-pet-param">
+                        <p class="search-order-pet-kind">Животное</p>
+                        <select id="search-order-kind-pet" name="search_order_kind_pet">
+                            <option value="cat">Кошка</option>
+                            <option value="dog">Собака</option>
+                            <option value="parrot">Попугай</option>
+                            <option value="bird">Другая птица</option>
+                            <option value="hamster">Хомяк</option>
+                            <option value="cavy">Морская свинка</option>
+                            <option value="rabbit">Кролик</option>
+                            <option value="chinchilla">Шиншилла</option>
+                            <option value="fish">Рыбки</option>
+                            <option value="turtle">Черепаха</option>
+                            <option value="other">Другой</option>
+                        </select>
+                        
+                        <p class="search-order-pet-sex">Пол</p>
+                        <select id="search-order-sex-pet" name="search_order_sex_pet">
+                            <option value="no">Пусто</option>
+                            <option value="m">Мальчик</option>
+                            <option value="w">Девочка</option>
+                        </select>
+                        
+                        <p class="search-order-pet-growth">Рост (в метрах)</p>
+                        <input type="number" id="search-order-growth-pet" name="search_order_growth_pet" min="0" max="1" step="0.01" placeholder="от 0 до 1" />
+                        
+                        <p class="search-order-pet-weight">Вес (в килограммах)</p>
+                        <input type="number" id="search-order-weight-pet" name="search_order_weight_pet" min="0" max="20" step="0.1" placeholder="от 0 до 20" />
 
-                
-                <div class="search-pet-param">
-                    <p class="search-order-pet-kind">Животное</p>
-                    <select id="search-order-kind-pet" name="search_order_kind_pet">
-                        <option value="cat">Кошка</option>
-                        <option value="dog">Собака</option>
-                        <option value="parrot">Попугай</option>
-                        <option value="bird">Другая птица</option>
-                        <option value="hamster">Хомяк</option>
-                        <option value="cavy">Морская свинка</option>
-                        <option value="rabbit">Кролик</option>
-                        <option value="chinchilla">Шиншилла</option>
-                        <option value="fish">Рыбки</option>
-                        <option value="turtle">Черепаха</option>
-                        <option value="other">Другой</option>
-                    </select>
-                    
-                    <p class="search-order-pet-sex">Пол</p>
-                    <select id="search-order-sex-pet" name="search_order_sex_pet">
-                        <option value="no">Пусто</option>
-                        <option value="m">Мальчик</option>
-                        <option value="w">Девочка</option>
-                    </select>
-                    
-                    <p class="search-order-pet-growth">Рост (в метрах)</p>
-                    <input type="number" id="search-order-growth-pet" name="search_order_growth_pet" min="0" max="1" step="0.01" placeholder="от 0 до 1" />
-                    
-                    <p class="search-order-pet-weight">Вес (в килограммах)</p>
-                    <input type="number" id="search-order-weight-pet" name="search_order_weight_pet" min="0" max="20" step="0.1" placeholder="от 0 до 20" />
+                    </div>
+                 </div>   
+                 
+                <div class="go-to-search-users">
+                    <a href="users_search.php?sort=all-users">
+                        <div id="block-title-and-sorting" style="min-height: 40px; height: auto;">
+                            <p class="title-section-main-body" style="font-size: 15px;">Перейти к поиску пользователей</p>
+                        </div>
+                    </a>
                 </div>
-                
-                    
+                     
             </div>
+            
             <div class="clear"></div>
         </div>
     </div>
