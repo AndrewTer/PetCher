@@ -521,6 +521,84 @@ body {
     /*margin-bottom: 15px;*/
 }
 
+.search-order-between {
+    margin: auto;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    float: left;
+    padding: 2px;
+}
+
+.search-order-between-dates {
+    margin: auto;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    float: left;
+    padding: 2px;
+}
+
+.block-for-search-cost {
+    /*border: 1px solid red;*/
+    float: left;
+    margin-bottom: 10px;
+}
+
+.block-for-search-cost-order {
+    /*border: 1px solid red;*/
+    margin: 10px;
+    min-height: 30px;
+}
+
+.block-for-search-date-order {
+    margin: 10px;
+    min-height: 30px;
+    /*border: 1px solid green;*/
+}
+
+.block-for-search-date {
+    /*border: 1px solid red;*/
+    float: right;
+    margin-bottom: 10px;
+
+}
+
+.block-for-search-pet-growth-order {
+    /*border: 1px solid red;*/
+    margin: 10px;
+    min-height: 30px;
+}
+
+.block-for-search-growth {
+    /*border: 1px solid red;*/
+    float: left;
+    margin-bottom: 10px;
+}
+
+.block-for-search-pet-weight-order {
+    /*border: 1px solid red;*/
+    margin: 10px;
+    min-height: 30px;
+}
+
+.block-for-search-weight {
+    /*border: 1px solid red;*/
+    float: left;
+    margin-bottom: 10px;
+}
+
 .search-user-city {
     margin: auto;
     margin-top: 15px;
@@ -557,6 +635,9 @@ body {
     font-size: 17px;
     float: right;
     width: 200px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .search-pet-param {
@@ -568,8 +649,7 @@ body {
 }
 
 #search-order-kind-pet, #search-order-sex-pet,
-#search-order-growth-pet, #search-order-weight-pet,
-#search-order-cost, #search-order-city {
+#search-order-city {
     font-size: 17px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -577,7 +657,33 @@ body {
     margin-right: 10px;
     float: left;
     width: 250px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
     /*border: 1px solid red;*/
+}
+
+#search-order-cost, #search-order-growth-pet,
+#search-order-weight-pet {
+    font-size: 17px;
+    float: left;
+    width: 113.5px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+    /*display: inline;
+    box-sizing: border-box;*/
+}
+
+#search-order-date {
+    font-size: 17px;
+    float: right;
+    width: 180px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #search-user-city {
@@ -588,6 +694,9 @@ body {
     margin-right: 10px;
     float: left;
     width: 250px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #other-information-new-pet {
@@ -598,6 +707,9 @@ body {
     width: 95%;
     height: 20%;
     font-size: 17px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .add-new-pet-link {
@@ -868,6 +980,9 @@ body {
     font-size: 17px;
     width: 300px;
     float: right;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #change-user-about, #change-pet-about {
@@ -879,6 +994,9 @@ body {
     width: 80%;
     height: 20%;
     font-size: 17px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .change-user-info-link, .change-pet-info-link {
@@ -1499,10 +1617,17 @@ body {
     resize: none;
     width: 75%;
     font-size: 17px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+    margin-top: 10px;
 }
 
 #cost_new_order, #dates_new_order {
     font-size: 17px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 #submit_add_new_order{
@@ -1570,6 +1695,9 @@ body {
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .select-pet-add-order:checked + label {
@@ -2356,7 +2484,6 @@ body {
     -webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     cursor: pointer;
-    
 }
 
 .del-apply-current-user-search:after {
@@ -2404,7 +2531,6 @@ body {
     content: 'Отменить заявку';
 }
 
-
 .users-search-links-button {
     /*border: 1px solid brown;*/
     margin: 0;
@@ -2414,7 +2540,14 @@ body {
     margin-right: 10px;
 }
 
-.search-user-by-param {
+.orders-search-links-button {
+    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.search-user-by-param, .search-order-by-param {
     font-weight: 600;     
     font-size: 16px;     
     text-decoration: none;     
@@ -2427,9 +2560,9 @@ body {
     -webkit-border-radius: 5px 5px 5px 5px;     
     -moz-border-radius: 5px 5px 5px 5px;     
     color: #3B64BD;
-   
+    cursor: pointer;
 }
 
-.search-user-by-param:hover {
+.search-user-by-param:hover, .search-order-by-param:hover {
     border: 1px solid #3b8dbd;
 }
