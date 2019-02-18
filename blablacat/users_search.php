@@ -135,7 +135,7 @@
                     <div class="block-title-and-sorting-left">
                         <p class="title-section-main-body">Поиск пользователей</p>
                     </div>
-                     <div class="block-title-and-sorting-right">
+                    <div class="block-title-and-sorting-right">
                         <ul id="options-list">
                             <p class="count-search-users-title"><?echo $count_users_search+1;?></p>
                         </ul>
@@ -235,28 +235,28 @@
                     <form enctype="multipart/form-data"  method="POST">
                         <p class="search-user-city">Город</p>
                         <select id="search-user-city" name="search_user_city">
-                                <option value="all">Все города</option>
-                                <option value="moscow">Москва</option>
-                                <option value="st_petersburg">Санкт-Петербург</option>
-                                <option value="volgograd">Волгоград</option>
-                                <option value="vladivostok">Владивосток</option>
-                                <option value="voronezh">Воронеж</option>
-                                <option value="yekaterinburg">Екатеринбург</option>
-                                <option value="kazan">Казань</option>
-                                <option value="kaliningrad">Калининград</option>
-                                <option value="krasnodar">Краснодар</option>
-                                <option value="krasnoyarsk">Красноярск</option>
-                                <option value="nizhny_novgorod">Нижний Новгород</option>
-                                <option value="novosibirsk">Новосибирск</option>
-                                <option value="omsk">Омск</option>
-                                <option value="permian">Пермь</option>
-                                <option value="rostov_on_don">Ростов-на-Дону</option>
-                                <option value="samara">Самара</option>
-                                <option value="ufa">Уфа</option>
-                                <option value="chelyabinsk">Челябинск</option>
-                                <option value="sevastopol">Севастополь</option>
-                                <option value="simferopol">Симферополь</option>
-                                <option value="other">Другой город</option>
+                                <option value="all" <?php if($param_city == 'all'){ echo ' selected="selected"'; } ?>>Все города</option>
+                                <option value="moscow" <?php if($param_city == 'moscow'){ echo ' selected="selected"'; } ?>>Москва</option>
+                                <option value="st_petersburg" <?php if($param_city == 'st_petersburg'){ echo ' selected="selected"'; } ?>>Санкт-Петербург</option>
+                                <option value="volgograd" <?php if($param_city == 'volgograd'){ echo ' selected="selected"'; } ?>>Волгоград</option>
+                                <option value="vladivostok" <?php if($param_city == 'vladivostok'){ echo ' selected="selected"'; } ?>>Владивосток</option>
+                                <option value="voronezh" <?php if($param_city == 'voronezh'){ echo ' selected="selected"'; } ?>>Воронеж</option>
+                                <option value="yekaterinburg" <?php if($param_city == 'yekaterinburg'){ echo ' selected="selected"'; } ?>>Екатеринбург</option>
+                                <option value="kazan" <?php if($param_city == 'kazan'){ echo ' selected="selected"'; } ?>>Казань</option>
+                                <option value="kaliningrad" <?php if($param_city == 'kaliningrad'){ echo ' selected="selected"'; } ?>>Калининград</option>
+                                <option value="krasnodar" <?php if($param_city == 'krasnodar'){ echo ' selected="selected"'; } ?>>Краснодар</option>
+                                <option value="krasnoyarsk" <?php if($param_city == 'krasnoyarsk'){ echo ' selected="selected"'; } ?>>Красноярск</option>
+                                <option value="nizhny_novgorod" <?php if($param_city == 'nizhny_novgorod'){ echo ' selected="selected"'; } ?>>Нижний Новгород</option>
+                                <option value="novosibirsk" <?php if($param_city == 'novosibirsk'){ echo ' selected="selected"'; } ?>>Новосибирск</option>
+                                <option value="omsk" <?php if($param_city == 'omsk'){ echo ' selected="selected"'; } ?>>Омск</option>
+                                <option value="permian" <?php if($param_city == 'permian'){ echo ' selected="selected"'; } ?>>Пермь</option>
+                                <option value="rostov_on_don" <?php if($param_city == 'rostov_on_don'){ echo ' selected="selected"'; } ?>>Ростов-на-Дону</option>
+                                <option value="samara" <?php if($param_city == 'samara'){ echo ' selected="selected"'; } ?>>Самара</option>
+                                <option value="ufa" <?php if($param_city == 'ufa'){ echo ' selected="selected"'; } ?>>Уфа</option>
+                                <option value="chelyabinsk" <?php if($param_city == 'chelyabinsk'){ echo ' selected="selected"'; } ?>>Челябинск</option>
+                                <option value="sevastopol" <?php if($param_city == 'sevastopol'){ echo ' selected="selected"'; } ?>>Севастополь</option>
+                                <option value="simferopol" <?php if($param_city == 'simferopol'){ echo ' selected="selected"'; } ?>>Симферополь</option>
+                                <option value="other" <?php if($param_city == 'other'){ echo ' selected="selected"'; } ?>>Другой город</option>
                         </select>
                         <p class="users-search-links-button" ><input type="submit" class="search-user-by-param" name="search_user_by_param" value="Поиск" /></p>     
                     </form>       
