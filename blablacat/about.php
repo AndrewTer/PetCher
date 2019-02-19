@@ -8,8 +8,11 @@
     <div class="contain clearfix">
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
         <nav>
+            <a href="login.php">Вход</a>
             <a href="register.php">Регистрация</a>
             <a href="">Правила</a>
+            <a href="">Помощь</a>
+            <a href="about.php">О нас</a>
         </nav>
     </div>
 </div>
@@ -47,9 +50,28 @@
     <p id="text-for-map-add">Остальные города России также могут быть указаны пользователями сервиса в описании.</p>
     <hr />
     
+    <p id="text-for-map-add">Для ознакомления с правилами данного сервиса, а также по вопросам пользования, вы можете обратиться к разделам, ссылки на которые приведены ниже</p>
+    
+    <div class="links-for-help-and-rules">
+        <div id="links-for-help-photo">
+            <a rel="nofollow" href="help.php">
+                <img src="images/help-icon.png" alt="" width="100%" />';
+            </a>
+        </div>
+        <div id="links-for-rules-photo">
+            <a rel="nofollow" href="rules.php">
+                <img src="images/rules-icon.png" alt="" width="100%" />';
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <hr />
+    
     <p id="text-for-map-add">Если есть какие-либо пожелания или вопросы, ответы на которые вы не смогли найти в разделе <a class="url-help" href="help.php">Помощь</a>, то вы можете написать сюда</p>
     <h4>Дополнить</h4>
     <hr />
+    
     <p id="text-for-map-add">BlaBlaCat - недавно начавший свою работу сервис, поэтому, если вам нравится данный сервис, мы будем очень вам признательны, если вы расскажете о нас:</p>
 
     <div style="text-align: center;" data-path="images/" class="shareinit"></div>
