@@ -716,3 +716,65 @@ input:checked + .toggle .toggle-handler .tongue {
 .url-help:hover {
     color: #9fdbfc;
 }
+
+.links-for-help-and-rules {
+    /*border: 1px solid red;*/
+}
+
+#links-for-help-photo {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 200px;
+    margin-right: 50px;
+    overflow: hidden;
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #3b8dbd 2px solid;
+    box-shadow: 0px 1px 2px 2px #E84DEF; /* тень */
+    -moz-box-shadow: 0px 1px 2px 2px #E84DEF;
+    -webkit-box-shadow: 0px 1px 2px 2px #E84DEF;
+    float: left;
+}
+
+#links-for-rules-photo {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 200px;
+    overflow: hidden;
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #3b8dbd 2px solid;
+    box-shadow: 0px 1px 2px 2px #E84DEF; /* тень */
+    -moz-box-shadow: 0px 1px 2px 2px #E84DEF;
+    -webkit-box-shadow: 0px 1px 2px 2px #E84DEF;
+    float: left;
+}
+
+#links-for-help-photo img, #links-for-rules-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*border: 1px solid #8A2877;*/
+}
+
+.clear {
+    clear: left; /* Отмена обтекания */
+}
