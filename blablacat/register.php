@@ -91,7 +91,10 @@ else
     <div class="contain clearfix">
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
         <nav>
+            <a href="login.php">Вход</a>
+            <a href="register.php">Регистрация</a>
             <a href="">Правила</a>
+            <a href="">Помощь</a>
             <a href="about.php">О нас</a>
         </nav>
     </div>
@@ -130,7 +133,7 @@ else
 		      <input type="submit" name="register" id="register" class="button" value="Продолжить регистрацию" />
             </p>
 	
-            <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход</a>!</p>
+            <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход!</a></p>
         </form>
     </div>
 </div>
