@@ -54,14 +54,16 @@ else
 </head>
 
 <div class="header">
-<div class="contain clearfix">
-
-<a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
-<nav>
-<a href="">Правила</a>
-<a href="about.php">О нас</a>
-</nav>
-</div>
+    <div class="contain clearfix">
+        <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
+        <nav>
+            <a href="login.php">Вход</a>
+            <a href="register.php">Регистрация</a>
+            <a href="">Правила</a>
+            <a href="">Помощь</a>
+            <a href="about.php">О нас</a>
+        </nav>
+    </div>
 </div>
 
 <div class="container mlogin">
@@ -93,4 +95,3 @@ else
 <div class="footer">
 BlaBlaCat © 2019
 </div>
-	
