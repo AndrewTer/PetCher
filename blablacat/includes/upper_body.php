@@ -103,10 +103,11 @@ if ($_POST["add_new_pet"])
                 
                 <nav>
                     <ul class="list-user-menu">
-                        <a href="favourites.php"><li class="list-user-menu-item">&ensp;&#9733;&ensp;Избранное</li></a>
-                        <a href="reviews.php?sort=about_me"><li class="list-user-menu-item">&ensp;&#9993;&ensp;Отзывы</li></a>
-                        <a href="requests.php"><li class="list-user-menu-item">&ensp;&#9743;&ensp;Заявки от ситтеров <?if ($count_requests > 0) { echo '<div class="count-requests">'.$count_requests.'</div>'; }?></li></a>
-                        <a href=""><li class="list-user-menu-item">&ensp;&#9990;&ensp;Ответы на мои заявки</li></a>
+                        <a href="index.php?id<?echo $id;?>"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-orders.png" width="10%"/>&ensp;<span>Заказы</span></li></a>
+                        <a href="favourites.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-fav.png" width="10%"/>&ensp;<span>Избранное</span></li></a>
+                        <a href="reviews.php?sort=about_me"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-reviews.png" width="10%"/>&ensp;<span>Отзывы</span></li></a>
+                        <a href="requests.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-requests.png" width="10%"/>&ensp;<span>Заявки от ситтеров</span> <?if ($count_requests > 0) { echo '<div class="count-requests">'.$count_requests.'</div>'; }?></li></a>
+                        <a href=""><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-answers.png" width="10%"/>&ensp;<span>Ответы на мои заявки</span></li></a>
                     </ul>
                 </nav>
                 
@@ -114,8 +115,8 @@ if ($_POST["add_new_pet"])
                 
                 <nav>
                     <ul class="list-user-menu">
-                        <a href="users_search.php?sort=all-users"><li class="list-user-menu-item">&ensp;&#128270;&ensp;Поиск пользователей</li></a>
-                        <a href="search.php"><li class="list-user-menu-item">&ensp;&#128270;&ensp;Поиск заказов</li></a>
+                        <a href="users_search.php?sort=all-users"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-users-search.png" width="10%"/>&ensp;<span>Поиск пользователей</span></li></a>
+                        <a href="search.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-orders-search.png" width="10%"/>&ensp;<span>Поиск заказов</span></li></a>
                     </ul>
                 </nav>
                 
