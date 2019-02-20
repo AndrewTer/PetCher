@@ -388,9 +388,15 @@ body {
 
 .list-user-menu-item {
     list-style-type: none; /* Убираем маркеры */
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
     /*border: 1px solid blue;*/
+}
+
+.list-user-menu-item span {
+    margin: 0;
+    vertical-align: 6px;
+    /*border: 1px solid green;*/
 }
 
 .user-menu nav {
@@ -1732,7 +1738,7 @@ body {
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-top: -2px;
+    margin-top: 4px;
     margin-right: 2px;
     float: right;
 }
@@ -2565,4 +2571,11 @@ body {
 
 .search-user-by-param:hover, .search-order-by-param:hover {
     border: 1px solid #3b8dbd;
+}
+
+.main-user-menu {
+    /*border: 1px solid red;*/
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
 }
