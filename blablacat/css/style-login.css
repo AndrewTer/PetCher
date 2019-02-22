@@ -737,9 +737,7 @@ input:checked + .toggle .toggle-handler .tongue {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border: #3b8dbd 2px solid;
-    box-shadow: 0px 1px 2px 2px #9fdbfc; /* тень */
-    -moz-box-shadow: 0px 1px 2px 2px #9fdbfc;
-    -webkit-box-shadow: 0px 1px 2px 2px #E84DEF;
+    
     float: left;
 }
 
@@ -759,9 +757,7 @@ input:checked + .toggle .toggle-handler .tongue {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border: #3b8dbd 2px solid;
-    box-shadow: 0px 1px 2px 2px #E84DEF; /* тень */
-    -moz-box-shadow: 0px 1px 2px 2px #E84DEF;
-    -webkit-box-shadow: 0px 1px 2px 2px #E84DEF;
+    
     float: left;
 }
 
