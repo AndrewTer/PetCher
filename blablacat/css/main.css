@@ -2054,7 +2054,7 @@ body {
     color: #273F9B;
     text-decoration: none;
     font-size: 13px;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 
 .order-cost-search {
@@ -2577,5 +2577,5 @@ body {
     /*border: 1px solid red;*/
     margin: 0;
     padding: 0;
-    margin-left: 5px;
+    margin-left: 5px;   
 }
