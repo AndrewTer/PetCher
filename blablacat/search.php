@@ -294,7 +294,8 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                             echo '</div>
                                     
                                     <div class="right-part-order-search-list">
-                                        <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a> <a id="order-about-search-username-page" href="user.php?id='.$row_search["user_id"].'">(Перейти на страницу)</a></p>
+                                        <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
+                                        <p class="order-about-search"><a id="order-about-search-username-page" href="user.php?id='.$row_search["user_id"].'">(Перейти на страницу пользователя)</a></p>
                                         <p class="order-about-search">'.$row_search["about_order"].'</p>';
                                         if ($row_search["city"]!=null)
                                         {
