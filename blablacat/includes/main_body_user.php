@@ -14,6 +14,7 @@
                     }else
                     {
                         $row_result_orders_current_user = mysql_fetch_array($result_orders_current_user);
+                        $current_orders_count_after = 0;
                         do{
                             $current_order_id = $row_result_orders_current_user["order_id"];
                             
@@ -88,8 +89,14 @@
                                         <div class="clear"></div>
                                 </div>
                                 ';
+                                $current_orders_count_after++;
                             }
                         }while ($row_result_orders_current_user = mysql_fetch_array($result_orders_current_user));
+                        
+                        if ($current_orders_count_after == 0)
+                        {
+                            echo '<hr /><p class="not-order">Список текущих заказов пуст</p>';
+                        }
                     }
                     ?>
                 </div>
@@ -162,5 +169,4 @@
                 ?>
                 </div>
             </div> 
-            
 </div>
