@@ -76,6 +76,9 @@
     <h4>Дополнить</h4>
     <hr />
     
+    <p id="text-for-map-add">Специально для любителей саги <a class="url-help" href="starwars.php">Звёздные войны</a> у нас есть отдельно оформленный текст</p>
+    <hr />
+    
     <p id="text-for-map-add">BlaBlaCat - недавно начавший свою работу сервис, поэтому, если вам нравится данный сервис, мы будем очень вам признательны, если вы расскажете о нас:</p>
 
     <div style="text-align: center;" data-path="images/" class="shareinit"></div>
