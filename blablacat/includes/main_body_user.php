@@ -16,70 +16,82 @@
                         $row_result_orders_current_user = mysql_fetch_array($result_orders_current_user);
                         do{
                             $current_order_id = $row_result_orders_current_user["order_id"];
-                            echo '
-                            <hr />
-                            <div class="current-order">
-                                    <div class="ribbon-wrapper-blue">
-                                        <div class="ribbon-blue">Текущий</div>
-                                    </div>
-                                    <div class="left-part-order-list">
-                                        <div id="avatar-pet">';
-                                            if($row_result_orders_current_user["avatar"]!="no" && file_exists("users/".$row_selected_user["folder"]."/".$row_result_orders_current_user["avatar"]))
+                            
+                            //Сравнение даты окончания заказа с текущей
+                            $result_date_order_fav_user=(strtotime($row_result_orders_current_user["date_in"])<strtotime(date('y-m-j'))); 
+                            if ($result_date_order_fav_user==true)
+                            {
+                                $change_status = mysql_query("UPDATE orders SET kind='performed' WHERE id=".$current_order_id);
+                                $row_result_orders_current_user["order_kind"]="performed";
+                            }
+                            
+                            if ($row_result_orders_current_user["order_kind"]=="current")
+                            {
+                                echo '
+                                <hr />
+                                <div class="current-order">
+                                        <div class="ribbon-wrapper-blue">
+                                            <div class="ribbon-blue">Текущий</div>
+                                        </div>
+                                        <div class="left-part-order-list">
+                                            <div id="avatar-pet">';
+                                                if($row_result_orders_current_user["avatar"]!="no" && file_exists("users/".$row_selected_user["folder"]."/".$row_result_orders_current_user["avatar"]))
+                                                {
+                                                    $img_path = 'users/'.$row_selected_user["folder"].'/'.$row_result_orders_current_user["avatar"];
+                                                    echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                                }else
+                                                {
+                                                    echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                                }
+                                        echo '</div>
+                                        </div>
+                                        <div class="right-part-order-list">
+                                            <p class="order-about">'.$row_result_orders_current_user["about_order"].'</p>';
+                                            if ($row_result_orders_current_user["city"]==null)
                                             {
-                                                $img_path = 'users/'.$row_selected_user["folder"].'/'.$row_result_orders_current_user["avatar"];
-                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                                echo '<p class="order-about">Город: не указан</p>';
                                             }else
                                             {
-                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                                echo '<p class="order-about">Город: '.$row_result_orders_current_user["city"].'</p>';
                                             }
-                                    echo '</div>
-                                    </div>
-                                    <div class="right-part-order-list">
-                                        <p class="order-about">'.$row_result_orders_current_user["about_order"].'</p>';
-                                        if ($row_result_orders_current_user["city"]==null)
-                                        {
-                                            echo '<p class="order-about">Город: не указан</p>';
-                                        }else
-                                        {
-                                            echo '<p class="order-about">Город: '.$row_result_orders_current_user["city"].'</p>';
-                                        }
-                                        echo '<p class="order-about">Даты: с '.$row_result_orders_current_user["date_out"].' до '.$row_result_orders_current_user["date_in"].'</p>
-                                        <p class="order-about">Животное: '.$row_result_orders_current_user["pet_kind"].' ('.$row_result_orders_current_user["pet_sex"].')</p>
-                                        <p class="order-about">Кличка: '.$row_result_orders_current_user["pet_name"].'</p>
-                                        <p class="order-about">Порода: '.$row_result_orders_current_user["pet_breed"].'</p>
-                                        <p class="order-about">Рост | Вес: '.$row_result_orders_current_user["pet_growth"].' м | '.$row_result_orders_current_user["pet_weight"].' кг</p>
-                                        <p class="order-cost">Цена: '.$row_result_orders_current_user["cost"].' руб</p>';
-                ?>
-                <script type="text/javascript">
-                    function goaddapply(identifier)
-                    {     
-                        var current_order =$(identifier).data('orderid'); 
-                        var sit_user = <?php echo $id ?>;
-                        //alert(current_order);
-                        //alert(sit_user);
-                        var tmpFunc = new Function(applycurrentorder(current_order, sit_user));
-                        tmpFunc();                                      
-                    }                           
-                </script>
-                
-                <?                       
-                                        $search_req_rows = mysql_query("SELECT * FROM request, orders WHERE (request.order_id = orders.id) AND (request.sitter_id = $id) AND (orders.owner_id = ".$user_id.") AND (request.order_id = ".$row_result_orders_current_user["order_id"].") AND (request.deleted='no')");
-                                        if (mysql_num_rows($search_req_rows) > 0)
-                                        {
-                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" onclick="event.preventDefault();goaddapply(this);" class="del-apply-current-order" id="apply_current_user_order" href="" ></a></p>';
-                                        }else
-                                        {
-                                            echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" onclick="event.preventDefault();goaddapply(this);" class="apply-current-order" id="apply_current_user_order" href="" ></a></p>';
-                                        }
-                                
-                                        echo '
-                                    </div>
-                                    <div class="clear"></div>
-                            </div>
-                            ';
+                                            echo '<p class="order-about">Даты: с '.$row_result_orders_current_user["date_out"].' до '.$row_result_orders_current_user["date_in"].'</p>
+                                            <p class="order-about">Животное: '.$row_result_orders_current_user["pet_kind"].' ('.$row_result_orders_current_user["pet_sex"].')</p>
+                                            <p class="order-about">Кличка: '.$row_result_orders_current_user["pet_name"].'</p>
+                                            <p class="order-about">Порода: '.$row_result_orders_current_user["pet_breed"].'</p>
+                                            <p class="order-about">Рост | Вес: '.$row_result_orders_current_user["pet_growth"].' м | '.$row_result_orders_current_user["pet_weight"].' кг</p>
+                                            <p class="order-cost">Цена: '.$row_result_orders_current_user["cost"].' руб</p>';
+                    ?>
+                    <script type="text/javascript">
+                        function goaddapply(identifier)
+                        {     
+                            var current_order =$(identifier).data('orderid'); 
+                            var sit_user = <?php echo $id ?>;
+                            //alert(current_order);
+                            //alert(sit_user);
+                            var tmpFunc = new Function(applycurrentorder(current_order, sit_user));
+                            tmpFunc();                                      
+                        }                           
+                    </script>
+                    
+                    <?                       
+                                            $search_req_rows = mysql_query("SELECT * FROM request, orders WHERE (request.order_id = orders.id) AND (request.sitter_id = $id) AND (orders.owner_id = ".$user_id.") AND (request.order_id = ".$row_result_orders_current_user["order_id"].") AND (request.deleted='no')");
+                                            if (mysql_num_rows($search_req_rows) > 0)
+                                            {
+                                                echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" onclick="event.preventDefault();goaddapply(this);" class="del-apply-current-order" id="apply_current_user_order" href="" ></a></p>';
+                                            }else
+                                            {
+                                                echo '<p class="apply-order-links" ><a data-orderid="'.$current_order_id.'" onclick="event.preventDefault();goaddapply(this);" class="apply-current-order" id="apply_current_user_order" href="" ></a></p>';
+                                            }
+                                    
+                                            echo '
+                                        </div>
+                                        <div class="clear"></div>
+                                </div>
+                                ';
+                            }
                         }while ($row_result_orders_current_user = mysql_fetch_array($result_orders_current_user));
                     }
-                ?>
+                    ?>
                 </div>
             </div> 
             
