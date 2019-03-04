@@ -130,7 +130,7 @@ else
             </p>
     
             <p class="submit">
-		      <input type="submit" name="register" id="register" class="button" value="Продолжить регистрацию" />
+		      <input type="submit" name="register" id="register" class="button" value="Регистрация" />
             </p>
 	
             <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход!</a></p>
