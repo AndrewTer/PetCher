@@ -107,7 +107,7 @@
             header("Location: index.php"); 
         }
         
-        $result_search = mysql_query("SELECT id AS user_id, full_name, city, description, photo, rating, folder FROM users WHERE (id != $id) AND (deleted = 'no') $param_city_search $sort");
+        $result_search = mysql_query("SELECT id AS user_id, full_name, city, description, photo, rating, folder, status, last_visit FROM users WHERE (id != $id) AND (deleted = 'no') $param_city_search $sort");
         
         $result_search_count = mysql_query("SELECT * FROM users WHERE (id != $id)");
         
@@ -194,6 +194,21 @@
                                     
                                     <div class="right-part-user-search-list">
                                         <p class="user-about-search"><a id="user-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name"].'</a></p>';
+                                        
+                                        $current_time_result = mysql_query("SELECT SUBTIME(CURTIME(), '0:2:0') AS twomin, DATE(NOW());");
+                                        $row_current_time_result = mysql_fetch_array($current_time_result);
+                                        
+                                        $loggedTime=$row_current_time_result["twomin"];	//2 minutes
+                                        $loggedDate=$row_current_time_result["DATE(NOW())"];
+                                        if(($row_search["status"]>$loggedTime) && ($row_search["last_visit"]==$loggedDate))
+                                        {
+                                        	echo '<p class="user-about-search" id="online-status">Статус: онлайн</p>';
+                                        }
+                                        else
+                                        {
+                                        	echo '<p class="user-about-search" id="offline-status">Статус: оффлайн</p>';
+                                        }
+                                        
                                         if ($row_search["city"]!=null)
                                         {
                                             echo '<p class="user-about-search">Город: '.$row_search["city"].'</p>';
