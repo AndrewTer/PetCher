@@ -1,4 +1,8 @@
 <?
+    $current_time_main_result = mysql_query("SELECT CURTIME()");
+    $row_current_time_main_result = mysql_fetch_array($current_time_main_result);
+                    
+    $setLogged=mysql_query("UPDATE users SET status='".$row_current_time_main_result["CURTIME()"]."', last_visit='".date("y-m-j")."' WHERE id='".$id."'");
     $result_new = mysql_query("SELECT * FROM users WHERE id = '".$id."' AND password = '".$encrypted_password."'"); // AND email = '".$email."'");
     if (mysql_num_rows($result_new) > 0)
     {
