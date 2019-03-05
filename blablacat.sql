@@ -1,3 +1,5 @@
+-- Версия сервера: 5.5.25
+-- Версия PHP: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,8 +38,7 @@ CREATE TABLE IF NOT EXISTS `favorites` (
   `favourite_id` int(11) DEFAULT NULL,
   `deleted` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 -- --------------------------------------------------------
 
@@ -56,7 +57,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `kind` varchar(10) NOT NULL,
   `deleted` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+
+-- --------------------------------------------------------
 
 --
 -- Структура таблицы `pets`
@@ -75,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `pets` (
   `photo` varchar(50) NOT NULL,
   `deleted` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 -- --------------------------------------------------------
 
@@ -89,8 +92,7 @@ CREATE TABLE IF NOT EXISTS `request` (
   `sitter_id` int(11) DEFAULT NULL,
   `deleted` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `hidden` varchar(10) DEFAULT NULL,
   `deleted` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -121,15 +123,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` text,
   `phone_number` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `address` text NOT NULL,
+  `city` varchar(70) NOT NULL,
+  `street` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `photo` varchar(50) NOT NULL,
   `rating` double DEFAULT NULL,
   `folder` varchar(100) NOT NULL,
+  `last_visit` date NOT NULL,
+  `status` time NOT NULL,
   `deleted` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
