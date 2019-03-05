@@ -92,8 +92,7 @@ if($_SESSION['auth_user'] == "yes_auth")
             break;
         }
         
-        mysql_query("UPDATE users SET full_name = '".$_POST["change_user_name"]."', phone_number = '".$_POST["change_user_phone_number"]."', 
-                        email = '".$_POST["change_user_email"]."', city = '".$city_change_user_result."', street = '".$_POST["change_user_street"]."', 
+        mysql_query("UPDATE users SET full_name = '".$_POST["change_user_name"]."', city = '".$city_change_user_result."', street = '".$_POST["change_user_street"]."', 
                         description = '".$_POST["change_user_about"]."' WHERE id = $id");
     }
 
@@ -165,8 +164,6 @@ if($_SESSION['auth_user'] == "yes_auth")
                     <p class="update-info-title">Основное</p>
                     <hr />
                     <p class="change-user-info">ФИО:&emsp; <input type="text" id="change-user-name" name="change_user_name" maxlength="50" value="<?echo $row_change_user_info["full_name"];?>" required /></p>
-                    <p class="change-user-info">Моб.телефон: &emsp; <input type="text" name="change_user_phone_number" maxlength="20" id="change-user-phone-number" class="input" value="<?echo $row_change_user_info["phone_number"];?>" size="20" required placeholder="+7" /></p>
-                    <p class="change-user-info">Email: &emsp; <input type="email" name="change_user_email" placeholder="example@gmail.com" maxlength="50" id="change-user-phone-email" class="input" value="<?echo $row_change_user_info["email"];?>" required /></p>
                     <p class="change-user-info">Город: &emsp; 
                         <select id="change-user-city" name="change_user_city">
                             <option value="moscow" <?php if($row_change_user_info['city'] == 'Москва'){ echo ' selected="selected"'; } ?>>Москва</option>
