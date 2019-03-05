@@ -336,6 +336,7 @@ body {
     width:100%;
     height: 100%;
     /*border: 1px solid black;*/
+    vertical-align: middle;        
 }
 
 .user-rating {
@@ -2718,4 +2719,12 @@ body {
         -webkit-transform: scale(1);
         opacity: 1; 
     }       
+}
+
+#online-status {
+    color: blue;
+}
+
+#offline-status {
+    color: #D63301;
 }
