@@ -37,6 +37,21 @@
             <div class="user-info">
                 <p class="name-user"><? echo $row_selected_user["full_name"];?></p>
                 <p class="address-user"><? echo $row_selected_user["city"] ?></p>
+                <?
+                    $current_time_result = mysql_query("SELECT SUBTIME(CURTIME(), '0:2:0') AS twomin, DATE(NOW());");
+                    $row_current_time_result = mysql_fetch_array($current_time_result);
+                    
+                    $loggedTime=$row_current_time_result["twomin"];	//2 minutes
+                    $loggedDate=$row_current_time_result["DATE(NOW())"];
+                    if(($row_selected_user["status"]>$loggedTime) && ($row_selected_user["last_visit"]==$loggedDate))
+                    {
+                    	echo '<p class="about-user" id="online-status">Статус: онлайн</p>';
+                    }
+                    else
+                    {
+                    	echo '<p class="about-user" id="offline-status">Статус: пользователь был в сети '.$row_selected_user["last_visit"].' в '.$row_selected_user["status"].'</p>';
+                    }
+                ?>
                 <hr />
                 <p class="about-user-info">О себе</p>
                 <?
