@@ -135,6 +135,21 @@ if ($_POST["add_new_pet"])
                 ?>
                 </p>
                 <p class="address-user-hint">(другим пользователям виден только ваш город для удобства поиска ваших заказов)</p>
+                <?
+                    $current_time_result = mysql_query("SELECT SUBTIME(CURTIME(), '0:2:0') AS twomin, DATE(NOW());");
+                    $row_current_time_result = mysql_fetch_array($current_time_result);
+                    
+                    $loggedTime=$row_current_time_result["twomin"];	//2 minutes
+                    $loggedDate=$row_current_time_result["DATE(NOW())"];
+                    if($row_new["status"]>$loggedTime && ($row_new["last_visit"]==$loggedDate))
+                    {
+                    	echo '<p class="about-user" id="online-status">Ваш статус: онлайн</p>';
+                    }
+                    else
+                    {
+                    	echo '<p class="about-user">Ваш статус: оффлайн</p>';
+                    }
+                ?>
                 <hr />
                 <p class="about-user-info">Контактная информация</p>
                 <p class="about-user">Моб.номер: <? echo $row_new["phone_number"]; ?></p>
