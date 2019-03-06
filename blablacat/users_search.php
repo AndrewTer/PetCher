@@ -287,7 +287,7 @@
                     <hr />
                     
                     <a class="sort-user-by-param-a" href="users_search.php?sort=rating-decrease"><p class="sort-user-by-param">&#8659; По убыванию рейтинга</p></a>
-                    <a class="sort-user-by-param-a" href="users_search.php?sort=rating-increase"><p class="sort-user-by-param">&#8657; По возрастанию рейтинга</p><a></a>
+                    <a class="sort-user-by-param-a" href="users_search.php?sort=rating-increase"><p class="sort-user-by-param">&#8657; По возрастанию рейтинга</p></a>
                     <a class="sort-user-by-param-a" href="users_search.php?sort=all-users"><p class="sort-user-by-param">&#215; Без сортировки</p><a></a>             
                 </div>
                 
