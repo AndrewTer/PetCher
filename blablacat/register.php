@@ -28,7 +28,7 @@ if(isset($_POST["register"]))
 	
             if($numrows==0)
             {
-                $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','Другой город','','','no','0','','no')";
+                $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','Другой город','','','no','0','','','','no')";
                 $result=mysql_query($sql);
             
                 if($result)
