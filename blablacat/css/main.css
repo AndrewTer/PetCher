@@ -1558,6 +1558,19 @@ body {
     width: 80%;
 }
 
+#current-order-sitter {
+    margin: auto;
+    margin-top: 10px;
+    /*border: 1px solid black;*/
+    color: #3D3D3D;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center; 
+    /*border: 1px solid red;*/
+}
+
 .delete-order-links {
     /*border: 1px solid brown;*/
     float: right;
@@ -1572,7 +1585,8 @@ body {
     cursor: pointer;
     color: #D63301;
     background-color: #FFD2C2;
-    box-shadow: 0px 0px 3px 2px #FC6636; 
+    border: 1px solid #FC6636;  
+    /*box-shadow: 0px 0px 3px 2px #FC6636; */
     padding: 4px;
     border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
@@ -1580,7 +1594,33 @@ body {
 }
 
 .delete-current-order:hover {
-    box-shadow: 0px 0px 3px 2px #D63301; 
+    /*box-shadow: 0px 0px 3px 2px #D63301; */
+}
+
+.change-order-links {
+    /*border: 1px solid brown;*/
+    float: right;
+    position: relative;
+    margin: 0;
+    margin-right: 10px;
+    margin-top: -7.5px; 
+}
+
+.change-current-order {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #3B64BD;
+    background-color: #9fdbfc;
+    border: 1px solid #1557D5;    
+    padding: 4px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    text-decoration: none;    
+}
+
+.change-current-order:hover {
+    /*box-shadow: 0px 0px 3px 2px #1557D5; */
 }
 
 .block-add-order {
