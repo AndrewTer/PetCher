@@ -125,7 +125,6 @@ if ($_POST["add_new_order"])
                     {
                         $row_orders = mysql_fetch_array($result_orders);
                         do{
-                            
                             //Сравнение даты окончания заказа с текущей
                             $result_date=(strtotime($row_orders["date_in"])<strtotime(date('y-m-j'))); 
                             if ($result_date==true)
@@ -170,9 +169,13 @@ if ($_POST["add_new_order"])
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
                                         <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
+                                        
                                         <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>
+                                        <p class="change-order-links" ><a class="change-current-order" href="#" id="changemycurrentorder" >Редактировать</a></p>
                                     </div>
                                     <div class="clear"></div>
+                                    <hr width=80% />
+                                    <p id="current-order-sitter">Место под текущего ситтера (если он есть)</p>
                             </div>
                             ';
                             } else if ($row_orders["order_kind"]=="performed" AND ($row_orders["order_deleted"]=="no"))
