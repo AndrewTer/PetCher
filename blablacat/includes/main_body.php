@@ -137,7 +137,7 @@ if ($_POST["add_new_order"])
                             {
                                 echo '
                             <hr />
-                            <div class="current-order">
+                            <div class="current-order" id="curor'.$row_orders["order_id"].'ch" style="display: block;">
                                     <div class="ribbon-wrapper-blue">
                                         <div class="ribbon-blue">Текущий</div>
                                     </div>
@@ -170,13 +170,30 @@ if ($_POST["add_new_order"])
                                         <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
                                         <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
                                         
-                                        <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>
-                                        <p class="change-order-links" ><a class="change-current-order" href="#" id="changemycurrentorder" >Редактировать</a></p>
+                                        <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>';
+                ?>
+                                        <p class="change-order-links" ><a class="change-current-order" href="javascript:SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf')" id="changemycurrentorder" >Редактировать</a></p>
                                     </div>
                                     <div class="clear"></div>
                                     <hr width=80% />
+                <?
+                                    echo '
                                     <p id="current-order-sitter">Место под текущего ситтера (если он есть)</p>
                             </div>
+                            <div id="curor'.$row_orders["order_id"].'chf" style="display: none;">';
+                ?>
+                            <form enctype="multipart/form-data" method="post">
+                                <?
+                                    $current_date_result = mysql_query("SELECT DATE(NOW())");
+                                    $row_current_date_result = mysql_fetch_array($current_date_result);
+                                ?>
+                                <p class="add-order">Даты: с <input type="date" id="dates_new_order" name="date_out_new_order" value="<?echo $row_orders["date_out"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /> по <input type="date" id="dates_new_order" name="date_in_new_order" value="<?echo $row_orders["date_in"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /></p>
+                                <p class="add-order">Цена:&emsp; <input type="number" id="cost_new_order" name="cost_new_order" min="100" max="1000000" value="<?echo $row_orders["cost"]; ?>" placeholder="100-1000000" /> руб</p>
+                                <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_orders["about_order"]; ?></textarea>
+                                <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="change_current_order" value="Сохранить" /></p>
+                            </form>
+                <?
+                        echo '</div>
                             ';
                             } else if ($row_orders["order_kind"]=="performed" AND ($row_orders["order_deleted"]=="no"))
                             {
