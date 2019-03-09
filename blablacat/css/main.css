@@ -1572,11 +1572,26 @@ body {
 }
 
 .delete-order-links {
-    /*border: 1px solid brown;*/
     float: right;
     position: relative;
     margin: 0;
     margin-right: -80px;
+    margin-top: -20px; 
+}
+
+.delete-order-links-with-ch {
+    float: right;
+    position: relative;
+    margin: 0;
+    margin-top: -2.5px;
+}
+
+#del-and-cur-current-order {
+    /*border: 3px solid red; */
+    float: right; 
+    position: relative; 
+    margin: 0; 
+    margin-right: -83px; 
     margin-top: -20px; 
 }
 
@@ -1598,12 +1613,9 @@ body {
 }
 
 .change-order-links {
-    /*border: 1px solid brown;*/
     float: right;
     position: relative;
     margin: 0;
-    margin-right: 10px;
-    margin-top: -17.2px; 
 }
 
 .change-current-order {
