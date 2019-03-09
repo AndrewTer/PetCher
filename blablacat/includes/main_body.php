@@ -168,11 +168,14 @@ if ($_POST["add_new_order"])
                                         <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
-                                        <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
-                                        
-                                        <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>';
-                ?>
-                                        <p class="change-order-links" ><a class="change-current-order" href="javascript:SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf')" id="changemycurrentorder" >Редактировать</a></p>
+                                        <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
+                ?>                    
+                                        <table id="del-and-cur-current-order">
+                                            <tr >
+                                                <td width=auto;><p class="change-order-links" ><a class="change-current-order" href="javascript:SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf')" id="changemycurrentorder" >Редактировать</a></p></td>
+                                                <td width=auto;><p class="delete-order-links-with-ch" ><a class="delete-current-order" rel="index.php?id=<? echo $row_orders["order_id"].'&action=delete'; ?>" >Удалить | &#10008;</a></p></td>
+                                            </tr>
+                                        </table>
                                     </div>
                                     <div class="clear"></div>
                                     <hr width=80% />
