@@ -84,15 +84,14 @@
                                         }
                                         
                                         echo '</div>
-                                        <table style="margin-left: 10px; margin-right: 10px; table-layout: fixed; width: 200px;">
+                                        <table id="ref-and-appr-current-request">
                                             <tr>
-                                                <td style="padding-bottom: 15px; padding-top: 10px; text-align: center; width: 100%; max-width: 100px;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" href="user.php?id='.$row_requests["sitter_id"].'" >Страница ситтера</a></p></td>
+                                                <td style="padding-bottom: 10px; padding-top: 10px; width: auto;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" href="user.php?id='.$row_requests["sitter_id"].'" >Страница ситтера</a></p></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 50%; text-align: center; "><p class="approve-request-links" ><a class="approve-current-request" rel="" >Одобрить</a></p></td>
-                                                <td style="width: 50%; text-align: center;"><p class="refusing-request-links" ><a class="refuse-current-request" rel="" >Отказать</a></p></td>
+                                                <td style="width: auto;"><p class="approve-request-links" ><a class="approve-current-request" rel="" >Одобрить</a></p></td>
+                                                <td style="width: auto;"><p class="refusing-request-links" ><a class="refuse-current-request" rel="" >Отказать</a></p></td>
                                             </tr>
-                                            
                                         </table>
                                         
                                     </div>
