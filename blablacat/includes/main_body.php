@@ -172,7 +172,7 @@ if ($_POST["add_new_order"])
                 ?>                    
                                         <table id="del-and-cur-current-order">
                                             <tr >
-                                                <td width=auto;><p class="change-order-links" ><a class="change-current-order" href="javascript:SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf')" id="changemycurrentorder" >Редактировать</a></p></td>
+                                                <td width=auto;><p class="change-order-links" ><a class="change-current-order" onclick="event.preventDefault();SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf');" id="changemycurrentorder" >Редактировать</a></p></td>
                                                 <td width=auto;><p class="delete-order-links-with-ch" ><a class="delete-current-order" rel="index.php?id=<? echo $row_orders["order_id"].'&action=delete'; ?>" >Удалить | &#10008;</a></p></td>
                                             </tr>
                                         </table>
