@@ -2210,16 +2210,17 @@ body {
     cursor: pointer;
     color: #D63301;
     background-color: #FFD2C2;
-    box-shadow: 0px 0px 3px 2px #FC6636; 
+    /*box-shadow: 0px 0px 3px 2px #FC6636; */
     padding: 4px;
-    
+    border: 1px solid #D63301;
     border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
+    float: right;
 }
 
 .refuse-current-request:hover {
-    box-shadow: 0px 0px 3px 2px #D63301; 
+    /*box-shadow: 0px 0px 3px 2px #D63301; */
 }
 
 .approve-request-links {
@@ -2233,15 +2234,25 @@ body {
     cursor: pointer;
     color: #74993D;
     background-color: #DAF0A8;
-    box-shadow: 0px 0px 3px 2px #8EBF45; 
+    /*box-shadow: 0px 0px 3px 2px #8EBF45; */
     padding: 4px;
+    border: 1px solid #74993D;
     border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
+    float: left;
 }
 
 .approve-current-request:hover {
-    box-shadow: 0px 0px 3px 2px #74993D; 
+    /*box-shadow: 0px 0px 3px 2px #74993D; */
+}
+
+#ref-and-appr-current-request {
+    float: right; 
+    position: relative; 
+    margin: 0; 
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .sitter-request-links {
