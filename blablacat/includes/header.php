@@ -16,6 +16,12 @@
         $count_requests = mysql_num_rows($result_requests);
     }
     
+    $result_all_responses = mysql_query("SELECT responses.id FROM responses, users, orders WHERE (responses.order_id=orders.id) AND (orders.owner_id=users.id)");
+    if (mysql_num_rows($result_all_responses) > 0)
+    {
+        $count_all_responses = mysql_num_rows($result_all_responses);
+    }
+    
     $result_pet_list = mysql_query("SELECT * FROM pets WHERE (owner_id = $id) AND (deleted = 'no')");
 ?>
 <div class="header">
