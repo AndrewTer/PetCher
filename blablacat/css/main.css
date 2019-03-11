@@ -1134,7 +1134,7 @@ body {
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
 }
 
-.ribbon-wrapper-green, .ribbon-wrapper-blue {
+.ribbon-wrapper-green, .ribbon-wrapper-blue, .ribbon-wrapper-yellow {
     width: 88px;
     height: 88px;
     overflow: hidden;
@@ -1160,10 +1160,10 @@ body {
     left: -5px;
     top: 17px;
     width: 120px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));*/
+    background: #ABE421;
     color:#6a6340;
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
-        
 }
 
 .ribbon-blue {
@@ -1183,9 +1183,33 @@ body {
     left: -5px;
     top: 17px;
     width: 120px;
-    background: -webkit-gradient(linear, left top, left bottom, from(#8AADFF), to(#6896FD));
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#8AADFF), to(#6896FD));*/
+    background: #8AADFF;
     color:#405B6A;
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);  
+}
+
+.ribbon-yellow {
+    font-weight: bold;
+    font-family: Sans-Serif;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: white 0px 1px 0px;
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position: relative;
+    padding: 7px 0 ;
+    left: -5px;
+    top: 17px;
+    width: 120px;
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#8AADFF), to(#6896FD));*/
+    background: #FBC032;
+    color:#9E5E05;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3); 
 }
 
 .ribbon-green:before, .ribbon-green:after {
@@ -1210,11 +1234,22 @@ body {
     /* +1 to compensate for the border */ 
 }
 
-.ribbon-green:before, .ribbon-blue:before {
+.ribbon-yellow:before, .ribbon-yellow:after {
+    content: '';
+    /* Colour of the triangle. To flip the effect, use border-bottom. */ 
+    border-top: 3px solid #9E5E05;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+    /* +1 to compensate for the border */ 
+}
+
+.ribbon-green:before, .ribbon-blue:before, .ribbon-yellow:before {
     left: 0px;
 }
 
-.ribbon-green:after, .ribbon-blue:after {
+.ribbon-green:after, .ribbon-blue:after, .ribbon-yellow:after {
     right: 0px;
 }
  
