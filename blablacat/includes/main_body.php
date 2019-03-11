@@ -135,69 +135,167 @@ if ($_POST["add_new_order"])
                             
                             if (($row_orders["order_kind"]=="current") AND ($row_orders["order_deleted"]=="no")) 
                             {
-                                echo '
-                            <hr />
-                            <div class="current-order" id="curor'.$row_orders["order_id"].'ch" style="display: block;">
-                                    <div class="ribbon-wrapper-blue">
-                                        <div class="ribbon-blue">Текущий</div>
+                                $check_responses_order = mysql_query("SELECT * FROM responses WHERE (order_id = ".$row_orders["order_id"].") AND (kind='yes')");
+                                if (mysql_num_rows($check_responses_order) == null)
+                                {
+                                                echo '
+                                    <hr />
+                                    <div class="current-order" id="curor'.$row_orders["order_id"].'ch" style="display: block;">
+                                            <div class="ribbon-wrapper-blue">
+                                                <div class="ribbon-blue">Текущий</div>
+                                            </div>
+                                            
+                                            <div class="left-part-order-list">
+                                                <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
+                                                    if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
+                                                    {
+                                                        $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
+                                                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                                    }else
+                                                    {
+                                                        echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                                    }
+                                            echo '</a></div>
+                                            </div>
+                                            <div class="right-part-order-list">
+                                                <p class="order-about">'.$row_orders["about_order"].'</p>';
+                                                if ($row_orders["city"]==null)
+                                                {
+                                                    echo '<p class="order-about">Город: не указан</p>';
+                                                }else
+                                                {
+                                                    echo '<p class="order-about">Город: '.$row_orders["city"].'</p>';
+                                                }
+                                                echo '<p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
+                                                <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
+                                                <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
+                                                <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
+                                                <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                                <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
+                        ?>                    
+                                                <table id="del-and-cur-current-order">
+                                                    <tr >
+                                                        <td width=auto;><p class="change-order-links" ><a class="change-current-order" onclick="event.preventDefault();SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf');" id="changemycurrentorder" >Редактировать</a></p></td>
+                                                        <td width=auto;><p class="delete-order-links-with-ch" ><a class="delete-current-order" rel="index.php?id=<? echo $row_orders["order_id"].'&action=delete'; ?>" >Удалить | &#10008;</a></p></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="clear"></div>
+                        <?
+                                            echo '
                                     </div>
-                                    
-                                    <div class="left-part-order-list">
-                                        <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
-                                            if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
-                                            {
-                                                $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
-                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
-                                            }else
-                                            {
-                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
-                                            }
-                                    echo '</a></div>
-                                    </div>
-                                    <div class="right-part-order-list">
-                                        <p class="order-about">'.$row_orders["about_order"].'</p>';
-                                        if ($row_orders["city"]==null)
-                                        {
-                                            echo '<p class="order-about">Город: не указан</p>';
-                                        }else
-                                        {
-                                            echo '<p class="order-about">Город: '.$row_orders["city"].'</p>';
-                                        }
-                                        echo '<p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
-                                        <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
-                                        <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
-                                        <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
-                                        <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
-                                        <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
-                ?>                    
-                                        <table id="del-and-cur-current-order">
-                                            <tr >
-                                                <td width=auto;><p class="change-order-links" ><a class="change-current-order" onclick="event.preventDefault();SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf');" id="changemycurrentorder" >Редактировать</a></p></td>
-                                                <td width=auto;><p class="delete-order-links-with-ch" ><a class="delete-current-order" rel="index.php?id=<? echo $row_orders["order_id"].'&action=delete'; ?>" >Удалить | &#10008;</a></p></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="clear"></div>
-                                    <hr width=80% />
-                <?
+                                    <div id="curor'.$row_orders["order_id"].'chf" style="display: none;">';
+                        ?>
+                                    <form enctype="multipart/form-data" method="post">
+                                        <?
+                                            $current_date_result = mysql_query("SELECT DATE(NOW())");
+                                            $row_current_date_result = mysql_fetch_array($current_date_result);
+                                        ?>
+                                        <p class="add-order">Даты: с <input type="date" id="dates_new_order" name="date_out_new_order" value="<?echo $row_orders["date_out"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /> по <input type="date" id="dates_new_order" name="date_in_new_order" value="<?echo $row_orders["date_in"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /></p>
+                                        <p class="add-order">Цена:&emsp; <input type="number" id="cost_new_order" name="cost_new_order" min="100" max="1000000" value="<?echo $row_orders["cost"]; ?>" placeholder="100-1000000" /> руб</p>
+                                        <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_orders["about_order"]; ?></textarea>
+                                        <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="change_current_order" value="Сохранить" /></p>
+                                    </form>
+                        <?
+                                echo '</div>
+                                    ';
+                                }else
+                                {
+                                    $row_check_responses_order = mysql_fetch_array($check_responses_order);
                                     echo '
-                                    <p id="current-order-sitter">Место под текущего ситтера (если он есть)</p>
-                            </div>
-                            <div id="curor'.$row_orders["order_id"].'chf" style="display: none;">';
-                ?>
-                            <form enctype="multipart/form-data" method="post">
-                                <?
-                                    $current_date_result = mysql_query("SELECT DATE(NOW())");
-                                    $row_current_date_result = mysql_fetch_array($current_date_result);
-                                ?>
-                                <p class="add-order">Даты: с <input type="date" id="dates_new_order" name="date_out_new_order" value="<?echo $row_orders["date_out"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /> по <input type="date" id="dates_new_order" name="date_in_new_order" value="<?echo $row_orders["date_in"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /></p>
-                                <p class="add-order">Цена:&emsp; <input type="number" id="cost_new_order" name="cost_new_order" min="100" max="1000000" value="<?echo $row_orders["cost"]; ?>" placeholder="100-1000000" /> руб</p>
-                                <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_orders["about_order"]; ?></textarea>
-                                <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="change_current_order" value="Сохранить" /></p>
-                            </form>
-                <?
-                        echo '</div>
-                            ';
+                                    <hr />
+                                    <div class="current-order" id="curor'.$row_orders["order_id"].'ch" style="display: block;">
+                                            <div class="ribbon-wrapper-blue">
+                                                <div class="ribbon-blue">Текущий</div>
+                                            </div>
+                                            
+                                            <div class="left-part-order-list">
+                                                <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
+                                                    if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
+                                                    {
+                                                        $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
+                                                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                                    }else
+                                                    {
+                                                        echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                                    }
+                                            echo '</a></div>
+                                            </div>
+                                            <div class="right-part-order-list">
+                                                <p class="order-about">'.$row_orders["about_order"].'</p>';
+                                                if ($row_orders["city"]==null)
+                                                {
+                                                    echo '<p class="order-about">Город: не указан</p>';
+                                                }else
+                                                {
+                                                    echo '<p class="order-about">Город: '.$row_orders["city"].'</p>';
+                                                }
+                                                echo '<p class="order-about">Даты: с '.$row_orders["date_out"].' до '.$row_orders["date_in"].'</p>
+                                                <p class="order-about">Животное: '.$row_orders["pet_kind"].' ('.$row_orders["pet_sex"].')</p>
+                                                <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
+                                                <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
+                                                <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                                <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
+                        ?>                    
+                                                <p class="end-order-links" ><a class="end-current-order" id="changemycurrentorder" >Завершить заказ</a></p>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <hr width=80% />
+                                            <p class="text-for-current-order-sitter">Текущий ситтер</p>
+                        <?
+                                            $result_cur_order_sitter = mysql_query("SELECT * FROM users WHERE id=".$row_check_responses_order["sitter_id"]);
+                                            {
+                                                $row_result_cur_order_sitter = mysql_fetch_array($result_cur_order_sitter);
+                                                echo '
+                                                <div id="current-order-sitter">
+                                                    <div class="left-part-current-order-sitter">
+                                                        <div id="sitter-current-order-circle">';
+                                                            if($row_requests["sitter_photo"]!="no" && file_exists("users/".$row_requests["sitter_folder"]."/".$row_requests["sitter_photo"]))
+                                                            {
+                                                                $img_path_sitter = 'users/'.$row_result_cur_order_sitter["folder"].'/'.$row_result_cur_order_sitter["photo"];
+                                                                echo '<a href="user.php?id='.$row_result_cur_order_sitter["id"].'"><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
+                                                            }else
+                                                            {
+                                                                echo '<a href="user.php?id='.$row_result_cur_order_sitter["id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                                            }
+                                                            
+
+                                                    echo '</div>  
+                                                    </div>
+                                                    
+                                                    <div class="right-part-current-order-sitter">
+                                                        <p class="user-about-search"><a id="user-about-search-username" href="user.php?id='.$row_result_cur_order_sitter["id"].'">'.$row_result_cur_order_sitter["full_name"].'</a></p>';
+                                            
+                                                        $current_time_result = mysql_query("SELECT SUBTIME(CURTIME(), '0:2:0') AS twomin, DATE(NOW());");
+                                                        $row_current_time_result = mysql_fetch_array($current_time_result);
+                                                        
+                                                        $loggedTime=$row_current_time_result["twomin"];	//2 minutes
+                                                        $loggedDate=$row_current_time_result["DATE(NOW())"];
+                                                        if(($row_result_cur_order_sitter["status"]>$loggedTime) && ($row_result_cur_order_sitter["last_visit"]==$loggedDate))
+                                                        {
+                                                        	echo '<p class="user-about-search" id="online-status">Статус: онлайн</p>';
+                                                        }
+                                                        else
+                                                        {
+                                                        	echo '<p class="user-about-search" id="offline-status">Статус: оффлайн</p>';
+                                                        }
+                                                        
+                                                    echo '
+                                                        <p class="user-about-search">Рейтинг: '.$row_result_cur_order_sitter["rating"].' / 10</p>
+                                                        <p class="user-about-search">Моб.номер: '.$row_result_cur_order_sitter["phone_number"].'</p>
+                                                    </div>
+                                                    
+                                                    
+                                                    <div class="clear"></div>
+                                                </div>';
+                                            }
+                        
+                        
+                        
+                                            echo '
+                                    </div>
+                                    ';
+                                }
                             } else if ($row_orders["order_kind"]=="performed" AND ($row_orders["order_deleted"]=="no"))
                             {
                                 echo '
