@@ -8,7 +8,7 @@
     ");
     $count_user_requests = mysql_num_rows($result_requests);
 ?>
-<div class="main-part-body">
+<div class="main-part-body" id="main-part-body-req">
             <div class="requests-part">
                 <div id="block-title-and-sorting">
                     <div class="block-title-and-sorting-left">
@@ -83,14 +83,20 @@
                                             echo '<a href="user.php?id='.$row_requests["sitter_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                         }
                                         
+                                        $cur_order_resp_id = $row_requests["order_id"];
+                                        $cur_order_resp_sit_id = $row_requests["sitter_id"];
+                ?>
+                                          
+                                        <script type="text/javascript" src="js/ajax-scripts.js"></script>   
+                <?
                                         echo '</div>
                                         <table id="ref-and-appr-current-request">
                                             <tr>
                                                 <td style="padding-bottom: 10px; padding-top: 10px; width: auto;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" href="user.php?id='.$row_requests["sitter_id"].'" >Страница ситтера</a></p></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: auto;"><p class="approve-request-links" ><a class="approve-current-request" rel="" >Одобрить</a></p></td>
-                                                <td style="width: auto;"><p class="refusing-request-links" ><a class="refuse-current-request" rel="" >Отказать</a></p></td>
+                                                <td style="width: auto;"><p class="approve-request-links" ><a data-curorderresp="'.$cur_order_resp_id.'" data-curorderrespsit="'.$cur_order_resp_sit_id.'" onclick="event.preventDefault();" class="approve-current-request" href="" >Одобрить</a></p></td>
+                                                <td style="width: auto;"><p class="refusing-request-links" ><a data-curorderresp="'.$cur_order_resp_id.'" data-curorderrespsit="'.$cur_order_resp_sit_id.'" onclick="event.preventDefault();" class="refuse-current-request" href="" >Отказать</a></p></td>
                                             </tr>
                                         </table>
                                         
