@@ -141,8 +141,8 @@ if ($_POST["add_new_order"])
                                                 echo '
                                     <hr />
                                     <div class="current-order" id="curor'.$row_orders["order_id"].'ch" style="display: block;">
-                                            <div class="ribbon-wrapper-blue">
-                                                <div class="ribbon-blue">Текущий</div>
+                                            <div class="ribbon-wrapper-yellow">
+                                                <div class="ribbon-yellow">В поиске</div>
                                             </div>
                                             
                                             <div class="left-part-order-list">
