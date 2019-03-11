@@ -2217,6 +2217,7 @@ body {
     -webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     float: right;
+    text-decoration: none;
 }
 
 .refuse-current-request:hover {
@@ -2241,6 +2242,7 @@ body {
     -webkit-border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     float: left;
+    text-decoration: none;
 }
 
 .approve-current-request:hover {
