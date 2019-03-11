@@ -170,7 +170,105 @@ function addtorequestsearchorder(current_order, current_user)
     }
 }
 
+function addtoresponsescurrentrequest(current_order_response, current_sitter)
+{
+        var orderandsitter = 'order='+current_order_response+'&sitter='+current_sitter;
+        
+        //alert(orderandsitter);
+        
+        $.ajax({
+        url: "actions/apply-current-request.php",
+        type : 'POST',
+        data : orderandsitter,
+        success : function (data) {
+            //alert("Одобрено!");
+            //$( ".main-part-body" ).load(window.location.href + ".main-part-body" );
+            //Обновление страницы
+            location.reload(true)
+        },
+        error : function () {
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
+        }
+        });
+        return false;
+}
+
+function deltoresponsescurrentrequest(current_order_response, current_sitter)
+{
+        var orderandsitter = 'order='+current_order_response+'&sitter='+current_sitter;
+        
+        //alert(orderandsitter);
+        
+        $.ajax({
+        url: "actions/denial-current-request.php",
+        type : 'POST',
+        data : orderandsitter,
+        success : function (data) {
+            //alert("Отказано!");
+            //$( ".main-part-body" ).load(window.location.href + ".main-part-body" );
+            //Обновление страницы
+            location.reload(true)
+        },
+        error : function () {
+           alert("Ошибка!\r\nПовторите действие, пожалуйста");
+        }
+        });
+        return false;
+}
+
 $(document).ready(function(){
     $("#add_user_to_favorite_link").click(addtofavoriteuser);
     //$("#apply_current_user_order").click(applycurrentorder);
+    $('.approve-current-request').click(function(){
+        $.confirm({
+            'title'   : 'Подтверждение одобрения ситтера',
+            'message' : 'При этом будет отказано остальным ситтерам в выполнении текущего заказа<br />Это необратимое действие! Продолжить?',
+            'buttons' : {
+                'Да'  : {
+                    'class' : 'blue',
+                    'action': function goaddcurreqtoresp()
+                    {     
+                        var curr_or_resp =$('.approve-current-request').data('curorderresp'); 
+                        var curr_or_resp_sit =$('.approve-current-request').data('curorderrespsit');
+        
+                        var addtorespFunc = new Function(addtoresponsescurrentrequest(curr_or_resp, curr_or_resp_sit));
+                        addtorespFunc();                                      
+                    } 
+                },
+                'Нет' : {
+                    'class' : 'gray',
+                    'action': function(){}
+                }
+                
+            }
+        });
+        
+    });
+    
+    $('.refuse-current-request').click(function(){
+        $.confirm({
+            'title'   : 'Подтверждение отказа ситтеру',
+            'message' : 'Это необратимое действие! Продолжить?',
+            'buttons' : {
+                'Да'  : {
+                    'class' : 'blue',
+                    'action': function godelcurreqtoresp()
+                    {     
+                        var curr_or_resp =$('.refuse-current-request').data('curorderresp'); 
+                        var curr_or_resp_sit =$('.refuse-current-request').data('curorderrespsit');
+        
+                        var deltorespFunc = new Function(deltoresponsescurrentrequest(curr_or_resp, curr_or_resp_sit));
+                        deltorespFunc();                                       
+                    } 
+                },
+                'Нет' : {
+                    'class' : 'gray',
+                    'action': function(){}
+                }
+                
+            }
+        });
+        
+    });
+    
 });
