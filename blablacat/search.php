@@ -210,7 +210,7 @@ $param_order_date_end = $row_current_date_result["next_year"];
             }
         }
         
-$result_search_orders_count = mysql_query("SELECT * FROM orders WHERE (owner_id != $id) AND (deleted = 'no')");
+$result_search_orders_count = mysql_query("SELECT * FROM orders WHERE (owner_id != $id) AND (deleted = 'no') AND (kind='current')");
 $count_orders_search = mysql_num_rows($result_search_orders_count);
 
 ?>
@@ -250,72 +250,83 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                             echo '<hr /><p class="not-order">Заказов нет</p>';
                         }else
                         {
+                            $count_resp_orders = 0;
                             $row_search = mysql_fetch_array($result_search);
                             do{
-                                echo '
-                            <hr />
-                            <div class="current-order-search">
-                                    
-                                    <div class="left-part-order-search-list">
-                                        <div id="search-order-circle">';
-                                            if($row_search["pet_photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["pet_photo"]))
-                                            {
-                                                $img_path = 'users/'.$row_search["folder"].'/'.$row_search["pet_photo"];
-                                                echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
-                                            }else
-                                            {
-                                                echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
-                                            }
-                                    echo '</div>';
-                                    $cur_order_search_id = $row_search["current_order_id"];
-                    ?>
-                    
-                                    <script type="text/javascript">
-                                            function goaddcurortoreq(identifier)
-                                            {     
-                                                var curr_order_search =$(identifier).data('ordersearchid'); 
-                                                var cur_user = <?php echo $id ?>;
-
-                                                var addtoreqFunc = new Function(addtorequestsearchorder(curr_order_search, cur_user));
-                                                addtoreqFunc();                                      
-                                            }                           
-                                    </script>    
-                                    <script type="text/javascript" src="js/ajax-scripts.js"></script>   
-                    
-                    <?        
-                                    $search_sitter_req_list = mysql_query("SELECT * FROM request WHERE (order_id = ".$cur_order_search_id.") AND (sitter_id = ".$id.") AND (deleted='no')");
-                                        if (mysql_num_rows($search_sitter_req_list) > 0)
-                                        {
-                                            echo '<p class="orders-search-links" ><a data-ordersearchid="'.$cur_order_search_id.'" onclick="event.preventDefault();goaddcurortoreq(this);" class="del-apply-current-order-search" id="apply_current_order_search" href="" ></a></p>';
-                                        }else
-                                        {
-                                            echo '<p class="orders-search-links" ><a data-ordersearchid="'.$cur_order_search_id.'" onclick="event.preventDefault();goaddcurortoreq(this);" class="apply-current-order-search" id="apply_current_order_search" href="" ></a></p>';
-                                        }
-                            echo '</div>
-                                    
-                                    <div class="right-part-order-search-list">
-                                        <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
-                                        <p class="order-about-search"><a id="order-about-search-username-page" href="user.php?id='.$row_search["user_id"].'">(Перейти на страницу пользователя)</a></p>
-                                        <p class="order-about-search">'.$row_search["about_order"].'</p>';
-                                        if ($row_search["city"]!=null)
-                                        {
-                                            echo '<p class="order-about-search">Город: '.$row_search["city"].'</p>';
-                                        }else
-                                        {
-                                            echo '<p class="order-about-search">Город: не указан</p>';
-                                        }
-                                        echo '<p class="order-about-search">Даты: с '.$row_search["date_out"].' до '.$row_search["date_in"].'</p>
-                                        <p class="order-about-search">Животное: '.$row_search["pet_kind"].' ('.$row_search["pet_sex"].')</p>
-                                        <p class="order-about-search">Кличка: '.$row_search["pet_name"].'</p>
-                                        <p class="order-about-search">Порода: '.$row_search["pet_breed"].'</p>
-                                        <p class="order-about-search">Рост | Вес: '.$row_search["pet_growth"].' м | '.$row_search["pet_weight"].' кг</p>
-                                        <p class="order-cost-search">Цена: '.$row_search["cost"].' руб</p>
+                                $res_check_req = mysql_query("SELECT * FROM responses WHERE (order_id=".$row_search["current_order_id"].") AND (kind='yes')");
+                                if (mysql_num_rows($res_check_req) == null)
+                                {
+                                    $count_resp_orders++;
+                                        echo '
+                                    <hr />
+                                    <div class="current-order-search">
+                                            
+                                            <div class="left-part-order-search-list">
+                                                <div id="search-order-circle">';
+                                                    if($row_search["pet_photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["pet_photo"]))
+                                                    {
+                                                        $img_path = 'users/'.$row_search["folder"].'/'.$row_search["pet_photo"];
+                                                        echo '<img class="image-avatar" src="'.$img_path.'" alt="" width="100%" />';
+                                                    }else
+                                                    {
+                                                        echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                                                    }
+                                            echo '</div>';
+                                            $cur_order_search_id = $row_search["current_order_id"];
+                            ?>
+                            
+                                            <script type="text/javascript">
+                                                    function goaddcurortoreq(identifier)
+                                                    {     
+                                                        var curr_order_search =$(identifier).data('ordersearchid'); 
+                                                        var cur_user = <?php echo $id ?>;
+        
+                                                        var addtoreqFunc = new Function(addtorequestsearchorder(curr_order_search, cur_user));
+                                                        addtoreqFunc();                                      
+                                                    }                           
+                                            </script>    
+                                            <script type="text/javascript" src="js/ajax-scripts.js"></script>   
+                            
+                            <?        
+                                            $search_sitter_req_list = mysql_query("SELECT * FROM request WHERE (order_id = ".$cur_order_search_id.") AND (sitter_id = ".$id.") AND (deleted='no')");
+                                                if (mysql_num_rows($search_sitter_req_list) > 0)
+                                                {
+                                                    echo '<p class="orders-search-links" ><a data-ordersearchid="'.$cur_order_search_id.'" onclick="event.preventDefault();goaddcurortoreq(this);" class="del-apply-current-order-search" id="apply_current_order_search" href="" ></a></p>';
+                                                }else
+                                                {
+                                                    echo '<p class="orders-search-links" ><a data-ordersearchid="'.$cur_order_search_id.'" onclick="event.preventDefault();goaddcurortoreq(this);" class="apply-current-order-search" id="apply_current_order_search" href="" ></a></p>';
+                                                }
+                                    echo '</div>
+                                            
+                                            <div class="right-part-order-search-list">
+                                                <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
+                                                <p class="order-about-search"><a id="order-about-search-username-page" href="user.php?id='.$row_search["user_id"].'">(Перейти на страницу пользователя)</a></p>
+                                                <p class="order-about-search">'.$row_search["about_order"].'</p>';
+                                                if ($row_search["city"]!=null)
+                                                {
+                                                    echo '<p class="order-about-search">Город: '.$row_search["city"].'</p>';
+                                                }else
+                                                {
+                                                    echo '<p class="order-about-search">Город: не указан</p>';
+                                                }
+                                                echo '<p class="order-about-search">Даты: с '.$row_search["date_out"].' до '.$row_search["date_in"].'</p>
+                                                <p class="order-about-search">Животное: '.$row_search["pet_kind"].' ('.$row_search["pet_sex"].')</p>
+                                                <p class="order-about-search">Кличка: '.$row_search["pet_name"].'</p>
+                                                <p class="order-about-search">Порода: '.$row_search["pet_breed"].'</p>
+                                                <p class="order-about-search">Рост | Вес: '.$row_search["pet_growth"].' м | '.$row_search["pet_weight"].' кг</p>
+                                                <p class="order-cost-search">Цена: '.$row_search["cost"].' руб</p>
+                                            </div>
+                                            
+                                            <div class="clear"></div>
                                     </div>
-                                    
-                                    <div class="clear"></div>
-                            </div>
-                            ';
+                                    ';
+                                }
                             }while ($row_search = mysql_fetch_array($result_search));
+                            
+                            if ($count_resp_orders==0)
+                            {
+                                echo '<hr /><p class="not-order">Заказов нет</p>';
+                            }
                         }
                     ?>
                 </div>
