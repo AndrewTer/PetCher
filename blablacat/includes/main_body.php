@@ -117,7 +117,7 @@ if ($_POST["add_new_order"])
                 </div>
                 
                 <?
-                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind, users.city AS city FROM orders, pets, users WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) AND (users.id=orders.owner_id) ORDER BY $sort");
+                    $result_orders = mysql_query("SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.deleted AS order_deleted, pets.id AS pet_id, date_out, date_in, cost, pets.name AS pet_name, pets.kind as pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.photo AS avatar, orders.other_information AS about_order, pets.other_information AS about_pet, orders.kind AS order_kind, users.city AS city FROM orders, pets, users WHERE (orders.owner_id = ".$id.") AND (orders.owner_id=pets.owner_id) AND (orders.pet_id=pets.id) AND (users.id=orders.owner_id) AND (orders.deleted='no') ORDER BY $sort");
                     if (mysql_num_rows($result_orders) == null)
                     {
                         echo '<hr /><p class="not-order">Вы пока не создали ни одного заказа</p>';
@@ -129,8 +129,12 @@ if ($_POST["add_new_order"])
                             $result_date=(strtotime($row_orders["date_in"])<strtotime(date('y-m-j'))); 
                             if ($result_date==true)
                             {
-                                $change_status = mysql_query("UPDATE orders SET kind='performed' WHERE id=".$row_orders["order_id"]);
-                                $row_orders["order_kind"]="performed";
+                                $check_responses_order_for_ch = mysql_query("SELECT * FROM responses WHERE (order_id = ".$row_orders["order_id"].") AND (kind='yes')");
+                                if (mysql_num_rows($check_responses_order_for_ch) == null)
+                                {
+                                    $change_status = mysql_query("UPDATE orders SET kind='performed' WHERE id=".$row_orders["order_id"]);
+                                    $row_orders["order_kind"]="performed";
+                                }
                             }
                             
                             if (($row_orders["order_kind"]=="current") AND ($row_orders["order_deleted"]=="no")) 
