@@ -1118,7 +1118,7 @@ body {
     /*border: 1px solid red;*/
 }
 
-.orders-part, .requests-part, .reviews-part {
+.orders-part, .requests-part, .reviews-part, .responses-part {
     width: 915px;
     margin: auto;
     background: #fbfbfb;
@@ -1134,7 +1134,7 @@ body {
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
 }
 
-.ribbon-wrapper-green, .ribbon-wrapper-blue, .ribbon-wrapper-yellow {
+.ribbon-wrapper-green, .ribbon-wrapper-blue, .ribbon-wrapper-yellow, .ribbon-wrapper-red {
     width: 88px;
     height: 88px;
     overflow: hidden;
@@ -1212,6 +1212,28 @@ body {
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3); 
 }
 
+.ribbon-red {
+    font-weight: bold;
+    font-family: Sans-Serif; 
+    font-size: 13px;
+    text-align: center;
+    text-shadow: white 0px 1px 0px;
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position: relative;
+    padding: 7px 0 ;
+    left: -5px;
+    top: 17px;
+    width: 120px;
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#8AADFF), to(#6896FD));*/
+    background: #FF8257;
+    color: #750000;
+    box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3); 
+}
+
 .ribbon-green:before, .ribbon-green:after {
     content: '';
     /* Colour of the triangle. To flip the effect, use border-bottom. */ 
@@ -1245,11 +1267,22 @@ body {
     /* +1 to compensate for the border */ 
 }
 
-.ribbon-green:before, .ribbon-blue:before, .ribbon-yellow:before {
+.ribbon-red:before, .ribbon-red:after {
+    content: '';
+    /* Colour of the triangle. To flip the effect, use border-bottom. */ 
+    border-top: 3px solid #750000;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+    /* +1 to compensate for the border */ 
+}
+
+.ribbon-green:before, .ribbon-blue:before, .ribbon-yellow:before, .ribbon-red:before {
     left: 0px;
 }
 
-.ribbon-green:after, .ribbon-blue:after, .ribbon-yellow:after {
+.ribbon-green:after, .ribbon-blue:after, .ribbon-yellow:after, .ribbon-red:after {
     right: 0px;
 }
  
@@ -1324,7 +1357,7 @@ body {
     cursor: pointer;
 }
 
-.not-order, .not-favourites, .not-requests, .not-users {
+.not-order, .not-favourites, .not-requests, .not-users, .not-responses {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -1342,7 +1375,7 @@ body {
     font-size: 20px;
 }
 
-.current-order, .current-request, .current-review {
+.current-order, .current-request, .current-review, .current-response {
     /*border: 1px solid green;*/
     margin: 0;
 }
@@ -1424,7 +1457,7 @@ body {
     text-decoration: none;
 }
 
-.left-part-order-list, .left-part-review-list {
+.left-part-order-list, .left-part-review-list, .left-part-response-list {
     /*border: 1px solid brown;*/
     width: 20%;
     float: left;
@@ -1437,7 +1470,7 @@ body {
     float: left;
 }
 
-.right-part-order-list {
+.right-part-order-list, .right-part-response-list {
     /*border: 1px solid brown;*/
     width: 70%; /* 78% */
     float: left;
@@ -2207,6 +2240,16 @@ body {
     text-decoration: none;
     font-size: 13px;
     /*margin-left: 10px;*/
+}
+
+#order-about-response-username {
+    color: #777;
+    text-decoration: none;
+    font-size: 17px; 
+}
+
+#order-about-response-username:hover {
+    color: #3D3D3D;    
 }
 
 .order-cost-search {
