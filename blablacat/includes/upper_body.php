@@ -107,7 +107,7 @@ if ($_POST["add_new_pet"])
                         <a href="favourites.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-fav.png" width="10%"/>&ensp;<span>Избранное</span></li></a>
                         <a href="reviews.php?sort=about_me"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-reviews.png" width="10%"/>&ensp;<span>Отзывы</span></li></a>
                         <a href="requests.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-requests.png" width="10%"/>&ensp;<span>Заявки от ситтеров</span> <? if ($count_requests > 0) { if ($count_requests < 100) { echo '<div class="count-requests">'.$count_requests.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
-                        <a href=""><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-answers.png" width="10%"/>&ensp;<span>Ответы на мои заявки</span> <? if ($count_all_responses > 0) { if ($count_all_responses < 100) { echo '<div class="count-requests">'.$count_all_responses.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
+                        <a href="responses.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-answers.png" width="10%"/>&ensp;<span>Ответы на мои заявки</span> <? if ($count_all_responses > 0) { if ($count_all_responses < 100) { echo '<div class="count-requests">'.$count_all_responses.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
                     </ul>
                 </nav>
                 
