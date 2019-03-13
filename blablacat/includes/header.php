@@ -16,7 +16,7 @@
         $count_requests = mysql_num_rows($result_requests);
     }
     
-    $result_all_responses = mysql_query("SELECT responses.id FROM responses, users WHERE (responses.sitter_id=$id) GROUP BY responses.sitter_id");
+    $result_all_responses = mysql_query("SELECT id FROM responses WHERE (sitter_id=$id)");
     if (mysql_num_rows($result_all_responses) > 0)
     {
         $count_all_responses = mysql_num_rows($result_all_responses);
