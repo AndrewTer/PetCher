@@ -206,8 +206,57 @@ if ($_POST["add_new_order"])
                                 }else
                                 {
                                     $row_check_responses_order = mysql_fetch_array($check_responses_order);
+                        ?>
+                                <script type="text/javascript">
+                                $(function(){
+                                    /* Открытие модального окна завершения текущего заказа */
+                                    $('a#endcurrent<? echo $row_orders["order_id"]; ?>order<? echo $row_check_responses_order["sitter_id"]; ?>').click( function(event){
+                                		event.preventDefault();
+                                		$('#overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').fadeIn(400,
+                                		 	function(){ 
+                                				$('#modal_form_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>') 
+                                					.css('display', 'block')
+                                					.animate({opacity: 1, top: '50%'}, 200);
+                                		});
+                                	});
+                                    
+                                	/* Зaкрытие мoдaльнoгo oкнa*/
+                                	$('#modal_close_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>, #overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').click( function(){ // лoвим клик пo крестику или пoдлoжке
+                                		$('#modal_form_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"];?>')
+                                			.animate({opacity: 0, top: '45%'}, 200,
+                                				function(){
+                                					$(this).css('display', 'none');
+                                					$('#overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').fadeOut(400);
+                                				}
+                                			);
+                                	});
+                                 });
+                                </script>
+                        <?
                                     echo '
                                     <hr />
+                                    
+                                    <div class="modal_form_end_cur_ord" id="modal_form_end_'.$row_orders["order_id"].'_cur_'.$row_check_responses_order["sitter_id"].'">
+                                        <form enctype="multipart/form-data" method="post">
+                                            <span class="modal_close_end_current_order" id="modal_close_end_'.$row_orders["order_id"].'_cur_'.$row_check_responses_order["sitter_id"].'">X</span>
+                                            <p id="title-end-cur-order">Завершение заказа</p>
+                                            <hr />
+                                            <p class="end-cur-ord-p">Ваш отзыв:</p><textarea id="feedback-end-order" name="feedback_end_order" maxlength="1000" cols="93" rows="10" placeholder="До 1000 символов"></textarea>
+                                            <p class="end-cur-ord-p">Ваша оценка:</p>
+                                            <fieldset class="rating_current_review_for_end_current_order">
+                                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Отлично!">5 stars</label>
+                                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Хорошо">4 stars</label>
+                                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Неплохо">3 stars</label>
+                                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Плохо">2 stars</label>
+                                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Ужасно!">1 star</label>
+                                            </fieldset>
+                                            <br />                                            
+                                            <p class="add-new-review-link" ><input type="submit" class="add-new-review-link-a" name="end_current_order_with_review" value="Завершить заказ" /></p>
+                                        </form>
+                                    </div>
+                                    <div class="overlay_end_current_order" id="overlay_end_'.$row_orders["order_id"].'_cur_'.$row_check_responses_order["sitter_id"].'"></div>
+                                    
+                                    
                                     <div class="current-order" id="curor'.$row_orders["order_id"].'ch" style="display: block;">
                                             <div class="ribbon-wrapper-blue">
                                                 <div class="ribbon-blue">Текущий</div>
@@ -241,7 +290,7 @@ if ($_POST["add_new_order"])
                                                 <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
                                                 <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
                         ?>                    
-                                                <p class="end-order-links" ><a class="end-current-order" id="changemycurrentorder" >Завершить заказ</a></p>
+                                                <p class="end-order-links" ><a class="end-current-order" id="endcurrent<? echo $row_orders["order_id"]; ?>order<? echo $row_check_responses_order["sitter_id"];?>" >Завершить заказ</a></p>
                                             </div>
                                             <div class="clear"></div>
                                             <hr width=80% />
