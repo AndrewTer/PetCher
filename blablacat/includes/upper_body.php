@@ -165,9 +165,9 @@ if ($_POST["add_new_pet"])
                 ?>
             </div>
             
-            <div id="modal_form_add_new_pet"> <!-- Окно добавления нового животного --> 
+            <div id="modal_form_add_new_pet">
                 <form enctype="multipart/form-data" method="post">
-                    <span id="modal_close_add_new_pet">X</span> <!-- Кнoпкa зaкрыть --> 
+                    <span id="modal_close_add_new_pet">X</span>
                     <p id="title-add-new-pet">Добавление питомца</p>
                     <hr />
                     <p class="add-new-pet">Кличка:&emsp; <input type="text" id="name-new-pet" name="name_new_pet" required /></p>
@@ -201,7 +201,7 @@ if ($_POST["add_new_pet"])
                     <p class="add-new-pet-link" ><input type="submit" class="add-new-pet-link-a" name="add_new_pet" value="Добавить" /></p>
                 </form>
             </div>
-            <div id="overlay_add_new_pet"></div> <!-- Пoдлoжкa -->
+            <div id="overlay_add_new_pet"></div>
             
             <div class="pets-list">
                 <div class="pets-list-title">
