@@ -2,7 +2,7 @@
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/share.js"></script>
-    <title>О сервисе | BlaBlaCat</title>
+    <title>О сервисе | PetCher</title>
 </head>
 <div class="header">
     <div class="contain clearfix">
@@ -17,14 +17,14 @@
     </div>
 </div>
 <div class="container_about about">
-    <p id="title-about">BlaBlaCat - сервис по передержке домашних животных</p>
+    <p id="title-about">PetCher - сервис по передержке домашних животных</p>
     <hr />
     <p id="title-main-targer">Наша цель - помощь владельцам животных в поиске желающих посидеть с их питомцами на время отсутствия, создавая для этого удобные средства поиска и связи.</p>
     <hr />
-    <p id="title-main-year-start">2019 год - является годом запуска сервиса BlaBlaCat !</p>
+    <p id="title-main-year-start">2019 год - является годом запуска сервиса PetCher !</p>
     
     <div class="div-for-map">
-        <p id="text-for-map">BlaBlaCat предоставляет возможность поиска пользователей сервиса в 20 городах России</p>
+        <p id="text-for-map">PetCher предоставляет возможность поиска пользователей сервиса в 20 городах России</p>
         <img id="map_about" width="100%" src="images/map_about.png"/>
         <span class="metka moscow" title="Москва"></span>
         <span class="metka st_petersburg" title="Санкт-Петербург"></span>
@@ -79,7 +79,7 @@
     <p id="text-for-map-add">Специально для любителей саги <a class="url-help" href="starwars.php">Звёздные войны</a> у нас есть отдельно оформленный текст.</p>
     <hr />
     
-    <p id="text-for-map-add">BlaBlaCat - недавно начавший свою работу сервис, поэтому, если вам нравится данный сервис, мы будем очень вам признательны, если вы расскажете о нас:</p>
+    <p id="text-for-map-add">PetCher - недавно начавший свою работу сервис, поэтому, если вам нравится данный сервис, мы будем очень вам признательны, если вы расскажете о нас:</p>
 
     <div style="text-align: center;" data-path="images/" class="shareinit"></div>
     
@@ -115,5 +115,5 @@
 </script>
 
 <div class="footer">
-BlaBlaCat © 2019
+PetCher © 2019
 </div>
