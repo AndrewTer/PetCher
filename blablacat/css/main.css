@@ -995,6 +995,7 @@ body {
 	width: 85%;
     height: 85%;
 	user-select: none;
+    /*border: 1px solid green;*/
 }
 
 #upload-container label {
@@ -1724,6 +1725,12 @@ body {
     margin-top: -2.5px;
 }
 
+.cancel-order-links-with-ch {
+    float: right;
+    position: relative;
+    margin: 0;
+}
+
 #del-and-cur-current-order {
     /*border: 3px solid red; */
     float: right; 
@@ -1731,6 +1738,15 @@ body {
     margin: 0; 
     margin-right: -83px; 
     margin-top: -20px; 
+}
+
+#change-and-cancel-current-order {
+    /*border: 1px solid red; */
+    position: relative; 
+    margin: 0; 
+    margin-top: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
 .delete-current-order {
@@ -1746,11 +1762,34 @@ body {
     -moz-border-radius: 5px 5px 5px 5px;
 }
 
+.cancel-current-order {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #D63301;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cancel-current-order:hover {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #D63301;
+    background-color: #FFEAE5;
+    /*box-shadow: 0px 0px 3px 2px #FC6636; */
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+}
+
 .delete-current-order:hover {
     /*box-shadow: 0px 0px 3px 2px #D63301; */
 }
 
-.change-order-links {
+.change-order-links, .save-order-links {
     float: right;
     position: relative;
     margin: 0;
@@ -1771,6 +1810,21 @@ body {
 
 .change-current-order:hover {
     /*box-shadow: 0px 0px 3px 2px #1557D5; */
+}
+
+.save-current-order {
+    font: bold 16px sans-serif;
+    cursor: pointer;
+    color: #3B64BD;
+    background-color: #9fdbfc;
+    border: 1px solid #1557D5;    
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    text-decoration: none;    
 }
 
 .end-order-links {
@@ -1855,7 +1909,7 @@ body {
     float: right;
 }
 
-#discription_new_order {
+#discription_new_order, #description_change_current_order {
     margin: auto;
     margin-left: 100px;
     margin-right: 100px;
@@ -1868,7 +1922,8 @@ body {
     margin-top: 10px;
 }
 
-#cost_new_order, #dates_new_order {
+#cost_new_order, #dates_new_order, #date_out_ch_order, #date_in_ch_order,
+#cost_change_current_order {
     font-size: 17px;
     -webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
