@@ -5,7 +5,7 @@ $action = $_GET["action"];
     {
         switch ($action) {
             case 'delete':
-            $delete = mysql_query("UPDATE orders SET deleted='yes' WHERE id=".$order_id);
+                $delete = mysql_query("UPDATE orders SET deleted='yes' WHERE id=".$order_id);
             break;
         }
     }
@@ -190,15 +190,36 @@ if ($_POST["add_new_order"])
                                     </div>
                                     <div id="curor'.$row_orders["order_id"].'chf" style="display: none;">';
                         ?>
-                                    <form enctype="multipart/form-data" method="post">
+                                    <script type="text/javascript">
+                                        function submitchangecurrentorder(name) {
+                                            var out_date = document.forms[name].elements["date_out_ch_order"].value;
+                                            var in_date = document.forms[name].elements["date_in_ch_order"].value;
+                                            var cost = document.forms[name].elements["cost_change_current_order"].value;
+                                            var description = document.forms[name].elements["description_change_current_order"].value;
+                                            var order_id_ch = document.forms[name].elements["current_order_id_for_change"].value;
+                                            
+                                            var updatecurorder = new Function(changecurrentorderinsearch(out_date, in_date, cost, description, order_id_ch));
+                                            updatecurorder();
+                                        }
+                                    </script>
+                                    <script type="text/javascript" src="js/ajax-scripts.js"></script>   
+                            
+                                    <form id="form-change-cur-order-<?echo $row_orders["order_id"];?>" enctype="multipart/form-data" method="post">
                                         <?
                                             $current_date_result = mysql_query("SELECT DATE(NOW())");
                                             $row_current_date_result = mysql_fetch_array($current_date_result);
+                                            $current_order_ch_id = $row_orders["order_id"];
                                         ?>
-                                        <p class="add-order">Даты: с <input type="date" id="dates_new_order" name="date_out_new_order" value="<?echo $row_orders["date_out"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /> по <input type="date" id="dates_new_order" name="date_in_new_order" value="<?echo $row_orders["date_in"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /></p>
-                                        <p class="add-order">Цена:&emsp; <input type="number" id="cost_new_order" name="cost_new_order" min="100" max="1000000" value="<?echo $row_orders["cost"]; ?>" placeholder="100-1000000" /> руб</p>
-                                        <p class="add-order">Краткое описание:</p><textarea id="discription_new_order" name="discription_new_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_orders["about_order"]; ?></textarea>
-                                        <p align="center" class="add-order"><input type="submit" id="submit_add_new_order" name="change_current_order" value="Сохранить" /></p>
+                                        <input type="hidden" id="current_order_id_for_change" value="<?echo $row_orders["order_id"]; ?>" />
+                                        <p class="add-order">Даты: с <input type="date" id="date_out_ch_order" name="date_out_change_current_order" value="<?echo $row_orders["date_out"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /> по <input type="date" id="date_in_ch_order" name="date_in_change_current_order" value="<?echo $row_orders["date_in"]; ?>" min="<?echo $row_current_date_result["DATE(NOW())"]; ?>" /></p>
+                                        <p class="add-order">Цена:&emsp; <input type="number" id="cost_change_current_order" name="cost_change_current_order" min="100" max="1000000" value="<?echo $row_orders["cost"]; ?>" placeholder="100-1000000" /> руб</p>
+                                        <p class="add-order">Краткое описание:</p><textarea id="description_change_current_order" name="description_change_current_order" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_orders["about_order"]; ?></textarea>
+                                        <table id="change-and-cancel-current-order">
+                                            <tr >
+                                                <td width=auto;><p class="save-order-links" ><input type="button" onclick="submitchangecurrentorder('form-change-cur-order-<?echo $row_orders["order_id"];?>')" class="save-current-order" value="Сохранить" /></p></td>
+                                                <td width=auto;><p class="cancel-order-links-with-ch" ><a class="cancel-current-order" onclick="event.preventDefault();SwapEditOrders('curor<? echo $row_orders["order_id"]; ?>ch','curor<? echo $row_orders["order_id"]; ?>chf');" >Отмена</a></p></td>
+                                            </tr>
+                                        </table>
                                     </form>
                         <?
                                 echo '</div>
