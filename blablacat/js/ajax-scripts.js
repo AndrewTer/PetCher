@@ -216,6 +216,25 @@ function deltoresponsescurrentrequest(current_order_response, current_sitter)
         return false;
 }
 
+function changecurrentorderinsearch(out_date_param, in_date_param, cost_param, description_param, order_id_ch_param)
+{
+        var changecurrentorderparams = 'out_date_parameter='+out_date_param+'&in_date_parameter='+in_date_param+'&cost_parameter='+cost_param+'&description_parameter='+description_param+'&order_id_ch_parameter='+order_id_ch_param;
+        
+        $.ajax({
+        url: "actions/change-current-order.php",
+        type: 'POST',
+        data: changecurrentorderparams,
+        success: function (data) {
+            //Обновление страницы
+            location.reload(true)
+        },
+        error: function () {
+            alert("Ошибка!\r\nПовторите действие, пожалуйста");
+        }
+        });
+        return false;
+}
+
 $(document).ready(function(){
     $("#add_user_to_favorite_link").click(addtofavoriteuser);
     //$("#apply_current_user_order").click(applycurrentorder);
