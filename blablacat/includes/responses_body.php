@@ -42,7 +42,7 @@ $result_responses = mysql_query("SELECT orders.id AS order_id, orders.owner_id A
                     </div>
                     <div class="block-title-and-sorting-right">
                         <ul id="options-list">
-                            <li>Ответов: <? echo $count_all_responses; ?> | Сортировать</li>
+                            <li>Ответов: <? if ($count_all_responses>0) { echo $count_all_responses; }else{ echo 'нет';} ?> | Сортировать</li>
                             <li><a id="select-links" href="#"><? echo $sort_name; ?></a>
                             <ul id="list-links-sort">
                                 <a href="responses.php?sort=all-responses"><li><strong>Все</strong></li></a>
