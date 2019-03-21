@@ -80,7 +80,7 @@ if($_SESSION['auth_user'] == "yes_auth")
         $("#change-user-phone-number-settings").mask("+7(999) 999-9999");
     });
     </script>
-    <title><? echo $username ?> | BlaBlaCat</title> 
+    <title><? echo $username ?> | PetCher</title> 
 </head>
 
 <div class="grid-container">
