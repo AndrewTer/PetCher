@@ -731,9 +731,9 @@ input:checked + .toggle .toggle-handler .tongue {
     margin-right: 50px;
     overflow: hidden;
     background: #fff;
-    padding: 5px; /* создание отступов */
+    padding: 5px; /* СЃРѕР·РґР°РЅРёРµ РѕС‚СЃС‚СѓРїРѕРІ */
     border-radius: 50%;
-    /* не забываем о кроссбраузерности */
+    /* РЅРµ Р·Р°Р±С‹РІР°РµРј Рѕ РєСЂРѕСЃСЃР±СЂР°СѓР·РµСЂРЅРѕСЃС‚Рё */
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border: #3b8dbd 2px solid;
@@ -751,9 +751,9 @@ input:checked + .toggle .toggle-handler .tongue {
     margin-right: 200px;
     overflow: hidden;
     background: #fff;
-    padding: 5px; /* создание отступов */
+    padding: 5px; /* СЃРѕР·РґР°РЅРёРµ РѕС‚СЃС‚СѓРїРѕРІ */
     border-radius: 50%;
-    /* не забываем о кроссбраузерности */
+    /* РЅРµ Р·Р°Р±С‹РІР°РµРј Рѕ РєСЂРѕСЃСЃР±СЂР°СѓР·РµСЂРЅРѕСЃС‚Рё */
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border: #3b8dbd 2px solid;
@@ -772,5 +772,5 @@ input:checked + .toggle .toggle-handler .tongue {
 }
 
 .clear {
-    clear: left; /* Отмена обтекания */
+    clear: left; /* РћС‚РјРµРЅР° РѕР±С‚РµРєР°РЅРёСЏ */
 }
