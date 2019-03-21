@@ -219,7 +219,7 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <title>Поиск заказов | BlaBlaCat</title> 
+    <title>Поиск заказов | PetCher</title> 
 </head>
 
 <div class="grid-container">
