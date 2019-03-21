@@ -175,6 +175,14 @@ if ($_POST["add_new_order"])
                                                 <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
                                                 <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                                 <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                                <p class="order-about">Остальная информация: ';
+                                                if ($row_orders["about_pet"]==null) 
+                                                {
+                                                    echo 'отсутствует';
+                                                } else {
+                                                    echo $row_orders["about_pet"];
+                                                }
+                                                echo '</p>
                                                 <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
                         ?>                    
                                                 <table id="del-and-cur-current-order">
@@ -323,6 +331,14 @@ if ($_POST["add_new_order"])
                                                 <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
                                                 <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                                 <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                                <p class="order-about">Остальная информация: ';
+                                                    if ($row_orders["about_pet"]==null) 
+                                                    {
+                                                        echo 'отсутствует';
+                                                    } else {
+                                                        echo $row_orders["about_pet"];
+                                                    }
+                                                    echo '</p>
                                                 <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>';           
                         ?>                    
                                                 <p class="end-order-links" ><a class="end-current-order" id="endcurrent<? echo $row_orders["order_id"]; ?>order<? echo $row_check_responses_order["sitter_id"];?>" >Завершить заказ</a></p>
@@ -418,6 +434,14 @@ if ($_POST["add_new_order"])
                                         <p class="order-about">Кличка: '.$row_orders["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_orders["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_orders["pet_growth"].' м | '.$row_orders["pet_weight"].' кг</p>
+                                        <p class="order-about">Остальная информация: ';
+                                                if ($row_orders["about_pet"]==null) 
+                                                {
+                                                    echo 'отсутствует';
+                                                } else {
+                                                    echo $row_orders["about_pet"];
+                                                }
+                                                echo '</p>
                                         <p class="order-cost">Цена: '.$row_orders["cost"].' руб</p>
                                         <p class="delete-order-links" ><a class="delete-current-order" rel="index.php?id='.$row_orders["order_id"].'&action=delete" >Удалить | &#10008;</a></p>
                                     </div>
