@@ -51,7 +51,7 @@ if($_SESSION['auth_user'] == "yes_auth")
         $(".containerr").clickCarousel({margin: 10});
     });
     </script>
-    <title><? echo $username ?> | BlaBlaCat</title> 
+    <title><? echo $username ?> | PetCher</title> 
 </head>
 
 <div class="grid-container">
