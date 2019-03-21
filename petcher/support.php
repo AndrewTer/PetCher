@@ -12,7 +12,7 @@ if($_SESSION['auth_user'] == "yes_auth")
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <title>Помощь | BlaBlaCat</title> 
+    <title>Помощь | PetCher</title> 
 </head>
 
 <div class="grid-container">
