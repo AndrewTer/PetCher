@@ -155,7 +155,7 @@
                             <div class="current-user-search">
     
                                     <div class="left-part-user-search-list">
-                                        <div id="search-user-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_search["rating"].'/10</span></div>';
+                                        <div id="search-user-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_search["rating"].'/5</span></div>';
                                         if($row_search["photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["photo"]))
                                         {
                                             $img_path = 'users/'.$row_search["folder"].'/'.$row_search["photo"];
@@ -228,7 +228,7 @@
                                         }
                                         
                                     echo '
-                                        <p class="user-about-search">Рейтинг: '.$row_search["rating"].' / 10</p>
+                                        <p class="user-about-search">Рейтинг: '.$row_search["rating"].' / 5</p>
                                     </div>
                                     <div class="clear"></div>
                             </div>
