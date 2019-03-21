@@ -118,7 +118,7 @@
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-    <title>Поиск пользователей | BlaBlaCat</title> 
+    <title>Поиск пользователей | PetCher</title> 
 </head>
 
 <div class="grid-container">
