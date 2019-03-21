@@ -85,7 +85,7 @@ else
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
     <!--<script type="text/javascript" src="/js/header.js"></script>
     <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>--!>
-    <title>Регистрация | BlaBlaCat</title>
+    <title>Регистрация | PetCher</title>
 </head>
 <div class="header">
     <div class="contain clearfix">
