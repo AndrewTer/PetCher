@@ -772,7 +772,7 @@ body {
     margin-right: 10px;
 }
 
-.add-new-review-link {
+.add-new-review-link, .create-new-review-link {
     /*border: 1px solid brown;*/
     /*position: absolute;*/
     margin: 0;
@@ -781,7 +781,7 @@ body {
     margin-left: 110px;
 }
 
-.add-new-pet-link-a, .add-new-review-link-a {
+.add-new-pet-link-a, .add-new-review-link-a, .create-new-review-link-a {
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
