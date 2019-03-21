@@ -50,7 +50,7 @@ else
 ?>
 <head>
 <link href="css/style-login.css" media="screen" rel="stylesheet" />
-<title>Добро пожаловать | BlaBlaCat</title>
+<title>Добро пожаловать | PetCher</title>
 </head>
 
 <div class="header">
