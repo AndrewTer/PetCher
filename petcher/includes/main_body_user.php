@@ -67,6 +67,14 @@
                                                 <p class="order-about">Кличка: '.$row_result_orders_current_user["pet_name"].'</p>
                                                 <p class="order-about">Порода: '.$row_result_orders_current_user["pet_breed"].'</p>
                                                 <p class="order-about">Рост | Вес: '.$row_result_orders_current_user["pet_growth"].' м | '.$row_result_orders_current_user["pet_weight"].' кг</p>
+                                                <p class="order-about">Остальная информация: ';
+                                                    if ($row_result_orders_current_user["about_pet"]==null) 
+                                                    {
+                                                        echo 'отсутствует';
+                                                    } else {
+                                                        echo $row_result_orders_current_user["about_pet"];
+                                                    }
+                                                    echo '</p>
                                                 <p class="order-cost">Цена: '.$row_result_orders_current_user["cost"].' руб</p>';
                         ?>
                         <script type="text/javascript">
