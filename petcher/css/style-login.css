@@ -1,0 +1,776 @@
+body {
+    background: #efefef;
+    font-family: 'Open Sans', sans-serif;
+    color: #777;
+}
+
+a {
+    color: #f58220; 
+    font-weight: 400;
+}
+
+.mlogin {
+    margin: 40px auto 0;
+}
+
+.mregister {
+    margin: 40px auto 0;
+    /*border: 1px solid yellow;*/
+}
+
+.about {
+    margin: 40px auto 0;
+}
+
+.error {
+    margin: auto;
+    padding: 5px;
+    color: #D63301;
+    background-color: #FFCCBA;
+    text-align: center;
+    /*border: 1px solid yellow;*/
+    
+    animation-name: error;
+    -webkit-animation-name: error; 
+ 
+    animation-duration: 2s; 
+    -webkit-animation-duration: 2s;
+ 
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;     
+ 
+    visibility: visible !important; 
+}
+ 
+@keyframes error {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;       
+    }
+    60% {
+        transform: scale(1.1);  
+    }
+    80% {
+        transform: scale(0.9);
+        opacity: 1; 
+    }   
+    100% {
+        transform: scale(1);
+        opacity: 1; 
+    }       
+}
+ 
+@-webkit-keyframes error {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;       
+    }
+    60% {
+        -webkit-transform: scale(1.1);
+    }
+    80% {
+        -webkit-transform: scale(0.9);
+        opacity: 1; 
+    }   
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1; 
+    }       
+}
+
+.regtext {
+    font-size: 13px;
+    margin-top: 26px;
+    color: #777;
+}
+.main_welcome{
+	text-align:center;
+	font-size: 100px;
+	margin-top: 20px;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #3b8dbd;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+    transition: height 0.3s;
+}
+.header h1#logo {
+    display: inline-block;
+    height: 50px;
+    float: left;
+    margin-left: 50px;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.header nav {
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+
+.header nav a {
+    line-height: 50px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.header nav a:hover {
+    color: white;
+}
+
+.header.smaller {
+    height: 75px;
+}
+
+.header.smaller h1#logo {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.header.smallernav a {
+    line-height: 55px;
+}
+
+#logos{
+    margin-left: 150px;
+}
+
+.footer{
+    margin-top: 15px;
+    text-align: center;
+}
+
+/*= CONTAINERS
+--------------------------------------------------------*/
+.container {
+    padding: 25px 16px 25px 10px;
+    margin: 90px auto auto auto;
+    font-weight: 400;
+    overflow: hidden;
+    width: 350px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    /*border: 1px solid green;*/
+}
+
+.container_about {
+    padding: 25px 16px 25px 10px;
+    margin: 90px auto auto auto;
+    font-weight: 400;
+    overflow: hidden;
+    width: 800px;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+#welcome {
+    width: 500px;
+    padding: 30px;
+    background: #fff;
+    margin: 160px auto 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+.container h1 {
+    color: #777;
+    text-align: center;
+    font-weight: 300;
+    border: 1px dashed #777;
+    margin-top: 13px;
+}
+
+.container label {
+    color: #777;
+    font-size: 14px;
+}
+
+#login {
+    width: 320px;
+    margin: auto;
+    padding-bottom: 1514:43 02.08.2016px;
+    /*border: 1px solid red;*/
+}
+
+.container form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    width: 100%;
+    padding: 3px;
+    margin: 0 6px 5px 0;
+    outline: none;
+    border: 1px solid #d9d9d9;
+}
+
+#reg_username, #password, #replay_password, #email {
+    /*border: 1px solid blue;*/
+    width: 90%;  
+}
+
+.container form .input:focus {
+    border: 1px solid #3b8dbd;
+    box-shadow: 0 0 3px #3b8dbd;
+}
+.loglink {
+	color: #3b8dbd;
+}
+.reglink {
+	color: #3b8dbd;
+}
+
+.input:valid + span:after {
+    content: "\2714";
+    color: #07A407;
+}
+
+.input:invalid + span:after {
+    content: "\2718";
+    color: #D32222;
+}
+
+/*= BUTTONS
+--------------------------------------------------------*/
+
+.button{
+    border: solid 1px #3b8dbd;
+	background: #3b8dbd;
+	color: white;
+        padding: 7px 12px;
+        border-radius:4px;
+        float: right;
+        cursor: pointer;
+}
+
+.button:hover{
+   background: #3B69BD;
+}
+
+#sitter{
+    margin-top: -5px;
+}
+
+.doggy {
+    display:inline-block;
+    margin-left: 20px;
+    margin-right: 10px;
+
+  --face-before: #AEB8D1;
+  --face-after: #679DFF;
+  --face-details-before: #5B6F8F;
+  --face-details-after: #002147;
+  --tongue: red;
+}
+
+.toggle-wrapper {
+  height: 50px;
+  width: 100px;
+  /*transform: translate3d(-50%, -50%, 0);*/
+}
+.toggle-wrapper input {
+  position: absolute;
+  left: -99em;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 90px;
+  height: 50px;
+  background-color: white;
+  border-radius: 84px;
+  font-size: 18px;
+}
+.toggle:before {
+  position: absolute;
+  right: -65px;
+  top: 60px;
+  width: 195px;
+  color: var(--text-before);
+}
+.toggle:after {
+  position: absolute;
+  top: 60px;
+  right: -35px;
+  width: 160px;
+  color: var(--text-after);
+}
+
+.toggle-handler {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  top: 4px;
+  left: 4px;
+  width: 42px;
+  height: 42px;
+  background-color: var(--face-before);
+  border-radius: 50px;
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: rotate(-45deg);
+}
+
+.face {
+  position: absolute;
+  background-color: var(--face-details-before);
+  opacity: 1;
+  transition-delay: 200ms;
+  transform: rotate(45deg);
+}
+
+.eye-left {
+  top: 8px;
+  left: 16px;
+  z-index: 0;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+}
+
+.eye-right {
+  top: 19px;
+  left: 27px;
+  z-index: 0;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+}
+
+.nose {
+  transition-delay: 200ms;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 12px;
+  top: 20px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--face-details-before);
+}
+
+.mouth1 {
+  top: 24px;
+  left: 14px;
+  z-index: 0;
+  width: 2px;
+  height: 6px;
+}
+
+.mouth2 {
+  top: 28px;
+  left: 6px;
+  border-radius: 25%;
+  z-index: 0;
+  width: 14px;
+  height: 2px;
+}
+
+.face2 {
+  transition-delay: 200ms;
+  opacity: 0;
+}
+
+.mouth-smile {
+  position: absolute;
+  left: 12px;
+  top: 21px;
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%) rotate(45deg);
+  width: 11px;
+  height: 6px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid var(--face-details-after);
+  border-top: 0;
+  box-sizing: border-box;
+}
+
+.mouth-smile2 {
+  position: absolute;
+  left: 18px;
+  top: 27px;
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%) rotate(45deg);
+  width: 11px;
+  height: 6px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid var(--face-details-after);
+  border-top: 0;
+  box-sizing: border-box;
+}
+
+.left-ear {
+  transition-delay: 200ms;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 5px;
+  height: 10px;
+  border-top: 7px solid var(--face-before);
+  border-right: 8px solid var(--face-before);
+  border-radius: 15% 20%;
+}
+
+.right-ear {
+  transition-delay: 200ms;
+  position: absolute;
+  top: 19px;
+  left: 27px;
+  width: 5px;
+  height: 10px;
+  border-top: 7px solid var(--face-before);
+  border-left: 8px solid var(--face-before);
+  border-radius: 20% 15%;
+  transform: rotate(80deg);
+}
+
+.tongue {
+  opacity: 0;
+  transition-delay: 200ms;
+  width: 7px;
+  height: 7px;
+  background-color: var(--tongue);
+  position: absolute;
+  bottom: -28px;
+  left: -4px;
+  transform: rotate(145deg);
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+}
+
+input:not(:checked) + .toggle:before {
+  display: block;
+}
+input:not(:checked) + .toggle:after {
+  display: none;
+}
+
+input:checked + .toggle:before {
+  display: none;
+}
+input:checked + .toggle:after {
+  display: block;
+}
+input:checked + .toggle .toggle-handler {
+  background-color: var(--face-after);
+  transform: translate3d(40px, 0, 0) rotate(-45deg);
+}
+input:checked + .toggle .toggle-handler .face {
+  background-color: var(--face-details-after);
+}
+input:checked + .toggle .toggle-handler .nose {
+  border-top: 8px solid var(--face-details-after);
+}
+input:checked + .toggle .toggle-handler .right-ear {
+  border-top: 7px solid var(--face-after);
+  border-left: 8px solid var(--face-after);
+}
+input:checked + .toggle .toggle-handler .left-ear {
+  border-top: 7px solid var(--face-after);
+  border-right: 8px solid var(--face-after);
+}
+input:checked + .toggle .toggle-handler .mouth2 {
+  opacity: 0;
+}
+input:checked + .toggle .toggle-handler .face2,
+input:checked + .toggle .toggle-handler .tongue {
+  opacity: 1;
+}
+
+#title-about {
+    text-align: center;
+    font-size: 25px;
+    background: #666666;
+    color: transparent;
+    text-shadow: 0px 1px 3px rgba(250,250,250,0.55);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;    
+    font-weight: 600;
+}
+
+#title-main-targer {
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-left: 2px solid #D1D1D1;
+    border-right: 2px solid #D1D1D1;
+    background-color: #F7F7F7;
+    font-weight: 600;
+}
+
+#title-main-year-start {
+    font-size: 20px;
+    text-align: center;
+}
+
+#map_about {
+    /*border: 1px solid green*/
+}
+
+.div-for-map {
+    position:relative;
+}
+
+#text-for-map {
+    width: 70%;
+    position:absolute;
+    margin-left: 10px;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    font-size: 18px;
+}
+
+.metka {
+    width: 2%;
+    position:absolute;
+    border-radius: 100px;
+    height: 3.5%;
+    display: inline-block;
+}
+
+.moscow {
+    left: 15%;
+    top: 55%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.st_petersburg {
+    left: 16%;
+    top: 42%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.volgograd {
+    left: 13%;
+    top: 73%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.vladivostok {
+    left: 89%;
+    top: 85%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.voronezh {
+    left: 12%;
+    top: 63%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.yekaterinburg {
+    left: 30%;
+    top: 68%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.kazan {
+    left: 22%;
+    top: 63%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.kaliningrad {
+    left: 6%;
+    top: 39%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.krasnodar {
+    left: 7%;
+    top: 74%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.krasnoyarsk {
+    left: 52%;
+    top: 77%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.nizhny_novgorod{
+    left: 19%;
+    top: 59%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.novosibirsk {
+    left: 44.5%;
+    top: 79%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.omsk {
+    left: 37.5%;
+    top: 77%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.permian {
+    left: 27.5%;
+    top: 64%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.rostov_on_don {
+    left: 9%;
+    top: 70%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.samara {
+    left: 20.7%;
+    top: 69%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.ufa {
+    left: 25%;
+    top: 71%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.chelyabinsk {
+    left: 29%;
+    top: 72%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.sevastopol {
+    left: 2%;
+    top: 69%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+.simferopol {
+    left: 4%;
+    top: 68%;
+    background: #3b8dbd;
+    border: 1px solid #9fdbfc;
+}
+
+#text-for-map-add {
+    text-align: center;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    font-size: 18px;
+    width: 100%;
+}
+
+.url-help {
+    text-decoration: none;
+    color: #3b8dbd;
+}
+
+.url-help:hover {
+    color: #9fdbfc;
+}
+
+.links-for-help-and-rules {
+    /*border: 1px solid red;*/
+}
+
+#links-for-help-photo {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 200px;
+    margin-right: 50px;
+    overflow: hidden;
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #3b8dbd 2px solid;
+    
+    float: left;
+}
+
+#links-for-rules-photo {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 200px;
+    overflow: hidden;
+    background: #fff;
+    padding: 5px; /* создание отступов */
+    border-radius: 50%;
+    /* не забываем о кроссбраузерности */
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: #3b8dbd 2px solid;
+    
+    float: left;
+}
+
+#links-for-help-photo img, #links-for-rules-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /*border: 1px solid #8A2877;*/
+}
+
+.clear {
+    clear: left; /* Отмена обтекания */
+}
