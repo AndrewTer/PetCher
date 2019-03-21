@@ -15,7 +15,7 @@
         {
             $row_favourites = mysql_fetch_array($result_favourites);
             do{
-            echo '<div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_favourites["rating"].'/10</span></div>';
+            echo '<div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_favourites["rating"].'/5</span></div>';
                     
                 if($row_favourites["photo"]!="no" && file_exists("users/".$row_favourites["folder"]."/".$row_favourites["photo"]))
                 {
