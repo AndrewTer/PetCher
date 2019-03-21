@@ -84,7 +84,7 @@ if ($_POST["add_new_pet"])
 <div class="upper-part-body">
             <div class="user-menu">
                 <div id="avatar">
-                    <div class="user-rating" title="Ваш рейтинг на основе оценок пользователей"><span class="user-rating-span"><? echo $row_new["rating"].'/10'; ?></span></div>
+                    <div class="user-rating" title="Ваш рейтинг на основе оценок пользователей"><span class="user-rating-span"><? echo $row_new["rating"].' / 5'; ?></span></div>
                     <?
                     if($row_new["photo"]!="no" && $row_new["photo"]!=null && file_exists("users/".$row_new["folder"]."/".$row_new["photo"]))
                     {
@@ -236,8 +236,8 @@ if ($_POST["add_new_pet"])
                         </a></figure>'; 
                         }while ($row_pets_list_menu = mysql_fetch_array($result_pet_list));         
             echo '</div>
-                    <img class="carouselLeft" src="images/left.png" width="5%" alt="Left Arrow" />
-                    <img class="carouselRight" src="images/right.png" width="5%" alt="Right Arrow" />
+                    <img class="carouselLeft" src="images/left.png" width="5%" alt="Left" />
+                    <img class="carouselRight" src="images/right.png" width="5%" alt="Right" />
                 </div>';
                     }else
                     {
