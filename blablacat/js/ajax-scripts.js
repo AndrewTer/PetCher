@@ -235,6 +235,25 @@ function changecurrentorderinsearch(out_date_param, in_date_param, cost_param, d
         return false;
 }
 
+function completecurrentorderfornewreview(sitter_param, author_param, order_param, text_review_param, rating_param)
+{
+        var completecurrentorderfornewreviewparams = 'sitter_parameter='+sitter_param+'&author_parameter='+author_param+'&order_parameter='+order_param+'&text_review_parameter='+text_review_param+'&rating_parameter='+rating_param;
+        
+        $.ajax({
+        url: "actions/complete-current-order.php",
+        type: 'POST',
+        data: completecurrentorderfornewreviewparams,
+        success: function (data) {
+            //Обновление страницы
+            location.reload(true)
+        },
+        error: function () {
+            alert("Ошибка!\r\nПовторите действие, пожалуйста");
+        }
+        });
+        return false;
+}
+
 $(document).ready(function(){
     $("#add_user_to_favorite_link").click(addtofavoriteuser);
     //$("#apply_current_user_order").click(applycurrentorder);
