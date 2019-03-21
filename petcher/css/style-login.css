@@ -530,6 +530,31 @@ input:checked + .toggle .toggle-handler .tongue {
     font-weight: 600;
 }
 
+#title-main-targer-support {
+    font-size: 20px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-left: 2px solid #D1D1D1;
+    border-right: 2px solid #D1D1D1;
+    border-bottom: 1px solid #D1D1D1;
+    background-color: #F7F7F7;
+    font-weight: 600;
+}
+
+#title-main-targer-support sub {
+    float: right;
+}
+
+#title-main-targer-support:hover {
+    background-color: #EDEDED;
+    cursor: pointer;
+}
+
 #title-main-year-start {
     font-size: 20px;
     text-align: center;
