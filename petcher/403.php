@@ -1,7 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <title>403 Forbidden | BlaBlaCat</title> 
+    <title>403 Forbidden | PetCher</title> 
 </head>
 
 <div class="grid-container">
