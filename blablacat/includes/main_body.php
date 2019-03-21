@@ -229,50 +229,64 @@ if ($_POST["add_new_order"])
                                     $row_check_responses_order = mysql_fetch_array($check_responses_order);
                         ?>
                                 <script type="text/javascript">
-                                $(function(){
-                                    /* Открытие модального окна завершения текущего заказа */
-                                    $('a#endcurrent<? echo $row_orders["order_id"]; ?>order<? echo $row_check_responses_order["sitter_id"]; ?>').click( function(event){
-                                		event.preventDefault();
-                                		$('#overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').fadeIn(400,
-                                		 	function(){ 
-                                				$('#modal_form_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>') 
-                                					.css('display', 'block')
-                                					.animate({opacity: 1, top: '50%'}, 200);
-                                		});
-                                	});
-                                    
-                                	/* Зaкрытие мoдaльнoгo oкнa*/
-                                	$('#modal_close_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>, #overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').click( function(){ // лoвим клик пo крестику или пoдлoжке
-                                		$('#modal_form_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"];?>')
-                                			.animate({opacity: 0, top: '45%'}, 200,
-                                				function(){
-                                					$(this).css('display', 'none');
-                                					$('#overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').fadeOut(400);
-                                				}
-                                			);
-                                	});
-                                 });
+                                    function submitcompletecurrentorder(name) {
+                                            var sitter = <?echo $row_check_responses_order["sitter_id"];?>;
+                                            var author = <?echo $id;?>;       
+                                            var order = <?echo $row_orders["order_id"];?>;                                                                           
+                                            var text_review = document.forms[name].elements["feedback-end-order"].value;
+                                            var rating = document.forms[name].elements["rating_end_order"].value;
+                                            
+                                            var addnewreview = new Function(completecurrentorderfornewreview(sitter, author, order, text_review, rating));
+                                            addnewreview();
+                                     }
+                                     
+                                    $(function(){
+                                        /* Открытие модального окна завершения текущего заказа */
+                                        $('a#endcurrent<? echo $row_orders["order_id"]; ?>order<? echo $row_check_responses_order["sitter_id"]; ?>').click( function(event){
+                                    		event.preventDefault();
+                                    		$('#overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').fadeIn(400,
+                                    		 	function(){ 
+                                    				$('#modal_form_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>') 
+                                    					.css('display', 'block')
+                                    					.animate({opacity: 1, top: '50%'}, 200);
+                                    		});
+                                    	});
+                                        
+                                    	/* Зaкрытие мoдaльнoгo oкнa*/
+                                    	$('#modal_close_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>, #overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').click( function(){ // лoвим клик пo крестику или пoдлoжке
+                                    		$('#modal_form_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"];?>')
+                                    			.animate({opacity: 0, top: '45%'}, 200,
+                                    				function(){
+                                    					$(this).css('display', 'none');
+                                    					$('#overlay_end_<? echo $row_orders["order_id"]; ?>_cur_<? echo $row_check_responses_order["sitter_id"]; ?>').fadeOut(400);
+                                    				}
+                                    			);
+                                    	});
+                                     });
                                 </script>
+                                <script type="text/javascript" src="js/ajax-scripts.js"></script>
                         <?
                                     echo '
                                     <hr />
-                                    
                                     <div class="modal_form_end_cur_ord" id="modal_form_end_'.$row_orders["order_id"].'_cur_'.$row_check_responses_order["sitter_id"].'">
-                                        <form enctype="multipart/form-data" method="post">
+                                        <form id="form-complete-cur-order-'.$row_orders["order_id"].'" enctype="multipart/form-data" method="post">
                                             <span class="modal_close_end_current_order" id="modal_close_end_'.$row_orders["order_id"].'_cur_'.$row_check_responses_order["sitter_id"].'">X</span>
                                             <p id="title-end-cur-order">Завершение заказа</p>
                                             <hr />
-                                            <p class="end-cur-ord-p">Ваш отзыв:</p><textarea id="feedback-end-order" name="feedback_end_order" maxlength="1000" cols="93" rows="10" placeholder="До 1000 символов"></textarea>
+                                            <p class="end-cur-ord-p">Ваш отзыв:</p><textarea id="feedback-end-order" name="feedback-end-order" maxlength="1000" cols="93" rows="10" placeholder="До 1000 символов"></textarea>
                                             <p class="end-cur-ord-p">Ваша оценка:</p>
-                                            <fieldset class="rating_current_review_for_end_current_order">
-                                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Отлично!">5 stars</label>
-                                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Хорошо">4 stars</label>
-                                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Неплохо">3 stars</label>
-                                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Плохо">2 stars</label>
-                                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Ужасно!">1 star</label>
+                                            <fieldset id="rating_current_review_for_end_current_order" class="rating_current_review_for_end_current_order">
+                                                <input type="radio" id="star5'.$row_orders["order_id"].'" name="rating_end_order" value="5" /><label for="star5'.$row_orders["order_id"].'" title="Отлично!">5 stars</label>
+                                                <input type="radio" id="star4'.$row_orders["order_id"].'" name="rating_end_order" value="4" /><label for="star4'.$row_orders["order_id"].'" title="Хорошо">4 stars</label>
+                                                <input type="radio" id="star3'.$row_orders["order_id"].'" name="rating_end_order" value="3" /><label for="star3'.$row_orders["order_id"].'" title="Неплохо">3 stars</label>
+                                                <input type="radio" id="star2'.$row_orders["order_id"].'" name="rating_end_order" value="2" /><label for="star2'.$row_orders["order_id"].'" title="Плохо">2 stars</label>
+                                                <input type="radio" id="star1'.$row_orders["order_id"].'" name="rating_end_order" value="1" /><label for="star1'.$row_orders["order_id"].'" title="Ужасно!">1 star</label>
                                             </fieldset>
-                                            <br />                                            
-                                            <p class="add-new-review-link" ><input type="submit" class="add-new-review-link-a" name="end_current_order_with_review" value="Завершить заказ" /></p>
+                                            <br />';
+                          ?>                                            
+                                            <p class="create-new-review-link" ><input type="submit" onclick="event.preventDefault();submitcompletecurrentorder('form-complete-cur-order-<?echo $row_orders["order_id"];?>')" class="create-new-review-link-a" id="complete_current_order_for_new_rev" name="complete_current_order_for_new_rev" value="Завершить заказ" /></p>
+                          <?
+                                    echo '
                                         </form>
                                     </div>
                                     <div class="overlay_end_current_order" id="overlay_end_'.$row_orders["order_id"].'_cur_'.$row_check_responses_order["sitter_id"].'"></div>
@@ -355,7 +369,7 @@ if ($_POST["add_new_order"])
                                                         }
                                                         
                                                     echo '
-                                                        <p class="user-about-search">Рейтинг: '.$row_result_cur_order_sitter["rating"].' / 10</p>
+                                                        <p class="user-about-search">Рейтинг: '.$row_result_cur_order_sitter["rating"].' / 5</p>
                                                         <p class="user-about-search">Моб.номер: '.$row_result_cur_order_sitter["phone_number"].'</p>
                                                     </div>
                                                     
