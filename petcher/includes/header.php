@@ -31,7 +31,7 @@
         <nav>
             <a href="index.php?id<?echo $id;?>"><div class="menu"><? echo $row_new["full_name"] ?></div></a>
             <a href="settings.php"><div class="menu">Настройки</div></a>
-            <a href="support.php"><div class="menu">Помощь</div></a>
+            <a href="support_for_user.php"><div class="menu">Помощь</div></a>
             <a href="logout.php"><div class="menu">Выйти</div></a>
         </nav>
     </div>
