@@ -10,6 +10,42 @@ $(document).ready(function(){
         $('.block-add-order-info').slideToggle(300);     
     }); 
     
+    $('.block-show-current-support-my-page').click(function(){
+        $('.block-support-info-my-page').slideToggle(300);     
+    }); 
+    
+    $('.block-show-current-support-settings').click(function(){
+        $('.block-support-info-settings').slideToggle(300);     
+    }); 
+    
+    $('.block-show-current-support-orders').click(function(){
+        $('.block-support-info-orders').slideToggle(300);     
+    }); 
+    
+    $('.block-show-current-support-reviews').click(function(){
+        $('.block-support-info-reviews').slideToggle(300);     
+    });
+    
+    $('.block-show-current-support-fav').click(function(){
+        $('.block-support-info-fav').slideToggle(300);     
+    });
+    
+    $('.block-show-current-support-req').click(function(){
+        $('.block-support-info-req').slideToggle(300);     
+    });
+    
+    $('.block-show-current-support-resp').click(function(){
+        $('.block-support-info-resp').slideToggle(300);     
+    });
+    
+    $('.block-show-current-support-search-users').click(function(){
+        $('.block-support-info-search-users').slideToggle(300);     
+    });
+    
+    $('.block-show-current-support-search-orders').click(function(){
+        $('.block-support-info-search-orders').slideToggle(300);     
+    });
+    
     $('#block-title-and-sorting-all-reviews-favourite-user-part').click(function() {
         $('.all-reviews-favourite-user-part').slideToggle(300);     
     });
