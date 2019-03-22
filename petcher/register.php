@@ -94,7 +94,6 @@ else
             <a href="login.php">Вход</a>
             <a href="register.php">Регистрация</a>
             <a href="">Правила</a>
-            <a href="support_for_user.php">Помощь</a>
             <a href="about.php">О нас</a>
         </nav>
     </div>
