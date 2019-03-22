@@ -11,7 +11,6 @@
             <a href="login.php">Вход</a>
             <a href="register.php">Регистрация</a>
             <a href="">Правила</a>
-            <a href="support_for_user.php">Помощь</a>
             <a href="about.php">О нас</a>
         </nav>
     </div>
@@ -58,7 +57,7 @@
     
     <div class="links-for-help-and-rules">
         <div id="links-for-help-photo">
-            <a rel="nofollow" href="help.php">
+            <a rel="nofollow" href="support_for_user.php">
                 <img src="images/help-icon.png" alt="" width="100%" />';
             </a>
         </div>
@@ -72,7 +71,7 @@
     
     <hr />
     
-    <p id="text-for-map-add">Если есть какие-либо пожелания или вопросы, ответы на которые вы не смогли найти в разделе <a class="url-help" href="help.php">Помощь</a>, то вы можете написать сюда</p>
+    <p id="text-for-map-add">Если есть какие-либо пожелания или вопросы, ответы на которые вы не смогли найти в разделе <a class="url-help" href="support_for_user.php">Помощь</a>, то вы можете написать сюда</p>
     <h4>Дополнить</h4>
     <hr />
     
