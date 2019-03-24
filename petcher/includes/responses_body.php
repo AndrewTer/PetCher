@@ -109,6 +109,14 @@ $result_responses = mysql_query("SELECT orders.id AS order_id, orders.owner_id A
                                                 <p class="order-about">Кличка: '.$row_responses["pet_name"].'</p>
                                                 <p class="order-about">Порода: '.$row_responses["pet_breed"].'</p>
                                                 <p class="order-about">Рост | Вес: '.$row_responses["pet_growth"].' м | '.$row_responses["pet_weight"].' кг</p>
+                                                <p class="order-about">Остальная информация: ';
+                                                if ($row_responses["about_pet"]==null) 
+                                                {
+                                                    echo 'отсутствует';
+                                                } else {
+                                                    echo $row_responses["about_pet"];
+                                                }
+                                                echo '</p>
                                                 <p class="order-cost">Цена: '.$row_responses["cost"].' руб</p>
                                             </div>
                                         <div class="clear"></div>
@@ -149,6 +157,14 @@ $result_responses = mysql_query("SELECT orders.id AS order_id, orders.owner_id A
                                         <p class="order-about">Кличка: '.$row_responses["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_responses["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_responses["pet_growth"].' м | '.$row_responses["pet_weight"].' кг</p>
+                                        <p class="order-about">Остальная информация: ';
+                                                if ($row_responses["about_pet"]==null) 
+                                                {
+                                                    echo 'отсутствует';
+                                                } else {
+                                                    echo $row_responses["about_pet"];
+                                                }
+                                                echo '</p>
                                         <p class="order-cost">Цена: '.$row_responses["cost"].' руб</p>
                                         <p class="delete-order-links" ><a class="delete-current-order" rel="responses.php?id='.$row_responses["order_id"].'&action=delete" >Удалить | &#10008;</a></p>
                                     </div>

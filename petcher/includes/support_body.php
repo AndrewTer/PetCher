@@ -49,14 +49,26 @@
         <p id="title-main-targer-support-up">О разделе «Заявки от ситтеров» <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-req">
-        asdasd 5
+        <img width="200px" class="support-image-settings-left" src="images/support/req-menu-info.png" title="Раздел заявки от ситтеров в пользовательском меню" />
+        <p class="right-text-support-part">Раздел <a id="text-support-part-link-to-page" href="requests.php">«Заявки от ситтеров»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+        <p class="right-text-support-part">Данный раздел нужен для отображения отправленных вам заявок на ваши заказы от других пользователей сервиса.</p>
+        <p class="right-text-support-part">Каждый блок заявки состоит из двух частей: слева отображается ваш заказ, на который пришла заявка, справа - часть пользователя, который отправил вам заявку (в ней находится ссылка на страницу этого пользователя, а также две кнопки для одобрения или отказа текущей заявки).</p>
+        <p class="right-text-support-part"><img width="600px" class="support-image-settings" src="images/support/req-page-info.png" title="Страница с разделом заявок от ситтеров" /></p>
+        <div class="clear"></div>
     </div>
     
     <div class="block-show-current-support-resp">
         <p id="title-main-targer-support-up">О разделе «Ответы на мои заявки» <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-resp">
-        asdasd 6
+        <img width="200px" class="support-image-settings-left" src="images/support/resp-menu-info.png" title="Раздел ответы на мои заявки в пользовательском меню" />
+        <p class="right-text-support-part">Раздел <a id="text-support-part-link-to-page" href="responses.php">«Ответы на мои заявки»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+        <p class="right-text-support-part">Данный раздел нужен для отображения ответов других пользователей сервиса на ваши заявки.</p>
+        <p class="right-text-support-part">Ответы могут быть двух видов - <a style="margin: 0; color: #04008A;">одобрение</a> и <a style="margin: 0; color: #D62B00;">отказ</a>.</p>
+        <p class="right-text-support-part">Блок c одобрением вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также мобильный номер для связи с заказчиком и ссылку на страницу самого заказчика.</p>
+        <p class="right-text-support-part">Блок отказа вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также ссылку на страницу самого заказчика. Вы также можете удалить ответ с отказом и повторно отправить свою заявку.</p>
+        <p class="right-text-support-part"><img width="600px" class="support-image-settings" src="images/support/resp-page-info.png" title="Страница с разделом ответов на ваши заявки" /></p>
+        <div class="clear"></div>
     </div>
     
     <div class="block-show-current-support-search-users">

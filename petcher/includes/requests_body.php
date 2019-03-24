@@ -66,6 +66,14 @@
                                         <p class="order-about">Кличка: '.$row_requests["pet_name"].'</p>
                                         <p class="order-about">Порода: '.$row_requests["pet_breed"].'</p>
                                         <p class="order-about">Рост | Вес: '.$row_requests["pet_growth"].' м | '.$row_requests["pet_weight"].' кг</p>
+                                        <p class="order-about">Остальная информация: ';
+                                                if ($row_requests["pet_info"]==null) 
+                                                {
+                                                    echo 'отсутствует';
+                                                } else {
+                                                    echo $row_requests["pet_info"];
+                                                }
+                                                echo '</p>
                                         <p class="order-cost">Цена: '.$row_requests["order_cost"].' руб</p>
                                     </div>
                                     
