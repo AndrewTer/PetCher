@@ -1954,12 +1954,14 @@ body {
 }
 
 .block-show-current-support-my-page, .block-show-current-support-settings, .block-show-current-support-orders, .block-show-current-support-reviews, 
-.block-show-current-support-fav, .block-show-current-support-req, .block-show-current-support-resp, .block-show-current-support-search-users, .block-show-current-support-search-orders {
+.block-show-current-support-fav, .block-show-current-support-req, .block-show-current-support-resp, .block-show-current-support-search-users, 
+.block-show-current-support-search-orders, .block-show-about-pet-page {
     /*border: 1px solid red;*/
 }
 
 .block-support-info-my-page, .block-support-info-settings, .block-support-info-orders, .block-support-info-reviews, 
-.block-support-info-fav, .block-support-info-req, .block-support-info-resp, .block-support-info-search-users, .block-support-info-search-orders {
+.block-support-info-fav, .block-support-info-req, .block-support-info-resp, .block-support-info-search-users, 
+.block-support-info-search-orders, .block-support-info-pet-page {
     display: none;
     font-size: 17px;
     padding: 5px;
@@ -1994,13 +1996,21 @@ body {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+    margin-right: 5px;
+    width: 25%;
 }
 
 .right-text-support-part {
     /*border: 1px solid red; */
     margin: 0; 
-    margin-left: 25%;
+    width: 70%;
     margin-bottom: 5px;
+    float: left;
+    margin-left: 10px;
+}
+
+.right-text-support-part p {
+    margin-top: 0;
 }
 
 #text-support-part-link-to-page{
