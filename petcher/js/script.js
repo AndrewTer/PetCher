@@ -18,6 +18,10 @@ $(document).ready(function(){
         $('.block-support-info-settings').slideToggle(300);     
     }); 
     
+    $('.block-show-about-pet-page').click(function(){
+        $('.block-support-info-pet-page').slideToggle(300);     
+    }); 
+    
     $('.block-show-current-support-orders').click(function(){
         $('.block-support-info-orders').slideToggle(300);     
     }); 
