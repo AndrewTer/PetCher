@@ -20,18 +20,50 @@
         <img width="400px" class="support-image-settings" src="images/support/settings-page-info.png" title="Страница настроек" />
     </div>
     
+    <div class="block-show-about-pet-page">
+        <p id="title-main-targer-support-up">О странице питомца <sub>﹀</sub></p>
+    </div>
+    <div class="block-support-info-pet-page">
+        
+    </div>
+    
     <div class="block-show-current-support-orders">
         <p id="title-main-targer-support-up">О разделе «Заказы» <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-orders">
-        asdasd2
+        <img class="support-image-settings-left" width="200px" src="images/support/orders-menu-info.png" title="Раздел заказов в пользовательском меню" />
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="index.php">«Заказы»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева), а также в верхнем меню вашей страницы (изображение ниже).</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/orders-up-menu-info.png" title="Раздел заказов в верхнем меню" /></p>
+            <p>Данный раздел нужен для отображения всех ваших заказов. Заказы делятся на три вида: <a style="margin: 0; color: #CC9005;">«В поиске»</a>, <a style="margin: 0; color: #549613;">«Выполненные»</a> и <a style="margin: 0; color: #2969FF;">«Текущие»</a>.</p>
+            <hr />
+            <p>Заказы <a style="margin: 0; color: #CC9005;">«В поиске»</a> содержат информацию о самом заказе (описание, цена, город и даты) и информацию о питомце. Данные заказы находятся в разделе <a id="text-support-part-link-to-page" href="search.php">«Поиск заказов»</a> и не имеют текущего ситтера, то есть другие пользователи сервиса могут увидеть их в разделе <a id="text-support-part-link-to-page" href="search.php">«Поиск заказов»</a> и отправить вам заявку. У вас есть возможность редактировать и удалять заказы такого вида.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/order-in-search-page-info.png" title="Заказ находящийся в поиске" /></p>
+            <hr />
+            <p><a style="margin: 0; color: #549613;">«Выполненные»</a> заказы содержат информацию о самом заказе (описание, цена, город и даты) и информацию о питомце. У вас есть возможность удалять заказы такого вида.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/order-complete-page-info.png" title="Выполненный заказ" /></p>
+            <hr />
+            <p><a style="margin: 0; color: #2969FF;">«Текущие»</a> заказы содержат информацию о самом заказе (описание, цена, город и даты), информацию о питомце, а также блок с текущим ситтером, в котором содержится ссылка на страницу ситтера, его сетевой статус (в сети он в данный момент или нет), рейтинг и мобильный номер. У вас есть возможность завершать заказы такого вида по мере их выполнения ситтером после чего они становятся <a style="margin: 0; color: #549613;">«Выполненными»</a>.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/order-current-page-info.png" title="Выполненный заказ" /></p>
+            <hr />
+            <p>В верхней части раздела находится блок добавления нового заказа. Однако добавить новый заказ можно только в том случае, если у вас уже имеются страницы ваших питомцев на сервисе (о том, как добавить нового питомца на сервис смотрите в разделе «О странице питомца»).</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/add-new-order-page-info.png" title="Блок добавления нового заказа" /></p>
+        </div>
+        <div class="clear"></div>
     </div>
     
     <div class="block-show-current-support-reviews">
         <p id="title-main-targer-support-up">О разделе «Отзывы» <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-reviews">
-        asdasd3
+        <img width="200px" class="support-image-settings-left" src="images/support/reviews-menu-info.png" title="Раздел отзывов в пользовательском меню" />
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="reviews.php?sort=about_me">«Отзывы»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Данный раздел нужен для отображения ваших отзывов о других пользователях сервиса, которые вы можете оставлять после выполнения ими ваших заказов, а также для отображения отзывов других пользователей сервиса о проделанной вами работе.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/reviews-page-info-my.png" title="Страница с разделом ваших отзывов о других пользователях сервиса" /></p>
+            <p><img width="600px" class="support-image-settings" src="images/support/reviews-page-info-about-me.png" title="Страница с разделом отзывов других пользователей сервиса о проделанной вами работе" /></p>
+        </div>
+        <div class="clear"></div>
     </div>
     
     <div class="block-show-current-support-fav">
@@ -39,9 +71,11 @@
     </div>
     <div class="block-support-info-fav">
         <img width="200px" class="support-image-settings-left" src="images/support/fav-menu-info.png" title="Раздел избранное в пользовательском меню" />
-        <p class="right-text-support-part">Раздел <a id="text-support-part-link-to-page" href="favourites.php">«Избранное»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
-        <p class="right-text-support-part">Данный раздел нужен для отображения важных вам пользователей и быстрого перехода на их страницы путём клика по фотографиям.</p>
-        <p class="right-text-support-part"><img width="600px" class="support-image-settings" src="images/support/fav-page-info.png" title="Страница с разделом избранного" /></p>
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="favourites.php">«Избранное»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Данный раздел нужен для отображения важных вам пользователей и быстрого перехода на их страницы путём клика по фотографиям.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/fav-page-info.png" title="Страница с разделом избранного" /></p>
+        </div>
         <div class="clear"></div>
     </div>
     
@@ -50,10 +84,12 @@
     </div>
     <div class="block-support-info-req">
         <img width="200px" class="support-image-settings-left" src="images/support/req-menu-info.png" title="Раздел заявки от ситтеров в пользовательском меню" />
-        <p class="right-text-support-part">Раздел <a id="text-support-part-link-to-page" href="requests.php">«Заявки от ситтеров»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
-        <p class="right-text-support-part">Данный раздел нужен для отображения отправленных вам заявок на ваши заказы от других пользователей сервиса.</p>
-        <p class="right-text-support-part">Каждый блок заявки состоит из двух частей: слева отображается ваш заказ, на который пришла заявка, справа - часть пользователя, который отправил вам заявку (в ней находится ссылка на страницу этого пользователя, а также две кнопки для одобрения или отказа текущей заявки).</p>
-        <p class="right-text-support-part"><img width="600px" class="support-image-settings" src="images/support/req-page-info.png" title="Страница с разделом заявок от ситтеров" /></p>
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="requests.php">«Заявки от ситтеров»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Данный раздел нужен для отображения отправленных вам заявок на ваши заказы от других пользователей сервиса.</p>
+            <p>Каждый блок заявки состоит из двух частей: слева отображается ваш заказ, на который пришла заявка, справа - часть пользователя, который отправил вам заявку (в ней находится ссылка на страницу этого пользователя, а также две кнопки для одобрения или отказа текущей заявки).</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/req-page-info.png" title="Страница с разделом заявок от ситтеров" /></p>
+        </div>
         <div class="clear"></div>
     </div>
     
@@ -62,12 +98,14 @@
     </div>
     <div class="block-support-info-resp">
         <img width="200px" class="support-image-settings-left" src="images/support/resp-menu-info.png" title="Раздел ответы на мои заявки в пользовательском меню" />
-        <p class="right-text-support-part">Раздел <a id="text-support-part-link-to-page" href="responses.php">«Ответы на мои заявки»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
-        <p class="right-text-support-part">Данный раздел нужен для отображения ответов других пользователей сервиса на ваши заявки.</p>
-        <p class="right-text-support-part">Ответы могут быть двух видов - <a style="margin: 0; color: #04008A;">одобрение</a> и <a style="margin: 0; color: #D62B00;">отказ</a>.</p>
-        <p class="right-text-support-part">Блок c одобрением вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также мобильный номер для связи с заказчиком и ссылку на страницу самого заказчика.</p>
-        <p class="right-text-support-part">Блок отказа вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также ссылку на страницу самого заказчика. Вы также можете удалить ответ с отказом и повторно отправить свою заявку.</p>
-        <p class="right-text-support-part"><img width="600px" class="support-image-settings" src="images/support/resp-page-info.png" title="Страница с разделом ответов на ваши заявки" /></p>
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="responses.php">«Ответы на мои заявки»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Данный раздел нужен для отображения ответов других пользователей сервиса на ваши заявки.</p>
+            <p>Ответы могут быть двух видов - <a style="margin: 0; color: #04008A;">одобрение</a> и <a style="margin: 0; color: #D62B00;">отказ</a>.</p>
+            <p>Блок c одобрением вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также мобильный номер для связи с заказчиком и ссылку на страницу самого заказчика.</p>
+            <p>Блок отказа вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также ссылку на страницу самого заказчика. Вы также можете удалить ответ с отказом и повторно отправить свою заявку.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/resp-page-info.png" title="Страница с разделом ответов на ваши заявки" /></p>
+        </div>
         <div class="clear"></div>
     </div>
     
@@ -75,14 +113,30 @@
         <p id="title-main-targer-support-up">Поиск пользователей <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-search-users">
-        asdasd 7
+        <img width="200px" class="support-image-settings-left" src="images/support/search-users-menu-info.png" title="Раздел поиска пользователей в пользовательском меню" />
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="users_search.php?sort=all-users">«Поиск пользователей»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Данный раздел нужен для удобного поиска других пользователей сервиса по заданным вами параметрам.</p>
+            <p>В левой части раздела находится список пользователей с краткой информации о них (ФИО, статус - в сети пользователь в данный момент или нет, город проживания, описание и рейтинг), а также ссылки на страницы и кнопки добавления в избранное.</p>
+            <p>Справа расположен блок с возможностью задания параметров поиска, сортировкой и переходом в раздел <a id="text-support-part-link-to-page" href="search.php">поиска заказов</a>.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/search-users-page-info.png" title="Страница с разделом поиска пользователей" /></p>
+        </div>
+        <div class="clear"></div>
     </div>
     
     <div class="block-show-current-support-search-orders">
         <p id="title-main-targer-support-up">Поиск заказов <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-search-orders">
-        asdasd 8
+        <img width="200px" class="support-image-settings-left" src="images/support/search-orders-menu-info.png" title="Раздел поиска заказов в пользовательском меню" />
+        <div class="right-text-support-part">
+            <p>Раздел <a id="text-support-part-link-to-page" href="search.php">«Поиск заказов»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Данный раздел нужен для удобного поиска текущих заказов пользователей сервиса по заданным вами параметрам.</p>
+            <p>В левой части раздела находится список текущих заказов с полной информацией о них, а также ссылки на страницы заказчиков и кнопки для подачи или отмены заявок.</p>
+            <p>Справа расположен блок с возможностью задания параметров поиска и переходом в раздел <a id="text-support-part-link-to-page" href="users_search.php?sort=all-users">поиска пользователей</a>.</p>
+            <p><img width="600px" class="support-image-settings" src="images/support/search-orders-page-info.png" title="Страница с разделом поиска заказов" /></p>
+        </div>
+        <div class="clear"></div>
     </div>
 
 </div>

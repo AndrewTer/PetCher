@@ -43,7 +43,7 @@
                                                     </div>
                                                     
                                                     <div class="left-part-review-list">
-                                                        <div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_result_reviews_about_sitter["rating"].'/10</span></div>';
+                                                        <div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_result_reviews_about_sitter["rating"].'/5</span></div>';
                                                             if($row_result_reviews_about_sitter["photo"]!="no" && file_exists("users/".$row_result_reviews_about_sitter["folder"]."/".$row_result_reviews_about_sitter["photo"]))
                                                             {
                                                                 $img_path = 'users/'.$row_result_reviews_about_sitter["folder"].'/'.$row_result_reviews_about_sitter["photo"];
@@ -87,7 +87,7 @@
                                                     </div>
                                                     
                                                     <div class="left-part-review-list">
-                                                        <div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_result_reviews_about_author["rating"].'/10</span></div>';
+                                                        <div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_result_reviews_about_author["rating"].'/5</span></div>';
                                                             if($row_result_reviews_about_author["photo"]!="no" && file_exists("users/".$row_result_reviews_about_author["folder"]."/".$row_result_reviews_about_author["photo"]))
                                                             {
                                                                 $img_path = 'users/'.$row_result_reviews_about_author["folder"].'/'.$row_result_reviews_about_author["photo"];
@@ -132,7 +132,7 @@
                                                     </div>
                                                     
                                                     <div class="left-part-review-list">
-                                                        <div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_result_reviews_about_sitter["rating"].'/10</span></div>';
+                                                        <div id="favourite-circle"><div class="fav-rating" title="Рейтинг на основе оценок пользователей"><span class="fav-rating-span">'.$row_result_reviews_about_sitter["rating"].'/5</span></div>';
                                                             if($row_result_reviews_about_sitter["photo"]!="no" && file_exists("users/".$row_result_reviews_about_sitter["folder"]."/".$row_result_reviews_about_sitter["photo"]))
                                                             {
                                                                 $img_path = 'users/'.$row_result_reviews_about_sitter["folder"].'/'.$row_result_reviews_about_sitter["photo"];
