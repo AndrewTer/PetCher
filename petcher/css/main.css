@@ -527,7 +527,7 @@ body {
 
 #modal_form_add_new_pet {
 	width: 400px; 
-	height: 500px; /* Рaзмеры дoлжны быть фиксирoвaны */
+	height: 450px; /* Рaзмеры дoлжны быть фиксирoвaны */
 	border-radius: 5px;
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
 	background: #fbfbfb;
