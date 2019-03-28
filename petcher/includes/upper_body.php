@@ -141,7 +141,7 @@ if ($_POST["add_new_pet"])
                     
                     $loggedTime=$row_current_time_result["twomin"];	//2 minutes
                     $loggedDate=$row_current_time_result["DATE(NOW())"];
-                    if($row_new["status"]>$loggedTime && ($row_new["last_visit"]==$loggedDate))
+                    if(($row_new["status"]>$loggedTime) && ($row_new["last_visit"]==$loggedDate))
                     {
                     	echo '<p class="about-user" id="online-status">Ваш статус: онлайн</p>';
                     }

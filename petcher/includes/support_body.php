@@ -6,8 +6,16 @@
         <p id="title-main-targer-support-up">Моя страница <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-my-page">
-        
-        
+        Ваша <a id="text-support-part-link-to-page" href="index.php">страница</a> состоит из двух частей:<br />
+        - в верхней части отображаются: ваша фотография, пользовательское меню, информация о вас и раздел с вашими питомцами, а также ссылка для перехода на страницу редактирования информации о вас.<br /><br />
+        <img width="700px" class="support-image-settings" src="images/support/my-page-info.png" title="Раздел с вашей информацией" />
+        Страница для редактирования информации о вас содержит поля для изменения ФИО (фамилия, имя, отчество), выбора города вашего проживания, улицы, краткой информации о вас, а также поле для изменения вашей фотографии с возможностью её удаления.<br /><br />
+        <img width="700px" class="support-image-settings" src="images/support/change-my-page-info.png" title="Страница для редактирования вашей информации" />
+        - в нижней части располагаются такие разделы, как 
+        <a id="text-support-part-link-to-page" href="index.php">«Заказы»</a>, <a id="text-support-part-link-to-page" href="favourites.php">«Избранное»</a>,
+        <a id="text-support-part-link-to-page" href="reviews.php?sort=about_me">«Отзывы»</a>, <a id="text-support-part-link-to-page" href="requests.php">«Заявки от ситтеров»</a> и
+        <a id="text-support-part-link-to-page" href="responses.php">«Ответы на мои заявки»</a>.<br /><br />
+        Отображение каждого из перечисленных разделов зависит от выбора вами раздела из пользовательского меню, которое располагается под вашей фотографией.
     </div>
     
     <div class="block-show-current-support-settings">
@@ -24,7 +32,14 @@
         <p id="title-main-targer-support-up">О странице питомца <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-pet-page">
-        
+        Список всех ваших питомцев отображён в верхней части вашей страницы под информацией о вас.
+        <img width="500px" class="support-image-settings" src="images/support/pet-list-info.png" title="Список питомцев" />
+        Для добавления нового питомца в верхней части блока со списком ваших питомцев расположена ссылка «Добавить». При нажатии на неё откроется окно добавления нового питомца.
+        <img width="300px" class="support-image-settings" src="images/support/add-page-new-pet-info.png" title="Окно добавления нового питомца" />
+        Для перехода на страницу редактирования информации о вашем питомце вы можете нажать на фотографию с вашим питомцем из списка питомцев, либо в разделах ваших заказов и заявок от ситтеров.<br /><br />
+        Страница для редактирования информации о вашем питомце содержит поля для изменения клички, вида, породы, пола, веса, роста и краткой информации о питомце, а также поле для для изменения фотографии питомца с возможностью её удаления.<br /><br />
+        <img width="700px" class="support-image-settings" src="images/support/change-my-pet-info.png" title="Страница для редактирования информации о питомце" />
+        Вы также имеете возможность удалить страницу определённого питомца, при этом будут удалены все ваши заказы, в которых этот питомец принимает участие.
     </div>
     
     <div class="block-show-current-support-orders">
