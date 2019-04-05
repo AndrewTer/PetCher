@@ -56,7 +56,7 @@ body {
     font-weight: 600;
 }
 
-#title-main-targer-support, #title-main-targer-support-up {
+#title-main-targer-support, #title-main-targer-support-up, #title-main-targer-support-rules {
     font-size: 20px;
     padding: 5px;
     padding-top: 10px;
@@ -72,17 +72,27 @@ body {
     font-weight: 600;
 }
 
-#title-main-targer-support-up {
+#title-main-targer-support-rules {
     border-top: 1px solid #D1D1D1;
-    
+    color: #C52002;
+    background: #FFE1DB;
 }
 
-#title-main-targer-support sub, #title-main-targer-support-up sub {
+#title-main-targer-support-up {
+    border-top: 1px solid #D1D1D1;
+}
+
+#title-main-targer-support sub, #title-main-targer-support-up sub, #title-main-targer-support-rules sub {
     float: right;
 }
 
 #title-main-targer-support:hover, #title-main-targer-support-up:hover {
     background-color: #EDEDED;
+    cursor: pointer;
+}
+
+#title-main-targer-support-rules:hover {
+    background-color: #FFC7BD;
     cursor: pointer;
 }
 
@@ -1229,6 +1239,93 @@ body {
     box-shadow: 0 1px 10px rgba(0,0,0,.13);
 }
 
+.user-statistic {
+    /*border: 1px solid blue;*/
+    width: 628px;
+    height: 100px;    
+    margin: 0;
+    float: left;
+    padding-bottom: 1514:43 02.08.2016px;
+    background: #fbfbfb;
+    font-size: 24px;
+    line-height: 1;
+    margin-top: 10px;
+    outline: none;
+    box-shadow: 0 1px 10px rgba(0,0,0,.13);
+    border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+}
+
+#count-fav-stat-user {
+    text-align: center;
+    font: bold 50px sans-serif;
+    height: 60px;
+    /*border: 1px solid black;*/
+    color: #74993D;
+    margin: 0;
+}
+
+.fav-count-current-user {
+    border-left: 3px solid #74993D;
+    float: left;
+    width: 311px;
+    height: 100%;
+    background-color: #DAF0A8;
+    border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+        -moz-border-radius: 5px 0 0 5px;
+        
+}
+
+.down-text-user-statistic-fav {
+    /*border: 1px solid green;*/
+    text-align: center;
+    font: bold 16px sans-serif;
+    color: #445926;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #B9E35F;
+    border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+}
+
+.down-text-user-statistic-ban {
+    /*border: 1px solid red;*/
+    text-align: center;
+    font: bold 16px sans-serif;
+    color: #9D2602;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #FFAF94;
+    border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+}
+
+#count-ban-stat-user {
+    text-align: center;
+    font: bold 50px sans-serif;
+    height: 60px;
+    /*border: 1px solid black;*/
+    color: #D63301;
+    margin: 0;
+}
+
+.ban-count-current-user {
+    border-right: 3px solid #D63301;
+    float: left;
+    width: 311px;
+    height: 100%;
+    background-color: #FFD2C2;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+        -moz-border-radius: 0 5px 5px 0;
+}
+
 .main-part-body {
     width: auto;
    /*border: 1px solid #000;*/
@@ -1959,6 +2056,10 @@ body {
     /*border: 1px solid red;*/
 }
 
+.block-show-rules {
+    /*border: 1px solid red;*/
+}
+
 .block-support-info-my-page, .block-support-info-settings, .block-support-info-orders, .block-support-info-reviews, 
 .block-support-info-fav, .block-support-info-req, .block-support-info-resp, .block-support-info-search-users, 
 .block-support-info-search-orders, .block-support-info-pet-page {
@@ -1976,6 +2077,38 @@ body {
     border-bottom: 1px solid #D1D1D1;
     background-color: white;
     font-weight: 600;
+}
+
+.block-support-info-rules {
+    display: none;
+    font-size: 17px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;   
+    text-align: left;
+    margin: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-left: 3px solid #D1D1D1;
+    border-right: 3px solid #D1D1D1;
+    border-bottom: 1px solid #D1D1D1;
+    background-color: #F9E7E7;
+    color: #C52002;
+    font-weight: 600;
+}
+
+.rules-list {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*border: 1px solid red;*/
+}
+
+.rules-list > li {
+    /*border: 1px solid blue;*/
+    margin-bottom: 10px;
 }
 
 .support-image-settings {
