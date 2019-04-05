@@ -23,6 +23,8 @@
     }
     
     $result_pet_list = mysql_query("SELECT * FROM pets WHERE (owner_id = $id) AND (deleted = 'no')");
+    
+    $result_in_fav_count = mysql_query("SELECT COUNT(*) AS count FROM favorites WHERE (favourite_id=$id) AND (deleted='no')");
 ?>
 <div class="header">
     <div class="contain clearfix">

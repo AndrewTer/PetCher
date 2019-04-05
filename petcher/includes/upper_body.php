@@ -164,7 +164,7 @@ if ($_POST["add_new_pet"])
                     }
                 ?>
             </div>
-            
+
             <div id="modal_form_add_new_pet">
                 <form enctype="multipart/form-data" method="post">
                     <span id="modal_close_add_new_pet">X</span>
@@ -244,6 +244,31 @@ if ($_POST["add_new_pet"])
                         echo '<p class="not-pet-list-menu">Вы пока не добавили ни одного питомца</p>';
                     }
                 ?>
+            </div>
+            
+            <div class="user-statistic">
+                <div class="fav-count-current-user">
+                <?
+                if (mysql_num_rows($result_in_fav_count) > 0)
+                {
+                    $row_result_in_fav_count = mysql_fetch_array($result_in_fav_count);
+                    echo "<h1 id='count-fav-stat-user'>".$row_result_in_fav_count["count"]."</h1>";
+                }
+                else
+                {
+                    echo "<h1 id='count-fav-stat-user'>0</h1>";
+                }
+                ?>
+                    <div class="down-text-user-statistic-fav">
+                        вы в избранном
+                    </div>
+                </div>
+                <div class="ban-count-current-user">
+                    <h1 id="count-ban-stat-user">0</h1>
+                    <div class="down-text-user-statistic-ban">
+                        жалоб на вас
+                    </div>
+                </div>
             </div>
             <div class="clear"></div>
 </div>
