@@ -10,6 +10,10 @@ $(document).ready(function(){
         $('.block-add-order-info').slideToggle(300);     
     }); 
     
+    $('.block-show-rules').click(function(){
+        $('.block-support-info-rules').slideToggle(300);     
+    }); 
+    
     $('.block-show-current-support-my-page').click(function(){
         $('.block-support-info-my-page').slideToggle(300);     
     }); 
