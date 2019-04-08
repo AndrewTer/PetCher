@@ -282,7 +282,8 @@ if ($_POST["add_new_order"])
                                             <p id="title-end-cur-order">Завершение заказа</p>
                                             <hr />
                                             <p class="end-cur-ord-p">Ваш отзыв:</p><textarea id="feedback-end-order" name="feedback-end-order" maxlength="1000" cols="93" rows="10" placeholder="До 1000 символов"></textarea>
-                                            <p class="end-cur-ord-p">Ваша оценка:</p>
+                                            <p class="end-cur-ord-p-rate">Ваша оценка:</p>
+                                            <p class="end-cur-ord-p-metka">(обязательное поле)</p>
                                             <fieldset id="rating_current_review_for_end_current_order" class="rating_current_review_for_end_current_order">
                                                 <input type="radio" id="star5'.$row_orders["order_id"].'" name="rating_end_order" value="5" /><label for="star5'.$row_orders["order_id"].'" title="Отлично!">5 stars</label>
                                                 <input type="radio" id="star4'.$row_orders["order_id"].'" name="rating_end_order" value="4" /><label for="star4'.$row_orders["order_id"].'" title="Хорошо">4 stars</label>
