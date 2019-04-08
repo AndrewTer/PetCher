@@ -59,7 +59,7 @@ else
         <nav>
             <a href="login.php">Вход</a>
             <a href="register.php">Регистрация</a>
-            <a href="">Правила</a>
+            <a href="support_for_user.php">Правила</a>
             <a href="about.php">О нас</a>
         </nav>
     </div>

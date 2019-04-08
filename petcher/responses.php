@@ -20,6 +20,11 @@ if($_SESSION['auth_user'] == "yes_auth")
     <script type="text/javascript" src="js/click-carousel.js"></script> 
     <script type="text/javascript" src="js/script.js"></script> 
     <script type="text/javascript" src="js/jquery_confirm/jquery_confirm.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $(".containerr").clickCarousel({margin: 10});
+    });
+    </script>
     <title><? echo $username ?> | PetCher</title> 
 </head>
 
