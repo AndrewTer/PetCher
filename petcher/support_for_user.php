@@ -19,9 +19,6 @@ if($_SESSION['auth_user'] == "yes_auth")
     <script type="text/javascript" src="js/script.js"></script> 
     <title>Помощь | PetCher</title>
 </head>
-<?php 
-    include("includes/header.php");
-?>
 
 <div class="grid-container">
 <?php 

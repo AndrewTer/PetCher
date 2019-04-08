@@ -28,6 +28,9 @@ if(isset($_POST["register"]))
 	
             if($numrows==0)
             {
+                //$colour_array = array("#3700CC", "#70FF42", "#FF8B05", "#0F55C2", "#ECC327");
+//                shuffle($colour_array);
+                
                 $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','Другой город','','','no','0','0','0','','','','no')";
                 $result=mysql_query($sql);
             
@@ -87,55 +90,50 @@ else
     <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>--!>
     <title>Регистрация | PetCher</title>
 </head>
-<div class="header">
-    <div class="contain clearfix">
-        <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
-        <nav>
-            <a href="login.php">Вход</a>
-            <a href="register.php">Регистрация</a>
-            <a href="">Правила</a>
-            <a href="about.php">О нас</a>
-        </nav>
+
+<div class="grid-container">
+    <div class="container mregister">
+        <?php 
+        include("includes/logreg_header.php");
+        ?>
+        <div id="login">
+    	   <h1>Регистрация</h1>
+            <form name="registerform" id="registerform" action="" method="POST">
+                <?php 
+                    if (!empty($message)) 
+                    {
+                        echo "<div class='error'>".$message."</div>";
+                    } 
+                ?>
+                <p>
+    		      <label for="user_login">Имя</label><br />
+    		      <input type="text" name="username" id="reg_username" class="input" value="" size="20" required placeholder="Имя пользователя" /><span></span>
+                </p>
+    	
+                <p>
+    		      <label for="user_pass">Пароль<br />
+    		      <input type="password" name="password" id="password" class="input" value="" size="32" required /><span></span></label>
+                </p>		
+    	
+                <p>
+    		      <label for="user_rep_pass">Повторить пароль<br />
+    		      <input type="password" name="replay_password" id="replay_password" class="input" value="" size="32" required /><span></span></label>
+                </p>
+        
+                <p>
+                    <label for="user_email">Эл. почта<br />
+                    <input type="email" name="email" placeholder="example@gmail.com" id="email" class="input" required /><span></span></label>
+                </p>
+        
+                <p class="submit">
+    		      <input type="submit" name="register" id="register" class="button" value="Регистрация" />
+                </p>
+    	
+                <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход!</a></p>
+            </form>
+        </div>
     </div>
-</div>
-<div class="container mregister">
-    <div id="login">
-	   <h1>Регистрация</h1>
-        <form name="registerform" id="registerform" action="" method="POST">
-            <?php 
-                if (!empty($message)) 
-                {
-                    echo "<div class='error'>".$message."</div>";
-                } 
-            ?>
-            <p>
-		      <label for="user_login">Имя</label><br />
-		      <input type="text" name="username" id="reg_username" class="input" value="" size="20" required placeholder="Имя пользователя" /><span></span>
-            </p>
-	
-            <p>
-		      <label for="user_pass">Пароль<br />
-		      <input type="password" name="password" id="password" class="input" value="" size="32" required /><span></span></label>
-            </p>		
-	
-            <p>
-		      <label for="user_rep_pass">Повторить пароль<br />
-		      <input type="password" name="replay_password" id="replay_password" class="input" value="" size="32" required /><span></span></label>
-            </p>
-    
-            <p>
-                <label for="user_email">Эл. почта<br />
-                <input type="email" name="email" placeholder="example@gmail.com" id="email" class="input" required /><span></span></label>
-            </p>
-    
-            <p class="submit">
-		      <input type="submit" name="register" id="register" class="button" value="Регистрация" />
-            </p>
-	
-            <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход!</a></p>
-        </form>
+    <div class="footer">
+    PetCher © 2019
     </div>
-</div>
-<div class="footer">
-PetCher © 2019
 </div>

@@ -53,44 +53,38 @@ else
 <title>Добро пожаловать | PetCher</title>
 </head>
 
-<div class="header">
-    <div class="contain clearfix">
-        <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
-        <nav>
-            <a href="login.php">Вход</a>
-            <a href="register.php">Регистрация</a>
-            <a href="support_for_user.php">Правила</a>
-            <a href="about.php">О нас</a>
-        </nav>
-    </div>
-</div>
 
-<div class="container mlogin">
-    <div id="login">
-        <h1>ВХОД</h1>
-        <form name="loginform" id="loginform" action="" method="POST">
-            <?php 
-            if (!empty($message)) 
-            {
-                echo "<div class='error'>".$message."</div>";
-            } 
-            ?>
-            <p>
-                <label for="user_email">Почта<br />
-                <input type="email" name="email" id="email_login" class="input" value="" size="20" required /></label>
-            </p>
-            <p>
-                <label for="user_pass">Пароль<br />
-                <input type="password" name="password" id="password_login" class="input" value="" size="20" required /></label>
-            </p>
-            <p class="submit">
-                <input type="submit" name="login" class="button" value="Вход" />
-            </p>
-            <p class="regtext">Впервые здесь? <a class="reglink" href="register.php" >Регистрация</a>!</p>
-        </form>
+<div class="grid-container">
+    <div class="container mlogin">
+        <?php 
+            include("includes/logreg_header.php");
+        ?>
+        <div id="login">
+            <h1>ВХОД</h1>
+            <form name="loginform" id="loginform" action="" method="POST">
+                <?php 
+                if (!empty($message)) 
+                {
+                    echo "<div class='error'>".$message."</div>";
+                } 
+                ?>
+                <p>
+                    <label for="user_email">Почта<br />
+                    <input type="email" name="email" id="email_login" class="input" value="" size="20" required /></label>
+                </p>
+                <p>
+                    <label for="user_pass">Пароль<br />
+                    <input type="password" name="password" id="password_login" class="input" value="" size="20" required /></label>
+                </p>
+                <p class="submit">
+                    <input type="submit" name="login" class="button" value="Вход" />
+                </p>
+                <p class="regtext">Впервые здесь? <a class="reglink" href="register.php" >Регистрация</a>!</p>
+            </form>
+        </div>
     </div>
-</div>
-
-<div class="footer">
-PetCher © 2019
+    
+    <div class="footer">
+    PetCher © 2019
+    </div>
 </div>
