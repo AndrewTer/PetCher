@@ -93,6 +93,7 @@ if ($_POST["add_new_pet"])
                     }else
                     {
                         echo '<img class="image-avatar" src="images/nophoto.jpg" width="100%" />';
+                        #echo '<img class="image-avatar" style="background:'.$row_new["avatar_colour"].';"  width="100%" />';
                     }
                     ?>
                 </div>
