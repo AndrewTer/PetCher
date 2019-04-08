@@ -633,6 +633,27 @@ body {
     margin-bottom: 10px;
 }
 
+.end-cur-ord-p-rate {
+    margin: auto;
+    margin-top: 15px;
+    color: #777;
+    font-weight: 600;
+    font-size: 17px;
+    /*border: 1px solid black;*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.end-cur-ord-p-metka {
+    margin: auto;
+    color: #2B2B2B;
+    font-weight: 600;
+    font-size: 12px;
+   /* border: 1px solid black;*/
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .search-order-between {
     margin: auto;
     color: #777;
