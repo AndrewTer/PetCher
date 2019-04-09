@@ -69,7 +69,7 @@ else
                 } 
                 ?>
                 <p>
-                    <label for="user_email">Почта<br />
+                    <label for="user_email">Email | Логин<br />
                     <input type="email" name="email" id="email_login" class="input" value="" size="20" required /></label>
                 </p>
                 <p>

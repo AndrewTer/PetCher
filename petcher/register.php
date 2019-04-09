@@ -121,7 +121,7 @@ else
                 </p>
         
                 <p>
-                    <label for="user_email">Эл. почта<br />
+                    <label for="user_email">Email | Логин<br />
                     <input type="email" name="email" placeholder="example@gmail.com" id="email" class="input" required /><span></span></label>
                 </p>
         
