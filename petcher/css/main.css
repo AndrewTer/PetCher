@@ -110,6 +110,7 @@ body {
     -ms-transition: height 0.3s;
     -o-transition: height 0.3s;
     transition: height 0.3s;
+    border-bottom: 3px solid #53A3D5;
 }
 
 .header h1#logo {
