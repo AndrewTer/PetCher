@@ -37,4 +37,24 @@
             <a href="logout.php"><div class="menu">Выйти</div></a>
         </nav>
     </div>
-  </div>
+</div>
+
+<div class="header-min">
+    <div class="contain clearfix">
+        <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <li><a class="menu__item" href="index.php?id<?echo $id;?>"><? echo $row_new["full_name"] ?></a></li>
+                <li><a class="menu__item" href="settings.php">Настройки</a></li>
+     			<li><a class="menu__item" href="support_for_user.php">Помощь</a></li>
+     			<li><a class="menu__item" href="logout.php">Выйти</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+  
