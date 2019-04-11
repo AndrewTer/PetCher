@@ -22,16 +22,14 @@ if(isset($_POST["register"]))
             }
     
             $email = htmlspecialchars($_POST['email']);
+            $phone_number_user = htmlspecialchars($_POST['userphonenumber']);
 	
             $query=mysql_query("SELECT * FROM users WHERE email='".$email."'");
             $numrows=mysql_num_rows($query);
 	
             if($numrows==0)
             {
-                //$colour_array = array("#3700CC", "#70FF42", "#FF8B05", "#0F55C2", "#ECC327");
-//                shuffle($colour_array);
-                
-                $sql="INSERT into users VALUES ('','$username','$encrypted_password','','$email','Другой город','','','no','0','0','0','','','','no')";
+                $sql="INSERT into users VALUES ('','$username','$encrypted_password','$phone_number_user','$email','Другой город','','','no','0','0','0','','','','no')";
                 $result=mysql_query($sql);
             
                 if($result)
@@ -86,8 +84,13 @@ else
 ?>
 <head>
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
-    <!--<script type="text/javascript" src="/js/header.js"></script>
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>--!>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $("#userphonenumber").mask("+7(999) 999-9999");
+    });
+    </script>
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.php" />
     </noscript>
@@ -126,6 +129,11 @@ else
                 <p>
                     <label for="user_email">Email | Логин<br />
                     <input type="email" name="email" placeholder="example@gmail.com" id="email" class="input" required /><span></span></label>
+                </p>
+                
+                <p>
+            		<label for="user_phone_number">Мобильный телефон<br />
+            		<input type="text" name="userphonenumber" id="userphonenumber" class="input" value="" size="20" required placeholder="+7" /><span></span></label>
                 </p>
         
                 <p class="submit">
