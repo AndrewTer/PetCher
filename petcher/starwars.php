@@ -1,6 +1,9 @@
 <html>
     <head>
         <link href="css/starwars.css" media="screen" rel="stylesheet"/>
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=noscript.php" />
+        </noscript>
         <title>О сервисе | PetCher</title>
     </head>
     <body>

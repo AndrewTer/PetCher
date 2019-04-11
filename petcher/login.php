@@ -50,6 +50,9 @@ else
 ?>
 <head>
 <link href="css/style-login.css" media="screen" rel="stylesheet" />
+<noscript>
+    <meta http-equiv="refresh" content="0; url=noscript.php" />
+</noscript>
 <title>Добро пожаловать | PetCher</title>
 </head>
 

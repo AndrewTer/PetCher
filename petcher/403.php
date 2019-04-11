@@ -2,6 +2,9 @@
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <title>403 Forbidden | PetCher</title> 
+    <style>
+        html { overflow:  hidden; }
+    </style>
 </head>
 
 <div class="grid-container">

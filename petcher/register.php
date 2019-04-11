@@ -88,6 +88,9 @@ else
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
     <!--<script type="text/javascript" src="/js/header.js"></script>
     <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>--!>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=noscript.php" />
+    </noscript>
     <title>Регистрация | PetCher</title>
 </head>
 

@@ -4,8 +4,17 @@ include("functions.php");
 ?>
 <head>
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
-    <script type="text/javascript" src="/js/header.js"></script>
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+    <!--<script type="text/javascript" src="/js/header.js"></script>-->
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $("#userphonenumber").mask("+7(999) 999-9999");
+    });
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=noscript.php" />
+    </noscript>
     <title>Регистрация | BlaBlaCat</title>
 </head>
 <?php
@@ -80,34 +89,30 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 
 <?php if (!empty($message)) {echo "<p class=\"error\">" .$message . "</p>";} ?>
 
-<div class="header">
-<div class="contain clearfix">
-
-
-<a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
-<nav>
-<a href="">Правила</a>
-<a href="">О нас</a>
-</nav>
-</div>
-</div>
 
 <div class="container mregister">
+    <?php 
+        include("includes/logreg_header.php");
+    ?>
     <div id="login">
-	<h1>Подтверждение регистрации</h1>
+	<h1>Завершение регистрации</h1>
     <form name="registerform" id="registerform" action="register.php" method="post">
 	
-    <p>Для защиты Вашей страницы мы вышлем на Ваш мобильный телефон бесплатное сообщение с кодом.</p>
+    <!--<p>Для защиты Вашей страницы мы вышлем на Ваш мобильный телефон бесплатное сообщение с кодом.</p>-->
     
 	<p>
 		<label for="user_phone_number">Мобильный телефон<br />
-		<input type="text" name="userphonenumber" id="userphonenumber" class="input" value="" size="20" required placeholder="+7" /></label>
+		<input type="text" name="userphonenumber" id="userphonenumber" class="input" value="" size="20" required placeholder="+7" /><span></span></label>
 	</p>
 	
-	
+	<p>
+        <label for="user_email">Email | Логин<br />
+        <input type="email" name="email" placeholder="example@gmail.com" id="email" class="input" required /><span></span></label>
+    </p>
+    
         
     <p class="submit">
-		<input type="submit" name="register" id="register" class="button" value="Получить код" />
+		<input type="submit" name="register" id="register" class="button" value="Регистрация" />
 	</p>
 	
 	<p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход</a>!</p>
@@ -117,6 +122,6 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['re
 
 
 <div class="footer">
-BlaBlaCat © 2019
+PetCher © 2019
 </div>
 

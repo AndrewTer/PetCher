@@ -17,6 +17,9 @@ if($_SESSION['auth_user'] == "yes_auth")
     <link href="css/main.css" media="screen" rel="stylesheet"/>
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script> 
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=noscript.php" />
+    </noscript>
     <title>Помощь | PetCher</title>
 </head>
 

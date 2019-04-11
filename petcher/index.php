@@ -43,6 +43,9 @@ if($_SESSION['auth_user'] == "yes_auth")
     }
     
     </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=noscript.php" />
+    </noscript>
     <title><? echo $username ?> | PetCher</title> 
 </head>
 
