@@ -259,7 +259,7 @@ a {
     border: 1px solid #d9d9d9;
 }
 
-#reg_username, #password, #replay_password, #email {
+#reg_username, #password, #replay_password, #email, #userphonenumber {
     /*border: 1px solid blue;*/
     width: 90%;  
 }
