@@ -28,7 +28,7 @@ if($_SESSION['auth_user'] == "yes_auth")
     {
         if(!empty($_POST['change_user_old_pass_settings']) && !empty($_POST['change_user_new_pass_settings']) && !empty($_POST['change_user_new_repeat_pass_settings'])) 
         {
-            $old_password = md5(htmlspecialchars($_POST['change_user_old_pass_settings']));
+            $old_password = htmlspecialchars($_POST['change_user_old_pass_settings']);
             $new_password = htmlspecialchars($_POST['change_user_new_pass_settings']);
             $replay_password = htmlspecialchars($_POST['change_user_new_repeat_pass_settings']);
             
@@ -38,23 +38,23 @@ if($_SESSION['auth_user'] == "yes_auth")
                 $row_change_old_password = mysql_fetch_array($result_change_old_password);
             }
         
-            if ($old_password != $row_change_old_password["password"])
-            {
-                $error_message_change_password = "Пароль не изменён, так как старый пароль введён неверно!";
-            } else
+            if (password_verify($old_password, $row_change_old_password["password"]))
             {
                 if ($new_password != $replay_password)
                 {
     		      $error_message_change_password = "Пароль не изменён, так как новый пароль повторен неправильно!";
                 } else
                 {
-                    $encrypted_new_password_settings = md5($new_password);
+                    $encrypted_new_password_settings = password_hash($new_password, PASSWORD_DEFAULT);
                     $_SESSION['encrypted_password'] = $encrypted_new_password_settings;
                     $encrypted_password = $encrypted_new_password_settings;
                     
                     mysql_query("UPDATE users SET password = '$encrypted_new_password_settings' WHERE id = $id");
                     $message_change_password = "Пароль успешно изменён!";
                 }
+            } else
+            {
+                $error_message_change_password = "Пароль не изменён, так как старый пароль введён неверно!";
             }
         }
     }

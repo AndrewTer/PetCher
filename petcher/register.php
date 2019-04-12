@@ -18,7 +18,9 @@ if(isset($_POST["register"]))
         {
             if (htmlspecialchars($password) == htmlspecialchars($replay_password))
             {
-		      $encrypted_password = md5($password);
+                echo phpversion();
+
+		      $encrypted_password = password_hash($password, PASSWORD_DEFAULT); //md5($password);
             }
     
             $email = htmlspecialchars($_POST['email']);
