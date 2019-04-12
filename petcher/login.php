@@ -9,26 +9,31 @@ if(isset($_POST["login"]))
 	{
 		$email=mysql_escape_string($_POST['email']);
 		$password=mysql_escape_string($_POST['password']);
-        $encrypted_password = md5($password);
         
-		$query = mysql_query("SELECT * FROM users WHERE email='".$email."' AND password='".$encrypted_password."' AND deleted='no'") 
+		$query = mysql_query("SELECT * FROM users WHERE email='".$email."' AND deleted='no'") 
 														or trigger_error(mysql_error().$query);
 		if($row= mysql_fetch_array($query))
 		{
-			if(($_POST['email']==$email)&&($_POST['password']==$password))
-			{
-				//создаём сессию с данным
-                  
-				$_SESSION['username']=$row['full_name'];
-                $_SESSION['encrypted_password'] = $row['password'];
-                $_SESSION['phone']=$row['phone_number'];
-                $_SESSION['email'] = $row['email'];
-                $_SESSION['street'] = $row['street'];
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['auth_user'] = 'yes_auth';
-				//переадресация
-				header("Location: index.php?id".$_SESSION['id']);
-			}
+            $user_pass = $row['password'];
+            if (password_verify($password, $user_pass)) {
+    			if(($_POST['email']==$email)&&($_POST['password']==$password))
+    			{
+    				//создаём сессию с данным
+                      
+    				$_SESSION['username']=$row['full_name'];
+                    $_SESSION['encrypted_password'] = $row['password'];
+                    $_SESSION['phone']=$row['phone_number'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['street'] = $row['street'];
+                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['auth_user'] = 'yes_auth';
+    				//переадресация
+    				header("Location: index.php?id".$_SESSION['id']);
+    			}
+            }else
+            {
+                $message = "Неверный логин и/или пароль";
+            }
 		}
 		else
 		{
