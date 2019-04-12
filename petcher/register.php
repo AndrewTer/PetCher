@@ -18,8 +18,6 @@ if(isset($_POST["register"]))
         {
             if (htmlspecialchars($password) == htmlspecialchars($replay_password))
             {
-                echo phpversion();
-
 		      $encrypted_password = password_hash($password, PASSWORD_DEFAULT); //md5($password);
             }
     
