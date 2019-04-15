@@ -112,6 +112,66 @@
         $result_search_count = mysql_query("SELECT * FROM users WHERE (id != $id)");
         
         $count_users_search = mysql_num_rows($result_search_count);
+        
+        $result_search_count_of_city_moscow = mysql_query("SELECT * FROM users WHERE (city = 'Москва')");
+        $count_search_count_of_city_moscow = mysql_num_rows($result_search_count_of_city_moscow);
+        
+        $result_search_count_of_city_spb = mysql_query("SELECT * FROM users WHERE (city = 'Санкт-Петербург')");
+        $count_search_count_of_city_spb = mysql_num_rows($result_search_count_of_city_spb);
+        
+        $result_search_count_of_city_volgograd = mysql_query("SELECT * FROM users WHERE (city = 'Волгоград')");
+        $count_search_count_of_city_volgograd = mysql_num_rows($result_search_count_of_city_volgograd);
+        
+        $result_search_count_of_city_vladivostok = mysql_query("SELECT * FROM users WHERE (city = 'Владивосток')");
+        $count_search_count_of_city_vladivostok = mysql_num_rows($result_search_count_of_city_vladivostok);
+        
+        $result_search_count_of_city_voronezh = mysql_query("SELECT * FROM users WHERE (city = 'Воронеж')");
+        $count_search_count_of_city_voronezh = mysql_num_rows($result_search_count_of_city_voronezh);
+        
+        $result_search_count_of_city_yekaterinburg = mysql_query("SELECT * FROM users WHERE (city = 'Екатеринбург')");
+        $count_search_count_of_city_yekaterinburg = mysql_num_rows($result_search_count_of_city_yekaterinburg);
+        
+        $result_search_count_of_city_kazan = mysql_query("SELECT * FROM users WHERE (city = 'Казань')");
+        $count_search_count_of_city_kazan = mysql_num_rows($result_search_count_of_city_kazan);
+        
+        $result_search_count_of_city_kaliningrad = mysql_query("SELECT * FROM users WHERE (city = 'Калининград')");
+        $count_search_count_of_city_kaliningrad = mysql_num_rows($result_search_count_of_city_kaliningrad);
+        
+        $result_search_count_of_city_krasnodar = mysql_query("SELECT * FROM users WHERE (city = 'Краснодар')");
+        $count_search_count_of_city_krasnodar = mysql_num_rows($result_search_count_of_city_krasnodar);
+        
+        $result_search_count_of_city_krasnoyarsk = mysql_query("SELECT * FROM users WHERE (city = 'Красноярск')");
+        $count_search_count_of_city_krasnoyarsk = mysql_num_rows($result_search_count_of_city_krasnoyarsk);
+        
+        $result_search_count_of_city_nizhny_novgorod = mysql_query("SELECT * FROM users WHERE (city = 'Нижний Новгород')");
+        $count_search_count_of_city_nizhny_novgorod = mysql_num_rows($result_search_count_of_city_nizhny_novgorod);
+        
+        $result_search_count_of_city_novosibirsk = mysql_query("SELECT * FROM users WHERE (city = 'Новосибирск')");
+        $count_search_count_of_city_novosibirsk = mysql_num_rows($result_search_count_of_city_novosibirsk);
+        
+        $result_search_count_of_city_omsk = mysql_query("SELECT * FROM users WHERE (city = 'Омск')");
+        $count_search_count_of_city_omsk = mysql_num_rows($result_search_count_of_city_omsk);
+        
+        $result_search_count_of_city_permian = mysql_query("SELECT * FROM users WHERE (city = 'Пермь')");
+        $count_search_count_of_city_permian = mysql_num_rows($result_search_count_of_city_permian);
+        
+        $result_search_count_of_city_rostov_on_don = mysql_query("SELECT * FROM users WHERE (city = 'Ростов-на-Дону')");
+        $count_search_count_of_city_rostov_on_don = mysql_num_rows($result_search_count_of_city_rostov_on_don);
+        
+        $result_search_count_of_city_samara = mysql_query("SELECT * FROM users WHERE (city = 'Самара')");
+        $count_search_count_of_city_samara = mysql_num_rows($result_search_count_of_city_samara);
+        
+        $result_search_count_of_city_ufa = mysql_query("SELECT * FROM users WHERE (city = 'Уфа')");
+        $count_search_count_of_city_ufa = mysql_num_rows($result_search_count_of_city_ufa);
+        
+        $result_search_count_of_city_chelyabinsk = mysql_query("SELECT * FROM users WHERE (city = 'Челябинск')");
+        $count_search_count_of_city_chelyabinsk = mysql_num_rows($result_search_count_of_city_chelyabinsk);
+        
+        $result_search_count_of_city_sevastopol = mysql_query("SELECT * FROM users WHERE (city = 'Севастополь')");
+        $count_search_count_of_city_sevastopol = mysql_num_rows($result_search_count_of_city_sevastopol);
+        
+        $result_search_count_of_city_simferopol = mysql_query("SELECT * FROM users WHERE (city = 'Симферополь')");
+        $count_search_count_of_city_simferopol = mysql_num_rows($result_search_count_of_city_simferopol);
 ?>
 
 <html>
@@ -145,6 +205,263 @@
                     </div>
                 </div>
                 <div class="search-list">
+                    <hr />
+                    <!--Карта-->
+                    <div id="map" style="width: 600px; height: 200px;"></div>  
+
+                    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+                    <script type="text/javascript">
+                    ymaps.ready(init);        
+                    function init() {
+                        var myMap = new ymaps.Map("map", {
+                            center: [53, 55],
+                            zoom: 3
+                        }, {
+                            searchControlProvider: 'yandex#search'
+                        });
+                    
+                        ymaps.geocode("г.Москва").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_moscow;?>',
+                                balloonContentHeader: "Москва",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_moscow;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });  
+                        
+                        ymaps.geocode("г.Санкт-Петербург").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_spb;?>',
+                                balloonContentHeader: "Санкт-Петербург",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_spb;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });   
+                        
+                        ymaps.geocode("г.Волгоград").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_volgograd;?>',
+                                balloonContentHeader: "Волгоград",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_volgograd;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Владивосток").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_vladivostok;?>',
+                                balloonContentHeader: "Владивосток",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_vladivostok;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Воронеж").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_voronezh;?>',
+                                balloonContentHeader: "Воронеж",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_voronezh;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Екатеринбург").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_yekaterinburg;?>',
+                                balloonContentHeader: "Екатеринбург",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_yekaterinburg;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Казань").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_kazan;?>',
+                                balloonContentHeader: "Казань",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_kazan;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Калининград").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_kaliningrad;?>',
+                                balloonContentHeader: "Калининград",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_kaliningrad;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Краснодар").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_krasnodar;?>',
+                                balloonContentHeader: "Краснодар",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_krasnodar;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Красноярск").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_krasnoyarsk;?>',
+                                balloonContentHeader: "Красноярск",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_krasnoyarsk;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Нижний Новгород").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_nizhny_novgorod;?>',
+                                balloonContentHeader: "Нижний Новгород",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_nizhny_novgorod;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Новосибирск").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_novosibirsk;?>',
+                                balloonContentHeader: "Новосибирск",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_novosibirsk;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Омск").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_omsk;?>',
+                                balloonContentHeader: "Омск",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_omsk;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Пермь").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_permian;?>',
+                                balloonContentHeader: "Пермь",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_permian;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Ростов-на-Дону").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_rostov_on_don;?>',
+                                balloonContentHeader: "Ростов-на-Дону",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_rostov_on_don;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Самара").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_samara;?>',
+                                balloonContentHeader: "Самара",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_samara;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Уфа").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_ufa;?>',
+                                balloonContentHeader: "Уфа",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_ufa;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Челябинск").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_chelyabinsk;?>',
+                                balloonContentHeader: "Челябинск",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_chelyabinsk;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Севастополь").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_sevastopol;?>',
+                                balloonContentHeader: "Севастополь",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_sevastopol;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                        
+                        ymaps.geocode("г.Симферополь").then(function (res) {
+                            var coord = res.geoObjects.get(0).geometry.getCoordinates();
+                            var myPlacemark = new ymaps.Placemark(coord, {
+                                iconCaption: '<?echo $count_search_count_of_city_simferopol;?>',
+                                balloonContentHeader: "Симферополь",
+                                balloonContentBody: "пользователей: <?echo $count_search_count_of_city_simferopol;?>"
+                            }, {
+                                preset: 'islands#blueCircleDotIcon'
+                            });
+                            myMap.geoObjects.add(myPlacemark); 
+                        });
+                    }
+                    </script>
+                    
                     <?
                         if (mysql_num_rows($result_search) == null)
                         {
