@@ -3,8 +3,8 @@ AddDefaultCharset UTF-8
 
 # Переход на страницы 403, 404
 RewriteEngine On
-ErrorDocument 404 http://localhost/blablacat/404.php
-ErrorDocument 403 http://localhost/blablacat/403.php
+ErrorDocument 404 http://localhost/petcher/404.php
+ErrorDocument 403 http://localhost/petcher/403.php
 
 # Запрет выдачи листинга пустого каталога в случае отсутствия главного файла
 Options -Indexes
