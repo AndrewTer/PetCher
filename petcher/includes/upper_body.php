@@ -78,6 +78,9 @@ if ($_POST["add_new_pet"])
                             'no',
                             'no'
                         )");
+        ?>
+            <meta http-equiv="refresh" content="0; url=index.php" />
+        <?
 }
 ?>
 
