@@ -1,4 +1,5 @@
 <?php
+define('mypetcher', true);
 session_start();
 require_once("includes/connection.php"); 
 include("functions.php");

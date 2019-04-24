@@ -1,3 +1,6 @@
+<?
+define('mypetcher', true);
+?>
 <html>
     <head>
         <link href="css/starwars.css" media="screen" rel="stylesheet"/>
