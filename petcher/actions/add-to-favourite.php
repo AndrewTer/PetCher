@@ -1,4 +1,5 @@
 <?php
+defined('mypetcher') or header("Location: ../403.php");
 echo $_POST["user"]. ", ". $_POST["fav"];
 if(isset($_POST["user"]) && isset($_POST["fav"]) && strlen($_POST["user"])>0 && strlen($_POST["fav"])>0)
 {

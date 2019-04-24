@@ -1,5 +1,5 @@
 <?php
-defined('blablauser') or die('Доступ запрещён!');
+defined('mypetcher') or header("Location: ../403.php");
         
     $error_img = array();
     $result_upload_user_photo = mysql_query("SELECT * FROM users WHERE id = $id");

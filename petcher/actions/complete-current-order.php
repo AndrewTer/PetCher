@@ -1,4 +1,5 @@
 <?php
+defined('mypetcher') or header("Location: ../403.php");
 echo $_POST["sitter_parameter"].", ".$_POST["author_parameter"].", ".$_POST["order_parameter"].", ".$_POST["text_review_parameter"].", ".$_POST["rating_parameter"];
 if(isset($_POST["sitter_parameter"]) && isset($_POST["author_parameter"]) && isset($_POST["rating_parameter"]) && isset($_POST["order_parameter"]) && strlen($_POST["sitter_parameter"])>0 && strlen($_POST["author_parameter"])>0 && strlen($_POST["order_parameter"])>0 && strlen($_POST["rating_parameter"])>0)
 {

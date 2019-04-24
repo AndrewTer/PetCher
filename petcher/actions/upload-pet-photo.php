@@ -1,5 +1,5 @@
 <?php
-defined('blablapet') or die('Доступ запрещён!');
+defined('mypetcher') or header("Location: ../403.php");
 
     if (!empty($_GET["petnum"]))
     {
