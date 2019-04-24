@@ -1,4 +1,5 @@
 <?
+defined('mypetcher') or header("Location: ../403.php");
 if ($_POST["add_new_pet"])
 {
         $sex_new_pet = $_POST["sex_new_pet"];

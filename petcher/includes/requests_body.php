@@ -1,4 +1,5 @@
 <?
+defined('mypetcher') or header("Location: ../403.php");
     $result_requests = mysql_query("
         SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS order_cost, orders.other_information AS order_about,
                 pets.id AS pet_id, pets.name AS pet_name, pets.kind AS pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.other_information AS pet_info, pets.photo AS pet_photo,

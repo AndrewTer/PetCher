@@ -1,3 +1,6 @@
+<?
+defined('mypetcher') or header("Location: ../403.php");
+?>
 <div class="container_support support">
     <p id="title-support">Раздел помощи</p>
     <hr />

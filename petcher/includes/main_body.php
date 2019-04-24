@@ -1,4 +1,5 @@
 <?
+defined('mypetcher') or header("Location: ../403.php");
 $order_id = clear_string($_GET["id"]);
 $action = $_GET["action"];
     if (isset($action))

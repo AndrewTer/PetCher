@@ -1,4 +1,5 @@
 <?
+    defined('mypetcher') or header("Location: ../403.php");
     $set_time_zone = mysql_query("set time_zone = '+03:00';");
     $current_time_main_result = mysql_query("SELECT CURTIME(), DATE(NOW())");
     $row_current_time_main_result = mysql_fetch_array($current_time_main_result);

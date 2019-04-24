@@ -1,3 +1,6 @@
+<?
+defined('mypetcher') or header("Location: ../403.php");
+?>
 <div class="upper-part-body">
             <div class="user-menu">
                 <div id="avatar">

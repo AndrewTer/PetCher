@@ -1,3 +1,6 @@
+<?
+defined('mypetcher') or header("Location: ../403.php");
+?>
 <div class="header">
     <div class="contain clearfix">
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>

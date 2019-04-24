@@ -1,3 +1,6 @@
+<?
+defined('mypetcher') or header("Location: ../403.php");
+?>
 <div class="main-part-body">
             <div class="orders-favourite-user-part">
                 <div id="block-title-and-sorting-all-orders-favourite-user-part">
