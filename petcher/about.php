@@ -6,7 +6,7 @@ define('mypetcher', true);
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/share.js"></script>
     <noscript>
-        <meta http-equiv="refresh" content="0; url=noscript.php" />
+        <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
     <title>О сервисе | PetCher</title>
 </head>
@@ -64,7 +64,7 @@ define('mypetcher', true);
             </div>
             -->
             <div id="links-for-rules-photo">
-                <a rel="nofollow" href="rules.php">
+                <a rel="nofollow" href="rules">
                     <img src="images/rules-icon.png" alt="" width="100%" />';
                 </a>
             </div>
@@ -77,7 +77,7 @@ define('mypetcher', true);
         <h4>Дополнить</h4>
         <hr />
         -->
-        <p id="text-for-map-add">Специально для любителей саги <a class="url-help" href="starwars.php">Звёздные войны</a> у нас есть отдельно оформленный текст.</p>
+        <p id="text-for-map-add">Специально для любителей саги <a class="url-help" href="starwars">Звёздные войны</a> у нас есть отдельно оформленный текст.</p>
         <hr />
         
         <p id="text-for-map-add">PetCher - недавно начавший свою работу сервис, поэтому, если вам нравится данный сервис, мы будем очень вам признательны, если вы расскажете о нас:</p>

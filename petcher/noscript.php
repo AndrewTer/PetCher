@@ -27,7 +27,7 @@ define('mypetcher', true);
                     </tr>
                 </tbody>
                 </table>
-                <p id="go-to-main"><a id="main" href="index.php">Переход на главную страницу сайта.</a></p>
+                <p id="go-to-main"><a id="main" href="orders">Переход на главную страницу сайта.</a></p>
                        
             <div class="clear"></div>
         </div>

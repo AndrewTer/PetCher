@@ -221,7 +221,7 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <noscript>
-        <meta http-equiv="refresh" content="0; url=noscript.php" />
+        <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
     <title>Поиск заказов | PetCher</title> 
 </head>
@@ -464,7 +464,7 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                  </div>   
                  
                 <div class="go-to-search-users">
-                    <a href="users_search.php?sort=all-users">
+                    <a href="users_search?sort=all-users">
                         <div id="block-title-and-sorting" style="min-height: 40px; height: auto;">
                             <p class="title-section-main-body" style="font-size: 15px;">Перейти к поиску пользователей</p>
                         </div>

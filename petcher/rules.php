@@ -6,7 +6,7 @@ define('mypetcher', true);
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/share.js"></script>
     <noscript>
-        <meta http-equiv="refresh" content="0; url=noscript.php" />
+        <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
     <title>Правила | PetCher</title>
 </head>

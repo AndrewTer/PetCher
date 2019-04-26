@@ -29,7 +29,7 @@ if(isset($_POST["login"]))
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['auth_user'] = 'yes_auth';
     				//переадресация
-    				header("Location: index.php?id".$_SESSION['id']);
+    				header("Location: orders");
     			}
             }else
             {
@@ -57,7 +57,7 @@ else
 <head>
 <link href="css/style-login.css" media="screen" rel="stylesheet" />
 <noscript>
-    <meta http-equiv="refresh" content="0; url=noscript.php" />
+    <meta http-equiv="refresh" content="0; url=noscript" />
 </noscript>
 <title>Добро пожаловать | PetCher</title>
 </head>
@@ -88,7 +88,7 @@ else
                 <p class="submit">
                     <input type="submit" name="login" class="button" value="Вход" />
                 </p>
-                <p class="regtext">Впервые здесь? <a class="reglink" href="register.php" >Регистрация</a>!</p>
+                <p class="regtext">Впервые здесь? <a class="reglink" href="register" >Регистрация</a>!</p>
             </form>
         </div>
     </div>

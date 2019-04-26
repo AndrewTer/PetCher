@@ -17,6 +17,11 @@ if($_SESSION['auth_user'] == "yes_auth")
         {
             header("Location: index.php");
         }
+        $result_check_del_pet = mysql_query("SELECT * FROM pets WHERE (id = $pet_id) AND (owner_id = $id) AND (deleted='yes')");
+        if (mysql_num_rows($result_check_del_pet) > null)
+        {
+           header("Location: index.php"); 
+        }
     }else
     {
         header("Location: index.php"); 

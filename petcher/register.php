@@ -56,7 +56,7 @@ if(isset($_POST["register"]))
                                     $_SESSION['id'] = $directory_new['id'];
                                     $_SESSION['auth_user'] = 'yes_auth';
 				                    //переадресация
-				                    header("Location: index.php?id".$_SESSION['id']);
+				                    header("Location: orders");
                                 }
                         }
                         else
@@ -93,7 +93,7 @@ else
     });
     </script>
     <noscript>
-        <meta http-equiv="refresh" content="0; url=noscript.php" />
+        <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
     <title>Регистрация | PetCher</title>
 </head>
@@ -141,7 +141,7 @@ else
     		      <input type="submit" name="register" id="register" class="button" value="Регистрация" />
                 </p>
     	
-                <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login.php" >Вход!</a></p>
+                <p class="regtext">У вас есть аккаунт? <a class="loglink" href="login" >Вход!</a></p>
             </form>
         </div>
     </div>
