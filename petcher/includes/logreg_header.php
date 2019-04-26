@@ -5,10 +5,10 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="contain clearfix">
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
         <nav>
-            <a href="login.php"><div class="menu">Вход</div></a>
-            <a href="register.php"><div class="menu">Регистрация</div></a>
-            <a href="rules.php"><div class="menu">Правила</div></a>
-            <a href="about.php"><div class="menu">О нас</div></a>
+            <a href="login"><div class="menu">Вход</div></a>
+            <a href="register"><div class="menu">Регистрация</div></a>
+            <a href="rules"><div class="menu">Правила</div></a>
+            <a href="about"><div class="menu">О нас</div></a>
         </nav>
     </div>
 </div>
@@ -23,10 +23,10 @@ defined('mypetcher') or header("Location: ../403.php");
             </label>
         
             <ul class="menu__box">
-                <li><a class="menu__item" href="login.php">Вход</a></li>
-                <li><a class="menu__item" href="register.php">Регистрация</a></li>
-     			<li><a class="menu__item" href="rules.php">Правила</a></li>
-     			<li><a class="menu__item" href="about.php">О нас</a></li>
+                <li><a class="menu__item" href="login">Вход</a></li>
+                <li><a class="menu__item" href="register">Регистрация</a></li>
+     			<li><a class="menu__item" href="rules">Правила</a></li>
+     			<li><a class="menu__item" href="about">О нас</a></li>
             </ul>
         </div>
     </div>

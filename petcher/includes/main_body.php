@@ -58,9 +58,9 @@ if ($_POST["add_new_order"])
                             <li>Сортировать</li>
                             <li><a id="select-links" href="#"><? echo $sort_name; ?></a>
                             <ul id="list-links-sort">
-                                <a href="index.php?sort=all-orders"><li><strong>Все</strong></li></a>
-                                <a href="index.php?sort=current"><li><strong>Текущие</strong></li></a>
-                                <a href="index.php?sort=performed"><li><strong>Выполненные</strong></li></a>
+                                <a href="orders?sort=all-orders"><li><strong>Все</strong></li></a>
+                                <a href="orders?sort=current"><li><strong>Текущие</strong></li></a>
+                                <a href="orders?sort=performed"><li><strong>Выполненные</strong></li></a>
                             </ul>
                             </li>
                         </ul>
@@ -151,7 +151,7 @@ if ($_POST["add_new_order"])
                                             </div>
                                             
                                             <div class="left-part-order-list">
-                                                <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
+                                                <div id="avatar-pet"><a href="pet'.$row_orders["pet_id"].'_'.ftranslite($row_orders["pet_name"]).'">';
                                                     if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
                                                     {
                                                         $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
@@ -308,7 +308,7 @@ if ($_POST["add_new_order"])
                                             </div>
                                             
                                             <div class="left-part-order-list">
-                                                <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
+                                                <div id="avatar-pet"><a href="pet'.$row_orders["pet_id"].'_'.ftranslite($row_orders["pet_name"]).'">';
                                                     if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
                                                     {
                                                         $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];
@@ -396,8 +396,6 @@ if ($_POST["add_new_order"])
                                                 </div>';
                                             }
                         
-                        
-                        
                                             echo '
                                     </div>
                                     ';
@@ -411,7 +409,7 @@ if ($_POST["add_new_order"])
                                         <div class="ribbon-green">Выполнен</div>
                                     </div>
                                     <div class="left-part-order-list">
-                                        <div id="avatar-pet"><a href="pets.php?petnum='.$row_orders["pet_id"].'">';
+                                        <div id="avatar-pet"><a href="pet'.$row_orders["pet_id"].'_'.ftranslite($row_orders["pet_name"]).'">';
                                             if($row_orders["avatar"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_orders["avatar"]))
                                             {
                                                 $img_path = 'users/'.$row_new["folder"].'/'.$row_orders["avatar"];

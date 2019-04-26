@@ -33,10 +33,10 @@
 
         <a href=""><img id = "logos" src='images/logo.png' width="150" height="50" /></a>
         <nav>
-            <a href="index.php?id<?echo $id;?>"><div class="menu"><? echo $row_new["full_name"] ?></div></a>
-            <a href="settings.php"><div class="menu">Настройки</div></a>
-            <a href="support_for_user.php"><div class="menu">Помощь</div></a>
-            <a href="logout.php"><div class="menu">Выйти</div></a>
+            <a href="orders"><div class="menu"><? echo $row_new["full_name"] ?></div></a>
+            <a href="settings"><div class="menu">Настройки</div></a>
+            <a href="support_for_user"><div class="menu">Помощь</div></a>
+            <a href="logout"><div class="menu">Выйти</div></a>
         </nav>
     </div>
 </div>
@@ -51,10 +51,10 @@
             </label>
         
             <ul class="menu__box">
-                <li><a class="menu__item" href="index.php?id<?echo $id;?>"><? echo $row_new["full_name"] ?></a></li>
-                <li><a class="menu__item" href="settings.php">Настройки</a></li>
-     			<li><a class="menu__item" href="support_for_user.php">Помощь</a></li>
-     			<li><a class="menu__item" href="logout.php">Выйти</a></li>
+                <li><a class="menu__item" href="orders"><? echo $row_new["full_name"] ?></a></li>
+                <li><a class="menu__item" href="settings">Настройки</a></li>
+     			<li><a class="menu__item" href="support_for_user">Помощь</a></li>
+     			<li><a class="menu__item" href="logout">Выйти</a></li>
             </ul>
         </div>
     </div>

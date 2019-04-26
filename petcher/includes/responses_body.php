@@ -46,9 +46,9 @@ $result_responses = mysql_query("SELECT orders.id AS order_id, orders.owner_id A
                             <li>Ответов: <? if ($count_all_responses>0) { echo $count_all_responses; }else{ echo 'нет';} ?> | Сортировать</li>
                             <li><a id="select-links" href="#"><? echo $sort_name; ?></a>
                             <ul id="list-links-sort">
-                                <a href="responses.php?sort=all-responses"><li><strong>Все</strong></li></a>
-                                <a href="responses.php?sort=approved"><li><strong>Одобренные</strong></li></a>
-                                <a href="responses.php?sort=denied"><li><strong>Отказанные</strong></li></a>
+                                <a href="responses?sort=all-responses"><li><strong>Все</strong></li></a>
+                                <a href="responses?sort=approved"><li><strong>Одобренные</strong></li></a>
+                                <a href="responses?sort=denied"><li><strong>Отказанные</strong></li></a>
                             </ul>
                             </li>
                         </ul>

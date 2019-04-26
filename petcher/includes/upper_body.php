@@ -102,17 +102,17 @@ if ($_POST["add_new_pet"])
                     ?>
                 </div>
                 
-                <p align="center" class="change-user-info"><a href="edit.php" id="change_user_info_link">Редактировать</a></p>
+                <p align="center" class="change-user-info"><a href="editing" id="change_user_info_link">Редактировать</a></p>
                 
                 <hr />
                 
                 <nav>
                     <ul class="list-user-menu">
-                        <a href="index.php?id<?echo $id;?>"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-orders.png" width="10%"/>&ensp;<span>Заказы</span></li></a>
-                        <a href="favourites.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-fav.png" width="10%"/>&ensp;<span>Избранное</span></li></a>
-                        <a href="reviews.php?sort=about_me"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-reviews.png" width="10%"/>&ensp;<span>Отзывы</span></li></a>
-                        <a href="requests.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-requests.png" width="10%"/>&ensp;<span>Заявки от ситтеров</span> <? if ($count_requests > 0) { if ($count_requests < 100) { echo '<div class="count-requests">'.$count_requests.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
-                        <a href="responses.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-answers.png" width="10%"/>&ensp;<span>Ответы на мои заявки</span> <? if ($count_all_responses > 0) { if ($count_all_responses < 100) { echo '<div class="count-requests">'.$count_all_responses.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
+                        <a href="orders"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-orders.png" width="10%"/>&ensp;<span>Заказы</span></li></a>
+                        <a href="favourites"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-fav.png" width="10%"/>&ensp;<span>Избранное</span></li></a>
+                        <a href="reviews?sort=about-me"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-reviews.png" width="10%"/>&ensp;<span>Отзывы</span></li></a>
+                        <a href="requests"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-requests.png" width="10%"/>&ensp;<span>Заявки от ситтеров</span> <? if ($count_requests > 0) { if ($count_requests < 100) { echo '<div class="count-requests">'.$count_requests.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
+                        <a href="responses"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-answers.png" width="10%"/>&ensp;<span>Ответы на мои заявки</span> <? if ($count_all_responses > 0) { if ($count_all_responses < 100) { echo '<div class="count-requests">'.$count_all_responses.'</div>'; }else{ echo '<div class="count-requests">99+</div>'; } } ?></li></a>
                     </ul>
                 </nav>
                 
@@ -120,8 +120,8 @@ if ($_POST["add_new_pet"])
                 
                 <nav>
                     <ul class="list-user-menu">
-                        <a href="users_search.php?sort=all-users"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-users-search.png" width="10%"/>&ensp;<span>Поиск пользователей</span></li></a>
-                        <a href="search.php"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-orders-search.png" width="10%"/>&ensp;<span>Поиск заказов</span></li></a>
+                        <a href="users_search?sort=all-users"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-users-search.png" width="10%"/>&ensp;<span>Поиск пользователей</span></li></a>
+                        <a href="orders_search"><li class="list-user-menu-item"><img class="main-user-menu" src="images/icon-menu-orders-search.png" width="10%"/>&ensp;<span>Поиск заказов</span></li></a>
                     </ul>
                 </nav>
                 
@@ -226,7 +226,7 @@ if ($_POST["add_new_pet"])
                     <div class="containerr">
                     <?
                         do{
-                        echo '<figure class="caption-border"><a href="pets.php?petnum='.$row_pets_list_menu["id"].'">';
+                        echo '<figure class="caption-border"><a href="pet'.$row_pets_list_menu["id"].'_'.ftranslite($row_pets_list_menu["name"]).'">';
                         
                             if($row_pets_list_menu["photo"]!="no" && file_exists("users/".$row_new["folder"]."/".$row_pets_list_menu["photo"]))
                             {

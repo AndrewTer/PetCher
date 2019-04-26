@@ -34,7 +34,7 @@ defined('mypetcher') or header("Location: ../403.php");
                             <hr />
                             <div class="current-request">
                                     <div class="left-part-order-list">
-                                        <div id="avatar-pet"><a href="pets.php?petnum='.$row_requests["pet_id"].'">';
+                                        <div id="avatar-pet"><a href="pet'.$row_requests["pet_id"].'_'.ftranslite($row_requests["pet_name"]).'">';
                                             $request_pet_id = $row_requests["pet_id"];
                                             $result_request_pet_folder = mysql_query("SELECT users.folder FROM users, pets WHERE (pets.owner_id = users.id) AND (pets.id = ".$request_pet_id.")");
                                             $folder_current_pet = mysql_fetch_array($result_request_pet_folder);

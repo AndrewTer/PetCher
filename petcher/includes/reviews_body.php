@@ -12,8 +12,8 @@ defined('mypetcher') or header("Location: ../403.php");
                             <li>Отобразить</li>
                             <li><a id="select-links" href="#"><? echo $sort_name; ?></a>
                             <ul id="list-links-sort">
-                                <a href="reviews.php?sort=my"><li><strong>Мои отзывы</strong></li></a>
-                                <a href="reviews.php?sort=about_me"><li><strong>Отзывы обо мне</strong></li></a>
+                                <a href="reviews?sort=my"><li><strong>Мои отзывы</strong></li></a>
+                                <a href="reviews?sort=about-me"><li><strong>Отзывы обо мне</strong></li></a>
                             </ul>
                             </li>
                         </ul>
