@@ -15,12 +15,12 @@ if($_SESSION['auth_user'] == "yes_auth")
         $user_id=clear_string($_GET["id"]);
         if (!preg_match('/^\+?\d+$/', $user_id)) 
         {
-            header("Location: index.php");
+            header("Location: orders");
         }else
         {
             if ($user_id == $id)
             {
-                header("Location: index.php"); 
+                header("Location: orders"); 
             }
             
             $result_selected_user = mysql_query("SELECT * FROM users WHERE id = ".$user_id." AND (deleted='no')");
@@ -29,12 +29,12 @@ if($_SESSION['auth_user'] == "yes_auth")
                 $row_selected_user = mysql_fetch_array($result_selected_user);
             }else
             {
-                header("Location: index.php"); 
+                header("Location: orders"); 
             }
         }
     }else
     {
-        header("Location: index.php"); 
+        header("Location: orders"); 
         
     }
 ?>
@@ -111,6 +111,6 @@ $(document).ready(function() {
 <?
 }else
 {
-    header("Location: login.php"); 
+    header("Location: login"); 
 }
 ?>

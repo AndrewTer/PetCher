@@ -480,10 +480,10 @@ define('mypetcher', true);
                                         if($row_search["photo"]!="no" && file_exists("users/".$row_search["folder"]."/".$row_search["photo"]))
                                         {
                                             $img_path = 'users/'.$row_search["folder"].'/'.$row_search["photo"];
-                                            echo '<a href="user.php?id='.$row_search["user_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
+                                            echo '<a href="id'.$row_search["user_id"].'_'.ftranslite($row_search["full_name"]).'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                                         }else
                                         {
-                                            echo '<a href="user.php?id='.$row_search["user_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                            echo '<a href="id'.$row_search["user_id"].'_'.ftranslite($row_search["full_name"]).'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                         }
                                                         
                                         echo '</div>';
@@ -514,7 +514,7 @@ define('mypetcher', true);
                             echo '</div>
                                     
                                     <div class="right-part-user-search-list">
-                                        <p class="user-about-search"><a id="user-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name"].'</a></p>';
+                                        <p class="user-about-search"><a id="user-about-search-username" href="id'.$row_search["user_id"].'_'.ftranslite($row_search["full_name"]).'">'.$row_search["full_name"].'</a></p>';
                                         
                                         $current_time_result = mysql_query("SELECT SUBTIME(CURTIME(), '0:2:0') AS twomin, DATE(NOW());");
                                         $row_current_time_result = mysql_fetch_array($current_time_result);
