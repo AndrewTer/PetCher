@@ -25,7 +25,12 @@ RewriteRule ^requests$ requests.php [QSA,L]
 RewriteRule ^responses$ responses.php [QSA,L]
 RewriteRule ^orders$ index.php [QSA,L]
 RewriteRule ^pet([0-9]+)_([a-z0-9\-]+)/?$ pets.php?petnum=$1 [L]
+RewriteRule ^id([0-9]+)_([a-z0-9\-]+)/?$ user.php?id=$1 [L]
 
+# Перенаправление на защищенное соединение HTTPS
+#RewriteEngine On
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
 
 # Переход на страницы 403, 404
 ErrorDocument 404 http://localhost/petcher/404.php
