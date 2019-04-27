@@ -3,7 +3,7 @@ defined('mypetcher') or header("Location: ../403.php");
     $result_requests = mysql_query("
         SELECT orders.id AS order_id, orders.owner_id AS owner_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS order_cost, orders.other_information AS order_about,
                 pets.id AS pet_id, pets.name AS pet_name, pets.kind AS pet_kind, pets.breed AS pet_breed, pets.sex AS pet_sex, pets.weight AS pet_weight, pets.growth AS pet_growth, pets.other_information AS pet_info, pets.photo AS pet_photo,
-                users.id AS sitter_id, users.photo AS sitter_photo, users.folder AS sitter_folder, users.rating AS sitter_rating
+                users.id AS sitter_id, users.full_name AS sitter_name, users.photo AS sitter_photo, users.folder AS sitter_folder, users.rating AS sitter_rating
         FROM request, orders, pets, users
         WHERE (orders.id = request.order_id) AND (orders.deleted = 'no') AND (orders.kind = 'current') AND (orders.owner_id = ".$id.") AND (orders.pet_id = pets.id) AND (request.sitter_id = users.id) AND (users.deleted = 'no') AND (request.deleted = 'no') AND (pets.deleted = 'no')
     ");
@@ -86,10 +86,10 @@ defined('mypetcher') or header("Location: ../403.php");
                                         if($row_requests["sitter_photo"]!="no" && file_exists("users/".$row_requests["sitter_folder"]."/".$row_requests["sitter_photo"]))
                                         {
                                             $img_path_sitter = 'users/'.$row_requests["sitter_folder"].'/'.$row_requests["sitter_photo"];
-                                            echo '<a href="user.php?id='.$row_requests["sitter_id"].'"><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
+                                            echo '<a href="id'.$row_requests["sitter_id"].'_'.ftranslite($row_requests["sitter_name"]).'"><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
                                         }else
                                         {
-                                            echo '<a href="user.php?id='.$row_requests["sitter_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                            echo '<a href="id'.$row_requests["sitter_id"].'_'.ftranslite($row_requests["sitter_name"]).'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                         }
                                         
                                         $cur_order_resp_id = $row_requests["order_id"];
@@ -101,7 +101,7 @@ defined('mypetcher') or header("Location: ../403.php");
                                         echo '</div>
                                         <table id="ref-and-appr-current-request">
                                             <tr>
-                                                <td style="padding-bottom: 10px; padding-top: 10px; width: auto;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" href="user.php?id='.$row_requests["sitter_id"].'" >Страница ситтера</a></p></td>
+                                                <td style="padding-bottom: 10px; padding-top: 10px; width: auto;" colspan="2"><p class="sitter-request-links" ><a class="sitter-current-request" href="id'.$row_requests["sitter_id"].'_'.ftranslite($row_requests["sitter_name"]).'" >Страница ситтера</a></p></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: auto;"><p class="approve-request-links" ><a data-curorderresp="'.$cur_order_resp_id.'" data-curorderrespsit="'.$cur_order_resp_sit_id.'" onclick="event.preventDefault();" class="approve-current-request" href="" >Одобрить</a></p></td>

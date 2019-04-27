@@ -94,8 +94,8 @@ $result_responses = mysql_query("SELECT orders.id AS order_id, orders.owner_id A
                                             echo '</a></div>
                                             </div>
                                             <div class="right-part-response-list">
-                                                <p class="order-about">Заказчик: <a id="order-about-response-username" href="user.php?id='.$row_responses["owner_id"].'">'.$row_responses["full_name_owner"].'</a></p>
-                                                <p class="order-about"><a id="order-about-search-username-page" href="user.php?id='.$row_responses["owner_id"].'">(Перейти на страницу пользователя)</a></p>
+                                                <p class="order-about">Заказчик: <a id="order-about-response-username" href="id'.$row_responses["owner_id"].'_'.ftranslite($row_responses["full_name_owner"]).'">'.$row_responses["full_name_owner"].'</a></p>
+                                                <p class="order-about"><a id="order-about-search-username-page" href="id'.$row_responses["owner_id"].'_'.ftranslite($row_responses["full_name_owner"]).'">(Перейти на страницу пользователя)</a></p>
                                                 <p class="order-cost">Моб.номер: '.$number_owner.'</p>
                                                 <p class="order-about">'.$row_responses["about_order"].'</p>';
                                                 if ($row_responses["city"]==null)
@@ -143,8 +143,8 @@ $result_responses = mysql_query("SELECT orders.id AS order_id, orders.owner_id A
                                     echo '</a></div>
                                     </div>
                                     <div class="right-part-response-list">
-                                        <p class="order-about">Заказчик: <a id="order-about-response-username" href="user.php?id='.$row_responses["owner_id"].'">'.$row_responses["full_name_owner"].'</a></p>
-                                        <p class="order-about"><a id="order-about-search-username-page" href="user.php?id='.$row_responses["owner_id"].'">(Перейти на страницу пользователя)</a></p>
+                                        <p class="order-about">Заказчик: <a id="order-about-response-username" href="id'.$row_responses["owner_id"].'_'.ftranslite($row_responses["full_name_owner"]).'">'.$row_responses["full_name_owner"].'</a></p>
+                                        <p class="order-about"><a id="order-about-search-username-page" href="id'.$row_responses["owner_id"].'_'.ftranslite($row_responses["full_name_owner"]).'">(Перейти на страницу пользователя)</a></p>
                                         <p class="order-about">'.$row_responses["about_order"].'</p>';
                                         if ($row_responses["city"]==null)
                                         {

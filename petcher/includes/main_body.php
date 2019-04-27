@@ -359,10 +359,10 @@ if ($_POST["add_new_order"])
                                                             if($row_requests["sitter_photo"]!="no" && file_exists("users/".$row_requests["sitter_folder"]."/".$row_requests["sitter_photo"]))
                                                             {
                                                                 $img_path_sitter = 'users/'.$row_result_cur_order_sitter["folder"].'/'.$row_result_cur_order_sitter["photo"];
-                                                                echo '<a href="user.php?id='.$row_result_cur_order_sitter["id"].'"><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_cur_order_sitter["id"].'_'.ftranslite($row_result_cur_order_sitter["full_name"]).'"><img class="image-avatar" src="'.$img_path_sitter.'" alt="" width="100%" /></a>';
                                                             }else
                                                             {
-                                                                echo '<a href="user.php?id='.$row_result_cur_order_sitter["id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_cur_order_sitter["id"].'_'.ftranslite($row_result_cur_order_sitter["full_name"]).'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                                             }
                                                             
 
@@ -370,7 +370,7 @@ if ($_POST["add_new_order"])
                                                     </div>
                                                     
                                                     <div class="right-part-current-order-sitter">
-                                                        <p class="user-about-search"><a id="user-about-search-username" href="user.php?id='.$row_result_cur_order_sitter["id"].'">'.$row_result_cur_order_sitter["full_name"].'</a></p>';
+                                                        <p class="user-about-search"><a id="user-about-search-username" href="id'.$row_result_cur_order_sitter["id"].'_'.ftranslite($row_result_cur_order_sitter["full_name"]).'">'.$row_result_cur_order_sitter["full_name"].'</a></p>';
                                             
                                                         $current_time_result = mysql_query("SELECT SUBTIME(CURTIME(), '0:2:0') AS twomin, DATE(NOW());");
                                                         $row_current_time_result = mysql_fetch_array($current_time_result);

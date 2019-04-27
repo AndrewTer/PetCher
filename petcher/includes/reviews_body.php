@@ -13,7 +13,7 @@ defined('mypetcher') or header("Location: ../403.php");
                             <li><a id="select-links" href="#"><? echo $sort_name; ?></a>
                             <ul id="list-links-sort">
                                 <a href="reviews?sort=my"><li><strong>Мои отзывы</strong></li></a>
-                                <a href="reviews?sort=about-me"><li><strong>Отзывы обо мне</strong></li></a>
+                                <a href="reviews?sort=about_me"><li><strong>Отзывы обо мне</strong></li></a>
                             </ul>
                             </li>
                         </ul>
@@ -50,10 +50,10 @@ defined('mypetcher') or header("Location: ../403.php");
                                                             if($row_result_reviews_about_sitter["photo"]!="no" && file_exists("users/".$row_result_reviews_about_sitter["folder"]."/".$row_result_reviews_about_sitter["photo"]))
                                                             {
                                                                 $img_path = 'users/'.$row_result_reviews_about_sitter["folder"].'/'.$row_result_reviews_about_sitter["photo"];
-                                                                echo '<a href="user.php?id='.$row_result_reviews["sitter_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_reviews["sitter_id"].'_'.ftranslite($row_result_reviews_about_sitter["full_name"]).'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                                                             }else
                                                             {
-                                                                echo '<a href="user.php?id='.$row_result_reviews["sitter_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_reviews["sitter_id"].'_'.ftranslite($row_result_reviews_about_sitter["full_name"]).'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                                             }
                                                         
                                                         echo '</div>
@@ -94,10 +94,10 @@ defined('mypetcher') or header("Location: ../403.php");
                                                             if($row_result_reviews_about_author["photo"]!="no" && file_exists("users/".$row_result_reviews_about_author["folder"]."/".$row_result_reviews_about_author["photo"]))
                                                             {
                                                                 $img_path = 'users/'.$row_result_reviews_about_author["folder"].'/'.$row_result_reviews_about_author["photo"];
-                                                                echo '<a href="user.php?id='.$row_result_reviews["author_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_reviews["author_id"].'_'.ftranslite($row_result_reviews_about_author["full_name"]).'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                                                             }else
                                                             {
-                                                                echo '<a href="user.php?id='.$row_result_reviews["author_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_reviews["author_id"].'_'.ftranslite($row_result_reviews_about_author["full_name"]).'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                                             }
                                                         
                                                         echo '</div>
@@ -139,10 +139,10 @@ defined('mypetcher') or header("Location: ../403.php");
                                                             if($row_result_reviews_about_sitter["photo"]!="no" && file_exists("users/".$row_result_reviews_about_sitter["folder"]."/".$row_result_reviews_about_sitter["photo"]))
                                                             {
                                                                 $img_path = 'users/'.$row_result_reviews_about_sitter["folder"].'/'.$row_result_reviews_about_sitter["photo"];
-                                                                echo '<a href="user.php?id='.$row_result_reviews["sitter_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_reviews["sitter_id"].'_'.$row_result_reviews_about_sitter["full_name"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                                                             }else
                                                             {
-                                                                echo '<a href="user.php?id='.$row_result_reviews["sitter_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                                                echo '<a href="id'.$row_result_reviews["sitter_id"].'_'.$row_result_reviews_about_sitter["full_name"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                                             }
                                                         
                                                         echo '</div>

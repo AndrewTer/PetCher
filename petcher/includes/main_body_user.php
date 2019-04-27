@@ -159,10 +159,10 @@ defined('mypetcher') or header("Location: ../403.php");
                                     if($row_result_reviews_about_author["photo"]!="no" && file_exists("users/".$row_result_reviews_about_author["folder"]."/".$row_result_reviews_about_author["photo"]))
                                     {
                                         $img_path = 'users/'.$row_result_reviews_about_author["folder"].'/'.$row_result_reviews_about_author["photo"];
-                                        echo '<a href="user.php?id='.$row_result_current_fav_user_reviews["author_id"].'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
+                                        echo '<a href="id'.$row_result_current_fav_user_reviews["author_id"].'_'.ftranslite($row_result_reviews_about_author["full_name"]).'"><img class="image-avatar" src="'.$img_path.'" alt="" width="100%" /></a>';
                                     }else
                                     {
-                                        echo '<a href="user.php?id='.$row_result_current_fav_user_reviews["author_id"].'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
+                                        echo '<a href="id'.$row_result_current_fav_user_reviews["author_id"].'_'.ftranslite($row_result_reviews_about_author["full_name"]).'"><img class="image-avatar" src="images/nophoto.jpg" width="100%" /></a>';
                                     }
                                                         
                                     echo '</div>
