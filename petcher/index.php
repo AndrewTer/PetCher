@@ -48,6 +48,7 @@ if($_SESSION['auth_user'] == "yes_auth")
         <meta http-equiv="refresh" content="0; url=noscript.php" />
     </noscript>
     <title><? echo $username ?> | PetCher</title> 
+    <meta name="description" content="PetCher - сервис по передержке домашних животных. Наша цель - помощь владельцам животных в поиске желающих посидеть с их питомцами на время отсутствия, создавая для этого удобные средства поиска и связи." />
 </head>
 
 <div class="grid-container">

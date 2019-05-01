@@ -77,7 +77,7 @@ define('mypetcher', true);
                 $param_city_search = " AND (city = 'Симферополь')";
             break;
             case 'other':
-                $param_city_search = " AND ((city = null) OR (city = ''))";
+                $param_city_search = " AND ((city = null) OR (city = '') OR (city = 'Другой город'))";
             break;
             default;
                 $param_city_search = " ";

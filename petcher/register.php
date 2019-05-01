@@ -96,6 +96,7 @@ else
         <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
     <title>Регистрация | PetCher</title>
+    <meta name="description" content="Регистрация в PetCher.ru" />
 </head>
 
 <div class="grid-container">

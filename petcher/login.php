@@ -60,8 +60,8 @@ else
     <meta http-equiv="refresh" content="0; url=noscript" />
 </noscript>
 <title>Добро пожаловать | PetCher</title>
+<meta name="description" content="Вход PetCher.ru" />
 </head>
-
 
 <div class="grid-container">
     <div class="container mlogin">
