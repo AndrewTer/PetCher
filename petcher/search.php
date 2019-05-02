@@ -248,7 +248,7 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                 </div>
                 <div class="search-list">
                     <?
-                        $result_search = mysql_query("SELECT orders.id AS current_order_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight, pets.photo AS pet_photo, pets.other_information AS about_pet, users.full_name AS full_name_user, users.id AS user_id, users.folder AS folder, users.city AS city FROM orders, pets, users WHERE (orders.pet_id = pets.id) AND (users.id = pets.owner_id) AND (orders.owner_id != $id)  AND (orders.date_out>=curdate()) AND (orders.deleted = 'no') AND (orders.kind = 'current') $param_city_search $param_order_cost_search $param_pet_sex_search $param_pet_kind_search $param_order_pet_growth_search $param_order_date_search GROUP BY orders.id");
+                        $result_search = mysql_query("SELECT orders.id AS current_order_id, orders.date_out AS date_out, orders.date_in AS date_in, orders.cost AS cost, orders.other_information AS about_order, pets.name AS pet_name, pets.kind AS pet_kind, pets.sex AS pet_sex, pets.breed AS pet_breed, pets.growth AS pet_growth, pets.weight AS pet_weight, pets.photo AS pet_photo, pets.other_information AS about_pet, users.full_name AS full_name_user, users.id AS user_id, users.folder AS folder, users.city AS city FROM orders, pets, users WHERE (orders.pet_id = pets.id) AND (users.id = pets.owner_id) AND (orders.owner_id != $id)  AND (orders.date_in>=curdate()) AND (orders.deleted = 'no') AND (orders.kind = 'current') $param_city_search $param_order_cost_search $param_pet_sex_search $param_pet_kind_search $param_order_pet_growth_search $param_order_date_search GROUP BY orders.id");
                         if (mysql_num_rows($result_search) == null)
                         {
                             echo '<hr /><p class="not-order">Заказов нет</p>';
@@ -303,8 +303,8 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                                     echo '</div>
                                             
                                             <div class="right-part-order-search-list">
-                                                <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="user.php?id='.$row_search["user_id"].'">'.$row_search["full_name_user"].'</a></p>
-                                                <p class="order-about-search"><a id="order-about-search-username-page" href="user.php?id='.$row_search["user_id"].'">(Перейти на страницу пользователя)</a></p>
+                                                <p class="order-about-search">Заказчик: <a id="order-about-search-username" href="id'.$row_search["user_id"].'_'.ftranslite($row_search["full_name_user"]).'">'.$row_search["full_name_user"].'</a></p>
+                                                <p class="order-about-search"><a id="order-about-search-username-page" href="id'.$row_search["user_id"].'_'.ftranslite($row_search["full_name_user"]).'">(Перейти на страницу пользователя)</a></p>
                                                 <p class="order-about-search">'.$row_search["about_order"].'</p>';
                                                 if ($row_search["city"]!=null)
                                                 {
