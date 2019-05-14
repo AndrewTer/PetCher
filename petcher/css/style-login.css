@@ -441,11 +441,6 @@ a {
 	color: #3b8dbd;
 }
 
-.pass_recovery_link {
-    color: #3b8dbd;
-    text-decoration: none;
-}
-
 .input:valid + span:after {
     content: "\2714";
     color: #07A407;
@@ -463,14 +458,42 @@ a {
     border: solid 1px #3b8dbd;
 	background: #3b8dbd;
 	color: white;
-        padding: 7px 12px;
-        border-radius:4px;
-        float: right;
-        cursor: pointer;
+    padding: 7px 12px;
+    border-radius:4px;
+    float: right;
+    cursor: pointer;
 }
 
 .button:hover{
    background: #3B69BD;
+}
+
+.pass_recovery_link{
+    border: solid 1px #3b8dbd;
+	background: #3b8dbd;
+	color: white;
+    padding: 7px 60px;
+    border-radius:4px;
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto;
+}
+
+.pass_recovery_link_success{
+    border: solid 1px #3b8dbd;
+	background: #3b8dbd;
+	color: white;
+    padding: 7px 80px;
+    border-radius:4px;
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+    margin: auto;
+}
+
+.pass_recovery_link:hover, .pass_recovery_link_success:hover{
+    background: #3B69BD;
 }
 
 #title-about {
