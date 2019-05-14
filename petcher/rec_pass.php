@@ -64,7 +64,7 @@ require_once("includes/connection.php");
                     echo "<div class='success'>".$success_message."</div>";
                 ?>
                         <hr />
-                        <p align="center"><a class='pass_recovery_link' href='login'>Перейти к авторизации</a></p>
+                        <p align="center"><a class='pass_recovery_link_success' href='login'>Перейти к авторизации</a></p>
                 <?
                 } 
                 ?>
