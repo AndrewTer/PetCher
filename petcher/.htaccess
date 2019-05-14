@@ -8,6 +8,8 @@ RewriteCond   %{REQUEST_FILENAME} !-f
 
 RewriteRule ^login$ login.php [QSA,L]
 RewriteRule ^register$ register.php [QSA,L]
+RewriteRule ^password_recovery$ password_recovery.php [QSA,L]
+RewriteRule ^rec_pass$ rec_pass.php [QSA,L]
 RewriteRule ^rules$ rules.php [QSA,L]
 RewriteRule ^about$ about.php [QSA,L]
 RewriteRule ^starwars$ starwars.php [QSA,L]
