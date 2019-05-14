@@ -90,6 +90,8 @@ else
                 </p>
                 <p class="regtext">Впервые здесь? <a class="reglink" href="register" >Регистрация</a>!</p>
             </form>
+            <hr />
+            <p class="regtext">Забыли свой пароль? <a class="reglink" href="password_recovery" >Восстановление пароля</a></p>
         </div>
     </div>
     
