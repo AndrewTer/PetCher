@@ -28,15 +28,15 @@ defined('mypetcher') or header("Location: ../403.php");
         <p id="title-main-targer-support-up">Моя страница <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-my-page">
-        Ваша <a id="text-support-part-link-to-page" href="index.php">страница</a> состоит из двух частей:<br />
+        Ваша <a id="text-support-part-link-to-page" href="orders">страница</a> состоит из двух частей:<br />
         - в верхней части отображаются: ваша фотография, пользовательское меню, информация о вас и раздел с вашими питомцами, а также ссылка для перехода на страницу редактирования информации о вас.<br /><br />
         <img width="700px" class="support-image-settings" src="images/support/my-page-info.png" title="Раздел с вашей информацией" />
         Страница для редактирования информации о вас содержит поля для изменения ФИО (фамилия, имя, отчество), выбора города вашего проживания, улицы, краткой информации о вас, а также поле для изменения вашей фотографии с возможностью её удаления.<br /><br />
         <img width="700px" class="support-image-settings" src="images/support/change-my-page-info.png" title="Страница для редактирования вашей информации" />
         - в нижней части располагаются такие разделы, как 
-        <a id="text-support-part-link-to-page" href="index.php">«Заказы»</a>, <a id="text-support-part-link-to-page" href="favourites.php">«Избранное»</a>,
-        <a id="text-support-part-link-to-page" href="reviews.php?sort=about_me">«Отзывы»</a>, <a id="text-support-part-link-to-page" href="requests.php">«Заявки от ситтеров»</a> и
-        <a id="text-support-part-link-to-page" href="responses.php">«Ответы на мои заявки»</a>.<br /><br />
+        <a id="text-support-part-link-to-page" href="orders">«Заказы»</a>, <a id="text-support-part-link-to-page" href="favourites">«Избранное»</a>,
+        <a id="text-support-part-link-to-page" href="reviews?sort=about_me">«Отзывы»</a>, <a id="text-support-part-link-to-page" href="requests">«Заявки от ситтеров»</a> и
+        <a id="text-support-part-link-to-page" href="responses">«Ответы на мои заявки»</a>.<br /><br />
         Отображение каждого из перечисленных разделов зависит от выбора вами раздела из пользовательского меню, которое располагается под вашей фотографией.
     </div>
     
@@ -44,7 +44,7 @@ defined('mypetcher') or header("Location: ../403.php");
         <p id="title-main-targer-support-up">Настройки <sub>﹀</sub></p>
     </div>
     <div class="block-support-info-settings">
-        Раздел <a id="text-support-part-link-to-page" href="settings.php">«Настройки»</a> находится в верхнем меню вашей страницы.
+        Раздел <a id="text-support-part-link-to-page" href="settings">«Настройки»</a> находится в верхнем меню вашей страницы.
         <img width="700px" class="support-image-settings" src="images/support/settings-menu-info.png" title="Раздел настроек в верхнем меню" />
         В этом разделе вам доступно редактировать ваш номер мобильного телефона, адрес вашей электронной почты (логин) и ваш пароль от данного сервиса.
         <img width="400px" class="support-image-settings" src="images/support/settings-page-info.png" title="Страница настроек" />
@@ -70,11 +70,11 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-orders">
         <img class="support-image-settings-left" width="200px" src="images/support/orders-menu-info.png" title="Раздел заказов в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="index.php">«Заказы»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева), а также в верхнем меню вашей страницы (изображение ниже).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="orders">«Заказы»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева), а также в верхнем меню вашей страницы (изображение ниже).</p>
             <p><img width="600px" class="support-image-settings" src="images/support/orders-up-menu-info.png" title="Раздел заказов в верхнем меню" /></p>
             <p>Данный раздел нужен для отображения всех ваших заказов. Заказы делятся на три вида: <a style="margin: 0; color: #CC9005;">«В поиске»</a>, <a style="margin: 0; color: #549613;">«Выполненные»</a> и <a style="margin: 0; color: #2969FF;">«Текущие»</a>.</p>
             <hr />
-            <p>Заказы <a style="margin: 0; color: #CC9005;">«В поиске»</a> содержат информацию о самом заказе (описание, цена, город и даты) и информацию о питомце. Данные заказы находятся в разделе <a id="text-support-part-link-to-page" href="search.php">«Поиск заказов»</a> и не имеют текущего ситтера, то есть другие пользователи сервиса могут увидеть их в разделе <a id="text-support-part-link-to-page" href="search.php">«Поиск заказов»</a> и отправить вам заявку. У вас есть возможность редактировать и удалять заказы такого вида.</p>
+            <p>Заказы <a style="margin: 0; color: #CC9005;">«В поиске»</a> содержат информацию о самом заказе (описание, цена, город и даты) и информацию о питомце. Данные заказы находятся в разделе <a id="text-support-part-link-to-page" href="orders_search">«Поиск заказов»</a> и не имеют текущего ситтера, то есть другие пользователи сервиса могут увидеть их в разделе <a id="text-support-part-link-to-page" href="orders_search">«Поиск заказов»</a> и отправить вам заявку. У вас есть возможность редактировать и удалять заказы такого вида.</p>
             <p><img width="600px" class="support-image-settings" src="images/support/order-in-search-page-info.png" title="Заказ находящийся в поиске" /></p>
             <hr />
             <p><a style="margin: 0; color: #549613;">«Выполненные»</a> заказы содержат информацию о самом заказе (описание, цена, город и даты) и информацию о питомце. У вас есть возможность удалять заказы такого вида.</p>
@@ -95,7 +95,7 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-reviews">
         <img width="200px" class="support-image-settings-left" src="images/support/reviews-menu-info.png" title="Раздел отзывов в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="reviews.php?sort=about_me">«Отзывы»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="reviews?sort=about_me">«Отзывы»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
             <p>Данный раздел нужен для отображения ваших отзывов о других пользователях сервиса, которые вы можете оставлять после выполнения ими ваших заказов, а также для отображения отзывов других пользователей сервиса о проделанной вами работе.</p>
             <p><img width="600px" class="support-image-settings" src="images/support/reviews-page-info-my.png" title="Страница с разделом ваших отзывов о других пользователях сервиса" /></p>
             <p><img width="600px" class="support-image-settings" src="images/support/reviews-page-info-about-me.png" title="Страница с разделом отзывов других пользователей сервиса о проделанной вами работе" /></p>
@@ -109,7 +109,7 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-fav">
         <img width="200px" class="support-image-settings-left" src="images/support/fav-menu-info.png" title="Раздел избранное в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="favourites.php">«Избранное»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="favourites">«Избранное»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
             <p>Данный раздел нужен для отображения важных вам пользователей и быстрого перехода на их страницы путём клика по фотографиям.</p>
             <p><img width="600px" class="support-image-settings" src="images/support/fav-page-info.png" title="Страница с разделом избранного" /></p>
         </div>
@@ -122,7 +122,7 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-req">
         <img width="200px" class="support-image-settings-left" src="images/support/req-menu-info.png" title="Раздел заявки от ситтеров в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="requests.php">«Заявки от ситтеров»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="requests">«Заявки от ситтеров»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
             <p>Данный раздел нужен для отображения отправленных вам заявок на ваши заказы от других пользователей сервиса.</p>
             <p>Каждый блок заявки состоит из двух частей: слева отображается ваш заказ, на который пришла заявка, справа - часть пользователя, который отправил вам заявку (в ней находится ссылка на страницу этого пользователя, а также две кнопки для одобрения или отказа текущей заявки).</p>
             <p><img width="600px" class="support-image-settings" src="images/support/req-page-info.png" title="Страница с разделом заявок от ситтеров" /></p>
@@ -136,7 +136,7 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-resp">
         <img width="200px" class="support-image-settings-left" src="images/support/resp-menu-info.png" title="Раздел ответы на мои заявки в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="responses.php">«Ответы на мои заявки»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="responses">«Ответы на мои заявки»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
             <p>Данный раздел нужен для отображения ответов других пользователей сервиса на ваши заявки.</p>
             <p>Ответы могут быть двух видов - <a style="margin: 0; color: #04008A;">одобрение</a> и <a style="margin: 0; color: #D62B00;">отказ</a>.</p>
             <p>Блок c одобрением вашей заявки содержит информацию о заказе, заявку на который вы отправили его создателю, а также мобильный номер для связи с заказчиком и ссылку на страницу самого заказчика.</p>
@@ -152,10 +152,10 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-search-users">
         <img width="200px" class="support-image-settings-left" src="images/support/search-users-menu-info.png" title="Раздел поиска пользователей в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="users_search.php?sort=all-users">«Поиск пользователей»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="users_search?sort=all-users">«Поиск пользователей»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
             <p>Данный раздел нужен для удобного поиска других пользователей сервиса по заданным вами параметрам.</p>
             <p>В левой части раздела находится список пользователей с краткой информации о них (ФИО, статус - в сети пользователь в данный момент или нет, город проживания, описание и рейтинг), а также ссылки на страницы и кнопки добавления в избранное.</p>
-            <p>Справа расположен блок с возможностью задания параметров поиска, сортировкой и переходом в раздел <a id="text-support-part-link-to-page" href="search.php">поиска заказов</a>.</p>
+            <p>Справа расположен блок с возможностью задания параметров поиска, сортировкой и переходом в раздел <a id="text-support-part-link-to-page" href="orders_search">поиска заказов</a>.</p>
             <p><img width="600px" class="support-image-settings" src="images/support/search-users-page-info.png" title="Страница с разделом поиска пользователей" /></p>
         </div>
         <div class="clear"></div>
@@ -167,10 +167,10 @@ defined('mypetcher') or header("Location: ../403.php");
     <div class="block-support-info-search-orders">
         <img width="200px" class="support-image-settings-left" src="images/support/search-orders-menu-info.png" title="Раздел поиска заказов в пользовательском меню" />
         <div class="right-text-support-part">
-            <p>Раздел <a id="text-support-part-link-to-page" href="search.php">«Поиск заказов»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
+            <p>Раздел <a id="text-support-part-link-to-page" href="orders_search">«Поиск заказов»</a> находится в пользовательском меню вашей страницы, расположенном под вашей фотографией (изображение слева).</p>
             <p>Данный раздел нужен для удобного поиска текущих заказов пользователей сервиса по заданным вами параметрам.</p>
             <p>В левой части раздела находится список текущих заказов с полной информацией о них, а также ссылки на страницы заказчиков и кнопки для подачи или отмены заявок.</p>
-            <p>Справа расположен блок с возможностью задания параметров поиска и переходом в раздел <a id="text-support-part-link-to-page" href="users_search.php?sort=all-users">поиска пользователей</a>.</p>
+            <p>Справа расположен блок с возможностью задания параметров поиска и переходом в раздел <a id="text-support-part-link-to-page" href="users_search?sort=all-users">поиска пользователей</a>.</p>
             <p><img width="600px" class="support-image-settings" src="images/support/search-orders-page-info.png" title="Страница с разделом поиска заказов" /></p>
         </div>
         <div class="clear"></div>
