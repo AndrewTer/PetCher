@@ -105,6 +105,6 @@ $(document).ready(function() {
 <?
 }else
 {
-    header("Location: login.php"); 
+    header("Location: login"); 
 }
 ?>
