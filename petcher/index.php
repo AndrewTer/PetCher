@@ -44,16 +44,31 @@ if($_SESSION['auth_user'] == "yes_auth")
     }
     
     </script>
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(53791042, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+   
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.php" />
     </noscript>
-    <title><? echo $username ?> | PetCher</title> 
+    <title><? echo $username ?> | PetCher</title>
     <meta name="description" content="PetCher - сервис по передержке домашних животных. Наша цель - помощь владельцам животных в поиске желающих посидеть с их питомцами на время отсутствия, создавая для этого удобные средства поиска и связи." />
 </head>
 
 <div class="grid-container">
-
-  
+    
   <?php 
     include("includes/header.php");
   ?>
@@ -64,7 +79,6 @@ if($_SESSION['auth_user'] == "yes_auth")
         include("includes/upper_body.php");
         include("includes/main_body.php");
     ?>
-    
     </div>
   </div>
   
