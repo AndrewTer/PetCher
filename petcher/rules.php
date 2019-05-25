@@ -5,6 +5,20 @@ define('mypetcher', true);
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/share.js"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(53791042, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
@@ -13,9 +27,9 @@ define('mypetcher', true);
 
 <div class="grid-container">
     <div class="container_about about">
-            <?php 
-                include("includes/logreg_header.php");
-            ?>
+        <?php 
+            include("includes/logreg_header.php");
+        ?>
             
         <p id="title-rules">Правила сервиса</p>
         <hr />
@@ -34,7 +48,6 @@ define('mypetcher', true);
             </ol>
             Список правил в дальнейшем может быть изменён.
         </div>
-    
     </div>
     
     <script>
@@ -66,6 +79,6 @@ define('mypetcher', true);
     </script>
     
     <div class="footer">
-    PetCher © 2019
+        PetCher © 2019
     </div>
 </div>
