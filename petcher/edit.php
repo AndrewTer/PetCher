@@ -15,7 +15,6 @@ if($_SESSION['auth_user'] == "yes_auth")
     
     if ($_POST["change_user_info_submit"])
     {   
-        
         if (empty($_POST["file_user_photo"]))
         {
             include("actions/upload-user-photo.php");
@@ -122,6 +121,20 @@ if($_SESSION['auth_user'] == "yes_auth")
         $(".containerr").clickCarousel({margin: 10});
     });
     </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(53791042, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.php" />
     </noscript>
@@ -157,7 +170,6 @@ if($_SESSION['auth_user'] == "yes_auth")
                 		      <input id="file-input" type="file" name="file_user_photo" />
                 		  </div>
                           <label for="file-input">Выберите фото</label>
-    		               <!--   <span>или перетащите его в квадрат</span> --!>
                         </div>
                     </div>
                     <hr />
@@ -192,12 +204,10 @@ if($_SESSION['auth_user'] == "yes_auth")
                             <option value="simferopol" <?php if($row_change_user_info['city'] == 'Симферополь'){ echo ' selected="selected"'; } ?>>Симферополь</option>
                             <option value="other" <?php if($row_change_user_info['city'] == 'Другой город'){ echo ' selected="selected"'; } ?>>Другой город</option>
                         </select>
-                        
                     <p class="change-user-info">Улица:&emsp; <input type="text" id="change-user-street" name="change_user_street" maxlength="100" value="<?echo $row_change_user_info["street"];?>" /></p>
                     <p class="change-user-info">Обо мне:</p><textarea id="change-user-about" name="change_user_about" maxlength="500" cols="93" rows="10" placeholder="До 500 символов"><?echo $row_change_user_info["description"];?></textarea>
                     <p class="change-user-info-link" ><input type="submit" class="change-user-info-link-a" name="change_user_info_submit" value="Сохранить" /></p>
                 </div>
-                
             </form>
                 <div class="clear"></div>
         </div>
