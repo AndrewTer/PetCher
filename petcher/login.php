@@ -15,38 +15,34 @@ if(isset($_POST["login"]))
 														or trigger_error(mysql_error().$query);
 		if($row= mysql_fetch_array($query))
 		{
-            $user_pass = $row['password'];
-            if (password_verify($password, $user_pass)) {
-    			if(($_POST['email']==$email)&&($_POST['password']==$password))
-    			{
-    				//создаём сессию с данным
-                      
-    				$_SESSION['username']=$row['full_name'];
-                    $_SESSION['encrypted_password'] = $row['password'];
-                    $_SESSION['phone']=$row['phone_number'];
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['street'] = $row['street'];
-                    $_SESSION['id'] = $row['id'];
-                    $_SESSION['auth_user'] = 'yes_auth';
-    				//переадресация
-    				header("Location: orders");
-    			}
-            }else
-            {
-                $message = "Неверный логин и/или пароль";
-            }
+            		$user_pass = $row['password'];
+            		if (password_verify($password, $user_pass)) {
+				if(($_POST['email']==$email)&&($_POST['password']==$password))
+				{
+    					//создаём сессию с данным
+    					$_SESSION['username']=$row['full_name'];
+				    	$_SESSION['encrypted_password'] = $row['password'];
+				    	$_SESSION['phone']=$row['phone_number'];
+				    	$_SESSION['email'] = $row['email'];
+				    	$_SESSION['street'] = $row['street'];
+				   	$_SESSION['id'] = $row['id'];
+				    	$_SESSION['auth_user'] = 'yes_auth';
+    					//переадресация
+    					header("Location: orders");
+    				}
+            		}else
+            		{
+                		$message = "Неверный логин и/или пароль";
+            		}
 		}
 		else
 		{
 			$message = "Неверный логин и/или пароль";
-			//print "Неверный логин и/или пароль";
 		}
 	}
 	else
 	{
-	   $message = "Неизвестный пользователь";
-	   //print "Неизвестный пользователь";
-		
+	   $message = "Неизвестный пользователь";	
 	}
 } 
 else 
@@ -56,6 +52,21 @@ else
 ?>
 <head>
 <link href="css/style-login.css" media="screen" rel="stylesheet" />
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(53791042, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	
 <noscript>
     <meta http-equiv="refresh" content="0; url=noscript" />
 </noscript>
