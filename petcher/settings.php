@@ -60,7 +60,6 @@ if($_SESSION['auth_user'] == "yes_auth")
         }
     }
     
-
     $result_change_user_info = mysql_query("SELECT * FROM users WHERE id = $id");
     if (mysql_num_rows($result_change_user_info) > null)
     {
@@ -81,6 +80,20 @@ if($_SESSION['auth_user'] == "yes_auth")
         $("#change-user-phone-number-settings").mask("+7(999) 999-9999");
     });
     </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(53791042, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.php" />
     </noscript>
@@ -141,10 +154,8 @@ if($_SESSION['auth_user'] == "yes_auth")
                     <p class="change-user-info-link" ><input type="submit" class="change-user-info-link-a" name="change_user_password_settings_submit" value="Изменить пароль" /></p>
                 </div>
             </form>   
-            
                 <div class="clear"></div>
         </div>
-    
     </div>
   </div>
   
@@ -185,6 +196,6 @@ $(document).ready(function() {
 <?
 }else
 {
-    header("Location: login.php"); 
+    header("Location: login"); 
 }
 ?>
