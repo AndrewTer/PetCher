@@ -25,7 +25,6 @@ if($_SESSION['auth_user'] == "yes_auth")
     }else
     {
         header("Location: index.php"); 
-        
     }
     
     $action = $_GET["action"];
@@ -42,7 +41,6 @@ if($_SESSION['auth_user'] == "yes_auth")
     
     if ($_POST["change_pet_info_submit"])
     {
-        
         $sex_change_pet = $_POST["change_pet_sex"];
         $breed_change_pet = $_POST["change_pet_breed"];
         
@@ -134,7 +132,6 @@ if($_SESSION['auth_user'] == "yes_auth")
     if (mysql_num_rows($result_current_pet) > null)
     {
         $row_current_pet = mysql_fetch_array($result_current_pet);
-    
 ?>
 
 <html>
@@ -150,6 +147,20 @@ if($_SESSION['auth_user'] == "yes_auth")
         $(".containerr").clickCarousel({margin: 10});
     });
     </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(53791042, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript.php" />
     </noscript>
@@ -186,7 +197,6 @@ if($_SESSION['auth_user'] == "yes_auth")
                     		      <input id="file-input" type="file" name="file_pet_photo" />
                     		  </div>
                               <label for="file-input">Выберите фото</label>
-        		               <!--   <span>или перетащите его в квадрат</span> --!>
                             </div>
                         </div>
                         <hr />
