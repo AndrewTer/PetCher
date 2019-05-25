@@ -5,14 +5,14 @@ include("functions.php");
 session_start();
 if($_SESSION['auth_user'] == "yes_auth")
 {
-$id = $_SESSION['id'];
-$username = $_SESSION['username'];
-$encrypted_password = $_SESSION['encrypted_password'];
+        $id = $_SESSION['id'];
+        $username = $_SESSION['username'];
+        $encrypted_password = $_SESSION['encrypted_password'];
 
-$current_date_result = mysql_query("SELECT DATE(NOW()) AS now_date, DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AS next_year");
-$row_current_date_result = mysql_fetch_array($current_date_result);
-$param_order_date_start = $row_current_date_result["now_date"];
-$param_order_date_end = $row_current_date_result["next_year"];
+        $current_date_result = mysql_query("SELECT DATE(NOW()) AS now_date, DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AS next_year");
+        $row_current_date_result = mysql_fetch_array($current_date_result);
+        $param_order_date_start = $row_current_date_result["now_date"];
+        $param_order_date_end = $row_current_date_result["next_year"];
                 
         if ($_POST["search_order_by_param"])
         {
@@ -73,7 +73,6 @@ $param_order_date_end = $row_current_date_result["next_year"];
             {
                 $param_order_pet_growth_search = " AND (pets.weight>=$param_order_pet_weight_min) AND (pets.weight<=$param_order_pet_weight_max)";
             }
-            
             
             $param_city = $_POST["search_order_city"];
             switch ($param_city) {
@@ -213,13 +212,26 @@ $param_order_date_end = $row_current_date_result["next_year"];
         
 $result_search_orders_count = mysql_query("SELECT * FROM orders WHERE (owner_id != $id) AND (deleted = 'no') AND (kind='current')");
 $count_orders_search = mysql_num_rows($result_search_orders_count);
-
 ?>
 
 <html>
 <head>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(53791042, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=noscript" />
     </noscript>
@@ -227,11 +239,9 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
 </head>
 
 <div class="grid-container">
-
   <?php 
     include("includes/header.php");
   ?>
-  
   <div class="body">
     <div class="main-body">
         <div class="upper-part-body">
@@ -277,7 +287,7 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                                                     }
                                             echo '</div>';
                                             $cur_order_search_id = $row_search["current_order_id"];
-                            ?>
+                    ?>
                             
                                             <script type="text/javascript">
                                                     function goaddcurortoreq(identifier)
@@ -460,7 +470,6 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                         </div>
                         <p class="orders-search-links-button" ><input type="submit" class="search-order-by-param" name="search_order_by_param" value="Поиск" /></p>     
                     </form>                     
-                    
                  </div>   
                  
                 <div class="go-to-search-users">
@@ -469,8 +478,7 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
                             <p class="title-section-main-body" style="font-size: 15px;">Перейти к поиску пользователей</p>
                         </div>
                     </a>
-                </div>
-                     
+                </div>   
             </div>
             
             <div class="clear"></div>
@@ -515,6 +523,6 @@ $count_orders_search = mysql_num_rows($result_search_orders_count);
 <?
 }else
 {
-    header("Location: login.php"); 
+    header("Location: login"); 
 }
 ?>
