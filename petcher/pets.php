@@ -288,10 +288,10 @@ $(document).ready(function() {
 <?
     }else
     {
-        header("Location: index.php"); 
+        header("Location: orders"); 
     }
 }else
 {
-    header("Location: login.php"); 
+    header("Location: login"); 
 }
 ?>
