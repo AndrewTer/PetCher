@@ -4,6 +4,20 @@ define('mypetcher', true);
 <html>
     <head>
         <link href="css/starwars.css" media="screen" rel="stylesheet"/>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+           ym(53791042, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/53791042" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
         <noscript>
             <meta http-equiv="refresh" content="0; url=noscript" />
         </noscript>
@@ -14,7 +28,7 @@ define('mypetcher', true);
         <script type="text/javascript">
                 // Sets the number of stars we wish to display
                 const numStars = 300;
-                
+            
                 // For every star we want to display
                 for (let i = 0; i < numStars; i++) {
                   let star = document.createElement("div");  
