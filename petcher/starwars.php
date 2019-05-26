@@ -1,5 +1,6 @@
 <?
 define('mypetcher', true);
+include("stat.php");
 ?>
 <html>
     <head>
