@@ -1,5 +1,6 @@
 <?php
 define('mypetcher', true);
+include("stat.php");
 require_once("includes/connection.php");
 
     if(!empty($_POST['email'])) 
