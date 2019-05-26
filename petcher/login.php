@@ -1,5 +1,6 @@
 <?php 
 define('mypetcher', true);
+include("stat.php");
 session_start();
 require_once("includes/connection.php");
 //нажатие на кнопку входа
