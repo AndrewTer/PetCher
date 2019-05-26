@@ -2,6 +2,7 @@
 define('mypetcher', true);
     require_once("includes/connection.php"); 
     include("functions.php");
+    include("stat.php");
     session_start();
     if($_SESSION['auth_user'] == "yes_auth")
     {
