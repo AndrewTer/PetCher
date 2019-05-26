@@ -1,5 +1,6 @@
 <?
 define('mypetcher', true);
+include("stat.php");
 ?>
 <head>
     <link href="css/style-login.css" media="screen" rel="stylesheet"/>
